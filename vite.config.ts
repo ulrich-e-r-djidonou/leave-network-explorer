@@ -4,6 +4,5 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  // Pour GitHub Pages : decommenter et ajuster le nom du repo
-  // base: '/App_leave_network/',
+  base: '/leave-network-explorer/',
 })

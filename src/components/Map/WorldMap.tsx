@@ -49,7 +49,7 @@ export function WorldMap({ countries, indicator, onCountryClick }: Props) {
   const [geoData, setGeoData] = useState<any>(null);
 
   useEffect(() => {
-    fetch("/world.geojson")
+    fetch(`${import.meta.env.BASE_URL}world.geojson`)
       .then((res) => res.json())
       .then(setGeoData);
   }, []);

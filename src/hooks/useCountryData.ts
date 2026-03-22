@@ -6,7 +6,7 @@ export function useCountryData() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/data/countries.json")
+    fetch(`${import.meta.env.BASE_URL}data/countries.json`)
       .then((res) => res.json())
       .then((json) => {
         setData(json);
