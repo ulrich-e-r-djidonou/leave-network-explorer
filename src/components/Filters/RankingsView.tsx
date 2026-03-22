@@ -6,6 +6,8 @@ import {
   getGenerosityScore,
   REGIONS,
 } from "../../utils/calculations";
+import { getComparableEntities } from "../../hooks/useCountryData";
+import { exportToCSV } from "../../utils/export";
 import {
   BarChart,
   Bar,
@@ -16,6 +18,7 @@ import {
   ResponsiveContainer,
   Cell,
 } from "recharts";
+import { Download } from "lucide-react";
 
 interface Props {
   countries: Country[];
@@ -40,9 +43,18 @@ export function RankingsView({ countries, onCountryClick }: Props) {
   const [metric, setMetric] = useState<RankingMetric>("total_leave");
   const [region, setRegion] = useState("All");
   const [showTop, setShowTop] = useState(20);
+  const [includeSubnational, setIncludeSubnational] = useState(false);
+
+  const allEntities = useMemo(
+    () => getComparableEntities(countries),
+    [countries]
+  );
 
   const ranked = useMemo(() => {
-    return countries
+    const source = includeSubnational
+      ? allEntities.map((e) => e.country)
+      : countries;
+    return source
       .filter((c) => region === "All" || c.region === region)
       .map((c) => ({
         country: c,
@@ -53,7 +65,7 @@ export function RankingsView({ countries, onCountryClick }: Props) {
       }))
       .sort((a, b) => b.value - a.value)
       .slice(0, showTop);
-  }, [countries, metric, region, showTop]);
+  }, [countries, allEntities, metric, region, showTop, includeSubnational]);
 
   const isScore =
     metric.includes("gender") ||
@@ -115,8 +127,28 @@ export function RankingsView({ countries, onCountryClick }: Props) {
           >
             <option value={10}>Top 10</option>
             <option value={20}>Top 20</option>
-            <option value={52}>Tous</option>
+            <option value={100}>Tous</option>
           </select>
+        </div>
+        <div className="flex items-end">
+          <label className="flex items-center gap-2 text-sm cursor-pointer">
+            <input
+              type="checkbox"
+              checked={includeSubnational}
+              onChange={(e) => setIncludeSubnational(e.target.checked)}
+              className="rounded border-slate-300 text-teal-600 focus:ring-teal-500"
+            />
+            <span className="text-slate-600">Inclure provinces/etats</span>
+          </label>
+        </div>
+        <div className="flex items-end ml-auto">
+          <button
+            onClick={() => exportToCSV(countries)}
+            className="flex items-center gap-1.5 px-3 py-1.5 text-sm bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition-colors"
+          >
+            <Download className="w-4 h-4" />
+            Export CSV
+          </button>
         </div>
       </div>
 

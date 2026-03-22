@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import type { Country } from "../../types";
 import { formatDuration, getGenderEqualityScore, getGenerosityScore } from "../../utils/calculations";
+import { getComparableEntities } from "../../hooks/useCountryData";
 import { LeaveTimeline } from "../Country/LeaveTimeline";
 import { X, Search } from "lucide-react";
 import {
@@ -23,10 +24,15 @@ export function CompareView({ countries }: Props) {
   const [selected, setSelected] = useState<Country[]>([]);
   const [search, setSearch] = useState("");
 
-  const filtered = countries.filter(
-    (c) =>
-      c.name.toLowerCase().includes(search.toLowerCase()) &&
-      !selected.find((s) => s.iso2 === c.iso2)
+  const allEntities = useMemo(
+    () => getComparableEntities(countries),
+    [countries]
+  );
+
+  const filtered = allEntities.filter(
+    (e) =>
+      e.label.toLowerCase().includes(search.toLowerCase()) &&
+      !selected.find((s) => s.iso2 === e.id)
   );
 
   const addCountry = (c: Country) => {
@@ -106,20 +112,25 @@ export function CompareView({ countries }: Props) {
             <Search className="absolute left-2.5 top-2.5 w-4 h-4 text-slate-400" />
             <input
               type="text"
-              placeholder="Ajouter un pays..."
+              placeholder="Ajouter un pays ou une province..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="w-full pl-9 pr-3 py-2 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
             />
             {search && (
               <div className="absolute top-full left-0 right-0 bg-white border rounded-lg mt-1 shadow-lg z-10 max-h-48 overflow-y-auto">
-                {filtered.slice(0, 10).map((c) => (
+                {filtered.slice(0, 15).map((e) => (
                   <button
-                    key={c.iso2}
-                    onClick={() => addCountry(c)}
-                    className="w-full text-left px-3 py-2 text-sm hover:bg-slate-50"
+                    key={e.id}
+                    onClick={() => addCountry(e.country)}
+                    className="w-full text-left px-3 py-2 text-sm hover:bg-slate-50 flex items-center gap-2"
                   >
-                    {c.name}
+                    {e.label}
+                    {e.isSubnational && (
+                      <span className="text-[10px] bg-indigo-100 text-indigo-600 px-1.5 rounded">
+                        infranational
+                      </span>
+                    )}
                   </button>
                 ))}
               </div>
