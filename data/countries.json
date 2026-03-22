@@ -99,7 +99,50 @@
         "entitlementAgeMonths": 48,
         "gapAfterLeaveMonths": 45
       },
-      "recentChanges": []
+      "recentChanges": [],
+      "subnational": [
+        {
+          "parentCountry": "AR",
+          "name": "Argentina (public sector)",
+          "code": "AR-PUB",
+          "type": "sector",
+          "maternity": {
+            "exists": true,
+            "durationMonths": {
+              "total": 3.3,
+              "paid": 3.3,
+              "wellPaid": 3.3
+            },
+            "durationDays": 100,
+            "durationDetail": "100 calendar days: 30 days prenatal + 70 days postnatal",
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "obligatory": true,
+            "obligatoryDetail": "Obligatory; 30 days before birth can be reduced with medical authorization",
+            "notes": "All public sector employees eligible. Multiple births: +10 days. From 3rd child: +10 days per pregnancy. Followed by optional unpaid excedencia of 3 or 6 months. Provincial public employment varies significantly: 90 days (Entre Rios, Jujuy, San Luis) to 210 days (Chubut, La Rioja, Santa Cruz). City of Buenos Aires: 105 days + optional 30 days family leave."
+          },
+          "paternity": {
+            "exists": true,
+            "durationMonths": {
+              "total": 0.2,
+              "paid": 0.2,
+              "wellPaid": 0.2
+            },
+            "durationDays": 5,
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "obligatory": false,
+            "notes": "5 working days under Collective Labour Agreement for Public Employment (national level). Must be taken immediately after birth. Provincial variation is significant: 0 days (Santiago del Estero) to 45 days (City of Buenos Aires). Other notable: La Rioja and Santa Cruz 30 days, San Luis 20 days, Salta 25 days, Province of Buenos Aires 15 days (modified 2024)."
+          },
+          "parental": {
+            "exists": false,
+            "notes": "No statutory parental leave entitlement in either public or private sector."
+          },
+          "notes": "Public sector leave is governed by the Collective Labour Agreement for Public Employment (Convenio Colectivo de Trabajo General para la Administracion Publica Nacional, 2006). Significantly more generous maternity leave (100 days vs 90 days private) and paternity leave (5 days vs 2 days private). Provincial public employment shows extreme variation in both maternity (90-210 days) and paternity (0-45 days) leave. Adoption leave: 100 days for mothers, 30 days for fathers in national public administration."
+        }
+      ]
     },
     {
       "name": "Australia",
@@ -495,7 +538,103 @@
         "entitlementAgeMonths": 60,
         "gapAfterLeaveMonths": null
       },
-      "recentChanges": []
+      "recentChanges": [],
+      "subnational": [
+        {
+          "parentCountry": "BA",
+          "name": "Federation of Bosnia and Herzegovina (FBiH)",
+          "code": "BA-BIH",
+          "type": "entity",
+          "maternity": {
+            "exists": true,
+            "durationMonths": {
+              "total": 11.6,
+              "paid": 11.6,
+              "wellPaid": null
+            },
+            "durationDetail": "1 calendar year: starts 28 days before expected delivery",
+            "paymentRate": null,
+            "paymentRateDetail": "Varies by canton (10 cantons with different rates): Una-Sana 50%, Posavina 80%, Tuzla 90%, Zenica-Doboj 55%, Bosnia-Podrinje 80%, Central Bosnia 50%, Herzegovina-Neretva 40%, Western Herzegovina 70% (first half), Canton 10: 60%/30%, Sarajevo 100%. Ceilings also vary by canton.",
+            "paymentType": "mixed",
+            "ceiling": true,
+            "ceilingDetail": "Various cantonal ceilings: average net salary in canton or FBiH entity",
+            "obligatory": true,
+            "obligatoryDetail": "42 calendar days after delivery are obligatory",
+            "notes": "Benefits regulated at cantonal level, creating significant inequality across 10 cantons. Funded by cantons from general taxes. Unemployed mothers entitled to maternity allowance: 55% of minimum FBiH salary (KM 550/month) for 12 months. Father can use leave after first 42 days if mother transfers. Self-employed covered if full social contributions paid for at least 1 year."
+          },
+          "paternity": {
+            "exists": false,
+            "notes": "No statutory paternity leave entitlement."
+          },
+          "parental": {
+            "exists": false,
+            "notes": "No statutory parental leave entitlement. However, one parent can take unpaid childcare leave until child turns 3 (employment rights suspended, health insurance maintained)."
+          },
+          "notes": "FBiH is decentralized with 10 cantons each having different maternity benefit rates and ceilings. No paternity or parental leave. Childcare leave (unpaid, until child turns 3) available. Maternity benefits for employed women vary from 40% (Herzegovina-Neretva) to 100% (Sarajevo) of earnings. Significant inter-cantonal inequality in both benefit levels and eligibility conditions."
+        },
+        {
+          "parentCountry": "BA",
+          "name": "Republic Srpska",
+          "code": "BA-SRP",
+          "type": "entity",
+          "maternity": {
+            "exists": true,
+            "durationMonths": {
+              "total": 11.6,
+              "paid": 11.6,
+              "wellPaid": 11.6
+            },
+            "durationDetail": "1 calendar year: starts 28 days before expected delivery. Extended to 18 months for twins, 3rd or subsequent child.",
+            "paymentRate": 100,
+            "paymentRateDetail": "100% of beneficiary's average registered gross wage in last 18 months",
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "obligatory": true,
+            "obligatoryDetail": "60 calendar days after delivery are obligatory",
+            "notes": "Funded by RS Fund for Child Protection (social insurance). Employers refunded full gross salary including social contributions. Father can use leave after first 60 days if mother transfers. Unemployed mothers: KM 406 (EUR 208)/month for 12 months (18 months for multiple births, 3rd+ child). Self-employed refunded contributions. Women may retire 1 year earlier per child born."
+          },
+          "paternity": {
+            "exists": false,
+            "notes": "No statutory paternity leave entitlement."
+          },
+          "parental": {
+            "exists": false,
+            "notes": "No statutory parental leave entitlement. However, one parent can take unpaid childcare leave until child turns 3."
+          },
+          "notes": "RS is centralized (entity + local authorities only). More generous and uniform maternity benefit than FBiH: 100% of gross wage with no ceiling. Funded through social insurance (RS Fund for Child Protection), not general taxation. Extended leave (18 months) for twins and 3rd+ child. No paternity or parental leave."
+        },
+        {
+          "parentCountry": "BA",
+          "name": "Brcko District",
+          "code": "BA-BRC",
+          "type": "district",
+          "maternity": {
+            "exists": true,
+            "durationMonths": {
+              "total": 11.6,
+              "paid": 11.6,
+              "wellPaid": 11.6
+            },
+            "durationDetail": "1 calendar year: starts at latest 10 days before expected delivery. Extended to 18 months for twins, 3rd or subsequent child, and women with disabilities.",
+            "paymentRate": 100,
+            "paymentRateDetail": "100% of beneficiary's average registered net wage in last 12 months",
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "obligatory": true,
+            "obligatoryDetail": "42 calendar days after delivery are obligatory",
+            "notes": "Funded from BD budget (general taxes). Unemployed mothers: 50% of average net salary in BD for 12 months (18 months for twins). Father can use leave after first 42 days if mother transfers. Extended maternity (18 months) also for parents with disabilities. State legislation applies directly."
+          },
+          "paternity": {
+            "exists": false,
+            "notes": "No statutory paternity leave entitlement."
+          },
+          "parental": {
+            "exists": false,
+            "notes": "No statutory parental leave entitlement. However, one parent can take unpaid childcare leave until child turns 3."
+          },
+          "notes": "Self-governing administrative unit independent from entities. State legislation applies directly. Maternity benefit at 100% of net wage (vs gross wage in RS). Extended leave (18 months) for twins, 3rd+ child, and parents with disabilities. Funded from district budget. No paternity or parental leave."
+        }
+      ]
     },
     {
       "name": "Brazil",
@@ -588,7 +727,33 @@
         "entitlementAgeMonths": null,
         "gapAfterLeaveMonths": null
       },
-      "recentChanges": []
+      "recentChanges": [],
+      "subnational": [
+        {
+          "parentCountry": "BR",
+          "name": "Federal public sector",
+          "code": "BR-FED",
+          "type": "federal_sector",
+          "variationType": "sector_variation",
+          "details": "Federal public sector: 6 months maternity leave (vs 4 months private sector standard). Paternity leave: 20 days (vs 5 days private sector standard). At state and municipal levels, entitlement to additional months depends on approval of local authorities; most state authorities approve extended maternity leave but only a minority of municipalities do so.",
+          "maternity": {
+            "exists": true,
+            "supplement": "6 months vs 4 months standard; state/municipal levels vary",
+            "durationMonths": {
+              "total": 6,
+              "paid": 6,
+              "wellPaid": 6
+            }
+          },
+          "paternity": {
+            "exists": true,
+            "supplement": "20 days vs 5 days standard",
+            "durationMonths": null
+          },
+          "parental": null,
+          "notes": "Private sector can also extend to 6 months maternity / 20 days paternity via voluntary Programa Empresa Cidada. No formal regional variations listed in the PDF, but state/municipal public sector entitlements depend on local authority approval. Payment at 100% of earnings for all sectors."
+        }
+      ]
     },
     {
       "name": "Bulgaria",
@@ -783,6 +948,70 @@
           "leaveType": "parental",
           "description": "Quebec expanded sharing incentive with additional weeks and increased support for low-income parents and single parents"
         }
+      ],
+      "subnational": [
+        {
+          "parentCountry": "CA",
+          "name": "Quebec",
+          "code": "CA-QC",
+          "type": "province",
+          "maternity": {
+            "exists": true,
+            "durationMonths": {
+              "total": 4.2,
+              "paid": 4.2,
+              "wellPaid": 4.2
+            },
+            "paymentRate": 70,
+            "paymentRateDetail": "Basic plan: 70% for 18 weeks; Special plan: 75% for 15 weeks",
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingDetail": "CAD 98,000/year maximum insurable earnings (2025)",
+            "obligatory": false,
+            "notes": "No waiting period (unlike federal EI which has 1-week waiting period). Self-employed automatically covered. Period can be taken up to 16 weeks before birth. Since Jan 2021 leave period extended to 20 weeks."
+          },
+          "paternity": {
+            "exists": true,
+            "durationMonths": {
+              "total": 1.2,
+              "paid": 1.2,
+              "wellPaid": 1.2
+            },
+            "durationWeeks": 5,
+            "paymentRate": 70,
+            "paymentRateDetail": "Basic plan: 70% for 5 weeks; Special plan: 75% for 3 weeks",
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "obligatory": false,
+            "notes": "No federal paternity leave exists; Quebec is the only province with dedicated paternity leave under QPIP. Covers parent who did not give birth. Same-sex partners eligible."
+          },
+          "parental": {
+            "exists": true,
+            "durationMonths": {
+              "total": 7.4,
+              "paid": 7.4,
+              "wellPaid": 5.3
+            },
+            "durationWeeksDetail": "Basic plan: 32 weeks (7 at 70% + 25 at 55%); Special plan: 25 weeks at 75%",
+            "paymentRate": 55,
+            "paymentRateDetail": "Basic: 7 weeks at 70% then 25 weeks at 55%; Special: 25 weeks at 75%. Additional sharing bonus: Basic +4 weeks at 55% if each parent takes 8+ weeks; Special +3 weeks at 75% if each parent takes 6+ weeks",
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "obligatory": false,
+            "entitlementType": "family",
+            "fatherQuotaMonths": null,
+            "sharingBonus": true,
+            "sharingBonusDetail": "Basic: +4 weeks at 55% once 8 shareable weeks paid to each parent; Special: +3 weeks at 75% once 6 shareable weeks paid to each parent",
+            "totalWeeksPerCouple": {
+              "basic": 55,
+              "basicIfShared": 59,
+              "special": 43,
+              "specialIfShared": 46
+            },
+            "notes": "Total includes maternity + paternity + parental. Low-income supplement can raise benefit to 85-100% of individual income. Benefits can be combined with work income."
+          },
+          "notes": "Quebec operates QPIP independently from federal EI. Key differences: lower eligibility threshold (CAD 2,000 vs 600 hours), no waiting period, higher payment rates, dedicated paternity leave, self-employed automatically covered, higher insurable earnings ceiling (CAD 98,000 vs CAD 65,700). Additional provisions for single parents (+5 weeks basic/+3 weeks special), multiple births (+5 weeks to each parent basic/+3 weeks special), and adoption."
+        }
       ]
     },
     {
@@ -967,7 +1196,352 @@
         "entitlementAgeMonths": 36,
         "gapAfterLeaveMonths": 32
       },
-      "recentChanges": []
+      "recentChanges": [],
+      "subnational": [
+        {
+          "parentCountry": "CN",
+          "name": "China — National baseline",
+          "code": "CN-NATIONAL",
+          "type": "national_baseline",
+          "maternity": {
+            "exists": true,
+            "durationDays": 98,
+            "durationWeeks": 14,
+            "durationMonths": {
+              "total": 3.3,
+              "paid": 3.3,
+              "wellPaid": 3.3
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "National baseline: 98 calendar days (15 pre-birth + 83 post-birth). 100% of earnings funded by Maternity Insurance Fund. Not obligatory to take. Additional 15 days for dystocia; 15 days per additional child in multiple births."
+          },
+          "paternity": {
+            "exists": false,
+            "notes": "No national statutory entitlement. All provinces have independently enacted paternity leave (see provincial entries)."
+          },
+          "parental": {
+            "exists": false,
+            "notes": "No national statutory entitlement. Most provinces have independently enacted parental leave (see provincial entries)."
+          },
+          "notes": "National regulations set the baseline; all provinces extend maternity leave beyond 98 days under the three-child policy framework (since 2021). Unemployed, flexibly employed, agricultural, and self-employed workers are not eligible."
+        },
+        {
+          "parentCountry": "CN",
+          "name": "Beijing",
+          "code": "CN-BJ",
+          "type": "province",
+          "maternity": {
+            "exists": true,
+            "durationDays": 158,
+            "durationMonths": {
+              "total": 3.7,
+              "paid": 3.7,
+              "wellPaid": 3.7
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "98 days national + 60 days provincial extension = 158 days. With employer consent, additional 1-3 months possible. Couples can redistribute extended maternity days to paternity leave with employer consent."
+          },
+          "paternity": {
+            "exists": true,
+            "durationDays": 15,
+            "durationMonths": {
+              "total": 0.5,
+              "paid": 0.5,
+              "wellPaid": 0.5
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false
+          },
+          "parental": {
+            "exists": true,
+            "durationDays": 5,
+            "durationMonths": {
+              "total": 0.2,
+              "paid": 0.2,
+              "wellPaid": 0.2
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "5 days per year per parent. Shortest parental leave among provinces along with Shanghai."
+          },
+          "notes": "Standard 158-day extension group. Unique redistribution provision between parents."
+        },
+        {
+          "parentCountry": "CN",
+          "name": "Shanghai",
+          "code": "CN-SH",
+          "type": "province",
+          "maternity": {
+            "exists": true,
+            "durationDays": 158,
+            "durationMonths": {
+              "total": 3.7,
+              "paid": 3.7,
+              "wellPaid": 3.7
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "98 + 60 = 158 days. Additional provisions: 1 hour paid break/day (80% earnings) for women 28+ weeks pregnant; foetus protection leave with medical certificate; 2.5 months pre-birth break (80% earnings) with unit approval."
+          },
+          "paternity": {
+            "exists": true,
+            "durationDays": 10,
+            "durationMonths": {
+              "total": 0.3,
+              "paid": 0.3,
+              "wellPaid": 0.3
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "Shortest paternity leave among all provinces (10 days)."
+          },
+          "parental": {
+            "exists": true,
+            "durationDays": 5,
+            "durationMonths": {
+              "total": 0.2,
+              "paid": 0.2,
+              "wellPaid": 0.2
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false
+          },
+          "notes": "Standard 158-day group. Notable additional pregnancy protections (foetus protection leave, pre-birth break)."
+        },
+        {
+          "parentCountry": "CN",
+          "name": "Guangdong",
+          "code": "CN-GD",
+          "type": "province",
+          "maternity": {
+            "exists": true,
+            "durationDays": 178,
+            "durationMonths": {
+              "total": 4.1,
+              "paid": 4.1,
+              "wellPaid": 4.1
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "98 + 80 = 178 days."
+          },
+          "paternity": {
+            "exists": true,
+            "durationDays": 15,
+            "durationMonths": {
+              "total": 0.5,
+              "paid": 0.5,
+              "wellPaid": 0.5
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false
+          },
+          "parental": {
+            "exists": true,
+            "durationDays": 10,
+            "durationMonths": {
+              "total": 0.3,
+              "paid": 0.3,
+              "wellPaid": 0.3
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "10 days (most common duration across provinces)."
+          },
+          "notes": "178-day maternity leave group (among the longer durations)."
+        },
+        {
+          "parentCountry": "CN",
+          "name": "Jiangsu",
+          "code": "CN-JS",
+          "type": "province",
+          "maternity": {
+            "exists": true,
+            "durationDays": 128,
+            "durationMonths": {
+              "total": 3.0,
+              "paid": 3.0,
+              "wellPaid": 3.0
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "98 + 30 = 128 days. Shortest provincial extension."
+          },
+          "paternity": {
+            "exists": true,
+            "durationDays": 15,
+            "durationMonths": {
+              "total": 0.5,
+              "paid": 0.5,
+              "wellPaid": 0.5
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false
+          },
+          "parental": {
+            "exists": true,
+            "durationDays": null,
+            "notes": "Parental leave is 'only promoted' with no number of days specified."
+          },
+          "notes": "Shortest maternity extension (128 days). Parental leave encouraged but not mandated."
+        },
+        {
+          "parentCountry": "CN",
+          "name": "Tibet (Xizang)",
+          "code": "CN-XZ",
+          "type": "province",
+          "maternity": {
+            "exists": true,
+            "durationDays": 365,
+            "durationMonths": {
+              "total": 8.5,
+              "paid": 8.5,
+              "wellPaid": 8.5
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "Up to 1 year — longest provincial extension in China."
+          },
+          "paternity": {
+            "exists": true,
+            "durationDays": 30,
+            "durationMonths": {
+              "total": 0.7,
+              "paid": 0.7,
+              "wellPaid": 0.7
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false
+          },
+          "parental": {
+            "exists": false,
+            "notes": "No relevant regulations in Tibet."
+          },
+          "notes": "Maximum maternity leave in China (up to 1 year). Among the longest paternity leave (30 days). No parental leave."
+        },
+        {
+          "parentCountry": "CN",
+          "name": "Zhejiang",
+          "code": "CN-ZJ",
+          "type": "province",
+          "maternity": {
+            "exists": true,
+            "durationDays": 158,
+            "durationMonths": {
+              "total": 3.7,
+              "paid": 3.7,
+              "wellPaid": 3.7
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "158 days standard. 30 additional days for 2nd or 3rd child. Can extend to 1 year post-birth (fully paid) if mother unable to work due to health issues."
+          },
+          "paternity": {
+            "exists": true,
+            "durationDays": 15,
+            "durationMonths": {
+              "total": 0.5,
+              "paid": 0.5,
+              "wellPaid": 0.5
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false
+          },
+          "parental": {
+            "exists": true,
+            "durationDays": 10,
+            "durationMonths": {
+              "total": 0.3,
+              "paid": 0.3,
+              "wellPaid": 0.3
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false
+          },
+          "notes": "158-day group. Extension possibility to 1 year fully paid (health reasons). Extra 30 days for multi-child births."
+        },
+        {
+          "parentCountry": "CN",
+          "name": "Shaanxi",
+          "code": "CN-SN",
+          "type": "province",
+          "maternity": {
+            "exists": true,
+            "durationDays": 158,
+            "durationMonths": {
+              "total": 3.7,
+              "paid": 3.7,
+              "wellPaid": 3.7
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "158 days standard. Additional half year (180 days) for third child."
+          },
+          "paternity": {
+            "exists": true,
+            "durationDays": 15,
+            "durationMonths": {
+              "total": 0.5,
+              "paid": 0.5,
+              "wellPaid": 0.5
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "15 days standard. +5 days if spouses live in different places. +15 days for third child."
+          },
+          "parental": {
+            "exists": true,
+            "durationDays": 30,
+            "durationMonths": {
+              "total": 0.7,
+              "paid": 0.7,
+              "wellPaid": 0.7
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "30 days — longest parental leave among all provinces."
+          },
+          "notes": "Longest parental leave in China (30 days). Extra paternity days for distance and third child."
+        },
+        {
+          "parentCountry": "CN",
+          "name": "China — Provincial summary (all provinces)",
+          "code": "CN-SUMMARY",
+          "type": "summary",
+          "maternity": {
+            "notes": "Range: 128 days (Jiangsu) to 1 year (Tibet). Most common extension: 158 days. Other clusters: 178 days (Guangdong, Chongqing); 180 days (Heilongjiang, Jilin, Gansu); 188 days (Henan, Jiangxi, Hainan, Qinghai). All paid at 100% of earnings. Provinces in the 158-day group include: Beijing, Shanghai, Tianjin, Zhejiang, Hebei, Hubei, Guangxi, Fujian, Shanxi, Inner Mongolia, Liaoning, Anhui, Shandong, Hunan, Sichuan, Guizhou, Yunnan, Ningxia, Shaanxi, Xinjiang."
+          },
+          "paternity": {
+            "notes": "Range: 10 days (Shanghai) to 30 days (Yunnan, Gansu, Henan, Anhui, Jiangxi, Guangxi, Tibet). 15 days is most common. 20 days: Inner Mongolia, Liaoning, Hunan, Sichuan, Chongqing. 25 days: Ningxia, Jilin. All paid at 100% of earnings."
+          },
+          "parental": {
+            "notes": "Range: 5 days (Beijing, Shanghai) to 30 days (Shaanxi). 10 days most common. 15 days: Shanxi, Gansu, Qinghai. Not specified: Jilin, Jiangsu (only promoted). No regulations: Tibet, Xinjiang. All paid at 100% of earnings where provided."
+          },
+          "notes": "All variations are provincial extensions of the national 98-day baseline under the three-child policy framework. All leave types paid at 100% of earnings. Self-employed, unemployed, and informal workers excluded."
+        }
+      ]
     },
     {
       "name": "Colombia",
@@ -1649,7 +2223,30 @@
         "entitlementAgeMonths": 9,
         "gapAfterLeaveMonths": 0
       },
-      "recentChanges": []
+      "recentChanges": [],
+      "subnational": [
+        {
+          "parentCountry": "FI",
+          "name": "Municipal supplements (various municipalities)",
+          "code": "FI-MUNI",
+          "type": "municipality",
+          "variationType": "supplement",
+          "details": "25.5% of municipalities (2024) pay a municipal supplement to the Child home care allowance, most commonly large municipalities. Supplements average EUR 18.80/month per child, ranging from EUR 50 to EUR 400. Conditions typically require all children below school age to be cared for at home.",
+          "maternity": null,
+          "paternity": null,
+          "parental": null,
+          "childcareLeave": {
+            "exists": true,
+            "supplement": "Municipal supplement to home care allowance: avg EUR 18.80/month, range EUR 50-400",
+            "durationMonths": {
+              "total": null,
+              "paid": null,
+              "wellPaid": null
+            }
+          },
+          "notes": "Base Child home care allowance is EUR 377.68/month plus supplements for siblings. Average total HCA per family was EUR 451/month in 2023. The share of municipalities offering supplements has fluctuated: 30% in 2014, 21% in 2022, 25.5% in 2024. Additionally, 34% of municipalities paid supplements for private day care allowance (avg EUR 281-418 for full-time care depending on child age/ECEC type). 39% offered service vouchers for private day care (avg EUR 426-1,344)."
+        }
+      ]
     },
     {
       "name": "France",
@@ -1851,6 +2448,50 @@
           "leaveType": "maternity",
           "description": "From June 2025, maternity leave extended to cover stillbirths from 13th week of pregnancy (previously 24th week), with graduated protection periods."
         }
+      ],
+      "subnational": [
+        {
+          "parentCountry": "DE",
+          "name": "Bavaria",
+          "code": "DE-BY",
+          "type": "state",
+          "variationType": "supplement",
+          "details": "Familiengeld: EUR 250/month per child from 13th to 36th month of life, increased to EUR 300/month from the 3rd child onwards. Universal benefit regardless of income or employment. Available even if child attends ECEC.",
+          "maternity": null,
+          "paternity": null,
+          "parental": null,
+          "childcareLeave": {
+            "exists": true,
+            "supplement": "EUR 250/month (EUR 300 from 3rd child), months 13-36",
+            "durationMonths": {
+              "total": 23,
+              "paid": 23,
+              "wellPaid": null
+            }
+          },
+          "notes": "Cash-for-care allowance (Familiengeld) paid in addition to other social benefits. No income test, no employment requirement. Parents can receive this whether the child attends ECEC or is cared for at home."
+        },
+        {
+          "parentCountry": "DE",
+          "name": "Saxony",
+          "code": "DE-SN",
+          "type": "state",
+          "variationType": "supplement",
+          "details": "Landeserziehungsgeld: income-related payment from 13th month after birth until child's 3rd birthday. Up to EUR 150/month (1st child), EUR 200/month (2nd child), EUR 300/month (3rd+ child). Duration depends on child order and start year: 5-12 months. Requires non-use of childcare facilities and max 30 hours/week work.",
+          "maternity": null,
+          "paternity": null,
+          "parental": null,
+          "childcareLeave": {
+            "exists": true,
+            "supplement": "EUR 150-300/month depending on child order, income-related",
+            "durationMonths": {
+              "total": null,
+              "paid": null,
+              "wellPaid": null
+            }
+          },
+          "notes": "Income-tested: benefits reduce starting at net household income of EUR 24,600 (EUR 21,600 for single parents), threshold rises by EUR 3,140 per additional child. Requires non-use of childcare facilities. Max 30 hours/week work (exception for training). Duration varies: 5-12 months depending on child order and start year."
+        }
       ]
     },
     {
@@ -1949,6 +2590,72 @@
           "type": "expansion",
           "leaveType": "maternity",
           "description": "From April 2024, minimum wage increase automatically increased leave payments. Special maternity benefit extended to 9 months for self-employed mothers and farmers, and to special categories of employees."
+        }
+      ],
+      "subnational": [
+        {
+          "parentCountry": "GR",
+          "name": "Greece (public sector)",
+          "code": "GR-PUB",
+          "type": "sector",
+          "maternity": {
+            "exists": true,
+            "durationMonths": {
+              "total": 5.0,
+              "paid": 5.0,
+              "wellPaid": 5.0
+            },
+            "durationDetail": "5 months: 2 months before birth + 3 months after birth",
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "obligatory": true,
+            "obligatoryDetail": "Obligatory to take all leave",
+            "notes": "No length-of-service conditions. Funded through general taxation. If birth occurs early, remainder granted after birth so total remains 5 months. Multiple births: +1 month postnatal per additional child. From 4th child: +2 months postnatal. Adoptive mothers and surrogacy mothers entitled to postnatal portion."
+          },
+          "paternity": {
+            "exists": true,
+            "durationMonths": {
+              "total": 0.7,
+              "paid": 0.7,
+              "wellPaid": 0.7
+            },
+            "durationDays": 14,
+            "durationDetail": "14 working days; 2 days can be taken before expected birth, rest within 30 days after birth",
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "obligatory": false,
+            "notes": "No length-of-service conditions. Funded through general taxation. Also available for adoption/foster care of children up to 8 years."
+          },
+          "parental": {
+            "exists": true,
+            "durationMonths": {
+              "total": 60.0,
+              "paid": 2.0,
+              "wellPaid": 0
+            },
+            "durationDetail": "5 years (60 months) per parent, individual non-transferable entitlement",
+            "paymentRate": null,
+            "paymentRateDetail": "First 2 months paid at minimum wage level; remaining 58 months unpaid. For 3+ children: first 3 months paid. Twins/multiple births: benefit for extra 2 months",
+            "paymentType": "flat-rate",
+            "ceiling": false,
+            "obligatory": false,
+            "entitlementType": "individual",
+            "fatherQuotaMonths": 60,
+            "notes": "Can be taken until child turns 8. Can be taken as one period, several periods, or reduced daily hours. Single parents (due to death/custody removal/non-recognition): double leave (time and payment). For each child, 4 months count as real time service for pension. Priority given to parents with disabilities, disabled children, multiple children, single parents."
+          },
+          "childcareLeave": {
+            "exists": true,
+            "durationMonths": 9,
+            "durationDetail": "9 months continuous OR reduced hours (2h/day until child turns 2, then 1h/day until child turns 4)",
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "entitlementType": "family",
+            "notes": "Fully paid, funded through general taxation. Family entitlement (shared between parents). Granted after maternity leave. For single/widowed/divorced parents or those with severe disability: +1 month (continuous) or +6 months (reduced hours). Multiple births: +6 months per child (reduced hours). 4th child: flexible working extended by 2 years."
+          },
+          "notes": "Greece public sector is substantially more generous than private sector. Key differences: Maternity 5 months (vs 17 weeks + 9 months special leave private), Parental 5 years per parent (vs 4 months private), Childcare fully paid 9 months (vs similar in private). No gap between end of leave and ECEC entitlement for public sector workers. Childcare leave is widely used as it is fully compensated, while parental leave (mostly unpaid beyond 2 months) sees limited uptake."
         }
       ]
     },
@@ -2646,6 +3353,28 @@
           "leaveType": "parental",
           "description": "Parental leave payment significantly increased with higher ceilings. Bonus leave of 6 months added when both parents take 3+ months. Enhanced benefits for single parents and parents of children with severe disabilities."
         }
+      ],
+      "subnational": [
+        {
+          "parentCountry": "KR",
+          "name": "Seoul Metropolitan Government",
+          "code": "KR-11",
+          "type": "metropolitan_city",
+          "variationType": "supplement",
+          "details": "Additional maternity benefit for ineligible workers (self-employed or not insured for 180 days): KRW 900,000 (EUR 557.60) per birth, KRW 1,700,000 (EUR 1,053.25) for multiple births, in addition to national benefit of KRW 1,500,000 (EUR 929.34). Additional paternity leave benefit for ineligible workers: KRW 800,000 (EUR 495.65) per birth.",
+          "maternity": {
+            "exists": true,
+            "supplement": "KRW 900,000 (EUR 557.60) per birth for ineligible workers; KRW 1,700,000 (EUR 1,053.25) for multiple births",
+            "durationMonths": null
+          },
+          "paternity": {
+            "exists": true,
+            "supplement": "KRW 800,000 (EUR 495.65) per birth for ineligible workers",
+            "durationMonths": null
+          },
+          "parental": null,
+          "notes": "Benefits target workers not eligible for national maternity/paternity benefits (self-employed or not insured for 180 days). These are supplementary to, not replacements for, the national government benefits."
+        }
       ]
     },
     {
@@ -3250,6 +3979,173 @@
           "leaveType": "other",
           "description": "~8 proposals in Congress to extend maternity (14-20 weeks) and paternity (10 days to 8 weeks) leave, none yet approved. Progress continues at state level for public sector employees."
         }
+      ],
+      "subnational": [
+        {
+          "parentCountry": "MX",
+          "name": "Mexico — National baseline",
+          "code": "MX-NATIONAL",
+          "type": "national_baseline",
+          "maternity": {
+            "exists": true,
+            "durationWeeks": 12,
+            "durationMonths": {
+              "total": 2.8,
+              "paid": 2.8,
+              "wellPaid": 2.8
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "12 weeks (2-6 before, 6-10 after birth). 100% of earnings, no upper limit. Up to 4 weeks can be transferred to post-birth. Funded by social security (employers ~20%, employees 5%, federal government 75%). Only formal sector employees eligible (~40% of employed women)."
+          },
+          "paternity": {
+            "exists": true,
+            "durationDays": 5,
+            "durationMonths": {
+              "total": 0.2,
+              "paid": 0.2,
+              "wellPaid": 0.2
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "5 working days. 100% of earnings. Funded by employer. Only formal sector (~50% of male employees)."
+          },
+          "parental": {
+            "exists": false
+          },
+          "notes": "Federal baseline. State variations apply only to public sector employees. Over 60% of employed women lack access (informal economy). Multiple proposals in Congress to extend to 14-20 weeks maternity and 10 days to 8 weeks paternity."
+        },
+        {
+          "parentCountry": "MX",
+          "name": "Ciudad de Mexico",
+          "code": "MX-CMX",
+          "type": "state",
+          "maternity": {
+            "exists": true,
+            "durationMonths": {
+              "total": 7.5,
+              "paid": 7.5,
+              "wellPaid": 0
+            },
+            "paymentRate": 40,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "Public sector employees: extended from 3 months to 7.5 months at 40% of earnings (since 2015)."
+          },
+          "paternity": {
+            "exists": true,
+            "notes": "Extended paternity leave for public sector employees (duration not specified in source, listed among states granting longer periods)."
+          },
+          "parental": null,
+          "notes": "Public sector only. Longest state maternity extension but at reduced pay rate (40%). Also listed among states with extended paternity leave."
+        },
+        {
+          "parentCountry": "MX",
+          "name": "Yucatan",
+          "code": "MX-YUC",
+          "type": "state",
+          "maternity": {
+            "exists": true,
+            "durationMonths": {
+              "total": 4.0,
+              "paid": 4.0,
+              "wellPaid": 4.0
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "Public sector employees: extended from 3 to 4 months (since 2016). Presumed at full earnings (consistent with national law)."
+          },
+          "paternity": {
+            "exists": true,
+            "notes": "Extended paternity leave for public sector employees (duration not specified in source, listed among states granting longer periods)."
+          },
+          "parental": null,
+          "notes": "Public sector only. Maternity extended to 4 months since 2016."
+        },
+        {
+          "parentCountry": "MX",
+          "name": "Chihuahua",
+          "code": "MX-CHH",
+          "type": "state",
+          "maternity": {
+            "exists": true,
+            "durationWeeks": 14,
+            "durationMonths": {
+              "total": 3.3,
+              "paid": 3.3,
+              "wellPaid": 3.3
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "Public sector employees: extended from 12 to 14 weeks (since 2017)."
+          },
+          "paternity": null,
+          "parental": null,
+          "notes": "Public sector only. Modest extension of 2 additional weeks."
+        },
+        {
+          "parentCountry": "MX",
+          "name": "Puebla",
+          "code": "MX-PUE",
+          "type": "state",
+          "maternity": {
+            "exists": true,
+            "durationWeeks": 14,
+            "durationMonths": {
+              "total": 3.3,
+              "paid": 3.3,
+              "wellPaid": 3.3
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "Public sector employees: extended from 12 to 14 weeks (since 2019)."
+          },
+          "paternity": {
+            "exists": true,
+            "notes": "Extended paternity leave for public sector employees (listed among states granting longer periods)."
+          },
+          "parental": null,
+          "notes": "Public sector only."
+        },
+        {
+          "parentCountry": "MX",
+          "name": "Nuevo Leon",
+          "code": "MX-NLE",
+          "type": "state",
+          "maternity": null,
+          "paternity": {
+            "exists": true,
+            "durationDays": 60,
+            "durationMonths": {
+              "total": 1.4,
+              "paid": 1.4,
+              "wellPaid": 1.4
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "Longest state-level paternity leave in Mexico: 60 days for public sector employees."
+          },
+          "parental": null,
+          "notes": "Public sector only. Notable for having the most generous paternity leave in the country."
+        },
+        {
+          "parentCountry": "MX",
+          "name": "Mexico — State paternity leave summary",
+          "code": "MX-PATERNITY-SUMMARY",
+          "type": "summary",
+          "maternity": null,
+          "paternity": {
+            "notes": "Many public agencies and states grant longer paternity leave than the 5-day federal minimum, typically 10-15 days. Specific states: Michoacan (20 days), State of Mexico/Tlaxcala/Zacatecas (45 days), Nuevo Leon (60 days). Also extended in Coahuila, Colima, Hidalgo, Jalisco, Mexico City, Morelos, Tamaulipas, Yucatan. Consejo de la Judicatura Federal grants 90 days. All for public sector employees only."
+          },
+          "parental": null,
+          "notes": "State variations apply only to public sector employees. Private sector leave is federally regulated."
+        }
       ]
     },
     {
@@ -3736,7 +4632,57 @@
         "entitlementAgeMonths": 48,
         "gapAfterLeaveMonths": 12
       },
-      "recentChanges": []
+      "recentChanges": [],
+      "subnational": [
+        {
+          "parentCountry": "PT",
+          "name": "Madeira",
+          "code": "PT-30",
+          "type": "autonomous_region",
+          "variationType": "supplement",
+          "details": "2% increase in parental leave benefits compared to mainland Portugal, to compensate for the higher cost of living. Applies to Initial Parental leave, Fathers-only Parental leave, and Additional Parental leave.",
+          "maternity": {
+            "exists": true,
+            "supplement": "+2% on all parental leave benefits vs mainland",
+            "durationMonths": null
+          },
+          "paternity": {
+            "exists": true,
+            "supplement": "+2% on all parental leave benefits vs mainland",
+            "durationMonths": null
+          },
+          "parental": {
+            "exists": true,
+            "supplement": "+2% on all parental leave benefits vs mainland",
+            "durationMonths": null
+          },
+          "notes": "Applies uniformly to Initial Parental leave (maternity/shared), Fathers-only Parental leave, and Additional Parental leave. Justification is higher cost of living in autonomous regions."
+        },
+        {
+          "parentCountry": "PT",
+          "name": "Azores",
+          "code": "PT-20",
+          "type": "autonomous_region",
+          "variationType": "supplement",
+          "details": "2% increase in parental leave benefits compared to mainland Portugal, to compensate for the higher cost of living. Applies to Initial Parental leave, Fathers-only Parental leave, and Additional Parental leave.",
+          "maternity": {
+            "exists": true,
+            "supplement": "+2% on all parental leave benefits vs mainland",
+            "durationMonths": null
+          },
+          "paternity": {
+            "exists": true,
+            "supplement": "+2% on all parental leave benefits vs mainland",
+            "durationMonths": null
+          },
+          "parental": {
+            "exists": true,
+            "supplement": "+2% on all parental leave benefits vs mainland",
+            "durationMonths": null
+          },
+          "notes": "Same as Madeira. Applies uniformly to all parental leave benefit types."
+        }
+      ]
     },
     {
       "name": "Romania",
@@ -3833,6 +4779,24 @@
           "type": "cutback",
           "leaveType": "other",
           "description": "EGO 156/2024: Freezing of social benefits due to fiscal austerity; Social Reference Indicator remains at RON660 in 2025."
+        }
+      ],
+      "subnational": [
+        {
+          "parentCountry": "RO",
+          "name": "Bucharest",
+          "code": "RO-B",
+          "type": "municipality",
+          "variationType": "supplement",
+          "details": "Birth grant (stimulentul pentru nou nascut) of RON 2,500 (EUR 492.81) introduced in 2017 by the municipality of Bucharest. Vouchers for pregnant women (vouchere materna) of RON 2,000 (EUR 394.24) for ante-natal care costs, usable in public and private health systems, introduced in 2018.",
+          "maternity": {
+            "exists": true,
+            "supplement": "RON 2,000 (EUR 394.24) ante-natal vouchers + RON 2,500 (EUR 492.81) birth grant",
+            "durationMonths": null
+          },
+          "paternity": null,
+          "parental": null,
+          "notes": "Both birth grants and maternal vouchers continue with amounts unchanged since introduction. Most other cities and communes have developed similar birth grant programmes since 2017."
         }
       ]
     },
@@ -3938,6 +4902,40 @@
           "type": "expansion",
           "leaveType": "other",
           "description": "2025: 41 regions with below-average fertility receive federal subsidies including RUB100,000 for pregnant students."
+        }
+      ],
+      "subnational": [
+        {
+          "parentCountry": "RU",
+          "name": "Regional coefficient zones (various regions)",
+          "code": "RU-COEF",
+          "type": "region",
+          "variationType": "supplement",
+          "details": "Regional coefficients (1.1 to 2.0) multiply minimum maternity benefit and childcare benefit amounts based on regional climate conditions. Applies to both maternity leave minimum benefit and parental leave childcare payments until 18 months.",
+          "maternity": {
+            "exists": true,
+            "supplement": "Regional coefficient 1.1-2.0 on minimum benefit amount",
+            "durationMonths": null
+          },
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "supplement": "Regional coefficient 1.1-2.0 on childcare benefit; additional low-income family payments vary by regional subsistence level",
+            "durationMonths": null
+          },
+          "notes": "Coefficients based on climate conditions (higher in Far North/harsh climate regions). Additional monthly childcare payments for first and second child of low-income families are also regionally variable based on subsistence level thresholds. Moscow government provides additional benefits for registered unemployed mothers dismissed due to business closure."
+        },
+        {
+          "parentCountry": "RU",
+          "name": "Regional Maternal Capital (various regions)",
+          "code": "RU-MATCAP",
+          "type": "region",
+          "variationType": "supplement",
+          "details": "Many regions provide Regional Maternal Capital in addition to Federal Maternal Capital (RUB 690,266/EUR 5,889.59 for 1st child, RUB 912,000/EUR 7,781.50 for 2nd child in 2025). Examples: Sakhalin: RUB 150,000 (EUR 1,279.85) for 1st child, RUB 250,000 (EUR 2,133.09) for 2nd+; Arkhangelsk: RUB 124,606.81 (EUR 1,063.19) for 3rd+; Kirov: RUB 50,000-100,000 for 3rd+; Sverdlovsk: RUB 167,918 (EUR 1,432.74) for 3rd+, RUB 251,876 (EUR 2,149.09) for multiples; Bashkortostan: RUB 622,800 (EUR 5,313.95) for families with 8+ children.",
+          "maternity": null,
+          "paternity": null,
+          "parental": null,
+          "notes": "Regional Maternal Capital is separate from Federal. Most regions provide it for the 3rd child, but some (e.g. Sakhalin) offer it from the 1st child. Student Maternal Capital introduced since April 2024 by regional authorities as additional one-time payments for students giving birth to first child (age limit 23-25, must be enrolled in higher education in the region). Many regions also provide free land plots or financial compensation to families with 3+ children."
         }
       ]
     },
@@ -4409,6 +5407,88 @@
           "leaveType": "maternity",
           "description": "2024: Constitutional Court ruled that lone mothers must receive both parents' optional Birth and Childcare leave (26 weeks total)."
         }
+      ],
+      "subnational": [
+        {
+          "parentCountry": "ES",
+          "name": "Basque Country",
+          "code": "ES-PV",
+          "type": "autonomous_community",
+          "variationType": "supplement",
+          "details": "Flat-rate benefit for parental leave: EUR 292/month (income < EUR 20,000/person) or EUR 245/month (income above threshold). +30% for single-parent/large families, disability, or gender-based violence. Mothers: up to 18 months per child; fathers: up to 30 months. Max 73 months total across all children.",
+          "maternity": null,
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "supplement": "EUR 292/month (low income) or EUR 245/month (higher income)",
+            "durationMonths": {
+              "total": null,
+              "paid": null,
+              "wellPaid": null
+            }
+          },
+          "notes": "Income ceilings introduced 2015, amounts updated 2019. 4 of 17 Comunidades Autonomas provide flat-rate parental leave benefits. The former 8-week parental leave at 100% salary for single-parent families was abolished after Constitutional Court ruling extending birth/childcare leave to 26 weeks for these families."
+        },
+        {
+          "parentCountry": "ES",
+          "name": "La Rioja",
+          "code": "ES-RI",
+          "type": "autonomous_community",
+          "variationType": "supplement",
+          "details": "Flat-rate benefit for parental leave: EUR 350/month up to max EUR 12,800. Income ceiling: EUR 60,000 (EUR 70,000 for large families). +30% for single-parent families (income ceiling reduced to EUR 35,000/40,000). Doubled for multiple births. Private sector only, minimum 1 year tenure, minimum 4 months parental leave.",
+          "maternity": null,
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "supplement": "EUR 350/month, max EUR 12,800 total",
+            "durationMonths": {
+              "total": null,
+              "paid": null,
+              "wellPaid": null
+            }
+          },
+          "notes": "Updated in 2022. Public sector employees excluded. Only one parent can receive the benefit if both take leave simultaneously. Minimum parental leave duration of 4 months required."
+        },
+        {
+          "parentCountry": "ES",
+          "name": "Navarre",
+          "code": "ES-NC",
+          "type": "autonomous_community",
+          "variationType": "supplement",
+          "details": "Flat-rate benefit of EUR 750/month (max 12 months) for care of children with serious accidents requiring hospitalization. EUR 500/month for: adoptions/foster care >1 year, multiple births until age 6, families with 2 children (1 disabled) under 9, families with 3+ children (2 under 6), single-parent families until child age 6/9.",
+          "maternity": null,
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "supplement": "EUR 500-750/month depending on circumstance",
+            "durationMonths": {
+              "total": null,
+              "paid": null,
+              "wellPaid": null
+            }
+          },
+          "notes": "Means-tested: income thresholds range from EUR 50,400/year (2-member family) to EUR 75,600 (6-member family). Amounts and covered cases extended in 2025. Chronic illness of children not included. Also provides dependency care payments: EUR 100-542.85/month (2025)."
+        },
+        {
+          "parentCountry": "ES",
+          "name": "Castilla-Leon",
+          "code": "ES-CL",
+          "type": "autonomous_community",
+          "variationType": "supplement",
+          "details": "Lump-sum of EUR 1,500 per parent for parental leave of 3 months or more. Additional EUR 100 per parent for large families, single-parent families, permanent foster care, or guardianship for adoption.",
+          "maternity": null,
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "supplement": "EUR 1,500 lump-sum per parent (min 3 months leave)",
+            "durationMonths": {
+              "total": null,
+              "paid": null,
+              "wellPaid": null
+            }
+          },
+          "notes": "In 2024, co-responsibility requirements (equal duration for two-parent families) and income ceiling requirements were abolished."
+        }
       ]
     },
     {
@@ -4604,6 +5684,142 @@
           "leaveType": "other",
           "description": "April 2025: Popular initiative for a national parental leave launched (36 weeks total, 18 per parent). Requires 100,000 signatures within 18 months."
         }
+      ],
+      "subnational": [
+        {
+          "parentCountry": "CH",
+          "name": "Switzerland — National baseline",
+          "code": "CH-NATIONAL",
+          "type": "national_baseline",
+          "maternity": {
+            "exists": true,
+            "durationWeeks": 14,
+            "durationMonths": {
+              "total": 3.3,
+              "paid": 3.3,
+              "wellPaid": 3.3
+            },
+            "paymentRate": 80,
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "CHF220/day (max monthly salary covered at 80%: CHF8,250; annual: CHF99,000)",
+            "notes": "14 weeks (98 days) starting on day of delivery. 8 weeks obligatory. Can be prolonged up to 56 additional days if newborn hospitalized 2+ weeks. Funded by Loss of Earnings Compensation fund (0.5% of earnings split equally employer/employee). Eligibility: 9 months contributions + 5 months work in 9 months preceding birth."
+          },
+          "paternity": {
+            "exists": true,
+            "durationWeeks": 2,
+            "durationMonths": {
+              "total": 0.5,
+              "paid": 0.5,
+              "wellPaid": 0.5
+            },
+            "paymentRate": 80,
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "Same as maternity (CHF220/day)",
+            "notes": "Called 'leave for the other parent' since Jan 2024 (includes same-sex spouses). Must be taken within 6 months of birth. Can be taken continuously or by day."
+          },
+          "parental": {
+            "exists": false,
+            "notes": "No statutory entitlement. Some private companies and cantonal public employers grant unpaid parental leave (a few days to 24 months). Popular initiative launched April 2025 for 36-week parental leave (18 weeks each parent) via constitutional amendment."
+          },
+          "notes": "Federal system with significant cantonal variation in public sector. Geneva approved parental leave by referendum but blocked by federal parliament (temporary). Adoption leave: 2 weeks since introduction."
+        },
+        {
+          "parentCountry": "CH",
+          "name": "Canton of Geneva",
+          "code": "CH-GE",
+          "type": "canton",
+          "maternity": {
+            "exists": true,
+            "durationWeeks": 16,
+            "durationMonths": {
+              "total": 3.7,
+              "paid": 3.7,
+              "wellPaid": 3.7
+            },
+            "paymentRate": 80,
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "Same as federal (CHF220/day for first 14 weeks; cantonal fund covers weeks 15-16)",
+            "notes": "All working mothers granted 16 weeks (vs. 14 federal). Additional 2 weeks paid by cantonal Loss of Earnings Compensation fund. Only canton with extended statutory maternity leave for all workers."
+          },
+          "paternity": {
+            "exists": true,
+            "durationWeeks": 2,
+            "durationMonths": {
+              "total": 0.5,
+              "paid": 0.5,
+              "wellPaid": 0.5
+            },
+            "paymentRate": 80,
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "notes": "Federal entitlement applies. No cantonal extension."
+          },
+          "parental": {
+            "exists": false,
+            "notes": "In June 2023, Geneva electorate voted to introduce 24-week parental leave (including existing 14 maternity + 2 paternity weeks = 8 additional weeks). In September 2024, federal parliament voted against allowing Geneva to implement this. Decision is temporary — once the LECA is modified to enable cantonal parental leave financing, Geneva should be able to proceed."
+          },
+          "adoptionLeave": {
+            "exists": true,
+            "durationWeeks": 16,
+            "paymentRate": 80,
+            "notes": "Adoptive parents entitled to 16 weeks at 80% (one of the most generous cantonal provisions along with Vaud at 14 weeks)."
+          },
+          "notes": "Most progressive canton for leave policy. Only canton with statutory maternity leave extension for all workers. Electorate approved parental leave but implementation blocked at federal level (temporarily)."
+        },
+        {
+          "parentCountry": "CH",
+          "name": "Canton of Vaud",
+          "code": "CH-VD",
+          "type": "canton",
+          "maternity": {
+            "exists": true,
+            "durationWeeks": 14,
+            "durationMonths": {
+              "total": 3.3,
+              "paid": 3.3,
+              "wellPaid": 3.3
+            },
+            "paymentRate": 80,
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "notes": "Federal baseline applies. No cantonal extension to general maternity leave."
+          },
+          "paternity": {
+            "exists": true,
+            "durationWeeks": 2,
+            "notes": "Federal entitlement applies."
+          },
+          "parental": {
+            "exists": false,
+            "notes": "Among cantons currently discussing parental leave proposals."
+          },
+          "adoptionLeave": {
+            "exists": true,
+            "durationWeeks": 14,
+            "paymentRate": 80,
+            "notes": "Adoptive parents entitled to 14 weeks at 80% of salary (one parent must interrupt employment)."
+          },
+          "notes": "Notable for adoption leave provision. Submitted cantonal initiative to federal parliament for parental leave."
+        },
+        {
+          "parentCountry": "CH",
+          "name": "Switzerland — Cantonal variation summary",
+          "code": "CH-SUMMARY",
+          "type": "summary",
+          "maternity": {
+            "notes": "Only Geneva extends statutory maternity leave beyond federal 14 weeks (to 16 weeks). Some cantons provide specific maternity benefits for mothers who don't meet federal eligibility. Collective agreements often supplement to 16 weeks at 100% in private sector."
+          },
+          "paternity": {
+            "notes": "No cantonal extensions reported. Federal 2-week entitlement is baseline. Pre-existing collective agreements may supplement."
+          },
+          "parental": {
+            "notes": "No canton has implemented parental leave yet. Geneva electorate approved but implementation blocked. Discussions ongoing in Bern, Vaud, Ticino, Neuchatel, Zurich. Popular initiative for national parental leave (36 weeks) launched April 2025. Public sector employers in about half of cantons offer paid adoption leave (2 days to 16 weeks)."
+          },
+          "notes": "Cantonal variation primarily in public sector employment and adoption leave. For general workers, only Geneva deviates from federal baseline on maternity. Significant reform momentum at both cantonal and federal levels."
+        }
       ]
     },
     {
@@ -4797,6 +6013,56 @@
           "leaveType": "paternity",
           "description": "Employment Rights Bill underway: Paternity leave and Parental leave to become 'day one' rights (removing qualifying periods)."
         }
+      ],
+      "subnational": [
+        {
+          "parentCountry": "GB",
+          "name": "England",
+          "code": "GB-ENG",
+          "type": "country",
+          "variationType": "ecec_entitlement",
+          "details": "ECEC: All 3-4 year-olds entitled to 15 hours/week free ECEC (38 weeks/year). Some eligible 2-year-olds. Working parents of children aged 9+ months entitled to 15 hours/week; working parents of 3-4 year-olds get 30 hours total (1,140 hours/year). From September 2025, 30 hours extends to all working parents of children 9+ months.",
+          "maternity": null,
+          "paternity": null,
+          "parental": null,
+          "notes": "Leave policy is national (no regional variation). ECEC policy is devolved. Most children start school in September after their 4th birthday."
+        },
+        {
+          "parentCountry": "GB",
+          "name": "Scotland",
+          "code": "GB-SCT",
+          "type": "country",
+          "variationType": "ecec_entitlement",
+          "details": "ECEC: All 3-4 year-olds entitled to 30 hours/week free ECEC during term time (1,140 hours/year). Some eligible 2-year-olds on similar basis to England.",
+          "maternity": null,
+          "paternity": null,
+          "parental": null,
+          "notes": "Leave policy is national (no regional variation). ECEC policy is devolved. Children generally start school aged 4.5-5.5."
+        },
+        {
+          "parentCountry": "GB",
+          "name": "Wales",
+          "code": "GB-WLS",
+          "type": "country",
+          "variationType": "ecec_entitlement",
+          "details": "ECEC: All 3-4 year-olds entitled to at least 10 hours/week free ECEC (48 weeks). Up to 30 hours/week for working parents meeting eligibility criteria. Some 2-year-olds entitled to 12.5 hours/week.",
+          "maternity": null,
+          "paternity": null,
+          "parental": null,
+          "notes": "Leave policy is national (no regional variation). ECEC policy is devolved. Most children start school in September after their 4th birthday."
+        },
+        {
+          "parentCountry": "GB",
+          "name": "Northern Ireland",
+          "code": "GB-NIR",
+          "type": "country",
+          "variationType": "ecec_entitlement",
+          "details": "ECEC: All children entitled to 22.5 hours/week free ECEC in the year before starting school.",
+          "maternity": null,
+          "paternity": null,
+          "parental": null,
+          "notes": "Leave policy is national (no regional variation). ECEC policy is devolved. Children start school aged 4 or 5. Most limited ECEC entitlement among UK nations."
+        }
       ]
     },
     {
@@ -4892,7 +6158,463 @@
         "entitlementAgeMonths": null,
         "gapAfterLeaveMonths": null
       },
-      "recentChanges": []
+      "recentChanges": [],
+      "subnational": [
+        {
+          "parentCountry": "US",
+          "name": "Hawaii",
+          "code": "US-HI",
+          "type": "state",
+          "maternity": {
+            "exists": true,
+            "durationWeeks": 26,
+            "durationMonths": {
+              "total": 6.0,
+              "paid": 6.0,
+              "wellPaid": 0
+            },
+            "paymentRate": 58,
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "USD$837/week (2025)",
+            "notes": "Temporary Disability Insurance (TDI) program since 1969. Covers pregnancy/childbirth only (certified by health professional). Not a general paid family leave program. Employee contributions capped at 0.5% of weekly wage base. Eligibility: 14 weeks employed, 20+ hrs/week."
+          },
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "durationWeeks": 4,
+            "durationMonths": {
+              "total": 0.9,
+              "paid": 0,
+              "wellPaid": 0
+            },
+            "paymentRate": 0,
+            "paymentType": "unpaid",
+            "ceiling": false,
+            "notes": "Hawaii Family Leave Law: 4 weeks unpaid family leave per calendar year for birth/adoption or care of child/spouse/parent with serious health condition. Employee may substitute accrued paid leave."
+          },
+          "notes": "Hawaii uniquely focuses on pregnancy disability rather than general paid family leave. No paid bonding/parental leave component."
+        },
+        {
+          "parentCountry": "US",
+          "name": "Puerto Rico",
+          "code": "US-PR",
+          "type": "territory",
+          "maternity": {
+            "exists": true,
+            "durationWeeks": 8,
+            "durationMonths": {
+              "total": 1.9,
+              "paid": 1.9,
+              "wellPaid": 1.9
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "notes": "Working Mothers Act (1942). 8 weeks at 100% of earnings. Must begin 1-4 weeks before expected delivery. Adoption of child under 6: same benefits. Updated 2020: 5 weeks for adoption of child 6+."
+          },
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "durationWeeks": 26,
+            "durationMonths": {
+              "total": 6.0,
+              "paid": 6.0,
+              "wellPaid": 0
+            },
+            "paymentRate": null,
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "USD$113/week (unchanged since 1972)",
+            "notes": "Separate disability law: 26 weeks paid leave for non-work-related disability including pregnancy. Employee contributions at 0.3% of wages up to USD$9,000. Maximum benefit very low: USD$113/week (USD$55 for agricultural workers). Amounts unchanged since July 1972."
+          },
+          "notes": "Two separate programs: Working Mothers Act (high replacement) and disability insurance (very low cap). The maternity-specific program does not extend to fathers."
+        },
+        {
+          "parentCountry": "US",
+          "name": "California",
+          "code": "US-CA",
+          "type": "state",
+          "maternity": {
+            "exists": true,
+            "durationWeeks": 10,
+            "durationMonths": {
+              "total": 2.3,
+              "paid": 2.3,
+              "wellPaid": 2.3
+            },
+            "paymentRate": 70,
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "Same SDI cap",
+            "notes": "Pregnancy disability leave via State Disability Insurance (SDI): typically 4 weeks pre-birth + 6 weeks post-birth. Additional weeks with physician certification for difficult pregnancies. Separate from PFL bonding leave. Employers with 5+ employees must provide 4 months job-protected pregnancy disability leave."
+          },
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "durationWeeks": 8,
+            "durationMonths": {
+              "total": 1.9,
+              "paid": 1.9,
+              "wellPaid": 1.9
+            },
+            "paymentRate": 70,
+            "paymentRateRange": "70-90% depending on income",
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "USD$1,681/week (2025)",
+            "notes": "Paid Family Leave (PFL) since 2004 — first comprehensive state PFL. 8 weeks for bonding with new child, adoption, or care of seriously ill family member. 70-90% of earnings depending on income. Average weekly benefit USD$934 (2024). Funded by employee payroll deductions via SDI. No job protection under PFL itself (covered by FMLA or CA Family Rights Act). San Francisco: top-off to 100% for employers with 20+ employees."
+          },
+          "notes": "First state to implement comprehensive PFL (2004). Total potential paid leave for birth mothers: ~18 weeks (10 SDI pregnancy + 8 PFL bonding). Covers all private sector; some public sector; self-employed can opt in."
+        },
+        {
+          "parentCountry": "US",
+          "name": "Colorado",
+          "code": "US-CO",
+          "type": "state",
+          "maternity": null,
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "durationWeeks": 12,
+            "durationMonths": {
+              "total": 2.8,
+              "paid": 2.8,
+              "wellPaid": 2.8
+            },
+            "paymentRate": 90,
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "USD$1,324.21/week (2025, = 90% of statewide AWW)",
+            "notes": "Passed 2020 via ballot initiative (first state to do so). Contributions began Jan 2023, benefits from Jan 2024. 12 weeks for bonding, self-care, family care, military, domestic violence. Additional 4 weeks for pregnancy/birth complications. 90% of earnings up to 50% of AWW + 50% above that. Eligibility: earned at least USD$2,500. Job protection requires 180 days employment. Jointly funded by employers and employees. Broad family definition including non-biological ties."
+          },
+          "notes": "Unified PFML program. Birth mothers with complications can get up to 16 weeks. Covers private sector, state/local government; self-employed can opt in."
+        },
+        {
+          "parentCountry": "US",
+          "name": "Connecticut",
+          "code": "US-CT",
+          "type": "state",
+          "maternity": null,
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "durationWeeks": 12,
+            "durationMonths": {
+              "total": 2.8,
+              "paid": 2.8,
+              "wellPaid": 0
+            },
+            "paymentRate": 60,
+            "paymentRateNote": "95% for those earning <= 40x minimum wage; capped at 60x minimum wage for higher earners",
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "USD$981/week (2025)",
+            "notes": "Two laws passed 2019, effective 2022: CTFMLA (job protection) and CT Paid Leave (income replacement). 12 weeks for new child, own health, family care, military, bone marrow/organ donation. Additional 2 weeks for pregnancy-related incapacity. State employees: up to 24 weeks in 2-year period for bonding. Eligibility: 3 months employment (less stringent than federal FMLA). Minimum earnings USD$2,325 in 1 of 5 recent quarters. Funded by 0.5% employee withholding tax. Self-employed can opt in."
+          },
+          "notes": "Unified PFML program. Lower replacement rate than some states for higher earners but generous for low-wage workers (95%)."
+        },
+        {
+          "parentCountry": "US",
+          "name": "Delaware",
+          "code": "US-DE",
+          "type": "state",
+          "maternity": null,
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "durationWeeks": 12,
+            "durationMonths": {
+              "total": 2.8,
+              "paid": 2.8,
+              "wellPaid": 2.8
+            },
+            "paymentRate": 80,
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "USD$900/week (2026-2027); increases with CPI thereafter",
+            "ceilingMinimum": "USD$100/week minimum benefit",
+            "notes": "Healthy Delaware Families Act (2022). Benefits begin 1 January 2026. 12 weeks parenting leave or 6 weeks family/medical leave. Contributions from Jan 2025 at 0.8% split equally employer/employee. Eligibility: 12 months and 1,250 hours with employer. Employers 10-25 employees: parenting leave only. Employers 25+: parenting, family, and medical. Job protected. Leave can be intermittent."
+          },
+          "notes": "Not yet distributing benefits (starts Jan 2026). Parenting leave duration (12 weeks) is longer than family/medical leave (6 weeks)."
+        },
+        {
+          "parentCountry": "US",
+          "name": "Maine",
+          "code": "US-ME",
+          "type": "state",
+          "maternity": null,
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "durationWeeks": 12,
+            "durationMonths": {
+              "total": 2.8,
+              "paid": 2.8,
+              "wellPaid": 2.8
+            },
+            "paymentRate": 100,
+            "paymentRateNote": "Progressive rate up to 100% of state AWW",
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "USD$1,144.67/week (2024 AWW reference)",
+            "notes": "Passed July 2023. Contributions began Jan 2025, benefits start May 2026. 12 weeks for family, medical reasons, birth or adoption. Covers part-time, seasonal, temporary workers. Funded by equal employer/employee payroll contributions, max 1%."
+          },
+          "notes": "Not yet distributing benefits (starts May 2026). Progressive replacement rate favoring lower earners."
+        },
+        {
+          "parentCountry": "US",
+          "name": "Maryland",
+          "code": "US-MD",
+          "type": "state",
+          "maternity": null,
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "durationWeeks": 12,
+            "durationMonths": {
+              "total": 2.8,
+              "paid": 2.8,
+              "wellPaid": 2.8
+            },
+            "paymentRate": 90,
+            "paymentRateNote": "90% for workers earning < 65% of state AWW; lower for higher earners",
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "USD$1,000/week (starting 2026)",
+            "notes": "Adopted 2022. Contributions began Oct 2024 at 0.9% split evenly employer/employee. Claims begin Jan 2026. 12 weeks for bonding, family care, own health, military. Additional 12 weeks if eligible for both bonding and own health condition. Eligibility: 680 hours worked in prior year. Job protected. Self-employed can opt in. Employers with 15+ employees contribute."
+          },
+          "notes": "Not yet distributing benefits (claims start Jan 2026). Potential 24 weeks if combining bonding + own health condition."
+        },
+        {
+          "parentCountry": "US",
+          "name": "Massachusetts",
+          "code": "US-MA",
+          "type": "state",
+          "maternity": null,
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "durationWeeks": 12,
+            "durationMonths": {
+              "total": 2.8,
+              "paid": 2.8,
+              "wellPaid": 2.8
+            },
+            "paymentRate": 80,
+            "paymentRateNote": "80% of AWW up to 50% of state AWW, then 50% above that amount",
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "USD$1,170.64/week (2025)",
+            "medicalLeaveWeeks": 20,
+            "combinedMaxWeeks": 26,
+            "notes": "Adopted 2018, benefits since 2021. 12 weeks bonding; 20 weeks own medical condition (including pregnancy); 12 weeks family care; 26 weeks military; 26 weeks combined max. Eligibility: 15 weeks worked and USD$6,000 earned in past year. Funded by 0.88% payroll tax (up to SS max). Since Nov 2023, employees can top off benefits with accrued paid leave. Covers all private sector and most public sector. Self-employed can opt in."
+          },
+          "notes": "One of the most comprehensive state programs. Up to 20 weeks for own medical condition (pregnancy). Broad family member definition."
+        },
+        {
+          "parentCountry": "US",
+          "name": "Minnesota",
+          "code": "US-MN",
+          "type": "state",
+          "maternity": null,
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "durationWeeks": 12,
+            "durationMonths": {
+              "total": 2.8,
+              "paid": 2.8,
+              "wellPaid": 0
+            },
+            "paymentRate": 55,
+            "paymentRateNote": "90% for < 50% of state average; ~67% at state average; 55% above average. Up to 20 weeks for combined events.",
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "combinedMaxWeeks": 20,
+            "notes": "Passed May 2023, takes effect Jan 2026. 12 weeks for birth/adoption/foster, self/family care, military, family violence. Up to 20 weeks combined for multiple events. Progressive replacement: 90% for lowest earners, 67% at average, 55% above. Firms < 30 employees may be exempt. Initially funded by state budget surplus, then payroll tax (0.7%, not > 1.2% after 2027), split employer/employee."
+          },
+          "notes": "Not yet in effect (Jan 2026). Progressive benefit structure. Includes family violence as qualifying event."
+        },
+        {
+          "parentCountry": "US",
+          "name": "New Jersey",
+          "code": "US-NJ",
+          "type": "state",
+          "maternity": {
+            "exists": true,
+            "durationWeeks": 10,
+            "durationMonths": {
+              "total": 2.3,
+              "paid": 2.3,
+              "wellPaid": 2.3
+            },
+            "paymentRate": 85,
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "notes": "Temporary Disability Insurance (TDI) covers pregnancy/childbirth: typically 4 weeks pre-delivery + 6 weeks post-delivery. Separate from FLI bonding benefits and does not run concurrent."
+          },
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "durationWeeks": 12,
+            "durationMonths": {
+              "total": 2.8,
+              "paid": 2.8,
+              "wellPaid": 2.8
+            },
+            "paymentRate": 85,
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "USD$1,081/week (2025)",
+            "notes": "Family Leave Insurance (FLI). 12 weeks at 85% of earnings. Eligibility: 20 weeks earning USD$303/week or USD$15,200 in preceding 4 quarters. Max taxable wage base USD$165,400. Funded by employee payroll deductions. Covers all private sector, some public employees. Very broad family definition including blood relatives and persons considered equivalent to family."
+          },
+          "notes": "TDI and FLI are separate and non-concurrent — birth mothers can receive ~22 weeks total (10 TDI + 12 FLI)."
+        },
+        {
+          "parentCountry": "US",
+          "name": "New York",
+          "code": "US-NY",
+          "type": "state",
+          "maternity": {
+            "exists": true,
+            "durationWeeks": 26,
+            "durationMonths": {
+              "total": 6.0,
+              "paid": 6.0,
+              "wellPaid": 0
+            },
+            "paymentRate": 50,
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "USD$170/week",
+            "notes": "TDI program for pregnancy/childbirth (birth mothers only). 50% of AWW up to very low cap of USD$170/week. Funded jointly by employees and employers. Covers medical issues related to pregnancy/childbirth."
+          },
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "durationWeeks": 12,
+            "durationMonths": {
+              "total": 2.8,
+              "paid": 2.8,
+              "wellPaid": 2.8
+            },
+            "paymentRate": 67,
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "USD$1,757.19/week (2025, = 67% of state AWW)",
+            "notes": "Adopted 2016, phased in from 2018. 12 weeks job-protected paid leave for bonding, family care, military. 67% of state AWW. Funded entirely by employee payroll deductions (capped USD$354.53/year). Eligibility: 26 weeks full-time or 175 days part-time. Total TDI + PFL cannot exceed 26 weeks in 52-week period. Extended to domestic workers (20+ hrs/week) since 2022. Self-employed can opt in."
+          },
+          "notes": "Mandatory private insurance scheme (unique among states). Combined TDI + PFL max 26 weeks per year."
+        },
+        {
+          "parentCountry": "US",
+          "name": "Oregon",
+          "code": "US-OR",
+          "type": "state",
+          "maternity": null,
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "durationWeeks": 12,
+            "durationMonths": {
+              "total": 2.8,
+              "paid": 2.8,
+              "wellPaid": 0
+            },
+            "paymentRate": 65,
+            "paymentRateNote": "65% of state AWW + 50% above that; 100% for low-income workers",
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "USD$1,568.60/week (2024); minimum USD$65.36/week",
+            "pregnancyAdditionalWeeks": 2,
+            "combinedMaxWeeks": 18,
+            "notes": "Adopted July 2019, benefits since Sep 2023. 12 weeks for self/family care + up to 2 additional weeks for pregnancy/childbirth. Some situations allow up to 18 weeks (4 may be unpaid). Low-income workers receive 100% of AWW. Funded by 1% payroll tax (employees 60%, employers 40%; employers < 25 exempt from employer share). Eligibility: earned USD$1,000 in prior year (very low threshold, covers almost all workers)."
+          },
+          "notes": "Very inclusive eligibility (USD$1,000/year threshold). Low-income workers get 100% replacement. Birth mothers can get up to 14 paid weeks."
+        },
+        {
+          "parentCountry": "US",
+          "name": "Rhode Island",
+          "code": "US-RI",
+          "type": "state",
+          "maternity": {
+            "exists": true,
+            "durationWeeks": null,
+            "durationMonths": null,
+            "paymentRate": 60,
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "notes": "TDI program covers pregnancy/childbirth medical issues separately from bonding leave (Temporary Caregiver Insurance). TDI duration based on medical need."
+          },
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "durationWeeks": 7,
+            "durationMonths": {
+              "total": 1.6,
+              "paid": 1.6,
+              "wellPaid": 0
+            },
+            "paymentRate": 60,
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "USD$1,070/week (2025)",
+            "notes": "Temporary Caregiver Insurance (TCI) since 2014. 7 weeks paid (increased from 6 in 2024) for bonding with new child or care of family member with serious health condition. Also 13 weeks unpaid leave in 2-year period. Funded by 1.3% employee contribution (max taxable wage USD$89,200). Job protected."
+          },
+          "notes": "TCI and TDI are separate programs. One of the earliest state paid family leave programs (2014). Shorter paid bonding duration than most newer programs."
+        },
+        {
+          "parentCountry": "US",
+          "name": "Washington",
+          "code": "US-WA",
+          "type": "state",
+          "maternity": null,
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "durationWeeks": 12,
+            "durationMonths": {
+              "total": 2.8,
+              "paid": 2.8,
+              "wellPaid": 2.8
+            },
+            "paymentRate": 90,
+            "paymentRateNote": "90% of AWW up to 50% of state AWW; then 50% of AWW above that",
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "USD$1,542/week (2025)",
+            "combinedMaxWeeks": 16,
+            "pregnancyMaxWeeks": 18,
+            "notes": "Adopted 2017, benefits since 2020. 12 weeks family or 12 weeks medical; 16 weeks combined; 18 weeks if pregnancy-related health + family. Eligibility: 820 hours in 4 of 5 previous quarters. Job protection: employers 50+ and 12 months/1,250 hours. Self-employed can opt in. Funded by 0.92% premium (employers 50+ pay 28.48%, employees pay 71.52%). Covers bonding, family care, own health, military."
+          },
+          "notes": "Comprehensive PFML. Birth mothers with pregnancy complications can get up to 18 weeks. Broad family definition including siblings."
+        },
+        {
+          "parentCountry": "US",
+          "name": "District of Columbia",
+          "code": "US-DC",
+          "type": "district",
+          "maternity": null,
+          "paternity": null,
+          "parental": {
+            "exists": true,
+            "durationWeeks": 12,
+            "durationMonths": {
+              "total": 2.8,
+              "paid": 2.8,
+              "wellPaid": 2.8
+            },
+            "paymentRate": 90,
+            "paymentType": "earnings-related",
+            "ceiling": true,
+            "ceilingAmount": "USD$1,153/week",
+            "prenatalLeaveWeeks": 2,
+            "notes": "Universal Paid Leave (UPL) Amendment Act (2017), benefits since Oct 2022. 12 weeks parental + 12 weeks family + 12 weeks medical + 2 weeks prenatal. 90% of AWW up to cap. Covers all private sector employees under DC Unemployment Compensation Act. Job protected. Self-employed can opt in."
+          },
+          "notes": "Generous program with separate 12-week allotments for parental, family, and medical leave, plus 2 weeks prenatal. High replacement rate (90%)."
+        }
+      ]
     },
     {
       "name": "Uruguay",

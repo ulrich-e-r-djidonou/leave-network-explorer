@@ -53,6 +53,18 @@ export interface RecentChange {
   description: string;
 }
 
+export interface SubnationalEntity {
+  name: string;
+  code: string;
+  type: "province" | "state" | "canton" | "entity" | "sector" | "region" | "municipality";
+  variationType?: "full" | "supplement";
+  maternity?: Partial<LeavePolicy> | null;
+  paternity?: Partial<LeavePolicy> | null;
+  parental?: Partial<ParentalLeave> | null;
+  details?: string;
+  notes?: string;
+}
+
 export interface Country {
   name: string;
   iso2: string;
@@ -60,6 +72,7 @@ export interface Country {
   region: string;
   federal: boolean;
   subnationalVariations: string[];
+  subnational?: SubnationalEntity[];
   maternity: LeavePolicy;
   paternity: LeavePolicy;
   parental: ParentalLeave;

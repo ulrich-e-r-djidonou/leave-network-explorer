@@ -1,4 +1,4 @@
-import type { Country } from "../../types";
+import type { Country, SubnationalEntity } from "../../types";
 import { formatDuration, getGenderEqualityScore, getGenerosityScore } from "../../utils/calculations";
 import { LeaveTimeline } from "./LeaveTimeline";
 import { X } from "lucide-react";
@@ -208,6 +208,20 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
             </div>
           </div>
         )}
+
+        {/* Subnational variations */}
+        {c.subnational && c.subnational.length > 0 && (
+          <div className="border-2 border-indigo-200 rounded-lg p-3 bg-indigo-50/30">
+            <h4 className="text-sm font-semibold text-indigo-800 mb-3">
+              Variations infranationales ({c.subnational.length})
+            </h4>
+            <div className="space-y-3">
+              {c.subnational.map((sub, i) => (
+                <SubnationalCard key={sub.code || i} entity={sub} />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -348,5 +362,81 @@ function ChangeTypeBadge({
     >
       {labels[type] || type}
     </span>
+  );
+}
+
+function SubnationalCard({ entity }: { entity: SubnationalEntity }) {
+  const typeLabels: Record<string, string> = {
+    province: "Province",
+    state: "Etat",
+    canton: "Canton",
+    entity: "Entite",
+    sector: "Secteur",
+    region: "Region",
+    municipality: "Municipalite",
+  };
+
+  const hasLeaveData =
+    entity.maternity?.exists || entity.paternity?.exists || entity.parental?.exists;
+
+  return (
+    <div className="bg-white rounded border border-indigo-100 p-2.5">
+      <div className="flex items-center gap-2 mb-1.5">
+        <span className="text-xs bg-indigo-100 text-indigo-700 px-1.5 py-0.5 rounded">
+          {typeLabels[entity.type] || entity.type}
+        </span>
+        <span className="text-sm font-medium text-slate-800">
+          {entity.name}
+        </span>
+        {entity.code && (
+          <span className="text-xs text-slate-400">{entity.code}</span>
+        )}
+      </div>
+
+      {hasLeaveData && (
+        <div className="grid grid-cols-3 gap-2 mt-2 text-xs">
+          {entity.maternity?.exists && (
+            <div className="bg-rose-50 rounded p-1.5">
+              <p className="text-rose-600 font-medium">Maternite</p>
+              <p className="text-slate-700">
+                {formatDuration(entity.maternity.durationMonths?.total ?? null)}
+              </p>
+              {entity.maternity.paymentRate && (
+                <p className="text-slate-500">{entity.maternity.paymentRate}%</p>
+              )}
+            </div>
+          )}
+          {entity.paternity?.exists && (
+            <div className="bg-blue-50 rounded p-1.5">
+              <p className="text-blue-600 font-medium">Paternite</p>
+              <p className="text-slate-700">
+                {formatDuration(entity.paternity.durationMonths?.total ?? null)}
+              </p>
+              {entity.paternity.paymentRate && (
+                <p className="text-slate-500">{entity.paternity.paymentRate}%</p>
+              )}
+            </div>
+          )}
+          {entity.parental?.exists && (
+            <div className="bg-amber-50 rounded p-1.5">
+              <p className="text-amber-600 font-medium">Parental</p>
+              <p className="text-slate-700">
+                {formatDuration(entity.parental.durationMonths?.total ?? null)}
+              </p>
+              {entity.parental.paymentRate && (
+                <p className="text-slate-500">{entity.parental.paymentRate}%</p>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+
+      {entity.details && (
+        <p className="text-xs text-slate-500 mt-1.5">{entity.details}</p>
+      )}
+      {entity.notes && (
+        <p className="text-xs text-slate-500 mt-1 italic">{entity.notes}</p>
+      )}
+    </div>
   );
 }

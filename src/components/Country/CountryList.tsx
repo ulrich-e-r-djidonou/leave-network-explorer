@@ -83,6 +83,11 @@ export function CountryList({
                 <span className="text-sm font-medium text-slate-700">
                   {c.name}
                 </span>
+                {c.subnational && c.subnational.length > 0 && (
+                  <span className="text-[10px] bg-indigo-100 text-indigo-600 px-1 rounded">
+                    {c.subnational.length}
+                  </span>
+                )}
               </div>
               <span className="text-sm text-slate-500 tabular-nums">
                 {value !== null
