@@ -1,0 +1,5100 @@
+{
+  "metadata": {
+    "year": 2025,
+    "asOf": "April 2025",
+    "source": "International Review of Leave Policies and Research 2025",
+    "editors": "Dobrotic, I., Blum, S., Kaufman, G., Koslowski, A., Moss, P. and Valentova, M.",
+    "totalCountries": 52
+  },
+  "countries": [
+    {
+      "name": "Argentina",
+      "iso2": "AR",
+      "iso3": "ARG",
+      "region": "South America",
+      "federal": true,
+      "subnationalVariations": [
+        "23 provinces with different public sector leave durations",
+        "Buenos Aires City (45 days paternity leave public sector)",
+        "Provincial public employment varies: maternity 90-210 days"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 2.1,
+          "paid": 2.1,
+          "wellPaid": 2.1
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "ANSES (National Social Security Administration), financed by federal government"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.07,
+          "paid": 0.07,
+          "wellPaid": 0.07
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "Employer"
+      },
+      "parental": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": null,
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": false,
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": false,
+          "daysPerYear": null,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": true
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 48,
+        "gapAfterLeaveMonths": 45
+      },
+      "recentChanges": []
+    },
+    {
+      "name": "Australia",
+      "iso2": "AU",
+      "iso3": "AUS",
+      "region": "Oceania",
+      "federal": true,
+      "subnationalVariations": [
+        "6 states and 2 territories with varying employer-paid schemes"
+      ],
+      "maternity": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": false,
+        "obligatory": false,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": null
+      },
+      "paternity": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 24,
+          "paid": 5.1,
+          "wellPaid": 0
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 0.5,
+        "fatherQuotaMonths": 0.5,
+        "sharedPortionMonths": 4.1,
+        "transferable": true,
+        "paymentRate": null,
+        "paymentType": "flat-rate",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "General taxation (paid parental leave pay); unpaid leave is employer obligation"
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 10,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": false
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": true
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": 60,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "parental",
+          "description": "Parental leave pay rising to 24 weeks (July 2025) and 26 weeks (July 2026); reserved portion increasing annually"
+        },
+        {
+          "type": "expansion",
+          "leaveType": "other",
+          "description": "Three-day childcare guarantee abolishing activity test for subsidised childcare from January 2026"
+        }
+      ]
+    },
+    {
+      "name": "Austria",
+      "iso2": "AT",
+      "iso3": "AUT",
+      "region": "Europe",
+      "federal": true,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.7,
+          "paid": 3.7,
+          "wellPaid": 3.7
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "70% Family Burden Equalisation Fund (FLAF), 30% public health insurance"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 1,
+          "paid": 1,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": "flat-rate",
+        "ceiling": true,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "FLAF (Family Burden Equalisation Fund)"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 24,
+          "paid": 12,
+          "wellPaid": 12
+        },
+        "entitlementType": "family",
+        "motherQuotaMonths": 2,
+        "fatherQuotaMonths": 2,
+        "sharedPortionMonths": 20,
+        "transferable": true,
+        "paymentRate": 80,
+        "paymentType": "mixed",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "FLAF (Family Burden Equalisation Fund)"
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "Voluntary agreement between employer and employee for 2-12 months unpaid leave"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 10,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 60,
+        "gapAfterLeaveMonths": 36
+      },
+      "recentChanges": [
+        {
+          "type": "introduction",
+          "leaveType": "maternity",
+          "description": "New Special maternity benefit introduced retroactively from November 2023 for previously uncovered women"
+        },
+        {
+          "type": "abolition",
+          "leaveType": "other",
+          "description": "Educational leave (Bildungskarenz) abolished by March 2025; new model planned for January 2026"
+        }
+      ]
+    },
+    {
+      "name": "Belgium",
+      "iso2": "BE",
+      "iso3": "BEL",
+      "region": "Europe",
+      "federal": true,
+      "subnationalVariations": [
+        "Flemish community pays additional encouragement benefit for care leave/Time Credit"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.5,
+          "paid": 3.5,
+          "wellPaid": 3.5
+        },
+        "paymentRate": 82,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": true,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Federal Health Insurance (employer and employee contributions, general taxation)"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.9,
+          "paid": 0.9,
+          "wellPaid": 0.9
+        },
+        "paymentRate": 82,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Employer (first 3 days) then Federal Health Insurance"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 8,
+          "paid": 8,
+          "wellPaid": 0
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 4,
+        "fatherQuotaMonths": 4,
+        "sharedPortionMonths": 0,
+        "transferable": false,
+        "paymentRate": null,
+        "paymentType": "flat-rate",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "Federal Health Insurance"
+      },
+      "childcareLeave": {
+        "exists": true,
+        "durationMonths": 12,
+        "paid": true,
+        "details": "Time Credit system: 1 year full-time or 24 months part-time or 60 months at one-fifth; for care of child under 8"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 10,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": false
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 30,
+        "gapAfterLeaveMonths": 26
+      },
+      "recentChanges": [
+        {
+          "type": "recalibration",
+          "leaveType": "parental",
+          "description": "New federal government planning radical reform introducing 'rucksack of leave' per child combining all leave types; grandparental leave also under consideration"
+        }
+      ]
+    },
+    {
+      "name": "Bosnia and Herzegovina",
+      "iso2": "BA",
+      "iso3": "BIH",
+      "region": "Europe",
+      "federal": true,
+      "subnationalVariations": [
+        "Federation of BiH (10 cantons with different rates)",
+        "Republic Srpska",
+        "Brcko District"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 12,
+          "paid": 12,
+          "wellPaid": 12
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": true,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "FBiH: cantonal budgets; RS: RS Fund for Child Protection; BD: general taxes"
+      },
+      "paternity": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null
+      },
+      "parental": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": null,
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": false,
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null
+      },
+      "childcareLeave": {
+        "exists": true,
+        "durationMonths": 24,
+        "paid": false,
+        "details": "One parent can take unpaid leave until child turns 3; employment suspended, health insurance maintained"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 15,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": false
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": 60,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": []
+    },
+    {
+      "name": "Brazil",
+      "iso2": "BR",
+      "iso3": "BRA",
+      "region": "South America",
+      "federal": true,
+      "subnationalVariations": [
+        "Federal public sector has 6 months maternity leave",
+        "State/municipal levels vary for extended leave"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 4,
+          "paid": 4,
+          "wellPaid": 4
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": true,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "Social security fund (employer and employee contributions)"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.12,
+          "paid": 0.12,
+          "wellPaid": 0.12
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "Employer"
+      },
+      "parental": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": null,
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": false,
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": false,
+          "daysPerYear": null,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": false
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": null,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": []
+    },
+    {
+      "name": "Bulgaria",
+      "iso2": "BG",
+      "iso3": "BGR",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 13.5,
+          "paid": 13.5,
+          "wellPaid": 13.5
+        },
+        "paymentRate": 90,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": true,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "National Social Security Institute (employer and employee contributions)"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 2.5,
+          "paid": 2.5,
+          "wellPaid": 0.5
+        },
+        "paymentRate": 90,
+        "paymentType": "mixed",
+        "ceiling": true,
+        "obligatory": true,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "National Social Security Institute"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 12,
+          "paid": 12,
+          "wellPaid": 0
+        },
+        "entitlementType": "family",
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": 12,
+        "transferable": true,
+        "paymentRate": null,
+        "paymentType": "flat-rate",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": false,
+        "fundingSource": "National Social Security Institute"
+      },
+      "childcareLeave": {
+        "exists": true,
+        "durationMonths": 6,
+        "paid": false,
+        "details": "Unpaid childcare leave per parent until child turns 8; 5 months transferable to other parent"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 60,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 60,
+        "gapAfterLeaveMonths": 24
+      },
+      "recentChanges": [
+        {
+          "type": "recalibration",
+          "leaveType": "parental",
+          "description": "Father can now use maternity/parental leave without mother's consent when mother is deprived of parental rights"
+        }
+      ]
+    },
+    {
+      "name": "Canada",
+      "iso2": "CA",
+      "iso3": "CAN",
+      "region": "North America",
+      "federal": true,
+      "subnationalVariations": [
+        "Quebec has separate QPIP programme with higher benefits and paternity leave",
+        "14 different jurisdictional employment standards for job-protected leave"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.7,
+          "paid": 3.5,
+          "wellPaid": 0
+        },
+        "paymentRate": 55,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": false,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "Employment Insurance (EI) premiums from employers and employees"
+      },
+      "paternity": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 15.8,
+          "paid": 8.1,
+          "wellPaid": 0
+        },
+        "entitlementType": "family",
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": 8.1,
+        "transferable": true,
+        "paymentRate": 55,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "Employment Insurance (EI) premiums from employers and employees"
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": false,
+          "daysPerYear": null,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": false
+        },
+        "flexibleWork": {
+          "rightToRequest": false
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": null,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "parental",
+          "description": "Quebec expanded sharing incentive with additional weeks and increased support for low-income parents and single parents"
+        }
+      ]
+    },
+    {
+      "name": "Chile",
+      "iso2": "CL",
+      "iso3": "CHL",
+      "region": "South America",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 7,
+          "paid": 7,
+          "wellPaid": 7
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": true,
+        "flexPartTime": true,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Health insurance institution (public FONASA or private ISAPRE)"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.23,
+          "paid": 0.23,
+          "wellPaid": 0.23
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Employer"
+      },
+      "parental": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": null,
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": false,
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": null,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": true
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": null,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": []
+    },
+    {
+      "name": "China",
+      "iso2": "CN",
+      "iso3": "CHN",
+      "region": "Asia",
+      "federal": false,
+      "subnationalVariations": [
+        "31 provincial regions with extended maternity leave (128-365 days)",
+        "Paternity leave varies 10-30 days by province",
+        "Parental leave varies 5-30 days by province"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 2.3,
+          "paid": 2.3,
+          "wellPaid": 2.3
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Maternity Insurance Fund and/or work units"
+      },
+      "paternity": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null
+      },
+      "parental": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": null,
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": false,
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": false,
+          "daysPerYear": null,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": false
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 36,
+        "gapAfterLeaveMonths": 32
+      },
+      "recentChanges": []
+    },
+    {
+      "name": "Colombia",
+      "iso2": "CO",
+      "iso3": "COL",
+      "region": "South America",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 4.2,
+          "paid": 4.2,
+          "wellPaid": 4.2
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": true,
+        "flexPartTime": true,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Health Provider Institution (EPS) funded by employer (8.5%) and employee (4%) contributions"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.65,
+          "paid": 0.65,
+          "wellPaid": 0.65
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": true,
+        "flexBlocks": false,
+        "fundingSource": "Health Provider Institution (EPS)"
+      },
+      "parental": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": null,
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": false,
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 10,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": 60,
+        "gapAfterLeaveMonths": 52
+      },
+      "recentChanges": [
+        {
+          "type": "introduction",
+          "leaveType": "other",
+          "description": "New care policy approved June 2023 establishing role of care person/personal assistant with right to flexible work"
+        }
+      ]
+    },
+    {
+      "name": "Croatia",
+      "iso2": "HR",
+      "iso3": "HRV",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 6,
+          "paid": 6,
+          "wellPaid": 6
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": true,
+        "flexPartTime": true,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "Croatian health insurance fund"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.93,
+          "paid": 0.93,
+          "wellPaid": 0.93
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "General taxation"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 8,
+          "paid": 8,
+          "wellPaid": 6
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 2,
+        "fatherQuotaMonths": 2,
+        "sharedPortionMonths": 4,
+        "transferable": true,
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "General taxation"
+      },
+      "childcareLeave": {
+        "exists": true,
+        "durationMonths": 18,
+        "paid": false,
+        "details": "Unpaid leave until child turns 3; employment suspended, health and retirement insurance maintained"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 60,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 60,
+        "gapAfterLeaveMonths": 46
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "paternity",
+          "description": "Paternity leave doubled to 20 working days"
+        },
+        {
+          "type": "expansion",
+          "leaveType": "parental",
+          "description": "Parental leave benefit increased significantly to 680% of budgetary base rate for first 6-8 months"
+        },
+        {
+          "type": "expansion",
+          "leaveType": "maternity",
+          "description": "Increased benefits for mothers not meeting insurance requirements and for maternity exemption from work"
+        }
+      ]
+    },
+    {
+      "name": "Cyprus",
+      "iso2": "CY",
+      "iso3": "CYP",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 5.1,
+          "paid": 5.1,
+          "wellPaid": 5.1
+        },
+        "paymentRate": 72,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Social Insurance Services (employer 6.8%, employee 6.8%, state 4.3%)"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.5,
+          "paid": 0.5,
+          "wellPaid": 0.5
+        },
+        "paymentRate": 72,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "Social Insurance Services"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 4.2,
+          "paid": 1.9,
+          "wellPaid": 1.9
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": true,
+        "paymentRate": 72,
+        "paymentType": "mixed",
+        "ceiling": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Social Insurance Services"
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 7,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 54,
+        "gapAfterLeaveMonths": 48
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "parental",
+          "description": "Paid parental leave increased for 2nd child (10 weeks) and 3rd child (12 weeks); age limit raised to 15 years"
+        },
+        {
+          "type": "introduction",
+          "leaveType": "other",
+          "description": "Young mother financial incentive: EUR 200/month for 24 months for first-time mothers under 30"
+        }
+      ]
+    },
+    {
+      "name": "Czech Republic",
+      "iso2": "CZ",
+      "iso3": "CZE",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 6.5,
+          "paid": 6.5,
+          "wellPaid": 6.5
+        },
+        "paymentRate": 70,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": true,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Sickness insurance scheme (employer 2.1%, employee 0.6%)"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.47,
+          "paid": 0.47,
+          "wellPaid": 0.47
+        },
+        "paymentRate": 70,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "Sickness insurance scheme"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 36,
+          "paid": 36,
+          "wellPaid": 0
+        },
+        "entitlementType": "family",
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": 36,
+        "transferable": true,
+        "paymentRate": null,
+        "paymentType": "flat-rate",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "General taxation"
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 9,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": false
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 36,
+        "gapAfterLeaveMonths": 0
+      },
+      "recentChanges": [
+        {
+          "type": "recalibration",
+          "leaveType": "parental",
+          "description": "From June 2025: parents on parental leave can work for the same employer; guarantee of return to original job if returning before child turns 2"
+        }
+      ]
+    },
+    {
+      "name": "Denmark",
+      "iso2": "DK",
+      "iso3": "DNK",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.3,
+          "paid": 3.3,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": true,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "State from general taxation (municipalities bear half of cost for first 8 weeks)"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.5,
+          "paid": 0.5,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "State from general taxation"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 6.5,
+          "paid": 6.5,
+          "wellPaid": 0
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 2.1,
+        "fatherQuotaMonths": 2.1,
+        "sharedPortionMonths": 2.3,
+        "transferable": true,
+        "paymentRate": null,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "State from general taxation"
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": null,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": false
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 6,
+        "gapAfterLeaveMonths": 0
+      },
+      "recentChanges": []
+    },
+    {
+      "name": "Estonia",
+      "iso2": "EE",
+      "iso3": "EST",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.3,
+          "paid": 3.3,
+          "wellPaid": 3.3
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "General taxation"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 1,
+          "paid": 1,
+          "wellPaid": 1
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "General taxation"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 36,
+          "paid": 15.6,
+          "wellPaid": 15.6
+        },
+        "entitlementType": "family",
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": 15.6,
+        "transferable": true,
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "General taxation"
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement but supplementary annual holiday and child leave benefit available"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 60,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 18,
+        "gapAfterLeaveMonths": 0
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "other",
+          "description": "Sick leave days for children under 12 increased from 14 to 60 days per illness episode"
+        },
+        {
+          "type": "cutback",
+          "leaveType": "parental",
+          "description": "From January 2026, upper limit for parental benefit decreases from 3x to 2x average wage"
+        }
+      ]
+    },
+    {
+      "name": "Finland",
+      "iso2": "FI",
+      "iso3": "FIN",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [
+        "Municipalities pay varying supplements to child home care allowance (25.5% of municipalities in 2024)"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 1.5,
+          "paid": 1.5,
+          "wellPaid": 1.5
+        },
+        "paymentRate": 90,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "Sickness insurance (employers 64%, employees 29%, state 8%)"
+      },
+      "paternity": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 12.4,
+          "paid": 12.4,
+          "wellPaid": 12.4
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 3.8,
+        "fatherQuotaMonths": 3.8,
+        "sharedPortionMonths": 4.9,
+        "transferable": true,
+        "paymentRate": 70,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "Sickness insurance (employers 64%, employees 29%, state 8%)"
+      },
+      "childcareLeave": {
+        "exists": true,
+        "durationMonths": null,
+        "paid": true,
+        "details": "Home-care leave until child turns 3; child home care allowance EUR 377.68/month plus supplements; can alternate with parental leave"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": null,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": false
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 9,
+        "gapAfterLeaveMonths": 0
+      },
+      "recentChanges": []
+    },
+    {
+      "name": "France",
+      "iso2": "FR",
+      "iso3": "FRA",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.7,
+          "paid": 3.7,
+          "wellPaid": 3.7
+        },
+        "paymentRate": 81,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Health insurance, financed by employee (2.35%) and employer (13.10%) contributions"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.9,
+          "paid": 0.9,
+          "wellPaid": 0.9
+        },
+        "paymentRate": 81,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Health insurance (25 days paternity); employer (3 days birth leave at 100%)"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 36,
+          "paid": 36,
+          "wellPaid": 0
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": false,
+        "paymentRate": null,
+        "paymentType": "flat-rate",
+        "ceiling": false,
+        "flexPartTime": true,
+        "flexBlocks": false,
+        "fundingSource": "Family Allowance funds (CAFs), financed by employer contributions (5.4% of gross wages)",
+        "notes": "PreParE benefit: EUR 456.06/month if not working; reduced if working part-time. For 1st child, paid 6 months per parent; for 2+ children, up to 24 months per parent (max child age 3)."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 3,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 36,
+        "gapAfterLeaveMonths": 0
+      },
+      "recentChanges": [
+        {
+          "type": "recalibration",
+          "leaveType": "parental",
+          "description": "Government announced leave reform in Jan 2024 to be implemented in 2025, but not implemented due to political changes."
+        }
+      ]
+    },
+    {
+      "name": "Germany",
+      "iso2": "DE",
+      "iso3": "DEU",
+      "region": "Europe",
+      "federal": true,
+      "subnationalVariations": [
+        "Bavaria and Saxony provide additional cash-for-care allowances (Landeserziehungsgeld/Familiengeld)"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.3,
+          "paid": 3.3,
+          "wellPaid": 3.3
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Mother's health insurance (EUR 13/day) and employer (difference to full earnings); employers contribute ~0.2% of gross pay"
+      },
+      "paternity": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "paymentRate": 0,
+        "paymentType": "unpaid",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null,
+        "notes": "No statutory paternity leave; fathers have 2 exclusive non-transferable months of parental leave (Elterngeld) which many use directly after birth."
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 36,
+          "paid": 14,
+          "wellPaid": 14
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 2,
+        "fatherQuotaMonths": 2,
+        "sharedPortionMonths": 10,
+        "transferable": false,
+        "paymentRate": 65,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "Federal government through general taxation",
+        "notes": "Basiselterngeld: 65% of net earnings, min EUR 300, max EUR 1,800/month for 12+2 partner months. ElterngeldPlus: up to 24+4 months at half rate for part-time workers. Income limit of EUR 175,000 from April 2025."
+      },
+      "childcareLeave": {
+        "exists": true,
+        "durationMonths": null,
+        "paid": true,
+        "details": "Bavaria: EUR 250/month for child aged 13-36 months (EUR 300 from 3rd child). Saxony: income-related up to EUR 150-300/month for 2nd-3rd year, if not using formal childcare."
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 15,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 12,
+        "gapAfterLeaveMonths": 0
+      },
+      "recentChanges": [
+        {
+          "type": "cutback",
+          "leaveType": "parental",
+          "description": "Income limit for parental benefit reduced to EUR 175,000 (from EUR 200,000) from April 2025. Simultaneous use of Basiselterngeld limited to 1 month within first 12 months."
+        },
+        {
+          "type": "expansion",
+          "leaveType": "maternity",
+          "description": "From June 2025, maternity leave extended to cover stillbirths from 13th week of pregnancy (previously 24th week), with graduated protection periods."
+        }
+      ]
+    },
+    {
+      "name": "Greece",
+      "iso2": "GR",
+      "iso3": "GRC",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "notes": "Greece has distinct leave systems for private and public sector employees. Private sector: shorter maternity but 9-month special maternity leave. Public sector: 5 months maternity, 5 years parental leave.",
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 12.9,
+          "paid": 12.9,
+          "wellPaid": 4.0
+        },
+        "paymentRate": 100,
+        "paymentType": "mixed",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": true,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Private: e-EFKA social insurance and DYPA (Public Employment Service). Public: general taxation.",
+        "notes": "Private sector: 17 weeks basic leave at 100% + 9 months special leave at minimum wage. Up to 7 months of special leave transferable to father. Public sector: 5 months at 100% of earnings."
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.7,
+          "paid": 0.7,
+          "wellPaid": 0.7
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "Employer (private sector); general taxation (public sector)"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 4,
+          "paid": 2,
+          "wellPaid": 0
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 4,
+        "fatherQuotaMonths": 4,
+        "sharedPortionMonths": 0,
+        "transferable": false,
+        "paymentRate": null,
+        "paymentType": "flat-rate",
+        "ceiling": false,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "Same as maternity leave",
+        "notes": "Private sector: 4 months per parent per child, 2 months paid at minimum wage. Public sector: 5 years per parent, 2 months paid at minimum wage (3 months if 3+ children)."
+      },
+      "childcareLeave": {
+        "exists": true,
+        "durationMonths": 3.6,
+        "paid": true,
+        "details": "Private: 2 hours/day reduced for 12 months then 1 hour/day for 6 months, or equivalent as continuous leave (~3.6 months). Public: 9 months continuous or reduced hours until child is 4. Family entitlement, fully paid."
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 6,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": false
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 48,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "maternity",
+          "description": "From April 2024, minimum wage increase automatically increased leave payments. Special maternity benefit extended to 9 months for self-employed mothers and farmers, and to special categories of employees."
+        }
+      ]
+    },
+    {
+      "name": "Hungary",
+      "iso2": "HU",
+      "iso3": "HUN",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 5.6,
+          "paid": 5.6,
+          "wellPaid": 5.6
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "National Health Insurance Fund (NHIF), financed by employer and employee contributions (6% each)"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.5,
+          "paid": 0.5,
+          "wellPaid": 0.2
+        },
+        "paymentRate": 100,
+        "paymentType": "mixed",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "National Treasury (first 5 days); employer (remaining 5 days at 40%)",
+        "notes": "10 working days total; first 5 days at 100% absence fee, remaining 5 at 40%."
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 36,
+          "paid": 36,
+          "wellPaid": 24
+        },
+        "entitlementType": "family",
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": 36,
+        "transferable": true,
+        "paymentRate": 70,
+        "paymentType": "mixed",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": false,
+        "fundingSource": "GYED: NHIF. GYES: Treasury from general taxation.",
+        "notes": "GYED (insured): 70% of earnings until child's 2nd birthday, max HUF 407,120/month. GYES (universal): flat-rate HUF 28,500/month until child's 3rd birthday. 44 days additional paid leave at 10% for employed parents with child under 3."
+      },
+      "childcareLeave": {
+        "exists": true,
+        "durationMonths": 60,
+        "paid": true,
+        "details": "GYET: For families with 3+ children, leave between child's 3rd and 8th birthday. Flat-rate same as GYES (HUF 28,500/month). Can work <30 hours/week."
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": null,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 36,
+        "gapAfterLeaveMonths": 12
+      },
+      "recentChanges": []
+    },
+    {
+      "name": "Iceland",
+      "iso2": "IS",
+      "iso3": "ISL",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 6,
+          "paid": 6,
+          "wellPaid": 6
+        },
+        "paymentRate": 80,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "additionalForMultiple": true,
+        "fundingSource": "Maternity/Paternity Leave Fund, financed by insurance levy paid by employers",
+        "notes": "No separate maternity leave. Part of 12-month parental leave system (6 months per parent). Mother must take 2 weeks after birth. 6 weeks transferable to other parent."
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 6,
+          "paid": 6,
+          "wellPaid": 6
+        },
+        "paymentRate": 80,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": false,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "Maternity/Paternity Leave Fund, financed by insurance levy paid by employers",
+        "notes": "No separate paternity leave. Part of 12-month parental leave system (6 months per parent). 6 weeks transferable to other parent."
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 12,
+          "paid": 12,
+          "wellPaid": 12
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 4.6,
+        "fatherQuotaMonths": 4.6,
+        "sharedPortionMonths": 2.8,
+        "transferable": true,
+        "paymentRate": 80,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "Maternity/Paternity Leave Fund, financed by insurance levy paid by employers",
+        "notes": "6 months per parent (individual entitlement), 6 weeks transferable to other parent. Can be used until 24 months after birth. ISK 800,000 ceiling/month."
+      },
+      "childcareLeave": {
+        "exists": true,
+        "durationMonths": 4,
+        "paid": false,
+        "details": "Each parent may take 4 months of non-transferable unpaid leave until child is 8 years old."
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": false,
+          "daysPerYear": null,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": null,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "parental",
+          "description": "Government agreed to raise ceiling on leave payments to ISK 900,000 in 2027. Proposed: increase shared extension for multiple births from 3 to 6 months, and extend leave by 2 months for mothers with serious illness during pregnancy."
+        }
+      ]
+    },
+    {
+      "name": "Ireland",
+      "iso2": "IE",
+      "iso3": "IRL",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 9.8,
+          "paid": 6.0,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": "flat-rate",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "Social Insurance Fund (SIF), financed by employee (4%) and employer (11.05%) PRSI contributions",
+        "notes": "26 weeks paid at flat-rate EUR 289/week + 16 weeks unpaid. Public sector workers get full pay top-up."
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.5,
+          "paid": 0.5,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": "flat-rate",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "Social Insurance Fund",
+        "notes": "2 weeks at EUR 289/week. About 55% of fathers have access to employer top-ups."
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 6.0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 6.0,
+        "fatherQuotaMonths": 6.0,
+        "sharedPortionMonths": 0,
+        "transferable": false,
+        "paymentRate": 0,
+        "paymentType": "unpaid",
+        "ceiling": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": null,
+        "notes": "26 weeks per parent, unpaid. Can be taken until child is 12. Minimum period of 6 continuous weeks. Additionally, Parent's leave: 9 weeks per parent at EUR 289/week, within first 2 years."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 3,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": true
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": 32,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "other",
+          "description": "Parent's leave extended to 9 weeks per parent (August 2024), from 5 weeks, to comply with EU Work-Life Balance Directive."
+        },
+        {
+          "type": "expansion",
+          "leaveType": "maternity",
+          "description": "Benefit rate increased from EUR 274 to EUR 289/week from January 2025. Maternity leave can now be postponed for serious health conditions (November 2024)."
+        }
+      ]
+    },
+    {
+      "name": "Israel",
+      "iso2": "IL",
+      "iso3": "ISR",
+      "region": "Asia",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 6.0,
+          "paid": 3.5,
+          "wellPaid": 3.5
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": true,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "National Insurance Institute, financed by employer (3.45%), employee (0.4%), and state contributions",
+        "notes": "26 weeks total: 15 weeks paid at 100% (ceiling at 5x average salary), 11 weeks unpaid. First 6 weeks after birth cannot be transferred."
+      },
+      "paternity": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "paymentRate": 0,
+        "paymentType": "unpaid",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null,
+        "notes": "No statutory paternity leave. Fathers entitled to 6 calendar days around birth (mix of sick leave and annual leave deductions)."
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 12,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 12,
+        "fatherQuotaMonths": 12,
+        "sharedPortionMonths": 0,
+        "transferable": false,
+        "paymentRate": 0,
+        "paymentType": "unpaid",
+        "ceiling": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": null,
+        "notes": "1 year per parent, unpaid. Duration limited to quarter of employment tenure with current employer. Parents cannot take leave simultaneously."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 8,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": false
+        },
+        "flexibleWork": {
+          "rightToRequest": false
+        },
+        "domesticViolenceLeave": {
+          "exists": true
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": null,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": []
+    },
+    {
+      "name": "Italy",
+      "iso2": "IT",
+      "iso3": "ITA",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 5.0,
+          "paid": 5.0,
+          "wellPaid": 5.0
+        },
+        "paymentRate": 80,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "INPS (National Institute for Social Security), financed by employer and employee contributions (manufacturing: 0.46% employer, 0.28% employee)",
+        "notes": "5 months obligatory. Public sector and most collective agreements top up to 100%."
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.5,
+          "paid": 0.5,
+          "wellPaid": 0.5
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "INPS",
+        "notes": "10 working days, obligatory. Can be taken as separate days from 2 months before to 5 months after birth. Extended to 20 days for multiple births."
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 10,
+          "paid": 9,
+          "wellPaid": 1.4
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 3,
+        "fatherQuotaMonths": 3,
+        "sharedPortionMonths": 5,
+        "transferable": false,
+        "paymentRate": 30,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "INPS",
+        "notes": "10 months per family (11 if father takes 3+ months). Each parent: 3 months non-transferable at 80%, 6 months at 30%, remaining unpaid. Can be used until child is 12."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": null,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": true
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": null,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "parental",
+          "description": "2025 budget law increased parental leave payment rates. Working mothers' bonus extended to temporary and self-employed workers. EUR 1,000 bonus per child born/adopted from Jan 2025 for families with ISEE under EUR 40,000."
+        }
+      ]
+    },
+    {
+      "name": "Japan",
+      "iso2": "JP",
+      "iso3": "JPN",
+      "region": "Asia",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.3,
+          "paid": 3.3,
+          "wellPaid": 3.3
+        },
+        "paymentRate": 67,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Employees' Health Insurance system, financed by equal contributions from employees and employers"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.9,
+          "paid": 0.9,
+          "wellPaid": 0.9
+        },
+        "paymentRate": 67,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Employment insurance (Parental leave section): 0.2% of wages each from employers and employees, plus state subsidy",
+        "notes": "4 weeks (28 calendar days) within first 8 weeks after birth. Can be split into 2 periods. Additional Postnatal Leave Support Benefit of 13% brings effective rate to ~80% (effectively 100% net with tax/contribution exemptions)."
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 12,
+          "paid": 12,
+          "wellPaid": 6
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 12,
+        "fatherQuotaMonths": 12,
+        "sharedPortionMonths": 0,
+        "transferable": false,
+        "paymentRate": 67,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Employment insurance system",
+        "notes": "Each parent: until child is 12 months (14 months if both parents take leave). 67% for first 180 days, then 50%. Can extend to 24 months if childcare unavailable. Postnatal Leave Support Benefit adds 13% for qualifying parents."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement. Public sector employees can take leave until child is 36 months under separate legislation."
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 5,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": null,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": [
+        {
+          "type": "introduction",
+          "leaveType": "parental",
+          "description": "Postnatal Leave Support Benefit introduced from April 2025, bringing effective income replacement to ~100% net for up to 4 weeks per parent when both parents take leave."
+        },
+        {
+          "type": "expansion",
+          "leaveType": "other",
+          "description": "Employers obliged to offer flexible working measures for parents of children 3-6 years. Overtime exemption expanded to parents of preschool children. Telework added as employer obligation for parents of children under 3."
+        }
+      ]
+    },
+    {
+      "name": "Korea",
+      "iso2": "KR",
+      "iso3": "KOR",
+      "region": "Asia",
+      "federal": false,
+      "subnationalVariations": [
+        "Seoul Metropolitan Government provides additional maternity and paternity benefits for ineligible workers"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 2.1,
+          "paid": 2.1,
+          "wellPaid": 2.1
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Employer (first 60 days) and Employment Insurance Fund (last 30 days, ceiling KRW 2,100,000/month). For SMEs, EIF covers all.",
+        "notes": "90 calendar days (120 for multiple births). Employer pays first 60 days, EIF pays last 30 days with ceiling."
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.9,
+          "paid": 0.9,
+          "wellPaid": 0.9
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Employer; Employment Insurance Fund for SMEs (20 days, ceiling KRW 1,607,650)",
+        "notes": "20 working days. Can be split into 4 periods within 120 days of birth. Increased from 10 to 20 days in 2025."
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 12,
+          "paid": 12,
+          "wellPaid": 12
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 12,
+        "fatherQuotaMonths": 12,
+        "sharedPortionMonths": 0,
+        "transferable": false,
+        "paymentRate": 80,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "Employment Insurance Fund",
+        "notes": "1 year per parent + 6 bonus months if both take 3+ months. Months 1-3: 100% (ceiling KRW 2,500,000). Months 4-6: 100% (ceiling KRW 2,000,000). Months 7+: 80% (ceiling KRW 1,600,000). 6+6 scheme boosts ceiling to KRW 4,500,000 if both parents take leave for child under 18 months. Single parents get higher ceilings."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": false,
+          "daysPerYear": null,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": null,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "paternity",
+          "description": "Paternity leave doubled from 10 to 20 days, all fully paid (2025)."
+        },
+        {
+          "type": "expansion",
+          "leaveType": "parental",
+          "description": "Parental leave payment significantly increased with higher ceilings. Bonus leave of 6 months added when both parents take 3+ months. Enhanced benefits for single parents and parents of children with severe disabilities."
+        }
+      ]
+    },
+    {
+      "name": "Kosovo",
+      "iso2": "XK",
+      "iso3": "XKX",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 12,
+          "paid": 9,
+          "wellPaid": 6
+        },
+        "paymentRate": 70,
+        "paymentType": "mixed",
+        "ceiling": false,
+        "obligatory": false,
+        "transferable": true,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "Employer (first 6 months at 70%); government from general taxation (months 7-9 at 50% average national wage); last 3 months unpaid",
+        "notes": "Employed: 12 months (6 months 70% employer-paid, 3 months government-paid, 3 months unpaid). Unemployed: 6 months at minimum wage. After 6 months, remaining leave transferable to father."
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.6,
+          "paid": 0.1,
+          "wellPaid": 0.1
+        },
+        "paymentRate": 100,
+        "paymentType": "mixed",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Employer",
+        "notes": "12 working days: 2 days paid at 100% at time of birth, remaining 10 days unpaid within 6 months."
+      },
+      "parental": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": null,
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": false,
+        "paymentRate": 0,
+        "paymentType": "unpaid",
+        "ceiling": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": false,
+          "daysPerYear": null,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": false
+        },
+        "flexibleWork": {
+          "rightToRequest": false
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": 60,
+        "gapAfterLeaveMonths": 54
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "maternity",
+          "description": "Maternity allowance for unemployed women and top-ups for employed women increased to EUR 319.5/month (from EUR 170) following minimum wage rise in June 2025."
+        },
+        {
+          "type": "expansion",
+          "leaveType": "other",
+          "description": "One-year preparatory pre-school programme became mandatory from 2024/25 school year."
+        }
+      ]
+    },
+    {
+      "name": "Latvia",
+      "iso2": "LV",
+      "iso3": "LVA",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.7,
+          "paid": 3.7,
+          "wellPaid": 0
+        },
+        "paymentRate": 80,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Social insurance, financed by employee (9.25%) and employer (20.77%) contributions",
+        "notes": "112 calendar days (56 before, 56 after birth). 80% of average insured salary. 14 extra days if early medical supervision or complications."
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.5,
+          "paid": 0.5,
+          "wellPaid": 0
+        },
+        "paymentRate": 80,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Social insurance"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 18,
+          "paid": 17,
+          "wellPaid": 1.9
+        },
+        "entitlementType": "mixed",
+        "motherQuotaMonths": 2,
+        "fatherQuotaMonths": 2,
+        "sharedPortionMonths": 13,
+        "transferable": true,
+        "paymentRate": 43.75,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Social insurance",
+        "notes": "18 months per parent (individual), but only one can receive benefit for max 17 months. Two options: 19 months at 43.75% or 13 months at 60%. 2 non-transferable months per parent. In 2025, benefit reduced to 75% of normal amount. Child care allowance also available (EUR 171/month until 18 months, EUR 42.69 until 24 months)."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement beyond parental leave"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": null,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 18,
+        "gapAfterLeaveMonths": 0
+      },
+      "recentChanges": [
+        {
+          "type": "cutback",
+          "leaveType": "parental",
+          "description": "From January to December 2025, parental benefit reduced to 75% of normal granted amount for working parents who continue employment during leave."
+        }
+      ]
+    },
+    {
+      "name": "Lithuania",
+      "iso2": "LT",
+      "iso3": "LTU",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 4.2,
+          "paid": 4.2,
+          "wellPaid": 4.2
+        },
+        "paymentRate": 77.58,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Social Insurance Fund (SODRA), financed by employer and employee contributions"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 1.0,
+          "paid": 1.0,
+          "wellPaid": 1.0
+        },
+        "paymentRate": 77.58,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "Social Insurance Fund (SODRA)"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 36,
+          "paid": 24,
+          "wellPaid": 12
+        },
+        "entitlementType": "mixed",
+        "motherQuotaMonths": 2,
+        "fatherQuotaMonths": 2,
+        "sharedPortionMonths": 32,
+        "transferable": true,
+        "paymentRate": 77.34,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Social Insurance Fund (SODRA)",
+        "notes": "Until child is 3. Option A: 77.34% of net earnings until 18 months, then unpaid. Option B: 58% until 12 months, then 38.67% until 24 months, then unpaid. 2 non-transferable months per parent at 100% net earnings. Grandparents eligible."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": false,
+          "daysPerYear": null,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": null,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "other",
+          "description": "From January 2025, one-off birth payment increased to EUR 770 (from EUR 605); child allowance increased to EUR 122.50; increased allowances for large families, poor families, and families with disabled children."
+        }
+      ]
+    },
+    {
+      "name": "Luxembourg",
+      "iso2": "LU",
+      "iso3": "LUX",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 4.7,
+          "paid": 4.7,
+          "wellPaid": 4.7
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "National Health Fund (private sector); employer (public sector). Funding: employers 30%, employees 30%, state 40%."
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.5,
+          "paid": 0.5,
+          "wellPaid": 0.5
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Employer (first 2 days); state reimburses employer from 3rd day onwards (ceiling 5x minimum social wage)",
+        "notes": "10 working days per child. Can be split within 2 months of birth."
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 6,
+          "paid": 6,
+          "wellPaid": 6
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 6,
+        "fatherQuotaMonths": 6,
+        "sharedPortionMonths": 0,
+        "transferable": false,
+        "paymentRate": null,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "General taxation via Zukunftskeess/Caisse pour l'Avenir des enfants",
+        "notes": "4-20 months per parent depending on working hours and leave option chosen. Full-time workers: 4 or 6 months full-time, 8 or 12 months part-time, or fractioned. Benefit: EUR 2,637.79-4,396.32/month based on income and hours."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 12,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 12,
+        "gapAfterLeaveMonths": 0
+      },
+      "recentChanges": [
+        {
+          "type": "recalibration",
+          "leaveType": "other",
+          "description": "Minimum social wage increased, affecting minimum and maximum benefit levels."
+        }
+      ]
+    },
+    {
+      "name": "Malta",
+      "iso2": "MT",
+      "iso3": "MLT",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "notes": "Significant differences between public administration and private sector leave provisions.",
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 4.2,
+          "paid": 3.7,
+          "wellPaid": 3.3
+        },
+        "paymentRate": 100,
+        "paymentType": "mixed",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "Employer for 14 weeks (refunded from Maternity Leave Trust Fund in private sector); government for final 4 weeks at minimum wage",
+        "notes": "18 weeks total: 14 weeks at 100% earnings, 4 weeks at statutory minimum wage (EUR 213.54/week). 6 weeks obligatory after birth."
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.5,
+          "paid": 0.5,
+          "wellPaid": 0.5
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "Government (public sector); employer refunded by State Trust Fund (private sector)",
+        "notes": "10 working days. Must be taken in one continuous period within 15 days of birth."
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 12,
+          "paid": 2,
+          "wellPaid": 0
+        },
+        "entitlementType": "family",
+        "motherQuotaMonths": 2,
+        "fatherQuotaMonths": 2,
+        "sharedPortionMonths": 8,
+        "transferable": true,
+        "paymentRate": 50,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "Government (public sector); employer refunded by State (private sector)",
+        "notes": "Public sector: 12 months family entitlement, 2 months paid (sickness benefit rate). Private sector: 4 months per parent, first 2 months non-transferable and paid at 50% (children under 4) or 25% (children 4-8). Cannot take leave simultaneously."
+      },
+      "childcareLeave": {
+        "exists": true,
+        "durationMonths": 60,
+        "paid": false,
+        "details": "Public sector only: 5-year career break until child is 10. Unpaid but pension credits awarded for first 3 children under 6."
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": false,
+          "daysPerYear": null,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 3,
+        "gapAfterLeaveMonths": 0
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "paternity",
+          "description": "Paternity leave extended from 5 days (public) / 1 day (private) to 10 working days, paid at 100%."
+        },
+        {
+          "type": "recalibration",
+          "leaveType": "other",
+          "description": "Government launched consultation on miscarriage leave scheme in April 2025."
+        }
+      ]
+    },
+    {
+      "name": "Mexico",
+      "iso2": "MX",
+      "iso3": "MEX",
+      "region": "North America",
+      "federal": true,
+      "subnationalVariations": [
+        "Ciudad de Mexico: up to 7.5 months maternity for public sector",
+        "Yucatan: 4 months maternity for public sector",
+        "Nuevo Leon: 60 days paternity for public sector",
+        "Multiple states extend paternity leave for public employees (10-90 days)"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 2.8,
+          "paid": 2.8,
+          "wellPaid": 2.8
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "Social security fund: employer (~20%), employee (5%), federal government (~75%)",
+        "notes": "12 weeks. Only for women in formal economy (~40% of employed women). Over 60% of employed women have no access due to informal economy."
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.2,
+          "paid": 0.2,
+          "wellPaid": 0.2
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "Employer",
+        "notes": "5 working days. Only for fathers in formal economy (~50% of male employees excluded)."
+      },
+      "parental": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": null,
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": false,
+        "paymentRate": 0,
+        "paymentType": "unpaid",
+        "ceiling": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 25,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": false
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 0,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": [
+        {
+          "type": "recalibration",
+          "leaveType": "other",
+          "description": "~8 proposals in Congress to extend maternity (14-20 weeks) and paternity (10 days to 8 weeks) leave, none yet approved. Progress continues at state level for public sector employees."
+        }
+      ]
+    },
+    {
+      "name": "Netherlands",
+      "iso2": "NL",
+      "iso3": "NLD",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.7,
+          "paid": 3.7,
+          "wellPaid": 3.7
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "additionalForMultiple": true,
+        "fundingSource": "Employee Insurance Agency, financed by employer contributions (2.6-7.64% of earnings)",
+        "notes": "16 weeks (20 for multiple births). Ceiling at 70% of daily maximum wage (EUR 290.67/day in 2025). After 6 weeks post-birth, remaining leave can be used flexibly over 30 weeks."
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 1.4,
+          "paid": 1.4,
+          "wellPaid": 0.2
+        },
+        "paymentRate": 100,
+        "paymentType": "mixed",
+        "ceiling": true,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Employer (1st week at 100%); Employee Insurance Agency (supplemental 5 weeks at 70% of daily maximum wage)",
+        "notes": "1 week at 100% (no ceiling) + 5 weeks supplemental at 70% of daily max wage. 79% of employers top up supplemental leave."
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 6.0,
+          "paid": 2.1,
+          "wellPaid": 0
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 6.0,
+        "fatherQuotaMonths": 6.0,
+        "sharedPortionMonths": 0,
+        "transferable": false,
+        "paymentRate": 70,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "Employee Insurance Agency",
+        "notes": "26 weeks per parent. First 9 weeks paid at 70% of daily max wage if taken in child's first year. Remaining 17 weeks unpaid (unless topped up by collective agreement). Can be used until child is 8."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": null,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": 48,
+        "gapAfterLeaveMonths": 40
+      },
+      "recentChanges": []
+    },
+    {
+      "name": "New Zealand",
+      "iso2": "NZ",
+      "iso3": "NZL",
+      "region": "Oceania",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 6.0,
+          "paid": 6.0,
+          "wellPaid": 0
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": false,
+        "transferable": true,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "General taxation",
+        "notes": "Called 'Primary carer leave'. 26 weeks paid at 100% of earnings with low ceiling (NZD 754.87/week, below minimum wage). Transferable to partner/spouse. Keeping-in-touch days available (64 hours from 28 days after birth)."
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.5,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "paymentRate": 0,
+        "paymentType": "unpaid",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null,
+        "notes": "Called 'Partner's leave'. 1-2 weeks unpaid depending on length of service. Can be taken 21 days before to 21 days after birth."
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 12,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": "family",
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": 12,
+        "transferable": true,
+        "paymentRate": 0,
+        "paymentType": "unpaid",
+        "ceiling": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": null,
+        "notes": "Called 'Extended leave'. 6 or 12 months after birth (depending on service length), including primary carer leave. Family entitlement, shareable. Can be taken in blocks or consecutively."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 10,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": true
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": 36,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": [
+        {
+          "type": "introduction",
+          "leaveType": "other",
+          "description": "From July 2024, parents can get back up to 25% of weekly ECEC fees (Family Boost scheme), max NZD 975 per quarter."
+        }
+      ]
+    },
+    {
+      "name": "Norway",
+      "iso2": "NO",
+      "iso3": "NOR",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": null,
+        "obligatory": null,
+        "transferable": null,
+        "flexPartTime": null,
+        "flexBlocks": null,
+        "additionalForMultiple": null,
+        "fundingSource": "No separate maternity leave; mother's quota is part of parental leave (see parental)"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.5,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "paymentRate": 0,
+        "paymentType": "unpaid",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Depends on individual or collective agreements; most fathers covered"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 14.2,
+          "paid": 14.2,
+          "wellPaid": 14.2
+        },
+        "entitlementType": "mixed",
+        "motherQuotaMonths": 3.5,
+        "fatherQuotaMonths": 3.5,
+        "sharedPortionMonths": 3.7,
+        "transferable": false,
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "General taxation via National Insurance Scheme"
+      },
+      "childcareLeave": {
+        "exists": true,
+        "durationMonths": 12,
+        "paid": false,
+        "details": "Each parent has right to 1 year unpaid leave after parental money period. Cash-for-care benefit for children 13-19 months (NOK7,500/month) if not using public ECEC."
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 10,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 12,
+        "gapAfterLeaveMonths": 0
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "parental",
+          "description": "From July 2024, parental benefit at 80% extended from 295 to 306 days to equalize total payment with 100% option."
+        },
+        {
+          "type": "expansion",
+          "leaveType": "parental",
+          "description": "From August 2024, fathers'/co-mothers' independent right to parental benefit extended by 2 weeks (total 10 weeks)."
+        },
+        {
+          "type": "cutback",
+          "leaveType": "other",
+          "description": "From August 2024, cash-for-care benefit reduced to max 7 months (until child turns 19 months, down from 24 months)."
+        }
+      ]
+    },
+    {
+      "name": "Poland",
+      "iso2": "PL",
+      "iso3": "POL",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 4.7,
+          "paid": 4.7,
+          "wellPaid": 4.7
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": true,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Social Insurance Fund financed by employee contributions (2.45% of earnings)"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.5,
+          "paid": 0.5,
+          "wellPaid": 0.5
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Social Insurance Institution"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 9.5,
+          "paid": 9.5,
+          "wellPaid": 9.5
+        },
+        "entitlementType": "mixed",
+        "motherQuotaMonths": 2.1,
+        "fatherQuotaMonths": 2.1,
+        "sharedPortionMonths": 5.3,
+        "transferable": false,
+        "paymentRate": 70,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "Social Insurance Fund"
+      },
+      "childcareLeave": {
+        "exists": true,
+        "durationMonths": 36,
+        "paid": true,
+        "details": "Up to 36 months until child turns 6. Means-tested parental allowance of PLN400/month for 24 months. 1 month non-transferable per parent."
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 60,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 36,
+        "gapAfterLeaveMonths": 0
+      },
+      "recentChanges": [
+        {
+          "type": "introduction",
+          "leaveType": "maternity",
+          "description": "December 2024: Parliament approved supplementary maternity leave for parents of premature born children, effective March 2025."
+        }
+      ]
+    },
+    {
+      "name": "Portugal",
+      "iso2": "PT",
+      "iso3": "PRT",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [
+        "Madeira and Azores: 2% increase in parental leave benefits"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 4.2,
+          "paid": 4.2,
+          "wellPaid": 4.2
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": true,
+        "flexPartTime": true,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Social security system financed by employer (23.75%) and employee (11%) contributions"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 1.2,
+          "paid": 1.2,
+          "wellPaid": 1.2
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Social security system"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 6,
+          "paid": 6,
+          "wellPaid": 0
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 3,
+        "fatherQuotaMonths": 3,
+        "sharedPortionMonths": 0,
+        "transferable": false,
+        "paymentRate": 30,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "Social security system"
+      },
+      "childcareLeave": {
+        "exists": true,
+        "durationMonths": 24,
+        "paid": false,
+        "details": "After Additional Parental leave, one parent may take up to 2 years (3 years for 3rd+ child) of unpaid childcare leave. Suspension of work contract."
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 30,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 48,
+        "gapAfterLeaveMonths": 12
+      },
+      "recentChanges": []
+    },
+    {
+      "name": "Romania",
+      "iso2": "RO",
+      "iso3": "ROU",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [
+        "Bucharest: birth grants of RON2,500; vouchers for pregnant women of RON2,000"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 4.2,
+          "paid": 4.2,
+          "wellPaid": 4.2
+        },
+        "paymentRate": 85,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "National Budget for Social Health Insurance financed by employer and employee contributions"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.5,
+          "paid": 0.5,
+          "wellPaid": 0.5
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "National Budget for Social Health Insurance"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 24,
+          "paid": 24,
+          "wellPaid": 24
+        },
+        "entitlementType": "family",
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": 2,
+        "sharedPortionMonths": 22,
+        "transferable": true,
+        "paymentRate": 85,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Local authority budgets"
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 45,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 24,
+        "gapAfterLeaveMonths": 0
+      },
+      "recentChanges": [
+        {
+          "type": "cutback",
+          "leaveType": "other",
+          "description": "EGO 156/2024: Freezing of social benefits due to fiscal austerity; Social Reference Indicator remains at RON660 in 2025."
+        }
+      ]
+    },
+    {
+      "name": "Russian Federation",
+      "iso2": "RU",
+      "iso3": "RUS",
+      "region": "Europe",
+      "federal": true,
+      "subnationalVariations": [
+        "Regional coefficients (1.1-2x) for minimum maternity benefit",
+        "Regional maternal capital programs",
+        "41 regions with below-average birth rates receive federal demographic subsidies"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 4.7,
+          "paid": 4.7,
+          "wellPaid": 4.7
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": false,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Social Fund of Russia financed by employer contributions (22% of wages)"
+      },
+      "paternity": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": null,
+        "obligatory": null,
+        "flexPartTime": null,
+        "flexBlocks": null,
+        "fundingSource": "No statutory entitlement. Father can take 5 days unpaid leave at birth."
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 36,
+          "paid": 18,
+          "wellPaid": 0
+        },
+        "entitlementType": "family",
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": 36,
+        "transferable": true,
+        "paymentRate": 40,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "Social Fund of Russia; federal budget for uninsured persons"
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 60,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 2,
+        "gapAfterLeaveMonths": 0
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "other",
+          "description": "2025: Maternity Capital programme extended to 2030 with new spending options. Family Mortgage Program extended to 2030."
+        },
+        {
+          "type": "expansion",
+          "leaveType": "other",
+          "description": "2025: 41 regions with below-average fertility receive federal subsidies including RUB100,000 for pregnant students."
+        }
+      ]
+    },
+    {
+      "name": "Serbia",
+      "iso2": "RS",
+      "iso3": "SRB",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 12.2,
+          "paid": 12.2,
+          "wellPaid": 12.2
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": true,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "General taxation"
+      },
+      "paternity": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": null,
+        "obligatory": null,
+        "flexPartTime": null,
+        "flexBlocks": null,
+        "fundingSource": null
+      },
+      "parental": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": null,
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": null,
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": null,
+        "flexPartTime": null,
+        "flexBlocks": null,
+        "fundingSource": null
+      },
+      "childcareLeave": {
+        "exists": true,
+        "durationMonths": 36,
+        "paid": false,
+        "details": "One parent can take unpaid leave until child turns 3. Rights and obligations suspended. Also: leave for special care of disabled child until age 5 (paid)."
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 15,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": false
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": 66,
+        "gapAfterLeaveMonths": 54
+      },
+      "recentChanges": []
+    },
+    {
+      "name": "Slovak Republic",
+      "iso2": "SK",
+      "iso3": "SVK",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 7.9,
+          "paid": 7.9,
+          "wellPaid": 7.9
+        },
+        "paymentRate": 75,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Social Insurance Agency financed by sickness insurance contributions (1.4% employee, 1.4% employer)"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 6.5,
+          "paid": 0.5,
+          "wellPaid": 0.5
+        },
+        "paymentRate": 75,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "Social Insurance Agency"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 36,
+          "paid": 36,
+          "wellPaid": 0
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": false,
+        "paymentRate": null,
+        "paymentType": "flat-rate",
+        "ceiling": false,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "General taxation. Flat-rate parental allowance of EUR482/month (EUR352 for those without prior maternity benefit)."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": null,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 36,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "maternity",
+          "description": "January 2025: Maternity benefit cap increased from EUR1,994 to EUR2,186 in line with wage growth."
+        },
+        {
+          "type": "expansion",
+          "leaveType": "parental",
+          "description": "January 2025: Parental allowance increased to EUR482 (from EUR473) for those with prior maternity benefit, EUR352 (from EUR345) for others."
+        }
+      ]
+    },
+    {
+      "name": "Slovenia",
+      "iso2": "SI",
+      "iso3": "SVN",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.5,
+          "paid": 3.5,
+          "wellPaid": 3.5
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": true,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "Parental Protection Insurance (0.1% employee + 0.1% employer contributions) plus >90% from central government budget"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.5,
+          "paid": 0.5,
+          "wellPaid": 0.5
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": false,
+        "flexPartTime": true,
+        "flexBlocks": false,
+        "fundingSource": "Parental Protection Insurance and central government budget"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 10.5,
+          "paid": 10.5,
+          "wellPaid": 10.5
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 1.4,
+        "fatherQuotaMonths": 1.4,
+        "sharedPortionMonths": 7.7,
+        "transferable": true,
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "Parental Protection Insurance and central government budget"
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 10,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 12,
+        "gapAfterLeaveMonths": 0
+      },
+      "recentChanges": []
+    },
+    {
+      "name": "South Africa",
+      "iso2": "ZA",
+      "iso3": "ZAF",
+      "region": "Africa",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 4,
+          "paid": 4,
+          "wellPaid": 0
+        },
+        "paymentRate": 66,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "Unemployment Insurance Fund (UIF) financed by 1% employee + 1% employer contributions. Statutory leave itself is unpaid; UIF benefits claimable."
+      },
+      "paternity": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": null,
+        "obligatory": null,
+        "flexPartTime": null,
+        "flexBlocks": null,
+        "fundingSource": null
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.3,
+          "paid": 0.3,
+          "wellPaid": 0
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": false,
+        "paymentRate": 66,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "Unemployment Insurance Fund. Statutory leave unpaid; UIF benefits claimable."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 3,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": false
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": null,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": []
+    },
+    {
+      "name": "Spain",
+      "iso2": "ES",
+      "iso3": "ESP",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [
+        "Several regional governments improve entitlements for public sector employees",
+        "Basque Country, La Rioja, Navarre, Castilla-Leon offer flat-rate payments for Parental leave 2"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.7,
+          "paid": 3.7,
+          "wellPaid": 3.7
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "additionalForMultiple": true,
+        "fundingSource": "Social insurance contributions: employers 23.6% + employees 4.7% of gross earnings"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.7,
+          "paid": 3.7,
+          "wellPaid": 3.7
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "Social insurance contributions"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 37.9,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": false,
+        "paymentRate": 0,
+        "paymentType": "unpaid",
+        "ceiling": false,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "Unpaid. Social security contributions credited during leave. Two schemes: Parental leave 1 (8 weeks, unpaid) + Parental leave 2 (until child is 3, unpaid)."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "Unpaid career breaks exist but with limited job protection"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 5,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 36,
+        "gapAfterLeaveMonths": 0
+      },
+      "recentChanges": [
+        {
+          "type": "recalibration",
+          "leaveType": "maternity",
+          "description": "2024: Constitutional Court ruled that lone mothers must receive both parents' optional Birth and Childcare leave (26 weeks total)."
+        }
+      ]
+    },
+    {
+      "name": "Sweden",
+      "iso2": "SE",
+      "iso3": "SWE",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.5,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "paymentRate": 0,
+        "paymentType": "unpaid",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "No separate maternity payment; parents can use parental leave benefit during this period"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.3,
+          "paid": 0.3,
+          "wellPaid": 0.3
+        },
+        "paymentRate": 77.6,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "Swedish Social Insurance Agency financed by employer statutory contributions (2.6% of all employees' salary for parental insurance)"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 16,
+          "paid": 16,
+          "wellPaid": 13
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": 3,
+        "fatherQuotaMonths": 3,
+        "sharedPortionMonths": 10,
+        "transferable": true,
+        "paymentRate": 77.6,
+        "paymentType": "mixed",
+        "ceiling": true,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "Swedish Social Insurance Agency. 195 days at 77.6% earnings (up to SEK588,000/year) + 45 days flat-rate SEK180/day per parent."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 120,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": false
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 12,
+        "gapAfterLeaveMonths": 0
+      },
+      "recentChanges": [
+        {
+          "type": "recalibration",
+          "leaveType": "parental",
+          "description": "From July 2024: Up to 60 'double days' can be used by both parents together during child's first 15 months. Up to 45 days transferable to someone else (e.g. grandparents)."
+        }
+      ]
+    },
+    {
+      "name": "Switzerland",
+      "iso2": "CH",
+      "iso3": "CHE",
+      "region": "Europe",
+      "federal": true,
+      "subnationalVariations": [
+        "Canton of Geneva: 16 weeks maternity leave at 80% earnings",
+        "Various cantons supplement basic maternity/paternity provisions for public employees"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.3,
+          "paid": 3.3,
+          "wellPaid": 3.3
+        },
+        "paymentRate": 80,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "Loss of Earnings Compensation fund financed by equal contributions (0.25% each) from employees and employers"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.5,
+          "paid": 0.5,
+          "wellPaid": 0.5
+        },
+        "paymentRate": 80,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Loss of Earnings Compensation fund"
+      },
+      "parental": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": null,
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": null,
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": null,
+        "flexPartTime": null,
+        "flexBlocks": null,
+        "fundingSource": "No statutory entitlement. Popular initiative for parental leave launched in April 2025."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement. Parenting credits for old-age pension."
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 10,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": false
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": 48,
+        "gapAfterLeaveMonths": 42
+      },
+      "recentChanges": [
+        {
+          "type": "recalibration",
+          "leaveType": "other",
+          "description": "April 2025: Popular initiative for a national parental leave launched (36 weeks total, 18 per parent). Requires 100,000 signatures within 18 months."
+        }
+      ]
+    },
+    {
+      "name": "Turkiye",
+      "iso2": "TR",
+      "iso3": "TUR",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.7,
+          "paid": 3.7,
+          "wellPaid": 3.7
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": true,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Maternity insurance fund financed by employee social security contributions"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.2,
+          "paid": 0.2,
+          "wellPaid": 0.2
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "Employer"
+      },
+      "parental": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": null,
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": null,
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": null,
+        "flexPartTime": null,
+        "flexBlocks": null,
+        "fundingSource": "No statutory entitlement. Part-time work provisions exist after maternity leave."
+      },
+      "childcareLeave": {
+        "exists": true,
+        "durationMonths": 6,
+        "paid": false,
+        "details": "Mothers can take 6 months unpaid leave after paid maternity leave. Civil servants can take up to 24 months unpaid."
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": false,
+          "daysPerYear": null,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": 36,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": []
+    },
+    {
+      "name": "United Kingdom",
+      "iso2": "GB",
+      "iso3": "GBR",
+      "region": "Europe",
+      "federal": false,
+      "subnationalVariations": [
+        "ECEC policies devolved: England, Scotland, Wales, Northern Ireland have distinct systems"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 12.1,
+          "paid": 9.1,
+          "wellPaid": 1.4
+        },
+        "paymentRate": 90,
+        "paymentType": "mixed",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": true,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "Employers pay and reclaim 92% (108.5% for small businesses) from central government via National Insurance reductions"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.5,
+          "paid": 0.5,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": "flat-rate",
+        "ceiling": true,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Employers, reclaimed from central government. Flat-rate GBP187.18/week or 90% of earnings (whichever lower)."
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 4.2,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": false,
+        "paymentRate": 0,
+        "paymentType": "unpaid",
+        "ceiling": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Unpaid. 18 weeks per parent per child, max 4 weeks per year."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": null,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": false
+        },
+        "flexibleWork": {
+          "rightToRequest": true
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": true
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 36,
+        "gapAfterLeaveMonths": 24
+      },
+      "recentChanges": [
+        {
+          "type": "introduction",
+          "leaveType": "other",
+          "description": "April 2025: Neonatal Care Leave introduced - up to 12 weeks paid leave for parents of babies in neonatal care."
+        },
+        {
+          "type": "recalibration",
+          "leaveType": "paternity",
+          "description": "Employment Rights Bill underway: Paternity leave and Parental leave to become 'day one' rights (removing qualifying periods)."
+        }
+      ]
+    },
+    {
+      "name": "United States",
+      "iso2": "US",
+      "iso3": "USA",
+      "region": "North America",
+      "federal": true,
+      "subnationalVariations": [
+        "Hawaii: 26 weeks TDI for pregnancy disability at 58% earnings",
+        "Puerto Rico: 8 weeks maternity at 100%",
+        "13 states + DC have paid family leave insurance programs (CA, CO, CT, DE, MA, MD, MN, NJ, NY, OR, RI, WA, ME)",
+        "9 states have voluntary family leave systems"
+      ],
+      "maternity": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": null,
+        "obligatory": null,
+        "transferable": null,
+        "flexPartTime": null,
+        "flexBlocks": null,
+        "additionalForMultiple": null,
+        "fundingSource": "No federal statutory entitlement to paid maternity leave. Some states have programs."
+      },
+      "paternity": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": null,
+        "obligatory": null,
+        "flexPartTime": null,
+        "flexBlocks": null,
+        "fundingSource": "No federal statutory entitlement"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 2.8,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": "individual",
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": false,
+        "paymentRate": 0,
+        "paymentType": "unpaid",
+        "ceiling": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "FMLA: 12 weeks unpaid, job-protected leave. Only ~58% of private sector workers eligible due to employer size and tenure requirements."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": false,
+          "daysPerYear": null,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": false
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": null,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": []
+    },
+    {
+      "name": "Uruguay",
+      "iso2": "UY",
+      "iso3": "URY",
+      "region": "South America",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.3,
+          "paid": 3.3,
+          "wellPaid": 3.3
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "Social security system financed by contributions (3-6% employee, 5% employer payroll) and earmarked taxes"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.6,
+          "paid": 0.6,
+          "wellPaid": 0.6
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "First 3 days by employer, remaining 14 days by BPS (Social Security Institute)"
+      },
+      "parental": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3,
+          "paid": 3,
+          "wellPaid": 3
+        },
+        "entitlementType": "family",
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": 3,
+        "transferable": true,
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "flexPartTime": true,
+        "flexBlocks": true,
+        "fundingSource": "Social security system. Must be taken part-time (max 4 hours/day). Parents alternate use."
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": false,
+          "daysPerYear": null,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": false
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 48,
+        "gapAfterLeaveMonths": 42
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "paternity",
+          "description": "Law 20,312 (April 2024): Private sector paternity leave increased to 17 days (from January 2026: further increase). Protection from dismissal strengthened."
+        }
+      ]
+    },
+    {
+      "name": "Vietnam",
+      "iso2": "VN",
+      "iso3": "VNM",
+      "region": "Asia",
+      "federal": false,
+      "subnationalVariations": [],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 6,
+          "paid": 6,
+          "wellPaid": 6
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "transferable": true,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": true,
+        "fundingSource": "Social Insurance Fund managed by Vietnam Social Security, financed by employer (17.5%) and employee (8%) contributions"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.2,
+          "paid": 0.2,
+          "wellPaid": 0.2
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": "Social Insurance Fund"
+      },
+      "parental": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": null,
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": null,
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": null,
+        "flexPartTime": null,
+        "flexBlocks": null,
+        "fundingSource": "No statutory entitlement"
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": true,
+          "daysPerYear": 20,
+          "paid": true
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": false
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": 60,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "maternity",
+          "description": "2024 Social Insurance Law (effective July 2025): Expanded coverage to new worker groups including part-time workers, business household owners. Extended eligible conditions for infertility treatment."
+        },
+        {
+          "type": "expansion",
+          "leaveType": "paternity",
+          "description": "Paternity leave can now be taken within 60 days (extended from 30 days) after birth."
+        },
+        {
+          "type": "expansion",
+          "leaveType": "maternity",
+          "description": "Prenatal check-up leave increased from 1 to 2 working days per visit."
+        }
+      ]
+    }
+  ]
+}
