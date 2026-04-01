@@ -30,7 +30,7 @@ export function ContactPage() {
 
       <div className="mb-2">
         <h2 className="text-2xl font-bold text-slate-800">Me contacter</h2>
-        <p className="text-slate-500 mt-1">Pour toute question, envoyez votre message.</p>
+        <p className="text-slate-500 mt-1">Pour toute question ou remarque, envoyez votre message.</p>
       </div>
 
       {/* Author card */}
