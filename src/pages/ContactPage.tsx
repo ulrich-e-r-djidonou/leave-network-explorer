@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function AboutPage() {
+export function ContactPage() {
   const [formState, setFormState] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -28,12 +28,32 @@ export function AboutPage() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-10 space-y-6">
 
+      {/* About the project */}
+      <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8 space-y-3">
+        <h3 className="text-lg font-semibold text-slate-800">À propos du projet</h3>
+        <p className="text-sm text-slate-600 leading-relaxed">
+          Ce tableau de bord interactif visualise les données de la{" "}
+          <strong>International Review of Leave Policies and Research</strong> publiée chaque
+          année en septembre par le Leave Network (LPRN). La version actuelle couvre les
+          politiques en vigueur en <strong>avril 2025</strong>, incluant 52 pays et plus de
+          60 entités infranationales (provinces, états, cantons).
+        </p>
+        <div className="pt-2 border-t border-slate-100">
+          <p className="text-xs text-slate-500">
+            <strong>Source :</strong> Dobrotic et al. (2025).{" "}
+            <em>International Review of Leave Policies and Research 2025</em>. Leave Network.
+          </p>
+        </div>
+      </div>
+
       {/* Author card */}
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8 text-center">
         {/* Avatar */}
-        <div className="w-28 h-28 bg-teal-600 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-4 select-none">
-          UD
-        </div>
+        <img
+          src="https://github.com/ulrich-e-r-djidonou.png"
+          alt="Ulrich Djidonou"
+          className="w-28 h-28 rounded-full object-cover border-2 border-slate-200 shadow-md mx-auto mb-4 hover:scale-105 transition-transform duration-200"
+        />
         <a
           href="https://www.linkedin.com/in/ulrichdjidonou"
           target="_blank"
@@ -57,24 +77,6 @@ export function AboutPage() {
           </svg>
           LinkedIn
         </a>
-      </div>
-
-      {/* About the project */}
-      <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8 space-y-3">
-        <h3 className="text-lg font-semibold text-slate-800">À propos du projet</h3>
-        <p className="text-sm text-slate-600 leading-relaxed">
-          Ce tableau de bord interactif visualise les données de la{" "}
-          <strong>International Review of Leave Policies and Research</strong> publiée chaque
-          année en septembre par le Leave Network (LPRN). La version actuelle couvre les
-          politiques en vigueur en <strong>avril 2025</strong>, incluant 52 pays et plus de
-          60 entités infranationales (provinces, états, cantons).
-        </p>
-        <div className="pt-2 border-t border-slate-100">
-          <p className="text-xs text-slate-500">
-            <strong>Source :</strong> Dobrotic et al. (2025).{" "}
-            <em>International Review of Leave Policies and Research 2025</em>. Leave Network.
-          </p>
-        </div>
       </div>
 
       {/* Contact form */}

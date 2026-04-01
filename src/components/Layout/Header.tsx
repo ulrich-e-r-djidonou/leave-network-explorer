@@ -1,11 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 
 const NAV_ITEMS = [
+  { path: "/contact", label: "Contact" },
   { path: "/", label: "Carte" },
   { path: "/compare", label: "Comparer" },
   { path: "/rankings", label: "Classements" },
   { path: "/analytics", label: "Analyses" },
-  { path: "/about", label: "À propos" },
 ];
 
 export function Header() {
