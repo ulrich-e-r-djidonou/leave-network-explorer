@@ -29,6 +29,15 @@ export function AboutPage() {
           </p>
         </div>
       </div>
+
+      <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 space-y-3">
+        <p className="text-xs text-slate-500 leading-relaxed">
+          <strong>Avertissement :</strong> Ce travail a été réalisé par l'auteur. Les opinions exprimées dans cette publication sont celles de l'auteur et ne représentent pas la position ou les opinions d'une quelconque organisation. Ce travail est destiné à fournir des informations générales sur le sujet traité.
+        </p>
+        <p className="text-xs text-slate-500">
+          © 2026 Ulrich Djidonou. Tous droits réservés.
+        </p>
+      </div>
     </div>
   );
 }
