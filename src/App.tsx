@@ -93,7 +93,7 @@ function App() {
               indicatif — consulter les notes-pays pour les details complets.
             </p>
             <p className="mt-1">
-              Realise par <strong>Ulrich Djidonou</strong> avec <strong>Claude Code</strong> (Anthropic).
+              Realise par <strong>Ulrich Djidonou</strong>.
             </p>
           </div>
         </footer>
