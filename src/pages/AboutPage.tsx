@@ -25,7 +25,7 @@ export function AboutPage() {
             <strong>Licence :</strong> Données publiées à titre indicatif — consulter les notes-pays pour les détails complets.
           </p>
           <p className="text-xs text-slate-500">
-            <strong>Réalisé par :</strong> Ulrich Djidonou avec Claude Code (Anthropic).
+            <strong>Réalisé par :</strong> Ulrich Djidonou.
           </p>
         </div>
       </div>
