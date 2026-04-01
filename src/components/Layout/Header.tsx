@@ -5,6 +5,7 @@ const NAV_ITEMS = [
   { path: "/compare", label: "Comparer" },
   { path: "/rankings", label: "Classements" },
   { path: "/analytics", label: "Analyses" },
+  { path: "/about", label: "À propos" },
 ];
 
 export function Header() {

@@ -4,6 +4,7 @@ import { DashboardPage } from "./pages/DashboardPage";
 import { CompareView } from "./components/Compare/CompareView";
 import { RankingsView } from "./components/Filters/RankingsView";
 import { AnalyticsView } from "./components/Analytics/AnalyticsView";
+import { AboutPage } from "./pages/AboutPage";
 import { useCountryData } from "./hooks/useCountryData";
 import { useState } from "react";
 import type { Country } from "./types";
@@ -77,6 +78,7 @@ function App() {
             path="/analytics"
             element={<AnalyticsView countries={data.countries} />}
           />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
         <footer className="border-t bg-white mt-12">
           <div className="max-w-7xl mx-auto px-4 py-4 text-xs text-slate-400">
@@ -87,6 +89,9 @@ function App() {
             <p className="mt-1">
               {data.metadata.totalCountries} pays couverts. Donnees a titre
               indicatif — consulter les notes-pays pour les details complets.
+            </p>
+            <p className="mt-1">
+              Realise par <strong>Ulrich Djidonou</strong> avec <strong>Claude Code</strong> (Anthropic).
             </p>
           </div>
         </footer>
