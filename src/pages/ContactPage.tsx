@@ -28,27 +28,13 @@ export function ContactPage() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-10 space-y-6">
 
-      {/* About the project */}
-      <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8 space-y-3">
-        <h3 className="text-lg font-semibold text-slate-800">À propos du projet</h3>
-        <p className="text-sm text-slate-600 leading-relaxed">
-          Ce tableau de bord interactif visualise les données de la{" "}
-          <strong>International Review of Leave Policies and Research</strong> publiée chaque
-          année en septembre par le Leave Network (LPRN). La version actuelle couvre les
-          politiques en vigueur en <strong>avril 2025</strong>, incluant 52 pays et plus de
-          60 entités infranationales (provinces, états, cantons).
-        </p>
-        <div className="pt-2 border-t border-slate-100">
-          <p className="text-xs text-slate-500">
-            <strong>Source :</strong> Dobrotic et al. (2025).{" "}
-            <em>International Review of Leave Policies and Research 2025</em>. Leave Network.
-          </p>
-        </div>
+      <div className="mb-2">
+        <h2 className="text-2xl font-bold text-slate-800">Me contacter</h2>
+        <p className="text-slate-500 mt-1">Pour toute question, envoyez votre message.</p>
       </div>
 
       {/* Author card */}
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8 text-center">
-        {/* Avatar */}
         <img
           src="https://github.com/ulrich-e-r-djidonou.png"
           alt="Ulrich Djidonou"
@@ -81,11 +67,6 @@ export function ContactPage() {
 
       {/* Contact form */}
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8">
-        <h3 className="text-lg font-semibold text-slate-800 mb-1">Me contacter</h3>
-        <p className="text-sm text-slate-500 mb-6">
-          Pour toute question, envoyez, s'il vous plaît, votre message.
-        </p>
-
         {formState === "success" ? (
           <div className="text-center py-8">
             <div className="w-14 h-14 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -93,8 +74,8 @@ export function ContactPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h4 className="text-base font-semibold text-slate-800 mb-1">Message envoyé !</h4>
-            <p className="text-sm text-slate-500">Merci. Je vous répondrai dans les meilleurs délais.</p>
+            <h4 className="text-base font-semibold text-slate-800 mb-1">Message envoye !</h4>
+            <p className="text-sm text-slate-500">Merci. Je vous repondrai dans les meilleurs delais.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -144,12 +125,6 @@ export function ContactPage() {
                 className="w-full px-3 py-2.5 border border-slate-300 rounded-lg text-sm bg-slate-50 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100 transition resize-none"
               />
             </div>
-
-            {formState === "error" && (
-              <p className="text-sm text-red-600">
-                Une erreur est survenue. Veuillez réessayer.
-              </p>
-            )}
 
             <button
               type="submit"

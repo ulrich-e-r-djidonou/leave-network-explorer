@@ -5,6 +5,7 @@ import { CompareView } from "./components/Compare/CompareView";
 import { RankingsView } from "./components/Filters/RankingsView";
 import { AnalyticsView } from "./components/Analytics/AnalyticsView";
 import { ContactPage } from "./pages/ContactPage";
+import { AboutPage } from "./pages/AboutPage";
 import { useCountryData } from "./hooks/useCountryData";
 import { useState } from "react";
 import type { Country } from "./types";
@@ -79,6 +80,7 @@ function App() {
             element={<AnalyticsView countries={data.countries} />}
           />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
         <footer className="border-t bg-white mt-12">
           <div className="max-w-7xl mx-auto px-4 py-4 text-xs text-slate-400">
