@@ -36,7 +36,7 @@ export function ContactPage() {
       {/* Author card */}
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8 text-center">
         <img
-          src="https://github.com/ulrich-e-r-djidonou.png"
+          src={`${import.meta.env.BASE_URL}avatar.png`}
           alt="Ulrich Djidonou"
           className="w-28 h-28 rounded-full object-cover border-2 border-slate-200 shadow-md mx-auto mb-4 hover:scale-105 transition-transform duration-200"
         />
