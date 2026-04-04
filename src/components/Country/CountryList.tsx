@@ -1,11 +1,8 @@
 import { useState, useMemo } from "react";
 import type { Country, MapIndicator } from "../../types";
-import {
-  getIndicatorValue,
-  formatDuration,
-  REGIONS,
-} from "../../utils/calculations";
+import { getIndicatorValue, formatDuration, REGIONS } from "../../utils/calculations";
 import { Search } from "lucide-react";
+import { useTranslation } from "../../hooks/useTranslation";
 
 interface Props {
   countries: Country[];
@@ -14,21 +11,15 @@ interface Props {
   selectedIso2?: string;
 }
 
-export function CountryList({
-  countries,
-  indicator,
-  onSelect,
-  selectedIso2,
-}: Props) {
+export function CountryList({ countries, indicator, onSelect, selectedIso2 }: Props) {
   const [search, setSearch] = useState("");
   const [region, setRegion] = useState<string>("All");
+  const { t, lang } = useTranslation();
 
   const filtered = useMemo(() => {
     return countries
       .filter((c) => {
-        const matchSearch = c.name
-          .toLowerCase()
-          .includes(search.toLowerCase());
+        const matchSearch = c.name.toLowerCase().includes(search.toLowerCase());
         const matchRegion = region === "All" || c.region === region;
         return matchSearch && matchRegion;
       })
@@ -39,8 +30,7 @@ export function CountryList({
       });
   }, [countries, search, region, indicator]);
 
-  const isScore =
-    indicator.includes("gender") || indicator.includes("generosity");
+  const isScore = indicator.includes("gender") || indicator.includes("generosity");
 
   return (
     <div className="bg-white rounded-lg border border-slate-200 overflow-hidden">
@@ -49,7 +39,7 @@ export function CountryList({
           <Search className="absolute left-2.5 top-2.5 w-4 h-4 text-slate-400" />
           <input
             type="text"
-            placeholder="Rechercher un pays..."
+            placeholder={t('search_placeholder')}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="w-full pl-9 pr-3 py-2 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
@@ -62,7 +52,7 @@ export function CountryList({
         >
           {REGIONS.map((r) => (
             <option key={r} value={r}>
-              {r === "All" ? "Toutes les regions" : r}
+              {r === "All" ? t('all_regions') : r}
             </option>
           ))}
         </select>
@@ -80,9 +70,7 @@ export function CountryList({
             >
               <div className="flex items-center gap-2">
                 <span className="text-xs text-slate-400 w-5">{i + 1}</span>
-                <span className="text-sm font-medium text-slate-700">
-                  {c.name}
-                </span>
+                <span className="text-sm font-medium text-slate-700">{c.name}</span>
                 {c.subnational && c.subnational.length > 0 && (
                   <span className="text-[10px] bg-indigo-100 text-indigo-600 px-1 rounded">
                     {c.subnational.length}
@@ -93,7 +81,7 @@ export function CountryList({
                 {value !== null
                   ? isScore
                     ? `${Math.round(value)}/100`
-                    : formatDuration(value)
+                    : formatDuration(value, lang)
                   : "N/A"}
               </span>
             </button>
@@ -101,7 +89,7 @@ export function CountryList({
         })}
         {filtered.length === 0 && (
           <p className="px-3 py-6 text-sm text-slate-400 text-center">
-            Aucun pays trouve
+            {t('no_countries')}
           </p>
         )}
       </div>

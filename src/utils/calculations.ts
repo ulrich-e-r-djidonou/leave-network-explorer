@@ -51,7 +51,7 @@ export function getTotalLeaveMonths(country: Country): number {
   return total;
 }
 
-/** Gender equality score (0-100): based on father quota share and paternity leave */
+/** Gender equality score (0–100): based on father quota share and paternity leave */
 export function getGenderEqualityScore(country: Country): number {
   let score = 0;
 
@@ -82,7 +82,7 @@ export function getGenderEqualityScore(country: Country): number {
   return Math.min(100, Math.round(score));
 }
 
-/** Generosity score (0-100): duration × payment × flexibility */
+/** Generosity score (0–100): duration × payment × flexibility */
 export function getGenerosityScore(country: Country): number {
   let score = 0;
 
@@ -114,15 +114,15 @@ export function getGenerosityScore(country: Country): number {
 }
 
 /** Format months to a human-readable string */
-export function formatDuration(months: number | null): string {
+export function formatDuration(months: number | null, lang: 'fr' | 'en' = 'fr'): string {
   if (months === null || months === undefined) return "N/A";
   if (months === 0) return "0";
   if (months < 1) {
     const weeks = Math.round(months * 4.3);
-    return `${weeks} sem.`;
+    return lang === 'en' ? `${weeks} wk.` : `${weeks} sem.`;
   }
-  if (Number.isInteger(months)) return `${months} mois`;
-  return `${months.toFixed(1)} mois`;
+  if (Number.isInteger(months)) return lang === 'en' ? `${months} months` : `${months} mois`;
+  return lang === 'en' ? `${months.toFixed(1)} months` : `${months.toFixed(1)} mois`;
 }
 
 /** Get color for a value on a gradient scale */
@@ -140,15 +140,27 @@ export function getColorForValue(
   return `rgb(${r},${g},${b})`;
 }
 
+export const INDICATOR_LABEL_KEYS: Record<MapIndicator, string> = {
+  maternity_total: 'ind_maternity_total',
+  maternity_wellPaid: 'ind_maternity_wellPaid',
+  paternity_total: 'ind_paternity_total',
+  paternity_wellPaid: 'ind_paternity_wellPaid',
+  parental_total: 'ind_parental_total',
+  parental_wellPaid: 'ind_parental_wellPaid',
+  total_leave: 'ind_total_leave',
+  gender_equality: 'ind_gender_equality',
+};
+
+// Legacy fallback (French) — utilisé uniquement si le composant ne peut pas accéder au hook
 export const INDICATOR_LABELS: Record<MapIndicator, string> = {
-  maternity_total: "Conge maternite (total)",
-  maternity_wellPaid: "Conge maternite (bien paye)",
-  paternity_total: "Conge paternite (total)",
-  paternity_wellPaid: "Conge paternite (bien paye)",
-  parental_total: "Conge parental (total)",
-  parental_wellPaid: "Conge parental (bien paye)",
-  total_leave: "Total conges payes (tous types)",
-  gender_equality: "Score egalite des genres",
+  maternity_total: 'Congé maternité (total)',
+  maternity_wellPaid: 'Congé maternité (bien payé)',
+  paternity_total: 'Congé paternité (total)',
+  paternity_wellPaid: 'Congé paternité (bien payé)',
+  parental_total: 'Congé parental (total)',
+  parental_wellPaid: 'Congé parental (bien payé)',
+  total_leave: 'Total congés payés (tous types)',
+  gender_equality: 'Score égalité des genres',
 };
 
 export const REGIONS = [

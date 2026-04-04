@@ -2,6 +2,7 @@ import type { Country, SubnationalEntity } from "../../types";
 import { formatDuration, getGenderEqualityScore, getGenerosityScore } from "../../utils/calculations";
 import { LeaveTimeline } from "./LeaveTimeline";
 import { X } from "lucide-react";
+import { useTranslation } from "../../hooks/useTranslation";
 
 interface Props {
   country: Country;
@@ -11,8 +12,16 @@ interface Props {
 
 export function CountryDetail({ country, onClose, onCompare }: Props) {
   const c = country;
+  const { t, lang } = useTranslation();
   const genderScore = getGenderEqualityScore(c);
   const generosityScore = getGenerosityScore(c);
+
+  const entitlementLabel = (type: string | null) => {
+    if (type === 'individual') return t('individual');
+    if (type === 'family') return t('family');
+    if (type === 'mixed') return t('mixed');
+    return t('na');
+  };
 
   return (
     <div className="bg-white rounded-lg border border-slate-200 overflow-hidden">
@@ -22,9 +31,9 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
           <h2 className="text-xl font-semibold">{c.name}</h2>
           <p className="text-sm text-slate-300 mt-0.5">
             {c.region}
-            {c.federal && " | Etat federal"}
+            {c.federal && ` | ${t('federal_state')}`}
             {c.subnationalVariations.length > 0 &&
-              ` | Variations: ${c.subnationalVariations.join(", ")}`}
+              ` | ${t('variations')}: ${c.subnationalVariations.join(", ")}`}
           </p>
         </div>
         <div className="flex gap-2">
@@ -33,13 +42,10 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
               onClick={() => onCompare(c)}
               className="text-xs bg-teal-600 hover:bg-teal-700 px-3 py-1.5 rounded transition-colors"
             >
-              + Comparer
+              {t('compare_btn')}
             </button>
           )}
-          <button
-            onClick={onClose}
-            className="text-slate-400 hover:text-white transition-colors"
-          >
+          <button onClick={onClose} className="text-slate-400 hover:text-white transition-colors">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -47,15 +53,13 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
 
       {/* Scores */}
       <div className="grid grid-cols-2 gap-3 p-4 bg-slate-50 border-b">
-        <ScoreBadge label="Generosite" score={generosityScore} />
-        <ScoreBadge label="Egalite des genres" score={genderScore} />
+        <ScoreBadge label={t('generosity')} score={generosityScore} />
+        <ScoreBadge label={t('gender_equality')} score={genderScore} />
       </div>
 
-      {/* Timeline visualization */}
+      {/* Timeline */}
       <div className="p-4 border-b">
-        <h3 className="text-sm font-semibold text-slate-700 mb-3">
-          Chronologie des conges
-        </h3>
+        <h3 className="text-sm font-semibold text-slate-700 mb-3">{t('leave_timeline')}</h3>
         <LeaveTimeline country={c} />
       </div>
 
@@ -63,48 +67,37 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
       <div className="p-4 space-y-4 max-h-[60vh] overflow-y-auto">
         {c.maternity.exists && (
           <LeaveSection
-            title="Conge de maternite"
+            title={t('maternity_leave')}
             leave={c.maternity}
             color="bg-rose-500"
+            lang={lang}
+            t={t}
           />
         )}
         {c.paternity.exists && (
           <LeaveSection
-            title="Conge de paternite"
+            title={t('paternity_leave')}
             leave={c.paternity}
             color="bg-blue-500"
+            lang={lang}
+            t={t}
           />
         )}
         {c.parental.exists && (
           <LeaveSection
-            title="Conge parental"
+            title={t('parental_leave')}
             leave={c.parental}
             color="bg-amber-500"
+            lang={lang}
+            t={t}
             extra={
               <>
-                <Detail
-                  label="Type de droit"
-                  value={
-                    c.parental.entitlementType === "individual"
-                      ? "Individuel"
-                      : c.parental.entitlementType === "family"
-                        ? "Familial"
-                        : c.parental.entitlementType === "mixed"
-                          ? "Mixte"
-                          : "N/A"
-                  }
-                />
+                <Detail label={t('entitlement_type')} value={entitlementLabel(c.parental.entitlementType)} />
                 {c.parental.motherQuotaMonths !== null && (
-                  <Detail
-                    label="Quota mere"
-                    value={formatDuration(c.parental.motherQuotaMonths)}
-                  />
+                  <Detail label={t('mother_quota')} value={formatDuration(c.parental.motherQuotaMonths, lang)} />
                 )}
                 {c.parental.fatherQuotaMonths !== null && (
-                  <Detail
-                    label="Quota pere"
-                    value={formatDuration(c.parental.fatherQuotaMonths)}
-                  />
+                  <Detail label={t('father_quota')} value={formatDuration(c.parental.fatherQuotaMonths, lang)} />
                 )}
               </>
             }
@@ -114,75 +107,48 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
           <div className="border rounded-lg p-3">
             <h4 className="text-sm font-semibold text-slate-700 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-green-500" />
-              Conge de garde d'enfants
+              {t('childcare_leave')}
             </h4>
             <p className="text-sm text-slate-600 mt-1">
-              {formatDuration(c.childcareLeave.durationMonths)} |{" "}
-              {c.childcareLeave.paid ? "Paye" : "Non paye"}
+              {formatDuration(c.childcareLeave.durationMonths, lang)} |{" "}
+              {c.childcareLeave.paid ? t('paid') : t('unpaid')}
             </p>
             {c.childcareLeave.details && (
-              <p className="text-xs text-slate-500 mt-1">
-                {c.childcareLeave.details}
-              </p>
+              <p className="text-xs text-slate-500 mt-1">{c.childcareLeave.details}</p>
             )}
           </div>
         )}
 
         {/* Other measures */}
         <div className="border rounded-lg p-3">
-          <h4 className="text-sm font-semibold text-slate-700 mb-2">
-            Autres mesures
-          </h4>
+          <h4 className="text-sm font-semibold text-slate-700 mb-2">{t('other_measures')}</h4>
           <div className="grid grid-cols-2 gap-2 text-xs">
             <Chip
-              label="Conge enfant malade"
+              label={t('sick_child_leave')}
               active={c.otherMeasures.sickChildLeave.exists}
               detail={
                 c.otherMeasures.sickChildLeave.daysPerYear
-                  ? `${c.otherMeasures.sickChildLeave.daysPerYear} j/an`
+                  ? `${c.otherMeasures.sickChildLeave.daysPerYear} ${lang === 'en' ? 'd/yr' : 'j/an'}`
                   : undefined
               }
             />
-            <Chip
-              label="Allaitement"
-              active={c.otherMeasures.breastfeeding.exists}
-            />
-            <Chip
-              label="Travail flexible"
-              active={c.otherMeasures.flexibleWork.rightToRequest}
-            />
-            <Chip
-              label="Violence domestique"
-              active={c.otherMeasures.domesticViolenceLeave.exists}
-            />
-            <Chip
-              label="Conge deuil"
-              active={c.otherMeasures.bereavementLeave.exists}
-            />
+            <Chip label={t('breastfeeding')} active={c.otherMeasures.breastfeeding.exists} />
+            <Chip label={t('flexible_work')} active={c.otherMeasures.flexibleWork.rightToRequest} />
+            <Chip label={t('domestic_violence')} active={c.otherMeasures.domesticViolenceLeave.exists} />
+            <Chip label={t('bereavement')} active={c.otherMeasures.bereavementLeave.exists} />
           </div>
         </div>
 
         {/* ECEC */}
         <div className="border rounded-lg p-3">
-          <h4 className="text-sm font-semibold text-slate-700 mb-2">
-            Garde d'enfants (ECEC)
-          </h4>
+          <h4 className="text-sm font-semibold text-slate-700 mb-2">{t('ecec')}</h4>
           <div className="text-sm text-slate-600 space-y-1">
-            <Detail
-              label="Droit universel"
-              value={c.ecec.universalEntitlement ? "Oui" : "Non"}
-            />
+            <Detail label={t('universal_entitlement')} value={c.ecec.universalEntitlement ? t('yes') : t('no')} />
             {c.ecec.entitlementAgeMonths !== null && (
-              <Detail
-                label="Age d'acces"
-                value={`${c.ecec.entitlementAgeMonths} mois`}
-              />
+              <Detail label={t('entitlement_age')} value={`${c.ecec.entitlementAgeMonths} ${lang === 'en' ? 'months' : 'mois'}`} />
             )}
             {c.ecec.gapAfterLeaveMonths !== null && (
-              <Detail
-                label="Ecart apres conge"
-                value={formatDuration(c.ecec.gapAfterLeaveMonths)}
-              />
+              <Detail label={t('gap_after_leave')} value={formatDuration(c.ecec.gapAfterLeaveMonths, lang)} />
             )}
           </div>
         </div>
@@ -190,17 +156,13 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
         {/* Recent changes */}
         {c.recentChanges.length > 0 && (
           <div className="border rounded-lg p-3">
-            <h4 className="text-sm font-semibold text-slate-700 mb-2">
-              Changements recents (2024/25)
-            </h4>
+            <h4 className="text-sm font-semibold text-slate-700 mb-2">{t('recent_changes')}</h4>
             <div className="space-y-2">
               {c.recentChanges.map((ch, i) => (
                 <div key={i} className="flex items-start gap-2">
-                  <ChangeTypeBadge type={ch.type} />
+                  <ChangeTypeBadge type={ch.type} t={t} />
                   <div>
-                    <span className="text-xs text-slate-500 uppercase">
-                      {ch.leaveType}
-                    </span>
+                    <span className="text-xs text-slate-500 uppercase">{ch.leaveType}</span>
                     <p className="text-sm text-slate-600">{ch.description}</p>
                   </div>
                 </div>
@@ -213,11 +175,11 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
         {c.subnational && c.subnational.length > 0 && (
           <div className="border-2 border-indigo-200 rounded-lg p-3 bg-indigo-50/30">
             <h4 className="text-sm font-semibold text-indigo-800 mb-3">
-              Variations infranationales ({c.subnational.length})
+              {t('subnational_variations')} ({c.subnational.length})
             </h4>
             <div className="space-y-3">
               {c.subnational.map((sub, i) => (
-                <SubnationalCard key={sub.code || i} entity={sub} />
+                <SubnationalCard key={sub.code || i} entity={sub} lang={lang} t={t} />
               ))}
             </div>
           </div>
@@ -228,15 +190,14 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
 }
 
 function LeaveSection({
-  title,
-  leave,
-  color,
-  extra,
+  title, leave, color, extra, lang, t,
 }: {
   title: string;
   leave: any;
   color: string;
   extra?: React.ReactNode;
+  lang: 'fr' | 'en';
+  t: (key: any) => string;
 }) {
   return (
     <div className="border rounded-lg p-3">
@@ -245,42 +206,17 @@ function LeaveSection({
         {title}
       </h4>
       <div className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
+        <Detail label={t('total_duration')} value={formatDuration(leave.durationMonths.total, lang)} />
+        <Detail label={t('paid_duration')} value={formatDuration(leave.durationMonths.paid, lang)} />
+        <Detail label={t('well_paid')} value={formatDuration(leave.durationMonths.wellPaid, lang)} />
         <Detail
-          label="Duree totale"
-          value={formatDuration(leave.durationMonths.total)}
+          label={t('rate')}
+          value={leave.paymentRate ? `${leave.paymentRate}%` : leave.paymentType || t('na')}
         />
-        <Detail
-          label="Duree payee"
-          value={formatDuration(leave.durationMonths.paid)}
-        />
-        <Detail
-          label="Bien paye"
-          value={formatDuration(leave.durationMonths.wellPaid)}
-        />
-        <Detail
-          label="Taux"
-          value={
-            leave.paymentRate
-              ? `${leave.paymentRate}%`
-              : leave.paymentType || "N/A"
-          }
-        />
-        <Detail
-          label="Obligatoire"
-          value={leave.obligatory ? "Oui" : "Non"}
-        />
-        <Detail
-          label="Transferable"
-          value={leave.transferable ? "Oui" : "Non"}
-        />
-        <Detail
-          label="Temps partiel"
-          value={leave.flexPartTime ? "Oui" : "Non"}
-        />
-        <Detail
-          label="En blocs"
-          value={leave.flexBlocks ? "Oui" : "Non"}
-        />
+        <Detail label={t('mandatory')} value={leave.obligatory ? t('yes') : t('no')} />
+        <Detail label={t('transferable')} value={leave.transferable ? t('yes') : t('no')} />
+        <Detail label={t('part_time')} value={leave.flexPartTime ? t('yes') : t('no')} />
+        <Detail label={t('in_blocks')} value={leave.flexBlocks ? t('yes') : t('no')} />
         {extra}
       </div>
       {leave.notes && (
@@ -293,21 +229,13 @@ function LeaveSection({
 function Detail({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <span className="text-slate-400">{label}: </span>
+      <span className="text-slate-400">{label} : </span>
       <span className="text-slate-700 font-medium">{value}</span>
     </div>
   );
 }
 
-function Chip({
-  label,
-  active,
-  detail,
-}: {
-  label: string;
-  active: boolean;
-  detail?: string;
-}) {
+function Chip({ label, active, detail }: { label: string; active: boolean; detail?: string }) {
   return (
     <div
       className={`px-2 py-1 rounded text-xs ${
@@ -316,7 +244,7 @@ function Chip({
           : "bg-slate-50 text-slate-400 border border-slate-200"
       }`}
     >
-      {active ? "+" : "-"} {label}
+      {active ? "+" : "−"} {label}
       {detail && <span className="ml-1 text-teal-500">({detail})</span>}
     </div>
   );
@@ -337,11 +265,7 @@ function ScoreBadge({ label, score }: { label: string; score: number }) {
   );
 }
 
-function ChangeTypeBadge({
-  type,
-}: {
-  type: string;
-}) {
+function ChangeTypeBadge({ type, t }: { type: string; t: (key: any) => string }) {
   const styles: Record<string, string> = {
     expansion: "bg-green-100 text-green-700",
     introduction: "bg-blue-100 text-blue-700",
@@ -349,31 +273,31 @@ function ChangeTypeBadge({
     abolition: "bg-red-100 text-red-700",
     recalibration: "bg-amber-100 text-amber-700",
   };
-  const labels: Record<string, string> = {
-    expansion: "Expansion",
-    introduction: "Introduction",
-    cutback: "Restriction",
-    abolition: "Abolition",
-    recalibration: "Recalibration",
+  const labelMap: Record<string, string> = {
+    expansion: t('change_expansion'),
+    introduction: t('change_introduction'),
+    cutback: t('change_cutback'),
+    abolition: t('change_abolition'),
+    recalibration: t('change_recalibration'),
   };
   return (
     <span
       className={`text-xs px-2 py-0.5 rounded-full whitespace-nowrap ${styles[type] || "bg-slate-100 text-slate-600"}`}
     >
-      {labels[type] || type}
+      {labelMap[type] || type}
     </span>
   );
 }
 
-function SubnationalCard({ entity }: { entity: SubnationalEntity }) {
-  const typeLabels: Record<string, string> = {
-    province: "Province",
-    state: "Etat",
-    canton: "Canton",
-    entity: "Entite",
-    sector: "Secteur",
-    region: "Region",
-    municipality: "Municipalite",
+function SubnationalCard({ entity, lang, t }: { entity: SubnationalEntity; lang: 'fr' | 'en'; t: (key: any) => string }) {
+  const typeKeys: Record<string, string> = {
+    province: 'entity_province',
+    state: 'entity_state',
+    canton: 'entity_canton',
+    entity: 'entity_entity',
+    sector: 'entity_sector',
+    region: 'entity_region',
+    municipality: 'entity_municipality',
   };
 
   const hasLeaveData =
@@ -383,23 +307,19 @@ function SubnationalCard({ entity }: { entity: SubnationalEntity }) {
     <div className="bg-white rounded border border-indigo-100 p-2.5">
       <div className="flex items-center gap-2 mb-1.5">
         <span className="text-xs bg-indigo-100 text-indigo-700 px-1.5 py-0.5 rounded">
-          {typeLabels[entity.type] || entity.type}
+          {t(typeKeys[entity.type] as any) || entity.type}
         </span>
-        <span className="text-sm font-medium text-slate-800">
-          {entity.name}
-        </span>
-        {entity.code && (
-          <span className="text-xs text-slate-400">{entity.code}</span>
-        )}
+        <span className="text-sm font-medium text-slate-800">{entity.name}</span>
+        {entity.code && <span className="text-xs text-slate-400">{entity.code}</span>}
       </div>
 
       {hasLeaveData && (
         <div className="grid grid-cols-3 gap-2 mt-2 text-xs">
           {entity.maternity?.exists && (
             <div className="bg-rose-50 rounded p-1.5">
-              <p className="text-rose-600 font-medium">Maternite</p>
+              <p className="text-rose-600 font-medium">{t('timeline_maternity')}</p>
               <p className="text-slate-700">
-                {formatDuration(entity.maternity.durationMonths?.total ?? null)}
+                {formatDuration(entity.maternity.durationMonths?.total ?? null, lang)}
               </p>
               {entity.maternity.paymentRate && (
                 <p className="text-slate-500">{entity.maternity.paymentRate}%</p>
@@ -408,9 +328,9 @@ function SubnationalCard({ entity }: { entity: SubnationalEntity }) {
           )}
           {entity.paternity?.exists && (
             <div className="bg-blue-50 rounded p-1.5">
-              <p className="text-blue-600 font-medium">Paternite</p>
+              <p className="text-blue-600 font-medium">{t('timeline_paternity')}</p>
               <p className="text-slate-700">
-                {formatDuration(entity.paternity.durationMonths?.total ?? null)}
+                {formatDuration(entity.paternity.durationMonths?.total ?? null, lang)}
               </p>
               {entity.paternity.paymentRate && (
                 <p className="text-slate-500">{entity.paternity.paymentRate}%</p>
@@ -419,9 +339,9 @@ function SubnationalCard({ entity }: { entity: SubnationalEntity }) {
           )}
           {entity.parental?.exists && (
             <div className="bg-amber-50 rounded p-1.5">
-              <p className="text-amber-600 font-medium">Parental</p>
+              <p className="text-amber-600 font-medium">{t('timeline_parental')}</p>
               <p className="text-slate-700">
-                {formatDuration(entity.parental.durationMonths?.total ?? null)}
+                {formatDuration(entity.parental.durationMonths?.total ?? null, lang)}
               </p>
               {entity.parental.paymentRate && (
                 <p className="text-slate-500">{entity.parental.paymentRate}%</p>
@@ -431,12 +351,8 @@ function SubnationalCard({ entity }: { entity: SubnationalEntity }) {
         </div>
       )}
 
-      {entity.details && (
-        <p className="text-xs text-slate-500 mt-1.5">{entity.details}</p>
-      )}
-      {entity.notes && (
-        <p className="text-xs text-slate-500 mt-1 italic">{entity.notes}</p>
-      )}
+      {entity.details && <p className="text-xs text-slate-500 mt-1.5">{entity.details}</p>}
+      {entity.notes && <p className="text-xs text-slate-500 mt-1 italic">{entity.notes}</p>}
     </div>
   );
 }

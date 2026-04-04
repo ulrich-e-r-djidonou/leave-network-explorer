@@ -1,9 +1,7 @@
 import { useMemo } from "react";
 import type { Country, MapIndicator } from "../../types";
-import {
-  getIndicatorValue,
-  formatDuration,
-} from "../../utils/calculations";
+import { getIndicatorValue, formatDuration } from "../../utils/calculations";
+import { useTranslation } from "../../hooks/useTranslation";
 
 interface Props {
   countries: Country[];
@@ -11,6 +9,8 @@ interface Props {
 }
 
 export function StatsBar({ countries, indicator }: Props) {
+  const { t, lang } = useTranslation();
+
   const stats = useMemo(() => {
     const values = countries
       .map((c) => ({
@@ -38,20 +38,21 @@ export function StatsBar({ countries, indicator }: Props) {
   }, [countries, indicator]);
 
   const isScore = indicator.includes("gender") || indicator.includes("generosity");
-  const fmt = (v: number) => (isScore ? `${Math.round(v)}/100` : formatDuration(v));
+  const fmt = (v: number) =>
+    isScore ? `${Math.round(v)}/100` : formatDuration(v, lang);
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-      <StatCard label="Pays couverts" value={`${stats.count}`} />
-      <StatCard label="Moyenne" value={fmt(stats.avg)} />
-      <StatCard label="Mediane" value={fmt(stats.median)} />
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+      <StatCard label={t('stats_countries')} value={`${stats.count}`} />
+      <StatCard label={t('stats_avg')} value={fmt(stats.avg)} />
+      <StatCard label={t('stats_median')} value={fmt(stats.median)} />
       <StatCard
-        label="Maximum"
+        label={t('stats_max')}
         value={stats.max ? `${fmt(stats.max.value!)}` : "N/A"}
         sub={stats.max?.name}
       />
       <StatCard
-        label="Minimum"
+        label={t('stats_min')}
         value={stats.min ? `${fmt(stats.min.value!)}` : "N/A"}
         sub={stats.min?.name}
       />
@@ -59,15 +60,7 @@ export function StatsBar({ countries, indicator }: Props) {
   );
 }
 
-function StatCard({
-  label,
-  value,
-  sub,
-}: {
-  label: string;
-  value: string;
-  sub?: string;
-}) {
+function StatCard({ label, value, sub }: { label: string; value: string; sub?: string }) {
   return (
     <div className="bg-white rounded-lg border border-slate-200 p-3">
       <p className="text-xs text-slate-500 uppercase tracking-wide">{label}</p>

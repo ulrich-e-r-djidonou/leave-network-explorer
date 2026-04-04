@@ -5,9 +5,12 @@ import {
   formatDuration,
   getGenerosityScore,
   REGIONS,
+  INDICATOR_LABEL_KEYS,
 } from "../../utils/calculations";
 import { getComparableEntities } from "../../hooks/useCountryData";
 import { exportToCSV } from "../../utils/export";
+import { useTranslation } from "../../hooks/useTranslation";
+import type { TranslationKey } from "../../i18n/translations";
 import {
   BarChart,
   Bar,
@@ -27,33 +30,29 @@ interface Props {
 
 type RankingMetric = MapIndicator | "generosity";
 
-const METRICS: { value: RankingMetric; label: string }[] = [
-  { value: "maternity_total", label: "Conge maternite (total)" },
-  { value: "maternity_wellPaid", label: "Conge maternite (bien paye)" },
-  { value: "paternity_total", label: "Conge paternite (total)" },
-  { value: "paternity_wellPaid", label: "Conge paternite (bien paye)" },
-  { value: "parental_total", label: "Conge parental (total)" },
-  { value: "parental_wellPaid", label: "Conge parental (bien paye)" },
-  { value: "total_leave", label: "Total conges payes" },
-  { value: "gender_equality", label: "Egalite des genres" },
-  { value: "generosity", label: "Score de generosite" },
-];
-
 export function RankingsView({ countries, onCountryClick }: Props) {
   const [metric, setMetric] = useState<RankingMetric>("total_leave");
   const [region, setRegion] = useState("All");
   const [showTop, setShowTop] = useState(20);
   const [includeSubnational, setIncludeSubnational] = useState(false);
+  const { t, lang } = useTranslation();
 
-  const allEntities = useMemo(
-    () => getComparableEntities(countries),
-    [countries]
-  );
+  const METRICS: { value: RankingMetric; labelKey: string }[] = [
+    { value: "maternity_total", labelKey: INDICATOR_LABEL_KEYS["maternity_total"] },
+    { value: "maternity_wellPaid", labelKey: INDICATOR_LABEL_KEYS["maternity_wellPaid"] },
+    { value: "paternity_total", labelKey: INDICATOR_LABEL_KEYS["paternity_total"] },
+    { value: "paternity_wellPaid", labelKey: INDICATOR_LABEL_KEYS["paternity_wellPaid"] },
+    { value: "parental_total", labelKey: INDICATOR_LABEL_KEYS["parental_total"] },
+    { value: "parental_wellPaid", labelKey: INDICATOR_LABEL_KEYS["parental_wellPaid"] },
+    { value: "total_leave", labelKey: INDICATOR_LABEL_KEYS["total_leave"] },
+    { value: "gender_equality", labelKey: INDICATOR_LABEL_KEYS["gender_equality"] },
+    { value: "generosity", labelKey: "ind_generosity" },
+  ];
+
+  const allEntities = useMemo(() => getComparableEntities(countries), [countries]);
 
   const ranked = useMemo(() => {
-    const source = includeSubnational
-      ? allEntities.map((e) => e.country)
-      : countries;
+    const source = includeSubnational ? allEntities.map((e) => e.country) : countries;
     return source
       .filter((c) => region === "All" || c.region === region)
       .map((c) => ({
@@ -68,9 +67,7 @@ export function RankingsView({ countries, onCountryClick }: Props) {
   }, [countries, allEntities, metric, region, showTop, includeSubnational]);
 
   const isScore =
-    metric.includes("gender") ||
-    metric.includes("generosity") ||
-    metric === "generosity";
+    metric.includes("gender") || metric.includes("generosity") || metric === "generosity";
 
   const chartData = ranked.map((r) => ({
     name: r.country.name,
@@ -80,16 +77,12 @@ export function RankingsView({ countries, onCountryClick }: Props) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-6">
-      <h2 className="text-xl font-semibold text-slate-800 mb-4">
-        Classements
-      </h2>
+      <h2 className="text-xl font-semibold text-slate-800 mb-4">{t('rankings_title')}</h2>
 
       {/* Controls */}
       <div className="bg-white rounded-lg border p-4 mb-6 flex flex-wrap gap-4">
         <div>
-          <label className="text-xs text-slate-500 block mb-1">
-            Indicateur
-          </label>
+          <label className="text-xs text-slate-500 block mb-1">{t('rankings_indicator')}</label>
           <select
             value={metric}
             onChange={(e) => setMetric(e.target.value as RankingMetric)}
@@ -97,13 +90,13 @@ export function RankingsView({ countries, onCountryClick }: Props) {
           >
             {METRICS.map((m) => (
               <option key={m.value} value={m.value}>
-                {m.label}
+                {t(m.labelKey as TranslationKey)}
               </option>
             ))}
           </select>
         </div>
         <div>
-          <label className="text-xs text-slate-500 block mb-1">Region</label>
+          <label className="text-xs text-slate-500 block mb-1">{t('rankings_region')}</label>
           <select
             value={region}
             onChange={(e) => setRegion(e.target.value)}
@@ -111,15 +104,13 @@ export function RankingsView({ countries, onCountryClick }: Props) {
           >
             {REGIONS.map((r) => (
               <option key={r} value={r}>
-                {r === "All" ? "Toutes" : r}
+                {r === "All" ? t('rankings_all') : r}
               </option>
             ))}
           </select>
         </div>
         <div>
-          <label className="text-xs text-slate-500 block mb-1">
-            Nombre de pays
-          </label>
+          <label className="text-xs text-slate-500 block mb-1">{t('rankings_count')}</label>
           <select
             value={showTop}
             onChange={(e) => setShowTop(Number(e.target.value))}
@@ -127,7 +118,7 @@ export function RankingsView({ countries, onCountryClick }: Props) {
           >
             <option value={10}>Top 10</option>
             <option value={20}>Top 20</option>
-            <option value={100}>Tous</option>
+            <option value={100}>{t('rankings_top_all')}</option>
           </select>
         </div>
         <div className="flex items-end">
@@ -138,7 +129,7 @@ export function RankingsView({ countries, onCountryClick }: Props) {
               onChange={(e) => setIncludeSubnational(e.target.checked)}
               className="rounded border-slate-300 text-teal-600 focus:ring-teal-500"
             />
-            <span className="text-slate-600">Inclure provinces/etats</span>
+            <span className="text-slate-600">{t('rankings_include_sub')}</span>
           </label>
         </div>
         <div className="flex items-end ml-auto">
@@ -153,36 +144,20 @@ export function RankingsView({ countries, onCountryClick }: Props) {
       </div>
 
       {/* Bar Chart */}
-      <div className="bg-white rounded-lg border p-4 mb-6">
+      <div className="bg-white rounded-lg border p-4 mb-6 overflow-x-auto">
         <ResponsiveContainer width="100%" height={Math.max(400, ranked.length * 28)}>
           <BarChart data={chartData} layout="vertical" margin={{ left: 120 }}>
             <CartesianGrid strokeDasharray="3 3" horizontal={false} />
             <XAxis type="number" className="text-xs" />
-            <YAxis
-              dataKey="name"
-              type="category"
-              width={110}
-              className="text-xs"
-              tick={{ fontSize: 11 }}
-            />
+            <YAxis dataKey="name" type="category" width={110} className="text-xs" tick={{ fontSize: 11 }} />
             <Tooltip
               formatter={(value) =>
-                isScore ? `${Math.round(Number(value))}/100` : formatDuration(Number(value))
+                isScore ? `${Math.round(Number(value))}/100` : formatDuration(Number(value), lang)
               }
             />
             <Bar dataKey="value" radius={[0, 4, 4, 0]}>
               {chartData.map((_, i) => (
-                <Cell
-                  key={i}
-                  fill={
-                    i < 3
-                      ? "#0d9488"
-                      : i < 10
-                        ? "#14b8a6"
-                        : "#99f6e4"
-                  }
-                  cursor="pointer"
-                />
+                <Cell key={i} fill={i < 3 ? "#0d9488" : i < 10 ? "#14b8a6" : "#99f6e4"} cursor="pointer" />
               ))}
             </Bar>
           </BarChart>
@@ -194,18 +169,10 @@ export function RankingsView({ countries, onCountryClick }: Props) {
         <table className="w-full text-sm">
           <thead className="bg-slate-50">
             <tr>
-              <th className="text-left px-4 py-3 text-slate-600 font-medium w-10">
-                #
-              </th>
-              <th className="text-left px-4 py-3 text-slate-600 font-medium">
-                Pays
-              </th>
-              <th className="text-left px-4 py-3 text-slate-600 font-medium">
-                Region
-              </th>
-              <th className="text-right px-4 py-3 text-slate-600 font-medium">
-                Valeur
-              </th>
+              <th className="text-left px-4 py-3 text-slate-600 font-medium w-10">{t('rankings_col_rank')}</th>
+              <th className="text-left px-4 py-3 text-slate-600 font-medium">{t('rankings_col_country')}</th>
+              <th className="text-left px-4 py-3 text-slate-600 font-medium">{t('rankings_col_region')}</th>
+              <th className="text-right px-4 py-3 text-slate-600 font-medium">{t('rankings_col_value')}</th>
             </tr>
           </thead>
           <tbody className="divide-y">
@@ -216,16 +183,10 @@ export function RankingsView({ countries, onCountryClick }: Props) {
                 onClick={() => onCountryClick(r.country)}
               >
                 <td className="px-4 py-2 text-slate-400">{i + 1}</td>
-                <td className="px-4 py-2 text-slate-800 font-medium">
-                  {r.country.name}
-                </td>
-                <td className="px-4 py-2 text-slate-500">
-                  {r.country.region}
-                </td>
+                <td className="px-4 py-2 text-slate-800 font-medium">{r.country.name}</td>
+                <td className="px-4 py-2 text-slate-500">{r.country.region}</td>
                 <td className="px-4 py-2 text-right tabular-nums text-slate-800 font-medium">
-                  {isScore
-                    ? `${Math.round(r.value)}/100`
-                    : formatDuration(r.value)}
+                  {isScore ? `${Math.round(r.value)}/100` : formatDuration(r.value, lang)}
                 </td>
               </tr>
             ))}

@@ -1,5 +1,7 @@
 import type { MapIndicator } from "../../types";
-import { INDICATOR_LABELS } from "../../utils/calculations";
+import { INDICATOR_LABEL_KEYS } from "../../utils/calculations";
+import { useTranslation } from "../../hooks/useTranslation";
+import type { TranslationKey } from "../../i18n/translations";
 
 interface Props {
   value: MapIndicator;
@@ -18,6 +20,8 @@ const INDICATORS: MapIndicator[] = [
 ];
 
 export function IndicatorSelector({ value, onChange }: Props) {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-wrap gap-2">
       {INDICATORS.map((ind) => (
@@ -30,7 +34,7 @@ export function IndicatorSelector({ value, onChange }: Props) {
               : "bg-slate-100 text-slate-600 hover:bg-slate-200"
           }`}
         >
-          {INDICATOR_LABELS[ind]}
+          {t(INDICATOR_LABEL_KEYS[ind] as TranslationKey)}
         </button>
       ))}
     </div>

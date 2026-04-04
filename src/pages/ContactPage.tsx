@@ -1,25 +1,19 @@
 import { useState } from "react";
+import { useTranslation } from "../hooks/useTranslation";
 
 export function ContactPage() {
   const [formState, setFormState] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const { t } = useTranslation();
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setFormState("sending");
     const form = e.currentTarget;
     const data = new FormData(form);
-
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: data,
-      });
-      if (res.ok) {
-        setFormState("success");
-        form.reset();
-      } else {
-        setFormState("error");
-      }
+      const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body: data });
+      if (res.ok) { setFormState("success"); form.reset(); }
+      else setFormState("error");
     } catch {
       setFormState("error");
     }
@@ -27,10 +21,9 @@ export function ContactPage() {
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-10 space-y-6">
-
       <div className="mb-2">
-        <h2 className="text-2xl font-bold text-slate-800">Me contacter</h2>
-        <p className="text-slate-500 mt-1">Pour toute question ou remarque, envoyez votre message.</p>
+        <h2 className="text-2xl font-bold text-slate-800">{t('contact_title')}</h2>
+        <p className="text-slate-500 mt-1">{t('contact_subtitle')}</p>
       </div>
 
       {/* Author card */}
@@ -74,8 +67,8 @@ export function ContactPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h4 className="text-base font-semibold text-slate-800 mb-1">Message envoye !</h4>
-            <p className="text-sm text-slate-500">Merci. Je vous repondrai dans les meilleurs delais.</p>
+            <h4 className="text-base font-semibold text-slate-800 mb-1">{t('contact_success_title')}</h4>
+            <p className="text-sm text-slate-500">{t('contact_success_desc')}</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -86,52 +79,42 @@ export function ContactPage() {
 
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1" htmlFor="contact-name">
-                Nom
+                {t('contact_name')}
               </label>
               <input
-                id="contact-name"
-                type="text"
-                name="name"
-                placeholder="Votre nom"
-                required
+                id="contact-name" type="text" name="name"
+                placeholder={t('contact_name_placeholder')} required
                 className="w-full px-3 py-2.5 border border-slate-300 rounded-lg text-sm bg-slate-50 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100 transition"
               />
             </div>
 
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1" htmlFor="contact-email">
-                Courriel
+                {t('contact_email')}
               </label>
               <input
-                id="contact-email"
-                type="email"
-                name="email"
-                placeholder="votre@courriel.com"
-                required
+                id="contact-email" type="email" name="email"
+                placeholder={t('contact_email_placeholder')} required
                 className="w-full px-3 py-2.5 border border-slate-300 rounded-lg text-sm bg-slate-50 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100 transition"
               />
             </div>
 
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1" htmlFor="contact-message">
-                Message
+                {t('contact_message')}
               </label>
               <textarea
-                id="contact-message"
-                name="message"
-                rows={5}
-                placeholder="Votre question ou commentaire..."
-                required
+                id="contact-message" name="message" rows={5}
+                placeholder={t('contact_message_placeholder')} required
                 className="w-full px-3 py-2.5 border border-slate-300 rounded-lg text-sm bg-slate-50 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100 transition resize-none"
               />
             </div>
 
             <button
-              type="submit"
-              disabled={formState === "sending"}
+              type="submit" disabled={formState === "sending"}
               className="w-full py-2.5 bg-teal-600 hover:bg-teal-700 disabled:bg-teal-400 text-white text-sm font-semibold rounded-lg transition-colors"
             >
-              {formState === "sending" ? "Envoi en cours..." : "Envoyer le message"}
+              {formState === "sending" ? t('contact_sending') : t('contact_send')}
             </button>
           </form>
         )}
