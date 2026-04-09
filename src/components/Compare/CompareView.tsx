@@ -1,18 +1,14 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import type { Country } from "../../types";
 import { formatDuration, getGenderEqualityScore, getGenerosityScore } from "../../utils/calculations";
 import { getComparableEntities } from "../../hooks/useCountryData";
+import { getCountryName } from "../../utils/countryNames";
 import { LeaveTimeline } from "../Country/LeaveTimeline";
-import { X, Search } from "lucide-react";
+import { X, Search, Download } from "lucide-react";
 import { useTranslation } from "../../hooks/useTranslation";
 import type { TranslationKey } from "../../i18n/translations";
+import { downloadChartAsPNG } from "../../utils/exportChart";
 import {
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
-  Radar,
-  Legend,
   ResponsiveContainer,
   BarChart,
   Bar,
@@ -66,25 +62,7 @@ export function CompareView({ countries }: Props) {
     setSelected(selected.filter((c) => c.iso2 !== iso2));
   };
 
-  const radarData = [
-    { axis: t('compare_maternity'), key: "mat" },
-    { axis: t('compare_paternity'), key: "pat" },
-    { axis: t('compare_parental'), key: "par" },
-    { axis: t('compare_generosity'), key: "gen" },
-    { axis: t('compare_gender'), key: "geq" },
-  ].map((dim) => {
-    const row: any = { axis: dim.axis };
-    selected.forEach((c) => {
-      switch (dim.key) {
-        case "mat": row[c.iso2] = c.maternity.durationMonths.paid ?? 0; break;
-        case "pat": row[c.iso2] = (c.paternity.durationMonths.paid ?? 0) * 5; break;
-        case "par": row[c.iso2] = c.parental.durationMonths.paid ?? 0; break;
-        case "gen": row[c.iso2] = getGenerosityScore(c); break;
-        case "geq": row[c.iso2] = (getGenderEqualityScore(c) ?? 0) / 5; break;
-      }
-    });
-    return row;
-  });
+  const chartRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-6">
@@ -99,7 +77,7 @@ export function CompareView({ countries }: Props) {
               className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm text-white"
               style={{ backgroundColor: COLORS[i % COLORS.length] }}
             >
-              {c.name}
+              {getCountryName(c.name, c.iso2, lang)}
               <button onClick={() => removeCountry(c.iso2)} className="hover:opacity-75">
                 <X className="w-3.5 h-3.5" />
               </button>
@@ -161,16 +139,29 @@ export function CompareView({ countries }: Props) {
             ];
             return categories.map((cat) => {
               const chartData = selected.map((c, i) => ({
-                name: c.name,
+                name: getCountryName(c.name, c.iso2, lang),
                 value: cat.getValue(c),
                 fill: COLORS[i % COLORS.length],
               }));
               const chartHeight = Math.max(180, selected.length * 40 + 40);
               return (
-                <div key={cat.key} className="bg-white dark:bg-slate-800 rounded-lg border dark:border-slate-700 p-4 mb-4">
-                  <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-3">
-                    {t(cat.titleKey)}
-                  </h3>
+                <div
+                  key={cat.key}
+                  ref={(el) => { chartRefs.current[cat.key] = el; }}
+                  className="bg-white dark:bg-slate-800 rounded-lg border dark:border-slate-700 p-4 mb-4"
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-200">
+                      {t(cat.titleKey)}
+                    </h3>
+                    <button
+                      onClick={() => downloadChartAsPNG(chartRefs.current[cat.key], `compare-${cat.key}.png`, lang)}
+                      className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+                      title={lang === 'fr' ? 'Télécharger en PNG' : 'Download as PNG'}
+                    >
+                      <Download className="w-4 h-4" />
+                    </button>
+                  </div>
                   <ResponsiveContainer width="100%" height={chartHeight}>
                     <BarChart data={chartData} layout="vertical" margin={{ left: 10, right: 30, top: 5, bottom: 5 }}>
                       <CartesianGrid strokeDasharray="3 3" horizontal={false} opacity={0.3} />
@@ -205,32 +196,6 @@ export function CompareView({ countries }: Props) {
             });
           })()}
 
-          {/* Radar chart — only show for ≤ 6 for readability */}
-          {selected.length <= 6 && (
-            <div className="bg-white dark:bg-slate-800 rounded-lg border dark:border-slate-700 p-4 mb-6">
-              <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-3">{t('compare_radar_title')}</h3>
-              <ResponsiveContainer width="100%" height={350}>
-                <RadarChart data={radarData}>
-                  <PolarGrid />
-                  <PolarAngleAxis dataKey="axis" className="text-xs" />
-                  <PolarRadiusAxis className="text-xs" />
-                  {selected.map((c, i) => (
-                    <Radar
-                      key={c.iso2}
-                      name={c.name}
-                      dataKey={c.iso2}
-                      stroke={COLORS[i % COLORS.length]}
-                      fill={COLORS[i % COLORS.length]}
-                      fillOpacity={0.12}
-                      strokeWidth={2}
-                    />
-                  ))}
-                  <Legend />
-                </RadarChart>
-              </ResponsiveContainer>
-            </div>
-          )}
-
           {/* Detailed comparison table */}
           <div className="bg-white dark:bg-slate-800 rounded-lg border dark:border-slate-700 overflow-x-auto mb-6">
             <table className="w-full text-sm">
@@ -241,7 +206,7 @@ export function CompareView({ countries }: Props) {
                   </th>
                   {selected.map((c, i) => (
                     <th key={c.iso2} className="text-center px-4 py-3 font-medium whitespace-nowrap" style={{ color: COLORS[i % COLORS.length] }}>
-                      {c.name}
+                      {getCountryName(c.name, c.iso2, lang)}
                     </th>
                   ))}
                 </tr>
@@ -268,7 +233,7 @@ export function CompareView({ countries }: Props) {
             {selected.map((c, i) => (
               <div key={c.iso2} className="bg-white dark:bg-slate-800 rounded-lg border dark:border-slate-700 p-4">
                 <h3 className="text-sm font-semibold mb-3" style={{ color: COLORS[i % COLORS.length] }}>
-                  {c.name}
+                  {getCountryName(c.name, c.iso2, lang)}
                 </h3>
                 <LeaveTimeline country={c} />
               </div>

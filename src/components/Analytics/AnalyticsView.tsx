@@ -1,4 +1,4 @@
-import { useMemo, useState, useCallback } from "react";
+import { useMemo, useState, useCallback, useRef } from "react";
 import type { Country } from "../../types";
 import {
   getGenderEqualityScore,
@@ -8,6 +8,8 @@ import {
 } from "../../utils/calculations";
 import { useTranslation } from "../../hooks/useTranslation";
 import { getCountryName } from "../../utils/countryNames";
+import { Download } from "lucide-react";
+import { downloadChartAsPNG } from "../../utils/exportChart";
 import {
   ScatterChart,
   Scatter,
@@ -55,6 +57,7 @@ export function AnalyticsView({ countries, onCountryClick }: Props) {
   const { t, lang } = useTranslation();
   const [activeRegion, setActiveRegion] = useState<string | null>(null);
   const [hoveredPoint, setHoveredPoint] = useState<string | null>(null);
+  const scatterRef = useRef<HTMLDivElement | null>(null);
 
   const scatterData = useMemo(() => {
     return countries.map((c) => ({
@@ -191,10 +194,19 @@ export function AnalyticsView({ countries, onCountryClick }: Props) {
       <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-100">{t('analytics_title')}</h2>
 
       {/* Gender equality vs Generosity scatter */}
-      <div className="bg-white dark:bg-slate-800 rounded-lg border dark:border-slate-700 p-4">
-        <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1">
-          {t('analytics_scatter_title')}
-        </h3>
+      <div ref={scatterRef} className="bg-white dark:bg-slate-800 rounded-lg border dark:border-slate-700 p-4">
+        <div className="flex items-start justify-between mb-1">
+          <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-200">
+            {t('analytics_scatter_title')}
+          </h3>
+          <button
+            onClick={() => downloadChartAsPNG(scatterRef.current, 'gender-vs-generosity.png', lang)}
+            className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+            title={lang === 'fr' ? 'Télécharger en PNG' : 'Download as PNG'}
+          >
+            <Download className="w-4 h-4" />
+          </button>
+        </div>
         <p className="text-xs text-slate-500 dark:text-slate-400 mb-2">{t('analytics_scatter_desc')}</p>
 
         {/* Region filter chips */}

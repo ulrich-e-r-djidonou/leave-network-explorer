@@ -12,6 +12,7 @@ export function Header() {
 
   const NAV_ITEMS = [
     { path: '/about', labelKey: 'nav_about' as const },
+    { path: '/methodology', labelKey: 'nav_methodology' as const },
     { path: '/', labelKey: 'nav_map' as const },
     { path: '/compare', labelKey: 'nav_compare' as const },
     { path: '/rankings', labelKey: 'nav_rankings' as const },
@@ -19,7 +20,6 @@ export function Header() {
     { path: '/subnational', labelKey: 'nav_subnational' as const },
     { path: '/reforms', labelKey: 'nav_reforms' as const },
     { path: '/data', labelKey: 'nav_data' as const },
-    { path: '/methodology', labelKey: 'nav_methodology' as const },
     { path: '/contact', labelKey: 'nav_contact' as const },
   ];
 
