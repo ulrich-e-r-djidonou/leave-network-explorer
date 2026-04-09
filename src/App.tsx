@@ -7,11 +7,16 @@ import { AnalyticsView } from "./components/Analytics/AnalyticsView";
 import { ContactPage } from "./pages/ContactPage";
 import { AboutPage } from "./pages/AboutPage";
 import { SubnationalPage } from "./pages/SubnationalPage";
+import { ReformsPage } from "./pages/ReformsPage";
+import { DataTablePage } from "./pages/DataTablePage";
+import { CountryPage } from "./pages/CountryPage";
+import { MethodologyPage } from "./pages/MethodologyPage";
 import { useCountryData } from "./hooks/useCountryData";
 import { useState } from "react";
 import type { Country } from "./types";
 import { CountryDetail } from "./components/Country/CountryDetail";
 import { useTranslation } from "./hooks/useTranslation";
+import ChatBot from "./components/ChatBot/ChatBot";
 
 function AppInner() {
   const { data, loading } = useCountryData();
@@ -20,10 +25,10 @@ function AppInner() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
         <div className="text-center">
           <div className="w-10 h-10 border-4 border-teal-500 border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="text-sm text-slate-500 mt-3">{t('loading')}</p>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">{t('loading')}</p>
         </div>
       </div>
     );
@@ -31,14 +36,14 @@ function AppInner() {
 
   if (!data) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
         <p className="text-red-600">{t('error_loading')}</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
       <Header />
       {detailCountry && (
         <div
@@ -60,20 +65,24 @@ function AppInner() {
           path="/rankings"
           element={<RankingsView countries={data.countries} onCountryClick={setDetailCountry} />}
         />
-        <Route path="/analytics" element={<AnalyticsView countries={data.countries} />} />
+        <Route path="/analytics" element={<AnalyticsView countries={data.countries} onCountryClick={setDetailCountry} />} />
         <Route path="/subnational" element={<SubnationalPage countries={data.countries} />} />
+        <Route path="/reforms" element={<ReformsPage countries={data.countries} />} />
+        <Route path="/data" element={<DataTablePage countries={data.countries} />} />
+        <Route path="/country/:iso2" element={<CountryPage countries={data.countries} />} />
+        <Route path="/methodology" element={<MethodologyPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
-      <footer className="border-t bg-white mt-12">
-        <div className="max-w-7xl mx-auto px-4 py-4 text-xs text-slate-400">
+      <ChatBot countries={data.countries} />
+      <footer className="border-t bg-white dark:bg-slate-800 dark:border-slate-700 mt-12">
+        <div className="max-w-7xl mx-auto px-4 py-4 text-xs text-slate-400 dark:text-slate-400">
           <p>
             {t('footer_made_by')} <strong>Ulrich Djidonou</strong> — Source : {data.metadata.source} ({data.metadata.asOf}).{" "}
             {data.metadata.editors} (eds.)
           </p>
           <p className="mt-1">
-            {data.metadata.totalCountries} {t('nav_about') === 'About' ? 'countries covered.' : 'pays couverts.'}{" "}
-            {t('footer_indicative')}
+            {data.metadata.totalCountries} {t('nav_about') === 'About' ? 'countries covered.' : 'pays couverts.'}
           </p>
         </div>
       </footer>

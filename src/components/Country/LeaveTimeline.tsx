@@ -69,24 +69,31 @@ export function LeaveTimeline({ country }: Props) {
 
   return (
     <div className="space-y-2">
-      {segments.map((seg, i) => (
-        <div key={i} className="flex items-center gap-2">
-          <span className="text-xs text-slate-500 w-16 text-right shrink-0">
-            {seg.label}
-          </span>
-          <div className="flex-1 relative h-7">
-            <div
-              className={`${seg.color} h-full rounded flex items-center px-2 text-white text-xs font-medium transition-all`}
-              style={{ width: `${Math.max(5, (seg.months / maxMonths) * 100)}%` }}
-            >
-              {formatDuration(seg.months, lang)}
-              {seg.subLabel && (
-                <span className="ml-1 opacity-75">({seg.subLabel})</span>
+      {segments.map((seg, i) => {
+        const pct = (seg.months / maxMonths) * 100;
+        const isNarrow = pct < 35;
+        const barText = `${formatDuration(seg.months, lang)}${seg.subLabel ? ` (${seg.subLabel})` : ''}`;
+        return (
+          <div key={i} className="flex items-center gap-2">
+            <span className="text-xs text-slate-500 w-16 text-right shrink-0">
+              {seg.label}
+            </span>
+            <div className="flex-1 relative h-7 flex items-center">
+              <div
+                className={`${seg.color} h-full rounded shrink-0 ${isNarrow ? '' : 'flex items-center px-2 text-white text-xs font-medium'}`}
+                style={{ width: `${Math.max(8, pct)}%` }}
+              >
+                {!isNarrow && barText}
+              </div>
+              {isNarrow && (
+                <span className="ml-1.5 text-xs font-medium text-slate-700 dark:text-slate-300 whitespace-nowrap">
+                  {barText}
+                </span>
               )}
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
       {/* ECEC marker */}
       {country.ecec.entitlementAgeMonths !== null && (
         <div className="flex items-center gap-2 mt-1">

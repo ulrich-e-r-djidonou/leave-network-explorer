@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTranslation } from '../../hooks/useTranslation';
+import { useTheme } from '../../contexts/ThemeContext';
 
 export function Header() {
   const location = useLocation();
   const { t, lang, setLang } = useTranslation();
+  const { theme, toggleTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const NAV_ITEMS = [
@@ -14,7 +16,10 @@ export function Header() {
     { path: '/compare', labelKey: 'nav_compare' as const },
     { path: '/rankings', labelKey: 'nav_rankings' as const },
     { path: '/analytics', labelKey: 'nav_analytics' as const },
-    { path: '/subnational', labelKey: 'sub_title' as const },
+    { path: '/subnational', labelKey: 'nav_subnational' as const },
+    { path: '/reforms', labelKey: 'nav_reforms' as const },
+    { path: '/data', labelKey: 'nav_data' as const },
+    { path: '/methodology', labelKey: 'nav_methodology' as const },
     { path: '/contact', labelKey: 'nav_contact' as const },
   ];
 
@@ -22,28 +27,28 @@ export function Header() {
 
   return (
     <header className="bg-slate-900 text-white shadow-lg sticky top-0 z-40">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+      {/* Barre principale */}
+      <div className="flex items-center gap-2 px-4 py-3">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 hover:opacity-90 shrink-0">
+        <Link to="/" className="flex items-center gap-2 hover:opacity-90 shrink-0">
           <div className="w-8 h-8 bg-teal-500 rounded-lg flex items-center justify-center text-sm font-bold">
             LN
           </div>
           <div className="hidden sm:block">
-            <h1 className="text-base font-semibold leading-tight">{t('app_title')}</h1>
-            <p className="text-xs text-slate-400">{t('app_subtitle')}</p>
-          </div>
-          <div className="sm:hidden">
-            <h1 className="text-sm font-semibold leading-tight">LN Explorer</h1>
+            <p className="text-sm font-semibold leading-tight whitespace-nowrap">
+              Leave Network Explorer
+            </p>
+            <p className="text-[11px] text-slate-400 whitespace-nowrap">{t('app_subtitle')}</p>
           </div>
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden lg:flex gap-1 items-center">
+        {/* Nav desktop — scrollable sans scrollbar visible, prend l'espace restant */}
+        <nav className="hidden lg:flex items-center gap-0.5 overflow-x-auto no-scrollbar min-w-0 flex-1 mx-2">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.path}
               to={item.path}
-              className={`px-2.5 py-1.5 rounded text-xs transition-colors whitespace-nowrap ${
+              className={`px-2.5 py-1.5 rounded text-xs transition-colors whitespace-nowrap shrink-0 ${
                 isActive(item.path)
                   ? 'bg-teal-600 text-white'
                   : 'text-slate-300 hover:bg-slate-800 hover:text-white'
@@ -54,9 +59,18 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Right side: lang toggle + hamburger */}
-        <div className="flex items-center gap-2 shrink-0">
-          {/* FR/EN Toggle */}
+        {/* FR/EN + hamburger — toujours visible à droite, ne rétrécit jamais */}
+        <div className="shrink-0 ml-auto flex items-center gap-2">
+          {/* Toggle Dark/Light */}
+          <button
+            onClick={toggleTheme}
+            className="p-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white transition-colors"
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
+
+          {/* Toggle FR/EN */}
           <div className="flex items-center bg-slate-800 rounded-lg p-0.5 text-xs">
             <button
               onClick={() => setLang('fr')}
@@ -80,7 +94,7 @@ export function Header() {
             </button>
           </div>
 
-          {/* Hamburger (mobile/tablet) */}
+          {/* Hamburger — uniquement sous lg */}
           <button
             className="lg:hidden p-1.5 rounded text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
             onClick={() => setMenuOpen((v) => !v)}
@@ -91,9 +105,9 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Menu mobile déroulant */}
       {menuOpen && (
-        <div className="lg:hidden border-t border-slate-700 bg-slate-900 px-4 py-2">
+        <div className="lg:hidden border-t border-slate-700 bg-slate-900 px-4 pb-3 pt-1">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.path}

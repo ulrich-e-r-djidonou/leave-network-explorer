@@ -7,8 +7,11 @@ import {
   getIndicatorValue,
   getColorForValue,
   formatDuration,
-  INDICATOR_LABELS,
+  INDICATOR_LABEL_KEYS,
 } from "../../utils/calculations";
+import { useTranslation } from "../../hooks/useTranslation";
+import type { TranslationKey } from "../../i18n/translations";
+import { getCountryName } from "../../utils/countryNames";
 import "leaflet/dist/leaflet.css";
 
 // Map from GeoJSON ISO_A3/ISO_A2 to our data ISO codes
@@ -47,6 +50,8 @@ interface Props {
 
 export function WorldMap({ countries, indicator, onCountryClick }: Props) {
   const [geoData, setGeoData] = useState<any>(null);
+  const { t, lang } = useTranslation();
+  const indicatorLabel = t(INDICATOR_LABEL_KEYS[indicator] as TranslationKey);
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}world.geojson`)
@@ -94,12 +99,13 @@ export function WorldMap({ countries, indicator, onCountryClick }: Props) {
       if (country) {
         const value = getIndicatorValue(country, indicator);
         const label =
-          indicator.includes("gender") || indicator.includes("generosity")
+          indicator.includes("gender")
             ? `${value}/100`
-            : formatDuration(value);
+            : formatDuration(value, lang);
 
+        const displayName = getCountryName(country.name, country.iso2, lang);
         layer.bindTooltip(
-          `<strong>${country.name}</strong><br/>${INDICATOR_LABELS[indicator]}: ${label}`,
+          `<strong>${displayName}</strong><br/>${indicatorLabel}: ${label}`,
           { sticky: true, className: "!text-sm" }
         );
         layer.on({
@@ -117,13 +123,13 @@ export function WorldMap({ countries, indicator, onCountryClick }: Props) {
         });
       }
     },
-    [countries, indicator, onCountryClick, style]
+    [countries, indicator, onCountryClick, style, lang, indicatorLabel]
   );
 
   if (!geoData) {
     return (
       <div className="h-[500px] bg-slate-100 flex items-center justify-center text-slate-500">
-        Chargement de la carte...
+        {lang === 'fr' ? 'Chargement de la carte...' : 'Loading map...'}
       </div>
     );
   }
@@ -144,32 +150,32 @@ export function WorldMap({ countries, indicator, onCountryClick }: Props) {
           url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
         />
         <GeoJSON
-          key={indicator}
+          key={`${indicator}-${lang}`}
           data={geoData}
           style={style}
           onEachFeature={onEachFeature}
         />
       </MapContainer>
       {/* Legend */}
-      <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur rounded-lg shadow p-3 z-[1000]">
-        <p className="text-xs font-medium text-slate-700 mb-1">
-          {INDICATOR_LABELS[indicator]}
+      <div className="absolute bottom-4 left-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur rounded-lg shadow p-3 z-[1000]">
+        <p className="text-xs font-medium text-slate-700 dark:text-slate-200 mb-1">
+          {indicatorLabel}
         </p>
         <div className="flex items-center gap-1">
-          <span className="text-xs text-slate-500">{min}</span>
+          <span className="text-xs text-slate-500 dark:text-slate-400">{min}</span>
           <div
             className="h-3 w-32 rounded"
             style={{
               background: `linear-gradient(to right, ${getColorForValue(min, min, max)}, ${getColorForValue(max, min, max)})`,
             }}
           />
-          <span className="text-xs text-slate-500">
-            {indicator.includes("gender") ? `${max}` : formatDuration(max)}
+          <span className="text-xs text-slate-500 dark:text-slate-400">
+            {indicator.includes("gender") ? `${max}` : formatDuration(max, lang)}
           </span>
         </div>
         <div className="flex items-center gap-1 mt-1">
           <div className="w-3 h-3 rounded bg-gray-200 border border-gray-300" />
-          <span className="text-xs text-slate-500">Pas dans la revue</span>
+          <span className="text-xs text-slate-500 dark:text-slate-400">{lang === 'fr' ? 'Pas dans la revue' : 'Not in review'}</span>
         </div>
       </div>
     </div>

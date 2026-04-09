@@ -1,8 +1,9 @@
 import type { Country, SubnationalEntity } from "../../types";
 import { formatDuration, getGenderEqualityScore, getGenerosityScore } from "../../utils/calculations";
 import { LeaveTimeline } from "./LeaveTimeline";
-import { X } from "lucide-react";
+import { X, ExternalLink } from "lucide-react";
 import { useTranslation } from "../../hooks/useTranslation";
+import { Link } from "react-router-dom";
 
 interface Props {
   country: Country;
@@ -37,6 +38,13 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
           </p>
         </div>
         <div className="flex gap-2">
+          <Link
+            to={`/country/${c.iso2}`}
+            className="text-xs bg-slate-700 hover:bg-slate-600 px-3 py-1.5 rounded transition-colors flex items-center gap-1"
+          >
+            <ExternalLink className="w-3 h-3" />
+            {lang === 'fr' ? 'Page dédiée' : 'Full page'}
+          </Link>
           {onCompare && (
             <button
               onClick={() => onCompare(c)}
@@ -53,7 +61,10 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
 
       {/* Scores */}
       <div className="grid grid-cols-2 gap-3 p-4 bg-slate-50 border-b">
-        <ScoreBadge label={t('generosity')} score={generosityScore} />
+        <div className="rounded-lg p-3 text-center text-teal-700 bg-teal-50">
+          <p className="text-2xl font-bold">{formatDuration(generosityScore, lang)}</p>
+          <p className="text-xs mt-0.5">{lang === 'fr' ? 'Générosité (ETP)' : 'Generosity (FTE)'}</p>
+        </div>
         <ScoreBadge label={t('gender_equality')} score={genderScore} />
       </div>
 
@@ -250,16 +261,18 @@ function Chip({ label, active, detail }: { label: string; active: boolean; detai
   );
 }
 
-function ScoreBadge({ label, score }: { label: string; score: number }) {
+function ScoreBadge({ label, score }: { label: string; score: number | null }) {
   const color =
-    score >= 70
-      ? "text-teal-700 bg-teal-50"
-      : score >= 40
-        ? "text-amber-700 bg-amber-50"
-        : "text-rose-700 bg-rose-50";
+    score === null
+      ? "text-slate-500 bg-slate-50"
+      : score >= 70
+        ? "text-teal-700 bg-teal-50"
+        : score >= 40
+          ? "text-amber-700 bg-amber-50"
+          : "text-rose-700 bg-rose-50";
   return (
     <div className={`rounded-lg p-3 text-center ${color}`}>
-      <p className="text-2xl font-bold">{score}</p>
+      <p className="text-2xl font-bold">{score !== null ? score : 'N/A'}</p>
       <p className="text-xs mt-0.5">{label}</p>
     </div>
   );

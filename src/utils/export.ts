@@ -68,7 +68,7 @@ export function exportToCSV(countries: Country[], filename = "leave_network_data
     c.parental?.flexPartTime ? "Oui" : "Non",
     getTotalLeaveMonths(c),
     getGenerosityScore(c),
-    getGenderEqualityScore(c),
+    getGenderEqualityScore(c) ?? "N/A",
     c.otherMeasures?.sickChildLeave?.daysPerYear ?? "",
     c.otherMeasures?.flexibleWork?.rightToRequest ? "Oui" : "Non",
     c.ecec?.universalEntitlement ? "Oui" : "Non",

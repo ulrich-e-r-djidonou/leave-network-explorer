@@ -17,6 +17,7 @@ const INDICATORS: MapIndicator[] = [
   "parental_wellPaid",
   "total_leave",
   "gender_equality",
+  "generosity",
 ];
 
 export function IndicatorSelector({ value, onChange }: Props) {
@@ -31,7 +32,7 @@ export function IndicatorSelector({ value, onChange }: Props) {
           className={`px-3 py-1.5 rounded-full text-sm transition-colors ${
             value === ind
               ? "bg-teal-600 text-white shadow-sm"
-              : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+              : "bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600"
           }`}
         >
           {t(INDICATOR_LABEL_KEYS[ind] as TranslationKey)}

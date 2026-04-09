@@ -9,6 +9,7 @@ const translations = {
     nav_analytics: 'Analyses',
     nav_contact: 'Contact',
     nav_about: 'À propos',
+    nav_data: 'Données',
 
     // Header
     app_title: 'Leave Network Explorer',
@@ -22,8 +23,23 @@ const translations = {
     ind_parental_total: 'Congé parental (total)',
     ind_parental_wellPaid: 'Congé parental (bien payé)',
     ind_total_leave: 'Total congés payés (tous types)',
-    ind_gender_equality: 'Score égalité des genres',
-    ind_generosity: 'Score de générosité',
+    ind_gender_equality: 'Égalité des genres (GII, UNDP)',
+    ind_generosity: 'G\u00e9n\u00e9rosit\u00e9 (ETP, mois)',
+    ind_wellpaid_total: 'Cong\u00e9s bien pay\u00e9s (total)',
+    rankings_methodology_note: 'Le classement est bas\u00e9 sur l\u2019indicateur s\u00e9lectionn\u00e9 ci-dessous. Les donn\u00e9es proviennent du LPRN 2025 (Leave Policy Research Network) et sont mises \u00e0 jour annuellement. Important : un cong\u00e9 offert ne signifie pas n\u00e9cessairement qu\u2019il est bien r\u00e9mun\u00e9r\u00e9. Consultez l\u2019indicateur \u00ab G\u00e9n\u00e9rosit\u00e9 (ETP) \u00bb pour une mesure tenant compte du taux de remplacement.',
+    rankings_see_methodology: 'Voir la m\u00e9thodologie',
+    rankings_data_source: 'Donn\u00e9es : LPRN 2025',
+    methodology_title: 'M\u00e9thodologie des scores',
+    methodology_subtitle: 'Formules, hypoth\u00e8ses et limites des indices composites',
+    nav_methodology: 'M\u00e9thodologie',
+    compare_bar_title: 'Comparaison visuelle (mois)',
+    region_all: 'Toutes',
+    region_europe: 'Europe',
+    region_north_america: 'Am\u00e9rique du Nord',
+    region_south_america: 'Am\u00e9rique du Sud',
+    region_asia: 'Asie',
+    region_oceania: 'Oc\u00e9anie',
+    region_africa: 'Afrique',
 
     // Barre de stats
     stats_countries: 'Pays couverts',
@@ -135,7 +151,7 @@ const translations = {
     compare_row_sick: 'Congé enfant malade',
     compare_row_flex: 'Travail flexible',
     compare_row_ecec: 'ECEC universel',
-    compare_row_generosity: 'Score générosité',
+    compare_row_generosity: 'Générosité (ETP)',
     compare_row_gender: 'Score égalité',
     compare_subnational: 'infranational',
 
@@ -192,8 +208,11 @@ const translations = {
     contact_success_desc: 'Merci. Je vous répondrai dans les meilleurs délais.',
 
     // À propos
-    about_title: 'À propos du projet',
-    about_subtitle: 'Sources, méthodologie et dictionnaire des données.',
+    about_title: "À propos de l'explorateur",
+    about_subtitle: 'Contexte, sources et avertissement.',
+
+    // Navigation courte (infranationale)
+    nav_subnational: 'Provinces',
 
     // Page infranationale
     sub_title: 'Entités infranationales',
@@ -210,6 +229,37 @@ const translations = {
     sub_col_parental: 'Parental',
     sub_col_notes: 'Notes',
 
+    // Réformes
+    nav_reforms: 'Réformes',
+    reforms_title: 'Réformes récentes',
+    reforms_subtitle: 'Évolutions des politiques de congé dans le monde',
+    reforms_all_types: 'Tous les types',
+    reforms_expansion: 'Extension',
+    reforms_cutback: 'Réduction',
+    reforms_recalibration: 'Recalibration',
+    reforms_introduction: 'Introduction',
+    reforms_abolition: 'Abolition',
+    reforms_no_results: 'Aucune réforme trouvée',
+    reforms_count: 'réformes',
+
+    // Custom score
+    nav_custom: 'Score perso.',
+    custom_title: 'Score personnalisé',
+    custom_subtitle: 'Ajustez les pondérations selon vos priorités',
+    custom_duration: 'Durée totale payée',
+    custom_wellpaid: 'Durée bien payée',
+    custom_flexibility: 'Flexibilité',
+    custom_ecec: 'Accueil universel (ECEC)',
+    custom_reset: 'Réinitialiser',
+    custom_total_weight: 'Poids total',
+
+    // Data table
+    data_title: 'Tableau de données',
+    data_subtitle: 'Toutes les données de congé par pays',
+    data_export_csv: 'Exporter CSV',
+    data_sort: 'Trier',
+    data_no_results: 'Aucun résultat',
+
     // Général
     months: 'mois',
     weeks: 'sem.',
@@ -225,6 +275,7 @@ const translations = {
     nav_analytics: 'Analytics',
     nav_contact: 'Contact',
     nav_about: 'About',
+    nav_data: 'Data',
 
     // Header
     app_title: 'Leave Network Explorer',
@@ -238,8 +289,23 @@ const translations = {
     ind_parental_total: 'Parental leave (total)',
     ind_parental_wellPaid: 'Parental leave (well-paid)',
     ind_total_leave: 'Total paid leave (all types)',
-    ind_gender_equality: 'Gender equality score',
-    ind_generosity: 'Generosity score',
+    ind_gender_equality: 'Gender equality (GII, UNDP)',
+    ind_generosity: 'Generosity (FTE, months)',
+    ind_wellpaid_total: 'Well-paid leave (total)',
+    rankings_methodology_note: 'Rankings are based on the selected indicator below. Data comes from LPRN 2025 (Leave Policy Research Network) and is updated annually. Important: a leave entitlement does not necessarily mean it is well paid. See the \u201cGenerosity (FTE)\u201d indicator for a measure that accounts for replacement rates.',
+    rankings_see_methodology: 'See methodology',
+    rankings_data_source: 'Data: LPRN 2025',
+    methodology_title: 'Score Methodology',
+    methodology_subtitle: 'Formulas, assumptions and limitations of composite indices',
+    nav_methodology: 'Methodology',
+    compare_bar_title: 'Visual comparison (months)',
+    region_all: 'All',
+    region_europe: 'Europe',
+    region_north_america: 'North America',
+    region_south_america: 'South America',
+    region_asia: 'Asia',
+    region_oceania: 'Oceania',
+    region_africa: 'Africa',
 
     // Stats bar
     stats_countries: 'Countries covered',
@@ -351,7 +417,7 @@ const translations = {
     compare_row_sick: 'Sick child leave',
     compare_row_flex: 'Flexible work',
     compare_row_ecec: 'Universal ECEC',
-    compare_row_generosity: 'Generosity score',
+    compare_row_generosity: 'Generosity (FTE)',
     compare_row_gender: 'Equality score',
     compare_subnational: 'subnational',
 
@@ -408,8 +474,11 @@ const translations = {
     contact_success_desc: 'Thank you. I will reply as soon as possible.',
 
     // About
-    about_title: 'About the project',
-    about_subtitle: 'Sources, methodology and data dictionary.',
+    about_title: 'About the Explorer',
+    about_subtitle: 'Context, sources and disclaimer.',
+
+    // Navigation courte (infranationale)
+    nav_subnational: 'Provinces',
 
     // Subnational page
     sub_title: 'Subnational entities',
@@ -425,6 +494,37 @@ const translations = {
     sub_col_paternity: 'Paternity',
     sub_col_parental: 'Parental',
     sub_col_notes: 'Notes',
+
+    // Reforms
+    nav_reforms: 'Reforms',
+    reforms_title: 'Recent Reforms',
+    reforms_subtitle: 'Leave policy changes around the world',
+    reforms_all_types: 'All types',
+    reforms_expansion: 'Expansion',
+    reforms_cutback: 'Cutback',
+    reforms_recalibration: 'Recalibration',
+    reforms_introduction: 'Introduction',
+    reforms_abolition: 'Abolition',
+    reforms_no_results: 'No reforms found',
+    reforms_count: 'reforms',
+
+    // Custom score
+    nav_custom: 'Custom Score',
+    custom_title: 'Custom Score',
+    custom_subtitle: 'Adjust weights based on your priorities',
+    custom_duration: 'Total paid duration',
+    custom_wellpaid: 'Well-paid duration',
+    custom_flexibility: 'Flexibility',
+    custom_ecec: 'Universal childcare (ECEC)',
+    custom_reset: 'Reset',
+    custom_total_weight: 'Total weight',
+
+    // Data table
+    data_title: 'Data Table',
+    data_subtitle: 'All leave data by country',
+    data_export_csv: 'Export CSV',
+    data_sort: 'Sort',
+    data_no_results: 'No results',
 
     // General
     months: 'months',
