@@ -1,78 +1,50 @@
+import html2canvas from "html2canvas";
+
 /**
- * Export a DOM element containing an SVG chart to a PNG file.
+ * Capture a DOM element as PNG and trigger download.
  * Adds a source/copyright watermark at the bottom.
  */
-export function downloadChartAsPNG(
+export async function downloadChartAsPNG(
   container: HTMLElement | null,
   filename = "chart.png",
   lang: "fr" | "en" = "fr"
-): void {
+): Promise<void> {
   if (!container) return;
-
-  const svg = container.querySelector("svg");
-  if (!svg) return;
 
   const watermark =
     lang === "fr"
       ? "Source : LPRN 2025 — © Ulrich Djidonou"
       : "Source: LPRN 2025 — © Ulrich Djidonou";
 
-  const svgRect = svg.getBoundingClientRect();
-  const W = Math.round(svgRect.width) || 800;
-  const H = Math.round(svgRect.height) || 400;
-  const PADDING = 28; // space for watermark
+  try {
+    const canvas = await html2canvas(container, {
+      backgroundColor: "#ffffff",
+      scale: 2,
+      useCORS: true,
+      logging: false,
+    });
 
-  // Clone SVG and set explicit dimensions
-  const clone = svg.cloneNode(true) as SVGSVGElement;
-  clone.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-  clone.setAttribute("width", String(W));
-  clone.setAttribute("height", String(H));
+    // Add watermark strip at bottom
+    const STRIP = 28;
+    const final = document.createElement("canvas");
+    final.width = canvas.width;
+    final.height = canvas.height + STRIP * 2;
 
-  // Inline computed styles for text elements so fonts render in canvas
-  const texts = clone.querySelectorAll("text, tspan");
-  const origTexts = svg.querySelectorAll("text, tspan");
-  texts.forEach((el, i) => {
-    const orig = origTexts[i];
-    if (orig) {
-      const cs = window.getComputedStyle(orig);
-      (el as HTMLElement).style.fontFamily = cs.fontFamily || "sans-serif";
-      (el as HTMLElement).style.fontSize = cs.fontSize || "12px";
-      (el as HTMLElement).style.fill = cs.fill || "#334155";
-    }
-  });
-
-  const svgData = new XMLSerializer().serializeToString(clone);
-  const svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
-  const url = URL.createObjectURL(svgBlob);
-
-  const img = new Image();
-  img.onload = () => {
-    const scale = 2; // retina quality
-    const canvas = document.createElement("canvas");
-    canvas.width = W * scale;
-    canvas.height = (H + PADDING) * scale;
-
-    const ctx = canvas.getContext("2d")!;
-    ctx.scale(scale, scale);
-
-    // White background
+    const ctx = final.getContext("2d")!;
     ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0, 0, W, H + PADDING);
-
-    // Chart
-    ctx.drawImage(img, 0, 0, W, H);
+    ctx.fillRect(0, 0, final.width, final.height);
+    ctx.drawImage(canvas, 0, 0);
 
     // Watermark bar
     ctx.fillStyle = "#f8fafc";
-    ctx.fillRect(0, H, W, PADDING);
+    ctx.fillRect(0, canvas.height, final.width, STRIP * 2);
 
     ctx.fillStyle = "#94a3b8";
-    ctx.font = "10px sans-serif";
+    ctx.font = `${11 * 2}px sans-serif`;
     ctx.textAlign = "right";
-    ctx.fillText(watermark, W - 8, H + 18);
+    ctx.fillText(watermark, final.width - 12, canvas.height + STRIP * 1.5);
 
-    // Download
-    canvas.toBlob((blob) => {
+    final.toBlob((blob) => {
       if (!blob) return;
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
@@ -80,9 +52,7 @@ export function downloadChartAsPNG(
       a.click();
       URL.revokeObjectURL(a.href);
     }, "image/png");
-
-    URL.revokeObjectURL(url);
-  };
-  img.onerror = () => URL.revokeObjectURL(url);
-  img.src = url;
+  } catch (e) {
+    console.error("Export PNG failed:", e);
+  }
 }

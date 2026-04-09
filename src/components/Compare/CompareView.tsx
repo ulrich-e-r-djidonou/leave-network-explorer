@@ -3,12 +3,17 @@ import type { Country } from "../../types";
 import { formatDuration, getGenderEqualityScore, getGenerosityScore } from "../../utils/calculations";
 import { getComparableEntities } from "../../hooks/useCountryData";
 import { getCountryName } from "../../utils/countryNames";
-import { LeaveTimeline } from "../Country/LeaveTimeline";
 import { X, Search, Download } from "lucide-react";
 import { useTranslation } from "../../hooks/useTranslation";
 import type { TranslationKey } from "../../i18n/translations";
 import { downloadChartAsPNG } from "../../utils/exportChart";
 import {
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+  Radar,
+  Legend,
   ResponsiveContainer,
   BarChart,
   Bar,
@@ -45,11 +50,13 @@ export function CompareView({ countries }: Props) {
 
   const allEntities = useMemo(() => getComparableEntities(countries), [countries]);
 
-  const filtered = allEntities.filter(
-    (e) =>
-      e.label.toLowerCase().includes(search.toLowerCase()) &&
-      !selected.find((s) => s.iso2 === e.id)
-  );
+  const filtered = allEntities.filter((e) => {
+    if (selected.find((s) => s.iso2 === e.id)) return false;
+    const q = search.toLowerCase();
+    const enName = e.label.toLowerCase();
+    const frName = getCountryName(e.country.name, e.country.iso2, "fr").toLowerCase();
+    return enName.includes(q) || frName.includes(q);
+  });
 
   const addCountry = (c: Country) => {
     if (selected.length < MAX_COMPARE) {
@@ -63,6 +70,27 @@ export function CompareView({ countries }: Props) {
   };
 
   const chartRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const radarRef = useRef<HTMLDivElement | null>(null);
+
+  const radarData = [
+    { axis: t('compare_maternity'), key: "mat" },
+    { axis: t('compare_paternity'), key: "pat" },
+    { axis: t('compare_parental'), key: "par" },
+    { axis: t('compare_generosity'), key: "gen" },
+    { axis: t('compare_gender'), key: "geq" },
+  ].map((dim) => {
+    const row: any = { axis: dim.axis };
+    selected.forEach((c) => {
+      switch (dim.key) {
+        case "mat": row[c.iso2] = c.maternity.durationMonths.paid ?? 0; break;
+        case "pat": row[c.iso2] = (c.paternity.durationMonths.paid ?? 0) * 5; break;
+        case "par": row[c.iso2] = c.parental.durationMonths.paid ?? 0; break;
+        case "gen": row[c.iso2] = getGenerosityScore(c); break;
+        case "geq": row[c.iso2] = (getGenderEqualityScore(c) ?? 0) / 5; break;
+      }
+    });
+    return row;
+  });
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-6">
@@ -196,6 +224,41 @@ export function CompareView({ countries }: Props) {
             });
           })()}
 
+          {/* Radar chart — overview (≤ 6 countries) */}
+          {selected.length <= 6 && (
+            <div ref={radarRef} className="bg-white dark:bg-slate-800 rounded-lg border dark:border-slate-700 p-4 mb-6">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-200">{t('compare_radar_title')}</h3>
+                <button
+                  onClick={() => downloadChartAsPNG(radarRef.current, 'compare-radar.png', lang)}
+                  className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+                  title={lang === 'fr' ? 'Télécharger en PNG' : 'Download as PNG'}
+                >
+                  <Download className="w-4 h-4" />
+                </button>
+              </div>
+              <ResponsiveContainer width="100%" height={350}>
+                <RadarChart data={radarData}>
+                  <PolarGrid />
+                  <PolarAngleAxis dataKey="axis" tick={{ fontSize: 11 }} />
+                  <PolarRadiusAxis tick={{ fontSize: 10 }} />
+                  {selected.map((c, i) => (
+                    <Radar
+                      key={c.iso2}
+                      name={getCountryName(c.name, c.iso2, lang)}
+                      dataKey={c.iso2}
+                      stroke={COLORS[i % COLORS.length]}
+                      fill={COLORS[i % COLORS.length]}
+                      fillOpacity={0.12}
+                      strokeWidth={2}
+                    />
+                  ))}
+                  <Legend />
+                </RadarChart>
+              </ResponsiveContainer>
+            </div>
+          )}
+
           {/* Detailed comparison table */}
           <div className="bg-white dark:bg-slate-800 rounded-lg border dark:border-slate-700 overflow-x-auto mb-6">
             <table className="w-full text-sm">
@@ -228,17 +291,6 @@ export function CompareView({ countries }: Props) {
             </table>
           </div>
 
-          {/* Side-by-side timelines */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {selected.map((c, i) => (
-              <div key={c.iso2} className="bg-white dark:bg-slate-800 rounded-lg border dark:border-slate-700 p-4">
-                <h3 className="text-sm font-semibold mb-3" style={{ color: COLORS[i % COLORS.length] }}>
-                  {getCountryName(c.name, c.iso2, lang)}
-                </h3>
-                <LeaveTimeline country={c} />
-              </div>
-            ))}
-          </div>
         </>
       )}
     </div>
