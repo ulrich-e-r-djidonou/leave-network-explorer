@@ -50,11 +50,23 @@ export function CompareView({ countries }: Props) {
 
   const allEntities = useMemo(() => getComparableEntities(countries), [countries]);
 
+  const normalize = (s: string) =>
+    s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
   const filtered = allEntities.filter((e) => {
     if (selected.find((s) => s.iso2 === e.id)) return false;
-    const q = search.toLowerCase();
-    const enName = e.label.toLowerCase();
-    const frName = getCountryName(e.country.name, e.country.iso2, "fr").toLowerCase();
+    const q = normalize(search);
+    // English label (always present)
+    const enName = normalize(e.label);
+    // French label: for subnational, translate the parent part
+    const frLabel = e.isSubnational
+      ? (() => {
+          const parts = e.label.split(' — ');
+          const parentIso = e.id.split('-')[0];
+          return `${getCountryName(parts[0], parentIso, "fr")} — ${parts.slice(1).join(' — ')}`;
+        })()
+      : getCountryName(e.country.name, e.country.iso2, "fr");
+    const frName = normalize(frLabel);
     return enName.includes(q) || frName.includes(q);
   });
 
@@ -133,7 +145,13 @@ export function CompareView({ countries }: Props) {
                     onClick={() => addCountry(e.country)}
                     className="w-full text-left px-3 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-600 dark:text-slate-200 flex items-center gap-2"
                   >
-                    {e.label}
+                    {e.isSubnational
+                      ? (() => {
+                          const parts = e.label.split(' — ');
+                          const parentIso = e.id.split('-')[0];
+                          return `${getCountryName(parts[0], parentIso, lang)} — ${parts.slice(1).join(' — ')}`;
+                        })()
+                      : getCountryName(e.country.name, e.country.iso2, lang)}
                     {e.isSubnational && (
                       <span className="text-[10px] bg-indigo-100 text-indigo-600 px-1.5 rounded">
                         {t('compare_subnational')}
