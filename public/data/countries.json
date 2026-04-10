@@ -492,7 +492,12 @@
         "flexPartTime": false,
         "flexBlocks": false,
         "additionalForMultiple": true,
-        "fundingSource": "FBiH: cantonal budgets; RS: RS Fund for Child Protection; BD: general taxes"
+        "fundingSource": "FBiH: cantonal budgets; RS: RS Fund for Child Protection; BD: general taxes",
+        "birthOrderVariation": {
+          "exists": true,
+          "details_en": "In Republika Srpska (RS) and Brčko District (BD): maternity leave extended to 18 months for 3rd child and above, and for twins (vs 12 months for 1st/2nd child). Applies only in these entities, not in the Federation (FBiH).",
+          "details_fr": "En Republika Srpska et dans le District de Brčko : le congé maternité est porté à 18 mois pour le 3e enfant et plus, et pour les jumeaux (contre 12 mois pour le 1er/2e enfant). Ne s'applique pas dans la Fédération (FBiH)."
+        }
       },
       "paternity": {
         "exists": false,
@@ -1750,7 +1755,12 @@
         "ceiling": true,
         "flexPartTime": true,
         "flexBlocks": true,
-        "fundingSource": "General taxation"
+        "fundingSource": "General taxation",
+        "birthOrderVariation": {
+          "exists": true,
+          "details_en": "For 3rd child and above (and twins): parental leave extends to 15 months per parent (vs 4 months for 1st/2nd child). Employment exemption also extends until child turns 3 years (vs 1 year for 1st/2nd child).",
+          "details_fr": "Pour le 3e enfant et plus (et jumeaux) : le congé parental passe à 15 mois par parent (contre 4 mois pour le 1er/2e enfant). L'exemption d'emploi est également prolongée jusqu'aux 3 ans de l'enfant (contre 1 an pour le 1er/2e enfant)."
+        }
       },
       "childcareLeave": {
         "exists": true,
@@ -1827,7 +1837,12 @@
         "flexPartTime": false,
         "flexBlocks": false,
         "additionalForMultiple": true,
-        "fundingSource": "Social Insurance Services (employer 6.8%, employee 6.8%, state 4.3%)"
+        "fundingSource": "Social Insurance Services (employer 6.8%, employee 6.8%, state 4.3%)",
+        "birthOrderVariation": {
+          "exists": true,
+          "details_en": "Payment rate increases by birth order: 72% (1st child), 80% (2nd child), 90% (3rd child), 100% (4th child and above).",
+          "details_fr": "Le taux de remplacement augmente selon le rang de naissance : 72 % (1er enfant), 80 % (2e), 90 % (3e), 100 % (4e et plus)."
+        }
       },
       "paternity": {
         "exists": true,
@@ -1861,7 +1876,12 @@
         "ceiling": false,
         "flexPartTime": false,
         "flexBlocks": true,
-        "fundingSource": "Social Insurance Services"
+        "fundingSource": "Social Insurance Services",
+        "birthOrderVariation": {
+          "exists": true,
+          "details_en": "Paid parental leave duration increases by birth order: 8 weeks (1st child), +10 additional weeks (2nd child), +12 additional weeks (3rd child).",
+          "details_fr": "La durée du congé parental payé augmente selon le rang : 8 semaines (1er enfant), +10 semaines supplémentaires (2e enfant), +12 semaines supplémentaires (3e enfant)."
+        }
       },
       "childcareLeave": {
         "exists": false,
@@ -2390,7 +2410,12 @@
         "flexPartTime": true,
         "flexBlocks": false,
         "fundingSource": "Family Allowance funds (CAFs), financed by employer contributions (5.4% of gross wages)",
-        "notes": "PreParE (flat-rate EUR 456/mois). 1er enfant : 6 mois par parent (12 mois couple). 2e enfant+ : 24 mois par parent (36 mois couple, partage obligatoire). Table 3 LPRN base sur 1er enfant."
+        "notes": "PreParE (flat-rate EUR 456/mois). 1er enfant : 6 mois par parent (12 mois couple). 2e enfant+ : 24 mois par parent (36 mois couple, partage obligatoire). Table 3 LPRN base sur 1er enfant.",
+        "birthOrderVariation": {
+          "exists": true,
+          "details_en": "PreParE payment duration varies by birth order: 6 months per parent (1st child) / 24 months per parent (2nd child and above, mandatory sharing between parents). The JSON stores the 1st-child value (6 months) as the international comparison base per Table 3 LPRN.",
+          "details_fr": "La durée du versement du PreParE varie selon le rang de naissance : 6 mois par parent (1er enfant) / 24 mois par parent (2e enfant et plus, partage obligatoire entre parents). Le JSON stocke la valeur 1er enfant (6 mois) comme base de comparaison internationale conformément à la Table 3 du LPRN."
+        }
       },
       "childcareLeave": {
         "exists": false,
@@ -2648,7 +2673,12 @@
         "flexPartTime": true,
         "flexBlocks": true,
         "fundingSource": "Same as maternity leave",
-        "notes": "Private sector: 4 months per parent per child, 2 months paid at minimum wage. Public sector: 5 years per parent, 2 months paid at minimum wage (3 months if 3+ children)."
+        "notes": "Private sector: 4 months per parent per child, 2 months paid at minimum wage. Public sector: 5 years per parent, 2 months paid at minimum wage (3 months if 3+ children).",
+        "birthOrderVariation": {
+          "exists": true,
+          "details_en": "Paid parental leave extended to 3 months per parent for families with 3 or more children (vs 2 months for 1-2 children).",
+          "details_fr": "Le congé parental payé est porté à 3 mois par parent pour les familles de 3 enfants et plus (contre 2 mois pour 1-2 enfants)."
+        }
       },
       "childcareLeave": {
         "exists": true,
@@ -5161,7 +5191,12 @@
         "flexPartTime": false,
         "flexBlocks": false,
         "additionalForMultiple": true,
-        "fundingSource": "General taxation"
+        "fundingSource": "General taxation",
+        "birthOrderVariation": {
+          "exists": true,
+          "details_en": "Paid child care leave after maternity: 8.2 months per family for 1st and 2nd child; 20.2 months per family for 3rd child and above (and multiples).",
+          "details_fr": "Congé de garde payé après maternité : 8,2 mois par famille pour le 1er et 2e enfant ; 20,2 mois pour le 3e enfant et plus (et naissances multiples)."
+        }
       },
       "paternity": {
         "exists": false,

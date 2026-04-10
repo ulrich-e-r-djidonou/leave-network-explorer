@@ -4,6 +4,12 @@ export interface Duration {
   wellPaid: number | null;
 }
 
+export interface BirthOrderVariation {
+  exists: boolean;
+  details_en: string;
+  details_fr: string;
+}
+
 export interface LeavePolicy {
   exists: boolean;
   durationMonths: Duration;
@@ -17,6 +23,7 @@ export interface LeavePolicy {
   additionalForMultiple?: boolean;
   fundingSource: string | null;
   notes?: string;
+  birthOrderVariation?: BirthOrderVariation;
 }
 
 export interface ParentalLeave extends LeavePolicy {
