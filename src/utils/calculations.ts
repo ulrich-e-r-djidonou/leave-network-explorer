@@ -99,16 +99,14 @@ export function getTotalWellPaidMonths(country: Country): number {
   return total;
 }
 
-/** Format months to a human-readable string */
+/** Format months to a human-readable string (always in months, 2 decimal places) */
 export function formatDuration(months: number | null, lang: 'fr' | 'en' = 'fr'): string {
   if (months === null || months === undefined) return "N/A";
-  if (months === 0) return "0";
-  if (months < 1) {
-    const weeks = Math.round(months * 4.3);
-    return lang === 'en' ? `${weeks} wk.` : `${weeks} sem.`;
-  }
-  if (Number.isInteger(months)) return lang === 'en' ? `${months} months` : `${months} mois`;
-  return lang === 'en' ? `${months.toFixed(1)} months` : `${months.toFixed(1)} mois`;
+  if (months === 0) return lang === 'en' ? "0 months" : "0 mois";
+  const label = lang === 'en' ? 'months' : 'mois';
+  // Always show 2 decimal places for precision, drop trailing zeros for clean display
+  const formatted = months % 1 === 0 ? `${months}` : `${months.toFixed(2).replace(/0+$/, '').replace(/\.$/, '')}`;
+  return `${formatted} ${label}`;
 }
 
 /** Get color for a value on a gradient scale */

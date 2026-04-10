@@ -139,14 +139,14 @@ describe('formatDuration', () => {
     expect(formatDuration(12, 'en')).toBe('12 months');
   });
 
-  it('formats small values as weeks', () => {
-    expect(formatDuration(0.5, 'fr')).toBe('2 sem.');
-    expect(formatDuration(0.5, 'en')).toBe('2 wk.');
+  it('formats small values in months with 2 decimals', () => {
+    expect(formatDuration(0.47, 'fr')).toBe('0.47 mois');
+    expect(formatDuration(0.33, 'en')).toBe('0.33 months');
   });
 
   it('handles null and zero', () => {
     expect(formatDuration(null)).toBe('N/A');
-    expect(formatDuration(0)).toBe('0');
+    expect(formatDuration(0, 'fr')).toBe('0 mois');
   });
 });
 

@@ -38,9 +38,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.07,
-          "paid": 0.07,
-          "wellPaid": 0.07
+          "total": 0.09,
+          "paid": 0.09,
+          "wellPaid": 0.09
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -142,7 +142,12 @@
           },
           "notes": "Public sector leave is governed by the Collective Labour Agreement for Public Employment (Convenio Colectivo de Trabajo General para la Administracion Publica Nacional, 2006). Significantly more generous maternity leave (100 days vs 90 days private) and paternity leave (5 days vs 2 days private). Provincial public employment shows extreme variation in both maternity (90-210 days) and paternity (0-45 days) leave. Adoption leave: 100 days for mothers, 30 days for fathers in national public administration."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": null,
+        "details_en": "No mention of pension contributions during leave in the source document",
+        "details_fr": "Aucune mention des cotisations retraite pendant le congé dans le document source"
+      }
     },
     {
       "name": "Australia",
@@ -245,7 +250,12 @@
           "leaveType": "other",
           "description": "Three-day childcare guarantee abolishing activity test for subsidised childcare from January 2026"
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "From July 2025, government pays 12% superannuation for parents on Parental Leave Pay",
+        "details_fr": "À partir de juillet 2025, le gouvernement verse 12% de cotisation retraite pour les parents en congé parental"
+      }
     },
     {
       "name": "Austria",
@@ -346,7 +356,12 @@
           "leaveType": "other",
           "description": "Educational leave (Bildungskarenz) abolished by March 2025; new model planned for January 2026"
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": null,
+        "details_en": "No explicit mention of pension contributions during leave in the source document",
+        "details_fr": "Aucune mention explicite des cotisations retraite pendant le congé dans le document source"
+      }
     },
     {
       "name": "Belgium",
@@ -377,9 +392,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.9,
-          "paid": 0.9,
-          "wellPaid": 0.9
+          "total": 0.93,
+          "paid": 0.93,
+          "wellPaid": 0.93
         },
         "paymentRate": 82,
         "paymentType": "earnings-related",
@@ -444,7 +459,12 @@
           "leaveType": "parental",
           "description": "New federal government planning radical reform introducing 'rucksack of leave' per child combining all leave types; grandparental leave also under consideration"
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": null,
+        "details_en": "No explicit mention of pension contributions during leave in the source document",
+        "details_fr": "Aucune mention explicite des cotisations retraite pendant le congé dans le document source"
+      }
     },
     {
       "name": "Bosnia and Herzegovina",
@@ -634,7 +654,12 @@
           },
           "notes": "Self-governing administrative unit independent from entities. State legislation applies directly. Maternity benefit at 100% of net wage (vs gross wage in RS). Extended leave (18 months) for twins, 3rd+ child, and parents with disabilities. Funded from district budget. No paternity or parental leave."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Women in registered employment maintain pension insurance during Maternity leave; unpaid childcare leave does not include pension contributions",
+        "details_fr": "Les femmes salariées maintiennent leur assurance retraite pendant le congé de maternité; le congé parental non rémunéré n'inclut pas les cotisations retraite"
+      }
     },
     {
       "name": "Brazil",
@@ -666,9 +691,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.12,
-          "paid": 0.12,
-          "wellPaid": 0.12
+          "total": 0.17,
+          "paid": 0.17,
+          "wellPaid": 0.17
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -753,7 +778,12 @@
           "parental": null,
           "notes": "Private sector can also extend to 6 months maternity / 20 days paternity via voluntary Programa Empresa Cidada. No formal regional variations listed in the PDF, but state/municipal public sector entitlements depend on local authority approval. Payment at 100% of earnings for all sectors."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Pension contributions are paid by the state during leave",
+        "details_fr": "Les cotisations retraite sont payées par l'État pendant le congé"
+      }
     },
     {
       "name": "Bulgaria",
@@ -782,9 +812,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 2.5,
-          "paid": 2.5,
-          "wellPaid": 0.5
+          "total": 0.49,
+          "paid": 0.49,
+          "wellPaid": 0.49
         },
         "paymentRate": 90,
         "paymentType": "mixed",
@@ -849,7 +879,12 @@
           "leaveType": "parental",
           "description": "Father can now use maternity/parental leave without mother's consent when mother is deprived of parental rights"
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Leave periods are counted as work experience for pension rights",
+        "details_fr": "Les périodes de congé sont comptabilisées comme expérience de travail pour les droits à la retraite"
+      }
     },
     {
       "name": "Canada",
@@ -1012,7 +1047,12 @@
           },
           "notes": "Quebec operates QPIP independently from federal EI. Key differences: lower eligibility threshold (CAD 2,000 vs 600 hours), no waiting period, higher payment rates, dedicated paternity leave, self-employed automatically covered, higher insurable earnings ceiling (CAD 98,000 vs CAD 65,700). Additional provisions for single parents (+5 weeks basic/+3 weeks special), multiple births (+5 weeks to each parent basic/+3 weeks special), and adoption."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": null,
+        "details_en": "Pension accrual during leave varies by province/territory; no universal national rule",
+        "details_fr": "L'accumulation des droits à la retraite pendant le congé varie selon la province/territoire; pas de règle nationale universelle"
+      }
     },
     {
       "name": "Chile",
@@ -1102,7 +1142,12 @@
         "entitlementAgeMonths": null,
         "gapAfterLeaveMonths": null
       },
-      "recentChanges": []
+      "recentChanges": [],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Pension contributions (10%) continue during leave, paid by the health insurance institution",
+        "details_fr": "Les cotisations retraite (10%) continuent pendant le congé, payées par l'institution d'assurance maladie"
+      }
     },
     {
       "name": "China",
@@ -1371,9 +1416,9 @@
             "exists": true,
             "durationDays": 128,
             "durationMonths": {
-              "total": 3.0,
-              "paid": 3.0,
-              "wellPaid": 3.0
+              "total": 3,
+              "paid": 3,
+              "wellPaid": 3
             },
             "paymentRate": 100,
             "paymentType": "earnings-related",
@@ -1541,7 +1586,12 @@
           },
           "notes": "All variations are provincial extensions of the national 98-day baseline under the three-child policy framework. All leave types paid at 100% of earnings. Self-employed, unemployed, and informal workers excluded."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": null,
+        "details_en": "No mention of pension contributions during leave in the source document",
+        "details_fr": "Aucune mention des cotisations retraite pendant le congé dans le document source"
+      }
     },
     {
       "name": "Colombia",
@@ -1637,7 +1687,12 @@
           "leaveType": "other",
           "description": "New care policy approved June 2023 establishing role of care person/personal assistant with right to flexible work"
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Pension rights are maintained during Maternity leave",
+        "details_fr": "Les droits à la retraite sont maintenus pendant le congé de maternité"
+      }
     },
     {
       "name": "Croatia",
@@ -1743,7 +1798,12 @@
           "leaveType": "maternity",
           "description": "Increased benefits for mothers not meeting insurance requirements and for maternity exemption from work"
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Pension insurance maintained during leave; contributions paid by the state based on benefit level",
+        "details_fr": "Assurance retraite maintenue pendant le congé; cotisations payées par l'État au niveau de la prestation"
+      }
     },
     {
       "name": "Cyprus",
@@ -1772,9 +1832,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.5,
-          "paid": 0.5,
-          "wellPaid": 0.5
+          "total": 0.47,
+          "paid": 0.47,
+          "wellPaid": 0.47
         },
         "paymentRate": 72,
         "paymentType": "earnings-related",
@@ -1844,7 +1904,12 @@
           "leaveType": "other",
           "description": "Young mother financial incentive: EUR 200/month for 24 months for first-time mothers under 30"
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": null,
+        "details_en": "No explicit mention; pension reform planned as part of future measures",
+        "details_fr": "Aucune mention explicite; réforme des pensions prévue dans les mesures futures"
+      }
     },
     {
       "name": "Czech Republic",
@@ -1940,7 +2005,12 @@
           "leaveType": "parental",
           "description": "From June 2025: parents on parental leave can work for the same employer; guarantee of return to original job if returning before child turns 2"
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": null,
+        "details_en": "No explicit mention of pension accrual during leave",
+        "details_fr": "Aucune mention explicite de l'accumulation des droits à la retraite pendant le congé"
+      }
     },
     {
       "name": "Denmark",
@@ -1969,8 +2039,8 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.5,
-          "paid": 0.5,
+          "total": 0.47,
+          "paid": 0.47,
           "wellPaid": 0
         },
         "paymentRate": null,
@@ -2030,7 +2100,12 @@
         "entitlementAgeMonths": 6,
         "gapAfterLeaveMonths": 0
       },
-      "recentChanges": []
+      "recentChanges": [],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Public pension not affected by leave; pension payments continue during Paternity and Parental leave",
+        "details_fr": "Pension publique non affectée par le congé; les cotisations retraite continuent pendant les congés de paternité et parental"
+      }
     },
     {
       "name": "Estonia",
@@ -2131,7 +2206,12 @@
           "leaveType": "parental",
           "description": "From January 2026, upper limit for parental benefit decreases from 3x to 2x average wage"
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "State pays pension contributions for parents with children under 3, regardless of employment status",
+        "details_fr": "L'État paie les cotisations retraite pour les parents d'enfants de moins de 3 ans, quel que soit le statut d'emploi"
+      }
     },
     {
       "name": "Finland",
@@ -2246,7 +2326,12 @@
           },
           "notes": "Base Child home care allowance is EUR 377.68/month plus supplements for siblings. Average total HCA per family was EUR 451/month in 2023. The share of municipalities offering supplements has fluctuated: 30% in 2014, 21% in 2022, 25.5% in 2024. Additionally, 34% of municipalities paid supplements for private day care allowance (avg EUR 281-418 for full-time care depending on child age/ECEC type). 39% offered service vouchers for private day care (avg EUR 426-1,344)."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Pension accrues based on 121% of yearly earnings during leave; accrual rate 1.5% per year",
+        "details_fr": "La pension s'accumule sur la base de 121% des revenus annuels pendant le congé; taux d'accumulation de 1,5% par an"
+      }
     },
     {
       "name": "France",
@@ -2275,9 +2360,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.9,
-          "paid": 0.9,
-          "wellPaid": 0.9
+          "total": 0.93,
+          "paid": 0.93,
+          "wellPaid": 0.93
         },
         "paymentRate": 81,
         "paymentType": "earnings-related",
@@ -2343,7 +2428,12 @@
           "leaveType": "parental",
           "description": "Government announced leave reform in Jan 2024 to be implemented in 2025, but not implemented due to political changes."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Non-employed parents receive pension credits for childrearing (AVPF)",
+        "details_fr": "Les parents non employés reçoivent des crédits de retraite pour l'éducation des enfants (AVPF)"
+      }
     },
     {
       "name": "Germany",
@@ -2492,7 +2582,12 @@
           },
           "notes": "Income-tested: benefits reduce starting at net household income of EUR 24,600 (EUR 21,600 for single parents), threshold rises by EUR 3,140 per additional child. Requires non-use of childcare facilities. Max 30 hours/week work (exception for training). Duration varies: 5-12 months depending on child order and start year."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Parents on leave have entitlement to full pension rights",
+        "details_fr": "Les parents en congé ont droit à la totalité des droits à la retraite"
+      }
     },
     {
       "name": "Greece",
@@ -2507,7 +2602,7 @@
         "durationMonths": {
           "total": 12.9,
           "paid": 12.9,
-          "wellPaid": 4.0
+          "wellPaid": 4
         },
         "paymentRate": 100,
         "paymentType": "mixed",
@@ -2523,9 +2618,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.7,
-          "paid": 0.7,
-          "wellPaid": 0.7
+          "total": 0.67,
+          "paid": 0.67,
+          "wellPaid": 0.67
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -2601,9 +2696,9 @@
           "maternity": {
             "exists": true,
             "durationMonths": {
-              "total": 5.0,
-              "paid": 5.0,
-              "wellPaid": 5.0
+              "total": 5,
+              "paid": 5,
+              "wellPaid": 5
             },
             "durationDetail": "5 months: 2 months before birth + 3 months after birth",
             "paymentRate": 100,
@@ -2631,8 +2726,8 @@
           "parental": {
             "exists": true,
             "durationMonths": {
-              "total": 60.0,
-              "paid": 2.0,
+              "total": 60,
+              "paid": 2,
               "wellPaid": 0
             },
             "durationDetail": "5 years (60 months) per parent, individual non-transferable entitlement",
@@ -2657,7 +2752,12 @@
           },
           "notes": "Greece public sector is substantially more generous than private sector. Key differences: Maternity 5 months (vs 17 weeks + 9 months special leave private), Parental 5 years per parent (vs 4 months private), Childcare fully paid 9 months (vs similar in private). No gap between end of leave and ECEC entitlement for public sector workers. Childcare leave is widely used as it is fully compensated, while parental leave (mostly unpaid beyond 2 months) sees limited uptake."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Maternity leave gives entitlement to full pension rights; 50% reduction in contributions for 12 months after birth",
+        "details_fr": "Le congé de maternité donne droit à la totalité des droits à la retraite; réduction de 50% des cotisations pendant 12 mois après la naissance"
+      }
     },
     {
       "name": "Hungary",
@@ -2686,9 +2786,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.5,
-          "paid": 0.5,
-          "wellPaid": 0.2
+          "total": 0.47,
+          "paid": 0.47,
+          "wellPaid": 0.23
         },
         "paymentRate": 100,
         "paymentType": "mixed",
@@ -2749,7 +2849,12 @@
         "entitlementAgeMonths": 36,
         "gapAfterLeaveMonths": 12
       },
-      "recentChanges": []
+      "recentChanges": [],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Pension contributions are deducted from leave benefits",
+        "details_fr": "Les cotisations retraite sont déduites des prestations de congé"
+      }
     },
     {
       "name": "Iceland",
@@ -2848,7 +2953,12 @@
           "leaveType": "parental",
           "description": "Government agreed to raise ceiling on leave payments to ISK 900,000 in 2027. Proposed: increase shared extension for multiple births from 3 to 6 months, and extend leave by 2 months for mothers with serious illness during pregnancy."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Employed parents continue to accumulate pension entitlements as if at work; state pension contributions automatically covered",
+        "details_fr": "Les parents salariés continuent d'accumuler leurs droits à la retraite comme s'ils travaillaient; cotisations à la pension d'État automatiquement couvertes"
+      }
     },
     {
       "name": "Ireland",
@@ -2861,7 +2971,7 @@
         "exists": true,
         "durationMonths": {
           "total": 9.8,
-          "paid": 6.0,
+          "paid": 6,
           "wellPaid": 0
         },
         "paymentRate": null,
@@ -2878,8 +2988,8 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.5,
-          "paid": 0.5,
+          "total": 0.47,
+          "paid": 0.47,
           "wellPaid": 0
         },
         "paymentRate": null,
@@ -2894,13 +3004,13 @@
       "parental": {
         "exists": true,
         "durationMonths": {
-          "total": 6.0,
+          "total": 6,
           "paid": 0,
           "wellPaid": 0
         },
         "entitlementType": "individual",
-        "motherQuotaMonths": 6.0,
-        "fatherQuotaMonths": 6.0,
+        "motherQuotaMonths": 6,
+        "fatherQuotaMonths": 6,
         "sharedPortionMonths": 0,
         "transferable": false,
         "paymentRate": 0,
@@ -2952,7 +3062,12 @@
           "leaveType": "maternity",
           "description": "Benefit rate increased from EUR 274 to EUR 289/week from January 2025. Maternity leave can now be postponed for serious health conditions (November 2024)."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "State pension contributions automatically covered during paid Maternity leave",
+        "details_fr": "Cotisations à la pension d'État automatiquement couvertes pendant le congé de maternité rémunéré"
+      }
     },
     {
       "name": "Israel",
@@ -2964,7 +3079,7 @@
       "maternity": {
         "exists": true,
         "durationMonths": {
-          "total": 6.0,
+          "total": 6,
           "paid": 3.5,
           "wellPaid": 3.5
         },
@@ -3045,7 +3160,12 @@
         "entitlementAgeMonths": null,
         "gapAfterLeaveMonths": null
       },
-      "recentChanges": []
+      "recentChanges": [],
+      "pensionRights": {
+        "continuesDuringLeave": null,
+        "details_en": "No explicit mention of pension contributions during leave",
+        "details_fr": "Aucune mention explicite des cotisations retraite pendant le congé"
+      }
     },
     {
       "name": "Italy",
@@ -3057,9 +3177,9 @@
       "maternity": {
         "exists": true,
         "durationMonths": {
-          "total": 5.0,
-          "paid": 5.0,
-          "wellPaid": 5.0
+          "total": 5,
+          "paid": 5,
+          "wellPaid": 5
         },
         "paymentRate": 80,
         "paymentType": "earnings-related",
@@ -3075,9 +3195,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.5,
-          "paid": 0.5,
-          "wellPaid": 0.5
+          "total": 0.47,
+          "paid": 0.47,
+          "wellPaid": 0.47
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -3144,7 +3264,12 @@
           "leaveType": "parental",
           "description": "2025 budget law increased parental leave payment rates. Working mothers' bonus extended to temporary and self-employed workers. EUR 1,000 bonus per child born/adopted from Jan 2025 for families with ISEE under EUR 40,000."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Pension contributions made by INPS during Maternity leave; Paternity leave covered by imputed pension contributions",
+        "details_fr": "Cotisations retraite versées par l'INPS pendant le congé de maternité; congé de paternité couvert par des cotisations retraite imputées"
+      }
     },
     {
       "name": "Japan",
@@ -3173,9 +3298,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.9,
-          "paid": 0.9,
-          "wellPaid": 0.9
+          "total": 0.93,
+          "paid": 0.93,
+          "wellPaid": 0.93
         },
         "paymentRate": 67,
         "paymentType": "earnings-related",
@@ -3247,7 +3372,12 @@
           "leaveType": "other",
           "description": "Employers obliged to offer flexible working measures for parents of children 3-6 years. Overtime exemption expanded to parents of preschool children. Telework added as employer obligation for parents of children under 3."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Recipients exempted from social insurance contributions (including pension) during leave",
+        "details_fr": "Les bénéficiaires sont exemptés des cotisations d'assurance sociale (y compris retraite) pendant le congé"
+      }
     },
     {
       "name": "Korea",
@@ -3279,9 +3409,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.9,
-          "paid": 0.9,
-          "wellPaid": 0.9
+          "total": 0.93,
+          "paid": 0.93,
+          "wellPaid": 0.93
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -3375,7 +3505,12 @@
           "parental": null,
           "notes": "Benefits target workers not eligible for national maternity/paternity benefits (self-employed or not insured for 180 days). These are supplementary to, not replacements for, the national government benefits."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": null,
+        "details_en": "No explicit mention of pension contributions during parental leave",
+        "details_fr": "Aucune mention explicite des cotisations retraite pendant le congé parental"
+      }
     },
     {
       "name": "Kosovo",
@@ -3405,9 +3540,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.6,
-          "paid": 0.1,
-          "wellPaid": 0.1
+          "total": 0.56,
+          "paid": 0.09,
+          "wellPaid": 0.09
         },
         "paymentRate": 100,
         "paymentType": "mixed",
@@ -3478,7 +3613,12 @@
           "leaveType": "other",
           "description": "One-year preparatory pre-school programme became mandatory from 2024/25 school year."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Taxes and pension contributions paid as normal during first 6 months of Maternity leave",
+        "details_fr": "Impôts et cotisations retraite payés normalement pendant les 6 premiers mois du congé de maternité"
+      }
     },
     {
       "name": "Latvia",
@@ -3508,8 +3648,8 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.5,
-          "paid": 0.5,
+          "total": 0.47,
+          "paid": 0.47,
           "wellPaid": 0
         },
         "paymentRate": 80,
@@ -3576,7 +3716,12 @@
           "leaveType": "parental",
           "description": "From January to December 2025, parental benefit reduced to 75% of normal granted amount for working parents who continue employment during leave."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": null,
+        "details_en": "No explicit mention of pension contributions during leave",
+        "details_fr": "Aucune mention explicite des cotisations retraite pendant le congé"
+      }
     },
     {
       "name": "Lithuania",
@@ -3605,9 +3750,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 1.0,
-          "paid": 1.0,
-          "wellPaid": 1.0
+          "total": 1,
+          "paid": 1,
+          "wellPaid": 1
         },
         "paymentRate": 77.58,
         "paymentType": "earnings-related",
@@ -3673,7 +3818,12 @@
           "leaveType": "other",
           "description": "From January 2025, one-off birth payment increased to EUR 770 (from EUR 605); child allowance increased to EUR 122.50; increased allowances for large families, poor families, and families with disabled children."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Women on Maternity leave receive pension credits",
+        "details_fr": "Les femmes en congé de maternité reçoivent des crédits de retraite"
+      }
     },
     {
       "name": "Luxembourg",
@@ -3702,9 +3852,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.5,
-          "paid": 0.5,
-          "wellPaid": 0.5
+          "total": 0.47,
+          "paid": 0.47,
+          "wellPaid": 0.47
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -3771,7 +3921,12 @@
           "leaveType": "other",
           "description": "Minimum social wage increased, affecting minimum and maximum benefit levels."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Pension contributions made during leave; Parental leave payments subject to social contributions",
+        "details_fr": "Cotisations retraite versées pendant le congé; les prestations de congé parental sont soumises aux cotisations sociales"
+      }
     },
     {
       "name": "Malta",
@@ -3802,9 +3957,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.5,
-          "paid": 0.5,
-          "wellPaid": 0.5
+          "total": 0.47,
+          "paid": 0.47,
+          "wellPaid": 0.47
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -3876,7 +4031,12 @@
           "leaveType": "other",
           "description": "Government launched consultation on miscarriage leave scheme in April 2025."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": null,
+        "details_en": "No explicit mention of pension contributions during leave",
+        "details_fr": "Aucune mention explicite des cotisations retraite pendant le congé"
+      }
     },
     {
       "name": "Mexico",
@@ -3911,9 +4071,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.2,
-          "paid": 0.2,
-          "wellPaid": 0.2
+          "total": 0.23,
+          "paid": 0.23,
+          "wellPaid": 0.23
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -4049,9 +4209,9 @@
           "maternity": {
             "exists": true,
             "durationMonths": {
-              "total": 4.0,
-              "paid": 4.0,
-              "wellPaid": 4.0
+              "total": 4,
+              "paid": 4,
+              "wellPaid": 4
             },
             "paymentRate": 100,
             "paymentType": "earnings-related",
@@ -4146,7 +4306,12 @@
           "parental": null,
           "notes": "State variations apply only to public sector employees. Private sector leave is federally regulated."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Leave periods taken into account in calculation of pension benefits",
+        "details_fr": "Les périodes de congé sont prises en compte dans le calcul des pensions"
+      }
     },
     {
       "name": "Netherlands",
@@ -4178,7 +4343,7 @@
         "durationMonths": {
           "total": 1.4,
           "paid": 1.4,
-          "wellPaid": 0.2
+          "wellPaid": 0.23
         },
         "paymentRate": 100,
         "paymentType": "mixed",
@@ -4192,13 +4357,13 @@
       "parental": {
         "exists": true,
         "durationMonths": {
-          "total": 6.0,
+          "total": 6,
           "paid": 2.1,
           "wellPaid": 0
         },
         "entitlementType": "individual",
-        "motherQuotaMonths": 6.0,
-        "fatherQuotaMonths": 6.0,
+        "motherQuotaMonths": 6,
+        "fatherQuotaMonths": 6,
         "sharedPortionMonths": 0,
         "transferable": false,
         "paymentRate": 70,
@@ -4239,7 +4404,12 @@
         "entitlementAgeMonths": 48,
         "gapAfterLeaveMonths": 40
       },
-      "recentChanges": []
+      "recentChanges": [],
+      "pensionRights": {
+        "continuesDuringLeave": null,
+        "details_en": "Impact on pensions depends on specific pension agreement and collective agreement",
+        "details_fr": "L'impact sur les pensions dépend de l'accord de pension spécifique et de la convention collective"
+      }
     },
     {
       "name": "New Zealand",
@@ -4251,8 +4421,8 @@
       "maternity": {
         "exists": true,
         "durationMonths": {
-          "total": 6.0,
-          "paid": 6.0,
+          "total": 6,
+          "paid": 6,
           "wellPaid": 0
         },
         "paymentRate": 100,
@@ -4269,7 +4439,7 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.5,
+          "total": 0.47,
           "paid": 0,
           "wellPaid": 0
         },
@@ -4338,7 +4508,12 @@
           "leaveType": "other",
           "description": "From July 2024, parents can get back up to 25% of weekly ECEC fees (Family Boost scheme), max NZD 975 per quarter."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": false,
+        "details_en": "No pension credits accrued during leave; KiwiSaver contributions cease unless employee opts to continue",
+        "details_fr": "Aucun crédit de retraite accumulé pendant le congé; les cotisations KiwiSaver cessent sauf si l'employé choisit de continuer"
+      }
     },
     {
       "name": "Norway",
@@ -4444,7 +4619,12 @@
           "leaveType": "other",
           "description": "From August 2024, cash-for-care benefit reduced to max 7 months (until child turns 19 months, down from 24 months)."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Pension rights continue to accrue based on benefit level (e.g. 80% of salary)",
+        "details_fr": "Les droits à la retraite continuent de s'accumuler selon le niveau de prestation (ex. 80% du salaire)"
+      }
     },
     {
       "name": "Poland",
@@ -4473,9 +4653,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.5,
-          "paid": 0.5,
-          "wellPaid": 0.5
+          "total": 0.47,
+          "paid": 0.47,
+          "wellPaid": 0.47
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -4540,7 +4720,12 @@
           "leaveType": "maternity",
           "description": "December 2024: Parliament approved supplementary maternity leave for parents of premature born children, effective March 2025."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Leave is a fully contributory period for pension; applies to both Maternity and Parental leave",
+        "details_fr": "Le congé est une période pleinement cotisée pour la retraite; s'applique aux congés de maternité et parental"
+      }
     },
     {
       "name": "Portugal",
@@ -4682,7 +4867,12 @@
           },
           "notes": "Same as Madeira. Applies uniformly to all parental leave benefit types."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Parents continue to accrue pension credits during leave; childcare leave also counted for pension calculations",
+        "details_fr": "Les parents continuent d'accumuler des crédits de retraite pendant le congé; le congé parental est aussi pris en compte pour le calcul des pensions"
+      }
     },
     {
       "name": "Romania",
@@ -4713,9 +4903,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.5,
-          "paid": 0.5,
-          "wellPaid": 0.5
+          "total": 0.47,
+          "paid": 0.47,
+          "wellPaid": 0.47
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -4798,7 +4988,12 @@
           "parental": null,
           "notes": "Both birth grants and maternal vouchers continue with amounts unchanged since introduction. Most other cities and communes have developed similar birth grant programmes since 2017."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Pension rights continue to accrue during Maternity, Parental and childcare leave",
+        "details_fr": "Les droits à la retraite continuent de s'accumuler pendant les congés de maternité, parental et de garde d'enfants"
+      }
     },
     {
       "name": "Russian Federation",
@@ -4937,7 +5132,12 @@
           "parental": null,
           "notes": "Regional Maternal Capital is separate from Federal. Most regions provide it for the 3rd child, but some (e.g. Sakhalin) offer it from the 1st child. Student Maternal Capital introduced since April 2024 by regional authorities as additional one-time payments for students giving birth to first child (age limit 23-25, must be enrolled in higher education in the region). Many regions also provide free land plots or financial compensation to families with 3+ children."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Pension contributions not paid during leave, but leave period included in pension calculations",
+        "details_fr": "Les cotisations retraite ne sont pas payées pendant le congé, mais la période est prise en compte dans le calcul des pensions"
+      }
     },
     {
       "name": "Serbia",
@@ -5027,7 +5227,12 @@
         "entitlementAgeMonths": 66,
         "gapAfterLeaveMonths": 54
       },
-      "recentChanges": []
+      "recentChanges": [],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Pension insurance maintained during Maternity leave; contributions paid by the state",
+        "details_fr": "Assurance retraite maintenue pendant le congé de maternité; cotisations payées par l'État"
+      }
     },
     {
       "name": "Slovak Republic",
@@ -5056,9 +5261,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 6.5,
-          "paid": 0.5,
-          "wellPaid": 0.5
+          "total": 6.51,
+          "paid": 0.47,
+          "wellPaid": 0.47
         },
         "paymentRate": 75,
         "paymentType": "earnings-related",
@@ -5128,7 +5333,12 @@
           "leaveType": "parental",
           "description": "January 2025: Parental allowance increased to EUR482 (from EUR473) for those with prior maternity benefit, EUR352 (from EUR345) for others."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "State pays pension and health insurance contributions for parent caring for child until age 6",
+        "details_fr": "L'État paie les cotisations retraite et d'assurance maladie pour le parent s'occupant d'un enfant jusqu'à 6 ans"
+      }
     },
     {
       "name": "Slovenia",
@@ -5157,9 +5367,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.5,
-          "paid": 0.5,
-          "wellPaid": 0.5
+          "total": 0.47,
+          "paid": 0.47,
+          "wellPaid": 0.47
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -5218,7 +5428,12 @@
         "entitlementAgeMonths": 12,
         "gapAfterLeaveMonths": 0
       },
-      "recentChanges": []
+      "recentChanges": [],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Parent caring for child in first year receives pension credits; social security contributions paid on proportional earnings",
+        "details_fr": "Le parent s'occupant d'un enfant dans sa première année reçoit des crédits de retraite; cotisations sociales payées sur une partie proportionnelle du salaire"
+      }
     },
     {
       "name": "South Africa",
@@ -5262,8 +5477,8 @@
       "parental": {
         "exists": true,
         "durationMonths": {
-          "total": 0.3,
-          "paid": 0.3,
+          "total": 0.33,
+          "paid": 0.33,
           "wellPaid": 0
         },
         "entitlementType": "individual",
@@ -5308,7 +5523,12 @@
         "entitlementAgeMonths": null,
         "gapAfterLeaveMonths": null
       },
-      "recentChanges": []
+      "recentChanges": [],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Companies continue paying pension contributions during Maternity leave, subject to employer-employee agreement",
+        "details_fr": "Les entreprises continuent de payer les cotisations retraite pendant le congé de maternité, sous réserve d'accord employeur-employé"
+      }
     },
     {
       "name": "Spain",
@@ -5340,9 +5560,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 3.7,
-          "paid": 3.7,
-          "wellPaid": 3.7
+          "total": 3.72,
+          "paid": 3.72,
+          "wellPaid": 3.72
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -5489,7 +5709,12 @@
           },
           "notes": "In 2024, co-responsibility requirements (equal duration for two-parent families) and income ceiling requirements were abolished."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Social Security contributions credited for entire Parental leave period; complementary pension benefit per child for mothers",
+        "details_fr": "Cotisations de sécurité sociale créditées pour toute la période de congé parental; complément de pension par enfant pour les mères"
+      }
     },
     {
       "name": "Sweden",
@@ -5501,7 +5726,7 @@
       "maternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.5,
+          "total": 0.47,
           "paid": 0,
           "wellPaid": 0
         },
@@ -5518,9 +5743,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.3,
-          "paid": 0.3,
-          "wellPaid": 0.3
+          "total": 0.33,
+          "paid": 0.33,
+          "wellPaid": 0.33
         },
         "paymentRate": 77.6,
         "paymentType": "earnings-related",
@@ -5585,7 +5810,12 @@
           "leaveType": "parental",
           "description": "From July 2024: Up to 60 'double days' can be used by both parents together during child's first 15 months. Up to 45 days transferable to someone else (e.g. grandparents)."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "All parental leave benefits offer pension credits; extra pension supplement for lower-earning parent during child's first four years",
+        "details_fr": "Toutes les prestations de congé parental offrent des crédits de retraite; supplément de pension pour le parent au revenu le plus faible pendant les 4 premières années"
+      }
     },
     {
       "name": "Switzerland",
@@ -5617,9 +5847,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.5,
-          "paid": 0.5,
-          "wellPaid": 0.5
+          "total": 0.47,
+          "paid": 0.47,
+          "wellPaid": 0.47
         },
         "paymentRate": 80,
         "paymentType": "earnings-related",
@@ -5820,7 +6050,12 @@
           },
           "notes": "Cantonal variation primarily in public sector employment and adoption leave. For general workers, only Geneva deviates from federal baseline on maternity. Significant reform momentum at both cantonal and federal levels."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Maternity leave counts for pension credits; years caring for children under 16 credited for old-age pension",
+        "details_fr": "Le congé de maternité compte pour les crédits de retraite; les années consacrées aux enfants de moins de 16 ans sont créditées pour la pension de vieillesse"
+      }
     },
     {
       "name": "Turkiye",
@@ -5849,9 +6084,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.2,
-          "paid": 0.2,
-          "wellPaid": 0.2
+          "total": 0.23,
+          "paid": 0.23,
+          "wellPaid": 0.23
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -5910,7 +6145,12 @@
         "entitlementAgeMonths": 36,
         "gapAfterLeaveMonths": null
       },
-      "recentChanges": []
+      "recentChanges": [],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Pension rights continue to accrue during Maternity leave",
+        "details_fr": "Les droits à la retraite continuent de s'accumuler pendant le congé de maternité"
+      }
     },
     {
       "name": "United Kingdom",
@@ -5941,8 +6181,8 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.5,
-          "paid": 0.5,
+          "total": 0.47,
+          "paid": 0.47,
           "wellPaid": 0
         },
         "paymentRate": null,
@@ -6063,7 +6303,12 @@
           "parental": null,
           "notes": "Leave policy is national (no regional variation). ECEC policy is devolved. Children start school aged 4 or 5. Most limited ECEC entitlement among UK nations."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": null,
+        "details_en": "National Insurance contributions part of funding, but no explicit statement about pension accrual during leave",
+        "details_fr": "Les cotisations d'assurance nationale font partie du financement, mais aucune déclaration explicite sur l'accumulation de pension pendant le congé"
+      }
     },
     {
       "name": "United States",
@@ -6169,8 +6414,8 @@
             "exists": true,
             "durationWeeks": 26,
             "durationMonths": {
-              "total": 6.0,
-              "paid": 6.0,
+              "total": 6,
+              "paid": 6,
               "wellPaid": 0
             },
             "paymentRate": 58,
@@ -6218,8 +6463,8 @@
             "exists": true,
             "durationWeeks": 26,
             "durationMonths": {
-              "total": 6.0,
-              "paid": 6.0,
+              "total": 6,
+              "paid": 6,
               "wellPaid": 0
             },
             "paymentRate": null,
@@ -6480,8 +6725,8 @@
             "exists": true,
             "durationWeeks": 26,
             "durationMonths": {
-              "total": 6.0,
-              "paid": 6.0,
+              "total": 6,
+              "paid": 6,
               "wellPaid": 0
             },
             "paymentRate": 50,
@@ -6614,7 +6859,12 @@
           },
           "notes": "Generous program with separate 12-week allotments for parental, family, and medical leave, plus 2 weeks prenatal. High replacement rate (90%)."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": null,
+        "details_en": "No federal paid leave; state programmes vary; no general mention of pension contributions during leave",
+        "details_fr": "Aucun congé rémunéré fédéral; les programmes d'État varient; aucune mention des cotisations retraite pendant le congé"
+      }
     },
     {
       "name": "Uruguay",
@@ -6643,9 +6893,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.6,
-          "paid": 0.6,
-          "wellPaid": 0.6
+          "total": 0.44,
+          "paid": 0.44,
+          "wellPaid": 0.44
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -6710,7 +6960,12 @@
           "leaveType": "paternity",
           "description": "Law 20,312 (April 2024): Private sector paternity leave increased to 17 days (from January 2026: further increase). Protection from dismissal strengthened."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "Retirement contributions continue during leave (deducted from benefits)",
+        "details_fr": "Les cotisations retraite continuent pendant le congé (déduites des prestations)"
+      }
     },
     {
       "name": "Vietnam",
@@ -6739,9 +6994,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.2,
-          "paid": 0.2,
-          "wellPaid": 0.2
+          "total": 0.19,
+          "paid": 0.19,
+          "wellPaid": 0.19
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -6816,7 +7071,12 @@
           "leaveType": "maternity",
           "description": "Prenatal check-up leave increased from 1 to 2 working days per visit."
         }
-      ]
+      ],
+      "pensionRights": {
+        "continuesDuringLeave": null,
+        "details_en": "No explicit mention of pension contributions during leave",
+        "details_fr": "Aucune mention explicite des cotisations retraite pendant le congé"
+      }
     }
   ]
 }

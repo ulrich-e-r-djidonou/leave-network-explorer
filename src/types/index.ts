@@ -41,6 +41,12 @@ export interface OtherMeasures {
   bereavementLeave: { exists: boolean };
 }
 
+export interface PensionRights {
+  continuesDuringLeave: boolean | null;
+  details_en: string;
+  details_fr: string;
+}
+
 export interface ECEC {
   universalEntitlement: boolean;
   entitlementAgeMonths: number | null;
@@ -78,6 +84,7 @@ export interface Country {
   parental: ParentalLeave;
   childcareLeave: ChildcareLeave;
   otherMeasures: OtherMeasures;
+  pensionRights?: PensionRights;
   ecec: ECEC;
   recentChanges: RecentChange[];
 }

@@ -150,6 +150,31 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
           </div>
         </div>
 
+        {/* Pension rights */}
+        {c.pensionRights && (
+          <div className="border rounded-lg p-3">
+            <h4 className="text-sm font-semibold text-slate-700 mb-2">{t('pension_rights')}</h4>
+            <div className={`flex items-start gap-2 px-3 py-2 rounded text-sm ${
+              c.pensionRights.continuesDuringLeave === true
+                ? 'bg-teal-50 text-teal-700 border border-teal-200'
+                : c.pensionRights.continuesDuringLeave === false
+                  ? 'bg-rose-50 text-rose-700 border border-rose-200'
+                  : 'bg-slate-50 text-slate-500 border border-slate-200'
+            }`}>
+              <span className="font-medium whitespace-nowrap">
+                {c.pensionRights.continuesDuringLeave === true
+                  ? t('pension_yes')
+                  : c.pensionRights.continuesDuringLeave === false
+                    ? t('pension_no')
+                    : t('pension_unknown')}
+              </span>
+            </div>
+            <p className="text-xs text-slate-500 mt-2 italic">
+              {lang === 'fr' ? c.pensionRights.details_fr : c.pensionRights.details_en}
+            </p>
+          </div>
+        )}
+
         {/* ECEC */}
         <div className="border rounded-lg p-3">
           <h4 className="text-sm font-semibold text-slate-700 mb-2">{t('ecec')}</h4>
