@@ -2150,13 +2150,13 @@
         "exists": true,
         "durationMonths": {
           "total": 36,
-          "paid": 15.6,
-          "wellPaid": 15.6
+          "paid": 15.8,
+          "wellPaid": 15.8
         },
         "entitlementType": "family",
         "motherQuotaMonths": null,
         "fatherQuotaMonths": null,
-        "sharedPortionMonths": 15.6,
+        "sharedPortionMonths": 15.8,
         "transferable": true,
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -3665,7 +3665,7 @@
         "durationMonths": {
           "total": 18,
           "paid": 17,
-          "wellPaid": 1.9
+          "wellPaid": 0
         },
         "entitlementType": "mixed",
         "motherQuotaMonths": 2,
@@ -3767,7 +3767,7 @@
         "durationMonths": {
           "total": 36,
           "paid": 24,
-          "wellPaid": 12
+          "wellPaid": 18
         },
         "entitlementType": "mixed",
         "motherQuotaMonths": 2,
@@ -5278,7 +5278,7 @@
         "durationMonths": {
           "total": 36,
           "paid": 36,
-          "wellPaid": 0
+          "wellPaid": 6.5
         },
         "entitlementType": "individual",
         "motherQuotaMonths": null,
@@ -5286,7 +5286,7 @@
         "sharedPortionMonths": null,
         "transferable": false,
         "paymentRate": null,
-        "paymentType": "flat-rate",
+        "paymentType": "mixed",
         "ceiling": false,
         "flexPartTime": true,
         "flexBlocks": true,

@@ -125,16 +125,15 @@ Le montant du PreParE est un forfait (456 EUR/mois en 2025), donc wellPaid = 0.
 |------|------|-------|-----------------|----------|--------|
 | Danemark | DK | parental wellPaid | 0 -> 6.5 | Conserve 0 | Plafond DKK 4,865/sem = taux effectif souvent < 66% pour revenus moyens/hauts |
 
-### Anomalies non corrigees (a investiguer)
+### Anomalies investiguees et corrigees (Phase 2b)
 
-Ces cas ont ete identifies par l'audit mais necessitent une verification plus approfondie :
-
-| Pays | ISO2 | Champ | Valeur actuelle | Valeur source | Notes |
-|------|------|-------|----------------|---------------|-------|
-| Estonie | EE | parental paid/wellPaid | 15.6 | 15.8 | Ecart mineur (0.2 mois) |
-| Slovaquie | SK | parental wellPaid | 0 | 3.25 | 6.5 mois couple a 75%. A verifier |
-| Lettonie | LV | parental wellPaid | 1.9 | 0 | Source dit 0. A verifier |
-| Lituanie | LT | parental wellPaid | 12 | 9 | 18 couple / 2 = 9 par parent. A verifier |
+| # | Pays | ISO2 | Champ | Ancien | Nouveau | Source / justification |
+|---|------|------|-------|--------|---------|----------------------|
+| 9 | Estonie | EE | parental paid/wellPaid | 15.6 | 15.8 | 475 jours a 100%. Table LPRN = 15.8 (475/30 = 15.83). Ancien calcul utilisait 475/30.4 = 15.6 |
+| 10 | Slovaquie | SK | parental wellPaid | 0 | 6.5 | 28 sem a 75% (prestation maternite pour peres pendant conge parental). Table LPRN = 6.5*. 75% > 66% = well-paid |
+| 11 | Slovaquie | SK | parental paymentType | flat-rate | mixed | Combine flat-rate (482 EUR/mois) et prestation maternite a 75% |
+| 12 | Lettonie | LV | parental wellPaid | 1.9 | 0 | Deux options : 43.75% (19 mois) ou 60% (13 mois). Les deux < 66%. Table LPRN = 0 |
+| 13 | Lituanie | LT | parental wellPaid | 12 | 18 | Option A : 77.34% du net pendant 18 mois (couple). 77.34% > 66%. Table LPRN = 18* |
 
 ---
 
