@@ -21,9 +21,9 @@
       "maternity": {
         "exists": true,
         "durationMonths": {
-          "total": 2.1,
-          "paid": 2.1,
-          "wellPaid": 2.1
+          "total": 2.99,
+          "paid": 2.99,
+          "wellPaid": 2.99
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -3004,22 +3004,22 @@
       "parental": {
         "exists": true,
         "durationMonths": {
-          "total": 6,
-          "paid": 0,
+          "total": 8.14,
+          "paid": 2.09,
           "wellPaid": 0
         },
         "entitlementType": "individual",
-        "motherQuotaMonths": 6,
-        "fatherQuotaMonths": 6,
+        "motherQuotaMonths": 8.14,
+        "fatherQuotaMonths": 8.14,
         "sharedPortionMonths": 0,
         "transferable": false,
-        "paymentRate": 0,
-        "paymentType": "unpaid",
+        "paymentRate": null,
+        "paymentType": "mixed",
         "ceiling": false,
         "flexPartTime": false,
         "flexBlocks": true,
-        "fundingSource": null,
-        "notes": "26 weeks per parent, unpaid. Can be taken until child is 12. Minimum period of 6 continuous weeks. Additionally, Parent's leave: 9 weeks per parent at EUR 289/week, within first 2 years."
+        "fundingSource": "Social Insurance Fund (Parent's Leave); unpaid (Parental Leave)",
+        "notes": "Parental leave: 26 weeks per parent, unpaid, until child is 12. Parent's leave: 9 weeks per parent at EUR 289/week, within first 2 years."
       },
       "childcareLeave": {
         "exists": false,
@@ -3391,9 +3391,9 @@
       "maternity": {
         "exists": true,
         "durationMonths": {
-          "total": 2.1,
-          "paid": 2.1,
-          "wellPaid": 2.1
+          "total": 2.99,
+          "paid": 2.99,
+          "wellPaid": 2.99
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -4358,8 +4358,8 @@
         "exists": true,
         "durationMonths": {
           "total": 6,
-          "paid": 2.1,
-          "wellPaid": 0
+          "paid": 2.09,
+          "wellPaid": 2.09
         },
         "entitlementType": "individual",
         "motherQuotaMonths": 6,
