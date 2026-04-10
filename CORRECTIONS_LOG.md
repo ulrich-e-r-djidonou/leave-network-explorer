@@ -173,4 +173,6 @@ Source : notes pays individuelles du LPRN 2025, recherche par mots-cles "pension
 | 2026-04-10 | 3b625f5 | Cotisations retraite dans le tableau Compare |
 | 2026-04-10 | 585a305 | Indicateur carte pension (categoriel) |
 | 2026-04-10 | ce53a64 | Corrections audit maternite/parental (KR, AR, IE, NL) |
-| 2026-04-10 | (a venir) | France parental paid : 36 -> 6 (base 1er enfant, Table 3 LPRN) |
+| 2026-04-10 | 9cae756 | France parental paid : 36 -> 6 (base 1er enfant, Table 3 LPRN) |
+| 2026-04-10 | 050ada1 | Corrections anomalies Phase 2b : EE, SK, LV, LT |
+| 2026-04-10 | 61fb421 | Variations de conge selon rang de naissance : HR, CY, RS, GR, BA, FR |

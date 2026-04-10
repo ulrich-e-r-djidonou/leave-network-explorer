@@ -258,6 +258,12 @@ function LeaveSection({
       {leave.notes && (
         <p className="text-xs text-slate-500 mt-2 italic">{leave.notes}</p>
       )}
+      {leave.birthOrderVariation?.exists && (
+        <div className="mt-2 px-2 py-1.5 bg-amber-50 border border-amber-200 rounded text-xs text-amber-700">
+          <span className="font-medium">{lang === 'fr' ? 'Varie selon le rang : ' : 'Varies by birth order: '}</span>
+          {lang === 'fr' ? leave.birthOrderVariation.details_fr : leave.birthOrderVariation.details_en}
+        </div>
+      )}
     </div>
   );
 }
