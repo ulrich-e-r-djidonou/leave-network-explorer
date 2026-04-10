@@ -303,6 +303,12 @@ export function CompareView({ countries }: Props) {
                 <CompareRow label={t('compare_row_sick')} values={selected.map((c) => c.otherMeasures.sickChildLeave.exists ? c.otherMeasures.sickChildLeave.daysPerYear ? `${c.otherMeasures.sickChildLeave.daysPerYear} ${lang === 'en' ? 'd/yr' : 'j/an'}` : t('yes') : t('no'))} />
                 <CompareRow label={t('compare_row_flex')} values={selected.map((c) => c.otherMeasures.flexibleWork.rightToRequest ? t('yes') : t('no'))} />
                 <CompareRow label={t('compare_row_ecec')} values={selected.map((c) => c.ecec.universalEntitlement ? t('yes') : t('no'))} />
+                <CompareRow label={t('compare_row_pension')} values={selected.map((c) => {
+                  if (!c.pensionRights) return t('na');
+                  if (c.pensionRights.continuesDuringLeave === true) return t('yes');
+                  if (c.pensionRights.continuesDuringLeave === false) return t('no');
+                  return '—';
+                })} />
                 <CompareRow label={t('compare_row_generosity')} values={selected.map((c) => formatDuration(getGenerosityScore(c), lang))} />
                 <CompareRow label={t('compare_row_gender')} values={selected.map((c) => { const s = getGenderEqualityScore(c); return s !== null ? `${s}/100` : 'N/A'; })} />
               </tbody>
