@@ -83,8 +83,14 @@ export function WorldMap({ countries, indicator, onCountryClick }: Props) {
         };
       }
       const value = getIndicatorValue(country, indicator);
+      let fillColor: string;
+      if (indicator === "pension") {
+        fillColor = value === 1 ? "#0d9488" : value === 0 ? "#e11d48" : "#9ca3af";
+      } else {
+        fillColor = getColorForValue(value, min, max);
+      }
       return {
-        fillColor: getColorForValue(value, min, max),
+        fillColor,
         weight: 1,
         color: "#6b7280",
         fillOpacity: 0.8,
@@ -99,9 +105,11 @@ export function WorldMap({ countries, indicator, onCountryClick }: Props) {
       if (country) {
         const value = getIndicatorValue(country, indicator);
         const label =
-          indicator.includes("gender")
-            ? `${value}/100`
-            : formatDuration(value, lang);
+          indicator === "pension"
+            ? (value === 1 ? (lang === 'fr' ? 'Oui' : 'Yes') : value === 0 ? (lang === 'fr' ? 'Non' : 'No') : (lang === 'fr' ? 'Inconnu' : 'Unknown'))
+            : indicator.includes("gender")
+              ? `${value}/100`
+              : formatDuration(value, lang);
 
         const displayName = getCountryName(country.name, country.iso2, lang);
         layer.bindTooltip(
@@ -161,22 +169,41 @@ export function WorldMap({ countries, indicator, onCountryClick }: Props) {
         <p className="text-xs font-medium text-slate-700 dark:text-slate-200 mb-1">
           {indicatorLabel}
         </p>
-        <div className="flex items-center gap-1">
-          <span className="text-xs text-slate-500 dark:text-slate-400">{min}</span>
-          <div
-            className="h-3 w-32 rounded"
-            style={{
-              background: `linear-gradient(to right, ${getColorForValue(min, min, max)}, ${getColorForValue(max, min, max)})`,
-            }}
-          />
-          <span className="text-xs text-slate-500 dark:text-slate-400">
-            {indicator.includes("gender") ? `${max}` : formatDuration(max, lang)}
-          </span>
-        </div>
-        <div className="flex items-center gap-1 mt-1">
-          <div className="w-3 h-3 rounded bg-gray-200 border border-gray-300" />
-          <span className="text-xs text-slate-500 dark:text-slate-400">{lang === 'fr' ? 'Pas dans la revue' : 'Not in review'}</span>
-        </div>
+        {indicator === "pension" ? (
+          <div className="space-y-1">
+            <div className="flex items-center gap-1">
+              <div className="w-3 h-3 rounded" style={{ backgroundColor: "#0d9488" }} />
+              <span className="text-xs text-slate-500 dark:text-slate-400">{lang === 'fr' ? 'Oui' : 'Yes'}</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-3 h-3 rounded" style={{ backgroundColor: "#e11d48" }} />
+              <span className="text-xs text-slate-500 dark:text-slate-400">{lang === 'fr' ? 'Non' : 'No'}</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-3 h-3 rounded bg-gray-400" />
+              <span className="text-xs text-slate-500 dark:text-slate-400">{lang === 'fr' ? 'Inconnu' : 'Unknown'}</span>
+            </div>
+          </div>
+        ) : (
+          <>
+            <div className="flex items-center gap-1">
+              <span className="text-xs text-slate-500 dark:text-slate-400">{min}</span>
+              <div
+                className="h-3 w-32 rounded"
+                style={{
+                  background: `linear-gradient(to right, ${getColorForValue(min, min, max)}, ${getColorForValue(max, min, max)})`,
+                }}
+              />
+              <span className="text-xs text-slate-500 dark:text-slate-400">
+                {indicator.includes("gender") ? `${max}` : formatDuration(max, lang)}
+              </span>
+            </div>
+            <div className="flex items-center gap-1 mt-1">
+              <div className="w-3 h-3 rounded bg-gray-200 border border-gray-300" />
+              <span className="text-xs text-slate-500 dark:text-slate-400">{lang === 'fr' ? 'Pas dans la revue' : 'Not in review'}</span>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

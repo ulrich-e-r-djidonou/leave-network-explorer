@@ -37,6 +37,11 @@ export function getIndicatorValue(
       return getGenderEqualityScore(country);
     case "generosity":
       return getGenerosityScore(country);
+    case "pension":
+      if (!country.pensionRights) return null;
+      if (country.pensionRights.continuesDuringLeave === true) return 1;
+      if (country.pensionRights.continuesDuringLeave === false) return 0;
+      return null;
     default:
       return null;
   }
@@ -134,6 +139,7 @@ export const INDICATOR_LABEL_KEYS: Record<MapIndicator, string> = {
   total_leave: 'ind_total_leave',
   gender_equality: 'ind_gender_equality',
   generosity: 'ind_generosity',
+  pension: 'ind_pension',
 };
 
 export const REGIONS = [

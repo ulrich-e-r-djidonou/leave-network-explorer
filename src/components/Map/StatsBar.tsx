@@ -39,8 +39,24 @@ export function StatsBar({ countries, indicator }: Props) {
   }, [countries, indicator]);
 
   const isScore = indicator.includes("gender");
+  const isPension = indicator === "pension";
   const fmt = (v: number) =>
     isScore ? `${Math.round(v)}/100` : formatDuration(v, lang);
+
+  if (isPension) {
+    const allValues = countries.map((c) => getIndicatorValue(c, indicator));
+    const yesCount = allValues.filter((v) => v === 1).length;
+    const noCount = allValues.filter((v) => v === 0).length;
+    const unknownCount = allValues.filter((v) => v === null).length;
+    return (
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <StatCard label={t('stats_countries')} value={`${countries.length}`} />
+        <StatCard label={lang === 'fr' ? 'OUI' : 'YES'} value={`${yesCount}`} />
+        <StatCard label={lang === 'fr' ? 'NON' : 'NO'} value={`${noCount}`} />
+        <StatCard label={lang === 'fr' ? 'INCONNU' : 'UNKNOWN'} value={`${unknownCount}`} />
+      </div>
+    );
+  }
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">

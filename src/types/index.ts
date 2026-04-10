@@ -111,4 +111,5 @@ export type MapIndicator =
   | "parental_wellPaid"
   | "total_leave"
   | "gender_equality"
-  | "generosity";
+  | "generosity"
+  | "pension";

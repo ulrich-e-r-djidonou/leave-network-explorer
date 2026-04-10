@@ -18,6 +18,7 @@ const INDICATORS: MapIndicator[] = [
   "total_leave",
   "gender_equality",
   "generosity",
+  "pension",
 ];
 
 export function IndicatorSelector({ value, onChange }: Props) {

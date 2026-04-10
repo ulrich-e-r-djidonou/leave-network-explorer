@@ -43,6 +43,7 @@ export function CountryList({ countries, indicator, onSelect, selectedIso2 }: Pr
   }, [countries, search, region, indicator]);
 
   const isScore = indicator.includes("gender");
+  const isPension = indicator === "pension";
 
   return (
     <div className="bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden">
@@ -91,10 +92,14 @@ export function CountryList({ countries, indicator, onSelect, selectedIso2 }: Pr
               </div>
               <span className="text-sm text-slate-500 dark:text-slate-400 tabular-nums">
                 {value !== null
-                  ? isScore
-                    ? `${Math.round(value)}/100`
-                    : formatDuration(value, lang)
-                  : "N/A"}
+                  ? isPension
+                    ? (value === 1 ? (lang === 'fr' ? 'Oui' : 'Yes') : (lang === 'fr' ? 'Non' : 'No'))
+                    : isScore
+                      ? `${Math.round(value)}/100`
+                      : formatDuration(value, lang)
+                  : isPension
+                    ? "—"
+                    : "N/A"}
               </span>
             </button>
           );
