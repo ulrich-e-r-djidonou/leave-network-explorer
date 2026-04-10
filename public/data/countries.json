@@ -2376,7 +2376,7 @@
         "exists": true,
         "durationMonths": {
           "total": 36,
-          "paid": 36,
+          "paid": 6,
           "wellPaid": 0
         },
         "entitlementType": "individual",
@@ -2390,7 +2390,7 @@
         "flexPartTime": true,
         "flexBlocks": false,
         "fundingSource": "Family Allowance funds (CAFs), financed by employer contributions (5.4% of gross wages)",
-        "notes": "PreParE benefit: EUR 456.06/month if not working; reduced if working part-time. For 1st child, paid 6 months per parent; for 2+ children, up to 24 months per parent (max child age 3)."
+        "notes": "PreParE (flat-rate EUR 456/mois). 1er enfant : 6 mois par parent (12 mois couple). 2e enfant+ : 24 mois par parent (36 mois couple, partage obligatoire). Table 3 LPRN base sur 1er enfant."
       },
       "childcareLeave": {
         "exists": false,

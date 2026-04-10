@@ -102,13 +102,28 @@ Audit systematique des Tables 1 (maternite) et 3 (parental) contre le document s
 | 5 | Irlande | IE | parental paymentType | unpaid | mixed | Combine Parental (unpaid) et Parent's Leave (paid) |
 | 6 | Pays-Bas | NL | parental wellPaid | 0.00 | 2.09 | 9 sem a 70% des revenus (p.9684). 70% > 66% = well-paid. 9/4.3 = 2.09 |
 | 7 | Pays-Bas | NL | parental paid | 2.10 | 2.09 | Correction mineure d'arrondi (9/4.3 = 2.093) |
+| 8 | France | FR | parental paid | 36.00 | 6.00 | Table 3 LPRN base sur 1er enfant. PreParE 1er enfant = 6 mois/parent (12 mois couple). 2e enfant+ = 24 mois/parent (36 mois couple). Voir note detaillee ci-dessous |
+
+#### Note detaillee : France parental paid
+
+La Table 3 du LPRN specifie "the first child entitlements" comme base de comparaison.
+Pour la France, la duree du versement PreParE varie selon le rang de naissance :
+
+| Rang | Par parent | Total couple | Notes |
+|------|-----------|-------------|-------|
+| 1er enfant | 6 mois | 12 mois | Base de reference Table 3 |
+| 2e enfant+ | 24 mois | 36 mois | Partage obligatoire : un parent max 24 mois |
+
+Le JSON stocke 6 mois (par parent, 1er enfant) pour etre coherent avec la base
+de comparaison internationale de la Table 3 du LPRN.
+
+Le montant du PreParE est un forfait (456 EUR/mois en 2025), donc wellPaid = 0.
 
 ### Corrections ecartees (apres verification)
 
 | Pays | ISO2 | Champ | Suggestion audit | Decision | Raison |
 |------|------|-------|-----------------|----------|--------|
 | Danemark | DK | parental wellPaid | 0 -> 6.5 | Conserve 0 | Plafond DKK 4,865/sem = taux effectif souvent < 66% pour revenus moyens/hauts |
-| France | FR | parental paid | 36 -> 12 | Conserve 36 | Le PreParE (flat-rate 456 EUR/mois) couvre les 36 mois complets |
 
 ### Anomalies non corrigees (a investiguer)
 
@@ -158,4 +173,5 @@ Source : notes pays individuelles du LPRN 2025, recherche par mots-cles "pension
 | 2026-04-10 | f247856 | Conversions 4.3 sem/mois, affichage mois, droits retraite 52 pays |
 | 2026-04-10 | 3b625f5 | Cotisations retraite dans le tableau Compare |
 | 2026-04-10 | 585a305 | Indicateur carte pension (categoriel) |
-| 2026-04-10 | (a venir) | Corrections audit maternite/parental (KR, AR, IE, NL) |
+| 2026-04-10 | ce53a64 | Corrections audit maternite/parental (KR, AR, IE, NL) |
+| 2026-04-10 | (a venir) | France parental paid : 36 -> 6 (base 1er enfant, Table 3 LPRN) |
