@@ -5,7 +5,118 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leave Network Explorer — Politiques de conges dans le monde</title>
-    <meta name="description" content="Visualisation interactive des politiques de conges parentaux dans 52 pays. Donnees du International Review of Leave Policies and Research 2025." />
+    <meta name="description" content="Visualisation interactive des politiques de conges parentaux dans 52 pays. Donnees du International Review of Leave Policies and Research 2025. Comparez conge de maternite, paternite et parental." />
+    <meta name="author" content="Ulrich Djidonou" />
+    <meta name="keywords" content="conge parental, conge de maternite, conge de paternite, politiques familiales, leave policies, parental leave, 52 pays, comparaison internationale, OECD, dashboard, data visualization" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ulrich-e-r-djidonou.github.io/leave-network-explorer/" />
+    <link rel="alternate" hreflang="en" href="https://ulrich-e-r-djidonou.github.io/leave-network-explorer/" />
+    <link rel="alternate" hreflang="fr" href="https://ulrich-e-r-djidonou.github.io/leave-network-explorer/" />
+    <link rel="alternate" hreflang="x-default" href="https://ulrich-e-r-djidonou.github.io/leave-network-explorer/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ulrich-e-r-djidonou.github.io/leave-network-explorer/" />
+    <meta property="og:site_name" content="Leave Network Explorer" />
+    <meta property="og:title" content="Leave Network Explorer — Parental Leave Policies Across 52 Countries" />
+    <meta property="og:description" content="Interactive visualization of parental leave policies in 52 countries, based on the International Review of Leave Policies and Research 2025. Compare maternity, paternity and parental leave." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="fr_CA" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Leave Network Explorer — Parental Leave Policies Across 52 Countries" />
+    <meta name="twitter:description" content="Interactive visualization of parental leave policies in 52 countries (International Review of Leave Policies and Research 2025)." />
+    <meta name="twitter:creator" content="@ulrichdjidonou" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://ulrich-e-r-djidonou.github.io/leave-network-explorer/#website",
+          "url": "https://ulrich-e-r-djidonou.github.io/leave-network-explorer/",
+          "name": "Leave Network Explorer",
+          "description": "Interactive visualization of parental leave policies across 52 countries.",
+          "inLanguage": ["en", "fr"],
+          "author": { "@id": "https://ulrich-e-r-djidonou.github.io/leave-network-explorer/#author" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://ulrich-e-r-djidonou.github.io/leave-network-explorer/#author",
+          "name": "Ulrich Djidonou",
+          "url": "https://github.com/ulrich-e-r-djidonou",
+          "jobTitle": "Économiste",
+          "description": "Économiste spécialisé en inférence causale et machine learning, basé au Québec.",
+          "sameAs": [
+            "https://www.linkedin.com/in/ulrich-djidonou/",
+            "https://github.com/ulrich-e-r-djidonou"
+          ]
+        },
+        {
+          "@type": "Dataset",
+          "@id": "https://ulrich-e-r-djidonou.github.io/leave-network-explorer/#dataset",
+          "name": "Parental Leave Policies in 52 Countries (2025)",
+          "description": "Comparative data on maternity, paternity, and parental leave policies across 52 countries, based on the International Review of Leave Policies and Research 2025 (Leave Network).",
+          "url": "https://ulrich-e-r-djidonou.github.io/leave-network-explorer/",
+          "creator": { "@id": "https://ulrich-e-r-djidonou.github.io/leave-network-explorer/#author" },
+          "temporalCoverage": "2025",
+          "isBasedOn": "https://www.leavenetwork.org/",
+          "keywords": ["parental leave", "maternity leave", "paternity leave", "family policy", "international comparison", "52 countries"],
+          "license": "https://opensource.org/licenses/MIT",
+          "inLanguage": ["en", "fr"],
+          "variableMeasured": [
+            { "@type": "PropertyValue", "name": "Maternity leave duration" },
+            { "@type": "PropertyValue", "name": "Paternity leave duration" },
+            { "@type": "PropertyValue", "name": "Parental leave duration" },
+            { "@type": "PropertyValue", "name": "Payment / replacement rate" }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://ulrich-e-r-djidonou.github.io/leave-network-explorer/#webpage",
+          "url": "https://ulrich-e-r-djidonou.github.io/leave-network-explorer/",
+          "name": "Leave Network Explorer — Politiques de conges dans le monde",
+          "isPartOf": { "@id": "https://ulrich-e-r-djidonou.github.io/leave-network-explorer/#website" },
+          "about": { "@id": "https://ulrich-e-r-djidonou.github.io/leave-network-explorer/#dataset" },
+          "author": { "@id": "https://ulrich-e-r-djidonou.github.io/leave-network-explorer/#author" },
+          "inLanguage": ["en", "fr"]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://ulrich-e-r-djidonou.github.io/leave-network-explorer/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the Leave Network Explorer?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Leave Network Explorer is an interactive visualization built by economist Ulrich Djidonou that compares parental leave policies across 52 countries. It draws on the International Review of Leave Policies and Research 2025 and lets users compare maternity, paternity, and parental leave durations and payment rates."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How many countries are covered and where does the data come from?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The tool covers 52 countries. The underlying data comes from the International Review of Leave Policies and Research 2025, published by the International Network on Leave Policies and Research (Leave Network)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Qu'est-ce que le Leave Network Explorer ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Le Leave Network Explorer est une visualisation interactive creee par l'economiste Ulrich Djidonou qui compare les politiques de conges parentaux dans 52 pays, a partir de l'International Review of Leave Policies and Research 2025. On peut comparer la duree et le taux de remuneration des conges de maternite, de paternite et parentaux."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
