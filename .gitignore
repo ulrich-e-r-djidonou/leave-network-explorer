@@ -28,3 +28,6 @@ dist-ssr
 
 # Claude plans
 .claude/plans/
+
+# Claude Code local settings (ne jamais committer)
+**/.claude/settings.local.json
