@@ -4,7 +4,7 @@ import type { Country, SubnationalEntity } from "../../types";
 import { formatDuration } from "../../utils/calculations";
 import "leaflet/dist/leaflet.css";
 
-// ── Approximate centroids for each entity code ──────────────────────────────
+// Approximate centroids for each entity code
 const ENTITY_COORDS: Record<string, [number, number]> = {
   // Canada
   "CA-QC": [52.0, -73.5],
@@ -55,7 +55,7 @@ const ENTITY_COORDS: Record<string, [number, number]> = {
   "MX-CHH": [28.6, -106.1],
   "MX-PUE": [19.0, -98.2],
   "MX-NLE": [25.6, -99.7],
-  // Portugal autonomous regions
+  // Portugal
   "PT-30": [32.7, -17.0],
   "PT-20": [37.7, -25.5],
   // Romania
@@ -79,7 +79,6 @@ const ENTITY_COORDS: Record<string, [number, number]> = {
   "RU-MATCAP": [57.0, 83.0],
 };
 
-// ── Types ────────────────────────────────────────────────────────────────────
 export type SubIndicator = "paternity" | "parental" | "total";
 
 interface FlatSub {
@@ -87,7 +86,7 @@ interface FlatSub {
   countryName: string;
   countryIso2: string;
   coords: [number, number];
-  value: number | null; // months
+  value: number | null;
 }
 
 interface Props {
@@ -99,7 +98,6 @@ interface Props {
   lang: "fr" | "en";
 }
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
 function getEntityValue(entity: SubnationalEntity, indicator: SubIndicator): number | null {
   switch (indicator) {
     case "paternity":
@@ -127,10 +125,9 @@ function getEntityValue(entity: SubnationalEntity, indicator: SubIndicator): num
 }
 
 function valueToColor(value: number | null, min: number, max: number, isQC: boolean): string {
-  if (isQC) return "#2563eb"; // bleu pour Québec
-  if (value === null || value === 0) return "#d1d5db"; // grey
+  if (isQC) return "#3b82f6";
+  if (value === null || value === 0) return "#94a3b8";
   const ratio = Math.max(0, Math.min(1, (value - min) / (max - min || 1)));
-  // pale yellow → deep teal
   const r = Math.round(253 - ratio * (253 - 13));
   const g = Math.round(230 - ratio * (230 - 148));
   const b = Math.round(138 - ratio * (138 - 136));
@@ -143,7 +140,6 @@ const INDICATOR_LABELS: Record<SubIndicator, { fr: string; en: string }> = {
   total:     { fr: "Total payé",      en: "Total paid" },
 };
 
-// ── Component ────────────────────────────────────────────────────────────────
 export function SubnationalMap({
   countries,
   indicator,
@@ -152,13 +148,12 @@ export function SubnationalMap({
   selectedCode,
   lang,
 }: Props) {
-  // Build flat list with coords and values
   const points = useMemo<FlatSub[]>(() => {
     const result: FlatSub[] = [];
     countries.forEach((c) => {
       (c.subnational || []).forEach((sub) => {
         const coords = ENTITY_COORDS[sub.code];
-        if (!coords) return; // skip entities without coords (summaries, etc.)
+        if (!coords) return;
         const value = getEntityValue(sub, indicator);
         result.push({
           entity: sub,
@@ -172,7 +167,6 @@ export function SubnationalMap({
     return result;
   }, [countries, indicator]);
 
-  // Compute min/max for color scale
   const { min, max } = useMemo(() => {
     const values = points.map((p) => p.value).filter((v): v is number => v !== null && v > 0);
     return {
@@ -183,19 +177,19 @@ export function SubnationalMap({
 
   return (
     <div className="space-y-3">
-      {/* Indicator selector */}
+      {/* Indicator selector pills */}
       <div className="flex items-center gap-2 flex-wrap">
-        <span className="text-xs text-slate-500 font-medium">
+        <span className="text-xs text-slate-500 dark:text-slate-400 font-semibold">
           {lang === "fr" ? "Indicateur :" : "Indicator:"}
         </span>
         {(["paternity", "parental", "total"] as SubIndicator[]).map((ind) => (
           <button
             key={ind}
             onClick={() => onIndicatorChange(ind)}
-            className={`px-3 py-1 rounded-full text-xs transition-colors ${
+            className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
               indicator === ind
-                ? "bg-teal-600 text-white shadow-sm"
-                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                ? "bg-teal-600 text-white shadow-xs"
+                : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700"
             }`}
           >
             {INDICATOR_LABELS[ind][lang]}
@@ -203,16 +197,16 @@ export function SubnationalMap({
         ))}
       </div>
 
-      {/* Map */}
-      <div className="relative rounded-xl overflow-hidden border border-slate-200 shadow-sm">
+      {/* Map container */}
+      <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm">
         <MapContainer
           center={[30, 10]}
           zoom={2}
           minZoom={1}
           maxZoom={8}
-          className="h-[420px] w-full"
+          className="h-[440px] w-full"
           scrollWheelZoom={true}
-          style={{ background: "#f1f5f9" }}
+          style={{ background: "#f8fafc" }}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
@@ -231,16 +225,16 @@ export function SubnationalMap({
                 radius={isSelected ? 14 : isQC ? 12 : 9}
                 pathOptions={{
                   fillColor: color,
-                  fillOpacity: 0.88,
-                  color: isSelected ? "#1e293b" : isQC ? "#1d4ed8" : "#6b7280",
-                  weight: isSelected ? 2.5 : isQC ? 1.5 : 1,
+                  fillOpacity: 0.9,
+                  color: isSelected ? "#0f172a" : isQC ? "#1e40af" : "#475569",
+                  weight: isSelected ? 3 : isQC ? 2 : 1,
                 }}
                 eventHandlers={{
                   click: () =>
                     onSelectEntity(isSelected ? null : pt.entity.code),
                 }}
               >
-                {/* Label permanent pour Québec */}
+                {/* Permanent label for Quebec */}
                 {isQC && (
                   <Tooltip
                     permanent
@@ -248,43 +242,28 @@ export function SubnationalMap({
                     offset={[14, 0]}
                     className="quebec-label"
                   >
-                    <span style={{
-                      background: "rgba(219, 234, 254, 0.92)",
-                      color: "#1e40af",
-                      fontWeight: 700,
-                      fontSize: "12px",
-                      padding: "2px 8px",
-                      borderRadius: "9999px",
-                      border: "1px solid #93c5fd",
-                      boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
-                      whiteSpace: "nowrap",
-                    }}>
+                    <span className="bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-200 font-bold text-xs px-2.5 py-1 rounded-full border border-blue-300 dark:border-blue-700 shadow-sm whitespace-nowrap">
                       ⚜️ Québec (RQAP)
                     </span>
                   </Tooltip>
                 )}
-                {/* Tooltip au survol pour tous */}
                 {!isQC && (
                   <Tooltip sticky>
-                    <div className="text-xs space-y-0.5">
-                      <p className="font-semibold">{pt.entity.name}</p>
-                      <p className="text-slate-500">{pt.countryName}</p>
-                      <p>
+                    <div className="text-xs space-y-1">
+                      <p className="font-bold text-slate-900 dark:text-slate-100">{pt.entity.name}</p>
+                      <p className="text-slate-500 dark:text-slate-400">{pt.countryName}</p>
+                      <p className="text-slate-700 dark:text-slate-300">
                         {label} :{" "}
-                        {pt.value !== null
-                          ? formatDuration(pt.value, lang)
-                          : lang === "fr"
-                          ? "Données non disponibles"
-                          : "Data not available"}
+                        <strong>
+                          {pt.value !== null
+                            ? formatDuration(pt.value, lang)
+                            : lang === "fr"
+                            ? "Données non disponibles"
+                            : "Data not available"}
+                        </strong>
                       </p>
-                      {pt.entity.paternity?.paymentRate && (
-                        <p>
-                          {lang === "fr" ? "Taux" : "Rate"} :{" "}
-                          {pt.entity.paternity.paymentRate}%
-                        </p>
-                    )}
-                  </div>
-                </Tooltip>
+                    </div>
+                  </Tooltip>
                 )}
               </CircleMarker>
             );
@@ -292,32 +271,26 @@ export function SubnationalMap({
         </MapContainer>
 
         {/* Legend */}
-        <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur rounded-lg shadow p-3 z-[1000] text-xs space-y-1.5">
-          <p className="font-medium text-slate-700">
+        <div className="absolute bottom-4 left-4 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md rounded-xl shadow-lg p-3.5 z-[1000] text-xs space-y-2 border border-slate-200/80 dark:border-slate-700/80 max-w-xs">
+          <p className="font-bold text-slate-800 dark:text-slate-200">
             {INDICATOR_LABELS[indicator][lang]}
           </p>
-          <div className="flex items-center gap-1.5">
-            <span className="text-slate-400">{formatDuration(min || 0, lang)}</span>
+          <div className="flex items-center gap-2">
+            <span className="text-slate-500 font-mono text-[11px]">{formatDuration(min || 0, lang)}</span>
             <div
-              className="h-3 w-24 rounded"
+              className="h-3 w-28 rounded-md shadow-inner"
               style={{
                 background: `linear-gradient(to right, ${valueToColor(min || 0.1, min, max, false)}, ${valueToColor(max, min, max, false)})`,
               }}
             />
-            <span className="text-slate-400">{formatDuration(max, lang)}</span>
+            <span className="text-slate-500 font-mono text-[11px]">{formatDuration(max, lang)}</span>
           </div>
-          <div className="flex items-center gap-1.5">
-            <div className="w-3 h-3 rounded-full bg-[#2563eb] border border-[#1d4ed8]" />
-            <span className="text-slate-500">Québec (RQAP)</span>
+          <div className="flex items-center gap-2 pt-1 border-t border-slate-100 dark:border-slate-700">
+            <div className="w-3 h-3 rounded-full bg-blue-600 border border-blue-400" />
+            <span className="text-slate-600 dark:text-slate-300 font-medium">Québec (RQAP)</span>
           </div>
-          <div className="flex items-center gap-1.5">
-            <div className="w-3 h-3 rounded-full bg-[#d1d5db] border border-slate-300" />
-            <span className="text-slate-500">
-              {lang === "fr" ? "Données N/D" : "Data N/A"}
-            </span>
-          </div>
-          <p className="text-slate-400 text-[10px] mt-1">
-            {lang === "fr" ? "Cliquer un point pour filtrer" : "Click a point to filter"}
+          <p className="text-slate-400 dark:text-slate-500 text-[10px]">
+            {lang === "fr" ? "Cliquer sur un point pour filtrer" : "Click a point to filter"}
           </p>
         </div>
       </div>

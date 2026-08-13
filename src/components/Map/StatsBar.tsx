@@ -36,7 +36,7 @@ export function StatsBar({ countries, indicator }: Props) {
       max: values[0],
       count: values.length,
     };
-  }, [countries, indicator]);
+  }, [countries, indicator, lang]);
 
   const isScore = indicator.includes("gender");
   const isPension = indicator === "pension";
@@ -51,9 +51,9 @@ export function StatsBar({ countries, indicator }: Props) {
     return (
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <StatCard label={t('stats_countries')} value={`${countries.length}`} />
-        <StatCard label={lang === 'fr' ? 'OUI' : 'YES'} value={`${yesCount}`} />
-        <StatCard label={lang === 'fr' ? 'NON' : 'NO'} value={`${noCount}`} />
-        <StatCard label={lang === 'fr' ? 'INCONNU' : 'UNKNOWN'} value={`${unknownCount}`} />
+        <StatCard label={lang === 'fr' ? 'Cotisations maintenues' : 'Covered in leave'} value={`${yesCount}`} />
+        <StatCard label={lang === 'fr' ? 'Non maintenues' : 'Not covered'} value={`${noCount}`} />
+        <StatCard label={lang === 'fr' ? 'Non spécifié' : 'Unspecified'} value={`${unknownCount}`} />
       </div>
     );
   }
@@ -79,10 +79,10 @@ export function StatsBar({ countries, indicator }: Props) {
 
 function StatCard({ label, value, sub }: { label: string; value: string; sub?: string }) {
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 p-3">
-      <p className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide">{label}</p>
-      <p className="text-xl font-semibold text-slate-800 dark:text-slate-100 mt-1">{value}</p>
-      {sub && <p className="text-xs text-slate-400 dark:text-slate-500 truncate">{sub}</p>}
+    <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700/80 p-3.5 shadow-xs hover:border-teal-500/40 transition-colors">
+      <p className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">{label}</p>
+      <p className="text-xl font-bold font-mono text-slate-800 dark:text-slate-100 mt-1 tabular-nums">{value}</p>
+      {sub && <p className="text-xs text-slate-500 dark:text-slate-400 truncate mt-0.5 font-medium">{sub}</p>}
     </div>
   );
 }

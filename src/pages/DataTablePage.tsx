@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Download, ChevronUp, ChevronDown, Search } from "lucide-react";
+import { Download, ChevronUp, ChevronDown, Search, X } from "lucide-react";
 import type { Country } from "../types";
 import { useTranslation } from "../hooks/useTranslation";
 import type { TranslationKey } from "../i18n/translations";
@@ -14,6 +14,7 @@ const REGION_LABEL_KEYS: Record<string, string> = {
   Oceania: 'region_oceania',
   Africa: 'region_africa',
 };
+
 import {
   getGenerosityScore,
   getGenderEqualityScore,
@@ -60,52 +61,52 @@ const COLUMNS: ColumnDef[] = [
     key: "name",
     labelFr: "Pays",
     labelEn: "Country",
-    getValue: (c) => c.name, // raw name for sorting; display handled separately
+    getValue: (c) => c.name,
   },
   {
     key: "region",
-    labelFr: "Region",
+    labelFr: "Région",
     labelEn: "Region",
     getValue: (c) => c.region,
   },
   {
     key: "mat_total",
-    labelFr: "Maternite (total)",
+    labelFr: "Maternité (total)",
     labelEn: "Maternity (total)",
     getValue: (c) => numOrZero(c.maternity?.durationMonths?.total),
     format: (v, lang) => formatDuration(v as number, lang),
   },
   {
     key: "mat_wellpaid",
-    labelFr: "Maternite (bien paye)",
+    labelFr: "Maternité (bien payé)",
     labelEn: "Maternity (well-paid)",
     getValue: (c) => numOrZero(c.maternity?.durationMonths?.wellPaid),
     format: (v, lang) => formatDuration(v as number, lang),
   },
   {
     key: "mat_rate",
-    labelFr: "Maternite taux (%)",
+    labelFr: "Maternité taux (%)",
     labelEn: "Maternity rate (%)",
     getValue: (c) => numOrZero(c.maternity?.paymentRate),
     format: (v) => (v as number) > 0 ? `${v}%` : "N/A",
   },
   {
     key: "pat_total",
-    labelFr: "Paternite (total)",
+    labelFr: "Paternité (total)",
     labelEn: "Paternity (total)",
     getValue: (c) => numOrZero(c.paternity?.durationMonths?.total),
     format: (v, lang) => formatDuration(v as number, lang),
   },
   {
     key: "pat_wellpaid",
-    labelFr: "Paternite (bien paye)",
+    labelFr: "Paternité (bien payé)",
     labelEn: "Paternity (well-paid)",
     getValue: (c) => numOrZero(c.paternity?.durationMonths?.wellPaid),
     format: (v, lang) => formatDuration(v as number, lang),
   },
   {
     key: "pat_rate",
-    labelFr: "Paternite taux (%)",
+    labelFr: "Paternité taux (%)",
     labelEn: "Paternity rate (%)",
     getValue: (c) => numOrZero(c.paternity?.paymentRate),
     format: (v) => (v as number) > 0 ? `${v}%` : "N/A",
@@ -119,31 +120,31 @@ const COLUMNS: ColumnDef[] = [
   },
   {
     key: "par_wellpaid",
-    labelFr: "Parental (bien paye)",
+    labelFr: "Parental (bien payé)",
     labelEn: "Parental (well-paid)",
     getValue: (c) => numOrZero(c.parental?.durationMonths?.wellPaid),
     format: (v, lang) => formatDuration(v as number, lang),
   },
   {
     key: "total_paid",
-    labelFr: "Total paye",
+    labelFr: "Total payé",
     labelEn: "Total paid",
     getValue: (c) => getTotalLeaveMonths(c),
     format: (v, lang) => formatDuration(v as number, lang),
   },
   {
     key: "generosity",
-    labelFr: "Generosite (/100)",
-    labelEn: "Generosity (/100)",
+    labelFr: "Générosité (ETP)",
+    labelEn: "Generosity (FTE)",
     getValue: (c) => getGenerosityScore(c),
-    format: (v) => String(v),
+    format: (v, lang) => formatDuration(v as number, lang),
   },
   {
     key: "gender_equality",
-    labelFr: "Egalite genres (/100)",
+    labelFr: "Égalité genres (/100)",
     labelEn: "Gender equality (/100)",
     getValue: (c) => getGenderEqualityScore(c) ?? null,
-    format: (v) => v !== null ? String(v) : 'N/A',
+    format: (v) => v !== null ? `${Math.round(Number(v))}` : 'N/A',
   },
 ];
 
@@ -222,18 +223,16 @@ export function DataTablePage({ countries }: Props) {
     }
   }
 
-  const regions = REGIONS;
-
   return (
-    <main className="max-w-[100vw] px-4 py-6">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6">
       {/* Header */}
-      <div className="max-w-7xl mx-auto mb-6">
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">{t("data_title")}</h1>
-        <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{t("data_subtitle")}</p>
+      <div>
+        <h1 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-slate-100">{t("data_title")}</h1>
+        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">{t("data_subtitle")}</p>
       </div>
 
-      {/* Controls */}
-      <div className="max-w-7xl mx-auto mb-4 flex flex-wrap items-center gap-3">
+      {/* Controls Bar */}
+      <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-4 shadow-xs flex flex-wrap items-center gap-3">
         {/* Search */}
         <div className="relative flex-1 min-w-[200px] max-w-sm">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
@@ -242,17 +241,25 @@ export function DataTablePage({ countries }: Props) {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder={t("search_placeholder")}
-            className="w-full pl-9 pr-3 py-2 border border-slate-200 dark:border-slate-600 rounded-lg text-sm bg-white dark:bg-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="w-full pl-9 pr-8 py-2 border border-slate-200 dark:border-slate-600 rounded-xl text-xs sm:text-sm bg-white dark:bg-slate-700 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500 shadow-xs"
           />
+          {search && (
+            <button
+              onClick={() => setSearch("")}
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 p-0.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
+          )}
         </div>
 
         {/* Region filter */}
         <select
           value={regionFilter}
           onChange={(e) => setRegionFilter(e.target.value)}
-          className="border border-slate-200 dark:border-slate-600 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="border border-slate-200 dark:border-slate-600 rounded-xl px-3 py-2 text-xs sm:text-sm bg-white dark:bg-slate-700 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500 shadow-xs cursor-pointer"
         >
-          {regions.map((r) => (
+          {REGIONS.map((r) => (
             <option key={r} value={r}>
               {t((REGION_LABEL_KEYS[r] || r) as TranslationKey)}
             </option>
@@ -262,30 +269,30 @@ export function DataTablePage({ countries }: Props) {
         {/* CSV export */}
         <button
           onClick={() => exportFilteredCSV(sorted, lang)}
-          className="flex items-center gap-1.5 px-4 py-2 bg-teal-600 text-white text-sm rounded-lg hover:bg-teal-700 transition-colors"
+          className="flex items-center gap-1.5 px-3.5 py-2 bg-teal-600 hover:bg-teal-700 text-white text-xs sm:text-sm font-semibold rounded-xl transition-colors shadow-xs ml-auto cursor-pointer"
         >
           <Download className="w-4 h-4" />
           {t("data_export_csv")}
         </button>
 
         {/* Count */}
-        <span className="text-sm text-slate-500 dark:text-slate-400 ml-auto">
+        <span className="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">
           {sorted.length} {lang === "fr" ? "pays" : "countries"}
         </span>
       </div>
 
       {/* Table container */}
-      <div className="max-w-7xl mx-auto overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm">
-        <table className="w-full text-sm border-collapse min-w-[1200px]">
+      <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-x-auto shadow-xs">
+        <table className="w-full text-xs sm:text-sm border-collapse min-w-[1100px]">
           <thead>
-            <tr className="bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300">
+            <tr className="bg-slate-50 dark:bg-slate-700/80 text-slate-700 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700">
               {COLUMNS.map((col, i) => (
                 <th
                   key={col.key}
                   onClick={() => handleSort(col.key)}
-                  className={`px-3 py-2.5 text-left font-semibold cursor-pointer select-none whitespace-nowrap hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors ${
+                  className={`px-3.5 py-3 text-left font-semibold cursor-pointer select-none whitespace-nowrap hover:bg-slate-100 dark:hover:bg-slate-600/80 transition-colors ${
                     i === 0
-                      ? "sticky left-0 z-10 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 border-r border-slate-200 dark:border-slate-600"
+                      ? "sticky left-0 z-10 bg-slate-50 dark:bg-slate-700 border-r border-slate-200 dark:border-slate-600"
                       : ""
                   }`}
                 >
@@ -298,30 +305,28 @@ export function DataTablePage({ countries }: Props) {
                         <ChevronDown className="w-3.5 h-3.5 text-teal-600" />
                       )
                     ) : (
-                      <span className="w-3.5 h-3.5 inline-block" />
+                      <span className="w-3.5 h-3.5 inline-block opacity-20 hover:opacity-50">↕</span>
                     )}
                   </span>
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody>
+          <tbody className="divide-y divide-slate-100 dark:divide-slate-700/60 font-mono">
             {sorted.length === 0 ? (
               <tr>
                 <td
                   colSpan={COLUMNS.length}
-                  className="text-center py-8 text-slate-400"
+                  className="text-center py-12 text-slate-400 italic font-sans"
                 >
                   {t("data_no_results")}
                 </td>
               </tr>
             ) : (
-              sorted.map((country, idx) => (
+              sorted.map((country) => (
                 <tr
                   key={country.iso2}
-                  className={`${
-                    idx % 2 === 0 ? "bg-white dark:bg-slate-800" : "bg-slate-50 dark:bg-slate-800/50"
-                  } hover:bg-teal-50 dark:hover:bg-slate-700 transition-colors`}
+                  className="hover:bg-slate-50 dark:hover:bg-slate-700/40 transition-colors"
                 >
                   {COLUMNS.map((col, colIdx) => {
                     const raw = col.getValue(country);
@@ -335,11 +340,12 @@ export function DataTablePage({ countries }: Props) {
                     return (
                       <td
                         key={col.key}
-                        className={`px-3 py-2 whitespace-nowrap ${
+                        className={`px-3.5 py-2.5 whitespace-nowrap ${
                           colIdx === 0
-                            ? "sticky left-0 z-10 font-medium text-slate-900 dark:text-slate-100 border-r border-slate-200 dark:border-slate-600 " +
-                              (idx % 2 === 0 ? "bg-white dark:bg-slate-800" : "bg-slate-50 dark:bg-slate-800/50")
-                            : "text-slate-700 dark:text-slate-300"
+                            ? "sticky left-0 z-10 font-sans font-semibold text-slate-900 dark:text-slate-100 bg-white dark:bg-slate-800 border-r border-slate-100 dark:border-slate-700"
+                            : col.key === 'region'
+                              ? "font-sans text-slate-500 dark:text-slate-400"
+                              : "text-slate-700 dark:text-slate-300 tabular-nums"
                         }`}
                       >
                         {display}

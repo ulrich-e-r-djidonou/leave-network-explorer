@@ -31,7 +31,7 @@ const REGION_COLORS: Record<string, string> = {
   Europe: "#3b82f6",
   "North America": "#ef4444",
   "South America": "#f59e0b",
-  Asia: "#22c55e",
+  Asia: "#10b981",
   Oceania: "#8b5cf6",
   Africa: "#ec4899",
 };
@@ -121,11 +121,11 @@ export function AnalyticsView({ countries, onCountryClick }: Props) {
   const maxGap = gapData.length > 0 ? Math.max(...gapData.map((d) => Math.abs(d.gap))) : 1;
 
   const reformTypes = [
-    { key: "expansion", labelKey: "analytics_expansion" as const, text: "text-green-700" },
-    { key: "introduction", labelKey: "analytics_introduction" as const, text: "text-blue-700" },
-    { key: "recalibration", labelKey: "analytics_recalibration" as const, text: "text-amber-700" },
-    { key: "cutback", labelKey: "analytics_cutback" as const, text: "text-red-700" },
-    { key: "abolition", labelKey: "analytics_abolition" as const, text: "text-red-800" },
+    { key: "expansion", labelKey: "analytics_expansion" as const, text: "text-emerald-600 dark:text-emerald-400", bg: "bg-emerald-50 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-800" },
+    { key: "introduction", labelKey: "analytics_introduction" as const, text: "text-blue-600 dark:text-blue-400", bg: "bg-blue-50 dark:bg-blue-950/40 border-blue-200 dark:border-blue-800" },
+    { key: "recalibration", labelKey: "analytics_recalibration" as const, text: "text-amber-600 dark:text-amber-400", bg: "bg-amber-50 dark:bg-amber-950/40 border-amber-200 dark:border-amber-800" },
+    { key: "cutback", labelKey: "analytics_cutback" as const, text: "text-rose-600 dark:text-rose-400", bg: "bg-rose-50 dark:bg-rose-950/40 border-rose-200 dark:border-rose-800" },
+    { key: "abolition", labelKey: "analytics_abolition" as const, text: "text-rose-700 dark:text-rose-300", bg: "bg-rose-100 dark:bg-rose-900/40 border-rose-300 dark:border-rose-700" },
   ];
 
   /* Custom tooltip */
@@ -133,19 +133,19 @@ export function AnalyticsView({ countries, onCountryClick }: Props) {
     if (!active || !payload?.length) return null;
     const d = payload[0].payload as ScatterPoint;
     return (
-      <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-lg px-3 py-2 text-sm">
-        <p className="font-semibold text-slate-800 dark:text-slate-100">{d.name}</p>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+      <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl px-3.5 py-2.5 text-xs">
+        <p className="font-bold text-slate-900 dark:text-slate-100">{d.name}</p>
+        <p className="text-slate-500 dark:text-slate-400">
           {t((REGION_KEYS[d.region] || d.region) as any)}
         </p>
-        <div className="mt-1 space-y-0.5 text-xs">
-          <p>
-            <span className="text-slate-500 dark:text-slate-400">{lang === "fr" ? "Générosité (ETP)" : "Generosity (FTE)"}:</span>{" "}
-            <span className="font-medium text-slate-700 dark:text-slate-200">{formatDuration(d.generosity, lang)}</span>
+        <div className="mt-2 space-y-1 font-mono">
+          <p className="flex items-center justify-between gap-3">
+            <span className="text-slate-500 dark:text-slate-400 font-sans">{lang === "fr" ? "Générosité (ETP):" : "Generosity (FTE):"}</span>
+            <span className="font-semibold text-slate-800 dark:text-slate-200">{formatDuration(d.generosity, lang)}</span>
           </p>
-          <p>
-            <span className="text-slate-500 dark:text-slate-400">{lang === "fr" ? "Égalité genres" : "Gender equality"}:</span>{" "}
-            <span className="font-medium text-slate-700 dark:text-slate-200">{d.gender}/100</span>
+          <p className="flex items-center justify-between gap-3">
+            <span className="text-slate-500 dark:text-slate-400 font-sans">{lang === "fr" ? "Égalité genres:" : "Gender equality:"}</span>
+            <span className="font-semibold text-slate-800 dark:text-slate-200">{d.gender}/100</span>
           </p>
         </div>
       </div>
@@ -166,20 +166,20 @@ export function AnalyticsView({ countries, onCountryClick }: Props) {
         <circle
           cx={cx}
           cy={cy}
-          r={isHovered ? 7 : 5}
+          r={isHovered ? 8 : 5.5}
           fill={REGION_COLORS[d.region] || "#94a3b8"}
-          opacity={isHovered ? 1 : 0.8}
-          stroke={isHovered ? "#0f172a" : "white"}
-          strokeWidth={isHovered ? 2 : 1}
+          opacity={isHovered ? 1 : 0.85}
+          stroke={isHovered ? "#0f172a" : "#ffffff"}
+          strokeWidth={isHovered ? 2.5 : 1}
           style={{ cursor: onCountryClick ? "pointer" : "default" }}
         />
         {showLabel && (
           <text
-            x={cx + 9}
+            x={cx + 10}
             y={cy - 5}
             fill={isHovered ? "#0f172a" : "#64748b"}
             fontSize={isHovered ? 12 : 10}
-            fontWeight={isHovered ? 600 : 400}
+            fontWeight={isHovered ? 700 : 500}
             style={{ pointerEvents: "none", userSelect: "none" }}
           >
             {truncName}
@@ -190,60 +190,70 @@ export function AnalyticsView({ countries, onCountryClick }: Props) {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6 space-y-8">
-      <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-100">{t('analytics_title')}</h2>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-8">
+      <div>
+        <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-slate-100">{t('analytics_title')}</h2>
+        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+          {lang === 'fr' ? 'Analyses multidimensionnelles, écarts garde-congé et tendances des réformes.' : 'Multidimensional analysis, leave-to-care gaps, and reform dynamics.'}
+        </p>
+      </div>
 
       {/* Gender equality vs Generosity scatter */}
-      <div ref={scatterRef} className="bg-white dark:bg-slate-800 rounded-lg border dark:border-slate-700 p-4">
+      <div ref={scatterRef} className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-4 sm:p-5 shadow-xs">
         <div className="flex items-start justify-between mb-1">
-          <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-200">
-            {t('analytics_scatter_title')}
-          </h3>
+          <div>
+            <h3 className="text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-200">
+              {t('analytics_scatter_title')}
+            </h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{t('analytics_scatter_desc')}</p>
+          </div>
           <button
             onClick={() => downloadChartAsPNG(scatterRef.current, 'gender-vs-generosity.png', lang)}
-            className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+            className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700"
             title={lang === 'fr' ? 'Télécharger en PNG' : 'Download as PNG'}
           >
             <Download className="w-4 h-4" />
           </button>
         </div>
-        <p className="text-xs text-slate-500 dark:text-slate-400 mb-2">{t('analytics_scatter_desc')}</p>
 
         {/* Region filter chips */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-2 my-4">
           <button
             onClick={() => setActiveRegion(null)}
-            className={`px-2.5 py-1 text-xs rounded-full border transition-colors ${
+            className={`px-3 py-1 text-xs font-semibold rounded-full border transition-all cursor-pointer ${
               !activeRegion
-                ? "bg-slate-800 text-white border-slate-800 dark:bg-slate-200 dark:text-slate-800 dark:border-slate-200"
-                : "bg-white dark:bg-slate-700 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600"
+                ? "bg-slate-800 text-white border-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:border-slate-100 shadow-xs"
+                : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700"
             }`}
           >
             {t('region_all' as any)}
           </button>
-          {regions.map((region) => (
-            <button
-              key={region}
-              onClick={() => setActiveRegion(activeRegion === region ? null : region)}
-              className={`px-2.5 py-1 text-xs rounded-full border transition-colors flex items-center gap-1.5 ${
-                activeRegion === region
-                  ? "text-white border-transparent"
-                  : "bg-white dark:bg-slate-700 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600"
-              }`}
-              style={activeRegion === region ? { backgroundColor: REGION_COLORS[region] } : {}}
-            >
-              <span
-                className="w-2.5 h-2.5 rounded-full inline-block"
-                style={{ backgroundColor: REGION_COLORS[region] }}
-              />
-              {t((REGION_KEYS[region] || region) as any)}
-            </button>
-          ))}
+          {regions.map((region) => {
+            const isSel = activeRegion === region;
+            return (
+              <button
+                key={region}
+                onClick={() => setActiveRegion(isSel ? null : region)}
+                className={`px-3 py-1 text-xs font-semibold rounded-full border transition-all flex items-center gap-1.5 cursor-pointer ${
+                  isSel
+                    ? "text-white border-transparent shadow-xs"
+                    : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700"
+                }`}
+                style={isSel ? { backgroundColor: REGION_COLORS[region] } : {}}
+              >
+                <span
+                  className="w-2.5 h-2.5 rounded-full inline-block"
+                  style={{ backgroundColor: REGION_COLORS[region] }}
+                />
+                {t((REGION_KEYS[region] || region) as any)}
+              </button>
+            );
+          })}
         </div>
 
         <ResponsiveContainer width="100%" height={460}>
-          <ScatterChart margin={{ top: 10, right: 30, bottom: 30, left: 10 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+          <ScatterChart margin={{ top: 15, right: 30, bottom: 30, left: 10 }}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#cbd5e1" opacity={0.3} />
             <XAxis
               type="number"
               dataKey="generosity"
@@ -254,8 +264,8 @@ export function AnalyticsView({ countries, onCountryClick }: Props) {
               <Label
                 value={lang === "fr" ? "Générosité — ETP (mois)" : "Generosity — FTE (months)"}
                 position="bottom"
-                offset={10}
-                style={{ fontSize: 12, fill: "#64748b" }}
+                offset={12}
+                style={{ fontSize: 12, fill: "#64748b", fontWeight: 500 }}
               />
             </XAxis>
             <YAxis
@@ -269,8 +279,8 @@ export function AnalyticsView({ countries, onCountryClick }: Props) {
                 value={lang === "fr" ? "Égalité genres (GII, /100)" : "Gender equality (GII, /100)"}
                 angle={-90}
                 position="insideLeft"
-                offset={5}
-                style={{ fontSize: 12, fill: "#64748b", textAnchor: "middle" }}
+                offset={8}
+                style={{ fontSize: 12, fill: "#64748b", textAnchor: "middle", fontWeight: 500 }}
               />
             </YAxis>
             <ZAxis range={[60, 60]} />
@@ -286,39 +296,55 @@ export function AnalyticsView({ countries, onCountryClick }: Props) {
         </ResponsiveContainer>
 
         {/* Legend */}
-        <div className="flex flex-wrap gap-3 justify-center mt-3">
+        <div className="flex flex-wrap gap-4 justify-center mt-4 pt-3 border-t border-slate-100 dark:border-slate-700">
           {Object.entries(REGION_COLORS).map(([region, color]) => (
-            <div key={region} className="flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-400">
+            <div key={region} className="flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-300 font-medium">
               <div className="w-3 h-3 rounded-full" style={{ backgroundColor: color }} />
               {t((REGION_KEYS[region] || region) as any)}
             </div>
           ))}
         </div>
         {onCountryClick && (
-          <p className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2">
+          <p className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2 italic">
             {lang === "fr" ? "Cliquez sur un point pour voir le détail du pays" : "Click a point to see country details"}
           </p>
         )}
       </div>
 
+      {/* Reform tracker */}
+      <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 shadow-xs">
+        <h3 className="text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-200 mb-1">
+          {t('analytics_reforms_title')}
+        </h3>
+        <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">{t('analytics_reforms_desc')}</p>
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 text-center">
+          {reformTypes.map((rt) => (
+            <div key={rt.key} className={`p-4 rounded-xl border ${rt.bg}`}>
+              <div className={`text-3xl font-bold font-mono ${rt.text}`}>{reformCounts[rt.key] || 0}</div>
+              <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 mt-1">{t(rt.labelKey)}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Gap analysis */}
       {gapData.length > 0 && (
-        <div className="bg-white dark:bg-slate-800 rounded-lg border dark:border-slate-700 p-4">
-          <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1">
+        <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 shadow-xs">
+          <h3 className="text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-200 mb-1">
             {t('analytics_gap_title')}
           </h3>
           <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">{t('analytics_gap_desc')}</p>
-          <div className="space-y-1.5">
+          <div className="space-y-2 max-h-96 overflow-y-auto pr-2">
             {gapData.map((d) => (
-              <div key={d.name} className="flex items-center gap-2">
-                <span className="text-xs text-slate-600 dark:text-slate-300 w-28 text-right shrink-0 truncate">{d.name}</span>
-                <div className="flex-1 h-5 bg-slate-100 dark:bg-slate-700 rounded relative">
+              <div key={d.name} className="flex items-center gap-3">
+                <span className="text-xs font-medium text-slate-700 dark:text-slate-300 w-32 text-right shrink-0 truncate">{d.name}</span>
+                <div className="flex-1 h-5 bg-slate-100 dark:bg-slate-700/60 rounded-lg overflow-hidden relative">
                   <div
-                    className={`h-full rounded ${d.gap > 0 ? "bg-red-400" : "bg-green-400"}`}
+                    className={`h-full rounded-lg ${d.gap > 0 ? "bg-rose-500" : "bg-emerald-500"}`}
                     style={{ width: `${(Math.abs(d.gap) / maxGap) * 100}%` }}
                   />
                 </div>
-                <span className="text-xs text-slate-500 dark:text-slate-400 w-16 tabular-nums">
+                <span className="text-xs font-mono font-semibold text-slate-600 dark:text-slate-300 w-20 tabular-nums">
                   {d.gap} {t('analytics_gap_months')}
                 </span>
               </div>
@@ -327,44 +353,28 @@ export function AnalyticsView({ countries, onCountryClick }: Props) {
         </div>
       )}
 
-      {/* Reform tracker */}
-      <div className="bg-white dark:bg-slate-800 rounded-lg border dark:border-slate-700 p-4">
-        <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1">
-          {t('analytics_reforms_title')}
-        </h3>
-        <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">{t('analytics_reforms_desc')}</p>
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 text-center">
-          {reformTypes.map((rt) => (
-            <div key={rt.key}>
-              <div className={`text-3xl font-bold ${rt.text}`}>{reformCounts[rt.key] || 0}</div>
-              <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">{t(rt.labelKey)}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Key findings */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="bg-rose-50 dark:bg-rose-900/20 border border-rose-200 dark:border-rose-800 rounded-lg p-4">
-          <h3 className="text-sm font-semibold text-rose-800 dark:text-rose-300 mb-2">
+        <div className="bg-rose-50/80 dark:bg-rose-950/30 border border-rose-200/80 dark:border-rose-900/50 rounded-2xl p-5 shadow-xs">
+          <h3 className="text-sm font-semibold text-rose-800 dark:text-rose-300 mb-3">
             {t('analytics_no_paternity')} ({noPaternity.length})
           </h3>
-          <div className="flex flex-wrap gap-1">
+          <div className="flex flex-wrap gap-1.5">
             {noPaternity.map((name) => (
-              <span key={name} className="text-xs bg-white dark:bg-slate-800 px-2 py-0.5 rounded border border-rose-200 dark:border-rose-700 text-rose-700 dark:text-rose-300">
+              <span key={name} className="text-xs font-medium bg-white dark:bg-slate-800 px-2.5 py-1 rounded-lg border border-rose-200 dark:border-rose-800 text-rose-700 dark:text-rose-300 shadow-2xs">
                 {name}
               </span>
             ))}
           </div>
         </div>
         {noLeave.length > 0 && (
-          <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg p-4">
-            <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-2">
+          <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-xs">
+            <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-3">
               {t('analytics_no_leave')} ({noLeave.length})
             </h3>
-            <div className="flex flex-wrap gap-1">
+            <div className="flex flex-wrap gap-1.5">
               {noLeave.map((name) => (
-                <span key={name} className="text-xs bg-white dark:bg-slate-700 px-2 py-0.5 rounded border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300">
+                <span key={name} className="text-xs font-medium bg-white dark:bg-slate-700 px-2.5 py-1 rounded-lg border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 shadow-2xs">
                   {name}
                 </span>
               ))}

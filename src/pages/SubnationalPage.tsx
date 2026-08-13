@@ -59,34 +59,34 @@ export function SubnationalPage({ countries }: Props) {
   const canada = countries.find((c) => c.iso2 === "CA");
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6 space-y-8">
-
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-8">
       {/* Page header */}
       <div>
-        <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-100">{t('sub_title')}</h2>
-        <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{t('sub_subtitle')}</p>
-        <p className="text-xs text-slate-400 mt-0.5">
-          {allEntities.length} {lang === 'fr' ? 'entités dans' : 'entities across'} {countriesWithSub.length} {lang === 'fr' ? 'pays' : 'countries'}
+        <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-slate-100">{t('sub_title')}</h2>
+        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">{t('sub_subtitle')}</p>
+        <p className="text-xs font-semibold text-teal-600 dark:text-teal-400 mt-1">
+          {allEntities.length} {lang === 'fr' ? 'entités infranationales répertoriées dans' : 'subnational entities across'} {countriesWithSub.length} {lang === 'fr' ? 'pays' : 'countries'}
         </p>
       </div>
 
       {/* ===== CARTE INFRANATIONALE ===== */}
-      <div className="space-y-2">
-        <h3 className="text-base font-semibold text-slate-800 dark:text-slate-100">
-          {lang === "fr" ? "Carte des entités infranationales" : "Subnational entities map"}
-        </h3>
-        <p className="text-xs text-slate-400">
-          {lang === "fr"
-            ? "Chaque point représente une entité infranationale avec des données de congé distinctes."
-            : "Each dot represents a subnational entity with distinct leave data."}
-        </p>
+      <div className="space-y-3">
+        <div>
+          <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
+            {lang === "fr" ? "Carte des entités infranationales" : "Subnational entities map"}
+          </h3>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            {lang === "fr"
+              ? "Chaque point représente une entité avec des dispositions ou régimes de congé distincts."
+              : "Each dot represents a subnational entity with distinct statutory leave rules."}
+          </p>
+        </div>
         <SubnationalMap
           countries={countries}
           indicator={mapIndicator}
           onIndicatorChange={setMapIndicator}
           onSelectEntity={(code) => {
             setSelectedCode(code);
-            // also clear text search & country filter when map is used
             if (code) { setSearch(""); setCountryFilter("all"); }
           }}
           selectedCode={selectedCode}
@@ -95,7 +95,7 @@ export function SubnationalPage({ countries }: Props) {
         {selectedCode && (
           <button
             onClick={() => setSelectedCode(null)}
-            className="text-xs text-teal-600 hover:underline"
+            className="text-xs font-semibold text-teal-600 dark:text-teal-400 hover:underline cursor-pointer"
           >
             {lang === "fr" ? "← Afficher toutes les entités" : "← Show all entities"}
           </button>
@@ -104,104 +104,104 @@ export function SubnationalPage({ countries }: Props) {
 
       {/* ===== QUÉBEC SPOTLIGHT ===== */}
       {quebec && canada && (
-        <div className="bg-gradient-to-br from-indigo-50 to-blue-50 border-2 border-indigo-200 rounded-2xl p-6 space-y-5">
+        <div className="bg-gradient-to-br from-indigo-50/90 to-blue-50/80 dark:from-slate-800/90 dark:to-indigo-950/40 border-2 border-indigo-200 dark:border-indigo-800/60 rounded-3xl p-6 sm:p-8 space-y-6 shadow-sm">
           {/* Header */}
-          <div className="flex items-start justify-between flex-wrap gap-3">
+          <div className="flex items-start justify-between flex-wrap gap-4">
             <div>
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-2xl text-blue-700">⚜️</span>
-                <h3 className="text-lg font-bold text-indigo-900">
+              <div className="flex items-center gap-2.5 mb-1.5 flex-wrap">
+                <span className="text-2xl text-blue-700 dark:text-blue-400">⚜️</span>
+                <h3 className="text-lg sm:text-xl font-bold font-display text-indigo-950 dark:text-indigo-200">
                   {t('sub_quebec_highlight')}
                 </h3>
-                <span className="text-xs bg-indigo-700 text-white px-2 py-0.5 rounded-full">
-                  {lang === 'fr' ? 'Régime distinct' : 'Distinct regime'}
+                <span className="text-xs font-semibold bg-indigo-700 text-white px-3 py-1 rounded-full shadow-xs">
+                  {lang === 'fr' ? 'Régime distinct (RQAP)' : 'Distinct plan (QPIP)'}
                 </span>
               </div>
-              <p className="text-sm text-indigo-700">
+              <p className="text-xs sm:text-sm text-indigo-800 dark:text-indigo-300 font-medium">
                 {lang === 'fr'
-                  ? 'Régime québécois de parentalité (RQAP) — le plus généreux au Canada'
-                  : 'Quebec Parental Insurance Plan (QPIP) — the most generous in Canada'}
+                  ? 'Régime québécois d\'assurance parentale — régime asymétrique le plus généreux au Canada'
+                  : 'Quebec Parental Insurance Plan — most generous asymmetric regime in Canada'}
               </p>
             </div>
           </div>
 
           {/* Key differentiators */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
             <KeyStat
-              label={lang === 'fr' ? 'Cong\u00e9 maternit\u00e9' : 'Maternity leave'}
-              qc={lang === 'fr' ? '18 sem. \u00e0 70\u00a0%' : '18 wk. at 70%'}
-              note={lang === 'fr' ? '(R\u00e9g. particulier\u00a0: 15 sem. \u00e0 75\u00a0%)' : '(Special plan: 15 wk. at 75%)'}
+              label={lang === 'fr' ? 'Congé maternité' : 'Maternity leave'}
+              qc={lang === 'fr' ? '18 sem. à 70 %' : '18 wk. at 70%'}
+              note={lang === 'fr' ? '(Rég. particulier : 15 sem. à 75 %)' : '(Special plan: 15 wk. at 75%)'}
               federal={formatDuration(canada.maternity?.durationMonths?.paid ?? null, lang)}
             />
             <KeyStat
-              label={lang === 'fr' ? 'Cong\u00e9 paternit\u00e9' : 'Paternity leave'}
-              qc={lang === 'fr' ? '5 sem. \u00e0 70\u00a0%' : '5 wk. at 70%'}
-              note={lang === 'fr' ? '(R\u00e9g. particulier\u00a0: 3 sem. \u00e0 75\u00a0%)' : '(Special plan: 3 wk. at 75%)'}
+              label={lang === 'fr' ? 'Congé paternité' : 'Paternity leave'}
+              qc={lang === 'fr' ? '5 sem. à 70 %' : '5 wk. at 70%'}
+              note={lang === 'fr' ? '(Rég. particulier : 3 sem. à 75 %)' : '(Special plan: 3 wk. at 75%)'}
               federal={lang === 'fr' ? 'Inexistant' : 'None'}
               highlight
             />
             <KeyStat
               label={lang === 'fr' ? 'Taux de remplacement' : 'Replacement rate'}
-              qc={lang === 'fr' ? '70\u00a0%' : '70%'}
-              note={lang === 'fr' ? '(R\u00e9g. particulier\u00a0: 75\u00a0%)' : '(Special plan: 75%)'}
+              qc={lang === 'fr' ? '70 %' : '70%'}
+              note={lang === 'fr' ? '(Rég. particulier : 75 %)' : '(Special plan: 75%)'}
               federal="55%"
               highlight
             />
             <KeyStat
-              label={lang === 'fr' ? "Seuil d\u2019admissibilit\u00e9" : 'Eligibility threshold'}
-              qc={lang === 'fr' ? '2\u00a0000\u00a0$ de revenus' : 'CAD 2,000 earnings'}
-              federal={lang === 'fr' ? '600 heures travaill\u00e9es' : '600 hours worked'}
+              label={lang === 'fr' ? "Seuil d'admissibilité" : 'Eligibility threshold'}
+              qc={lang === 'fr' ? '2 000 $ de revenus' : 'CAD 2,000 earnings'}
+              federal={lang === 'fr' ? '600 heures travaillées' : '600 hours worked'}
             />
           </div>
 
-          {/* Explanation of the two RQAP regimes */}
-          <div className="bg-indigo-50/60 rounded-lg p-3 text-xs text-indigo-800 leading-relaxed">
+          {/* Explanation */}
+          <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur rounded-2xl p-4 text-xs sm:text-sm text-indigo-900 dark:text-indigo-200 leading-relaxed border border-indigo-100 dark:border-slate-700">
             {lang === 'fr'
-              ? "Le RQAP offre deux options\u00a0: le r\u00e9gime de base (dur\u00e9e plus longue, taux de 70\u00a0%) et le r\u00e9gime particulier (dur\u00e9e plus courte, taux de 75\u00a0%). Les parents choisissent l\u2019un ou l\u2019autre au moment de la demande."
-              : "QPIP offers two options: the basic plan (longer duration, 70% rate) and the special plan (shorter duration, 75% rate). Parents choose one or the other when applying."}
+              ? "Le RQAP offre deux options au choix des parents : le régime de base (durée plus longue, taux de 70 %) et le régime particulier (durée plus courte, taux de 75 %). Les prestations sont versées directement par le Conseil de gestion de l'assurance parentale."
+              : "QPIP offers parents two choices: the basic plan (longer duration, 70% replacement rate) and the special plan (shorter duration, 75% replacement rate). Benefits are administered directly by the Conseil de gestion de l'assurance parentale."}
           </div>
 
-          {/* Detailed comparison table — 3 columns */}
-          <div className="bg-white rounded-xl border border-indigo-100 overflow-x-auto">
-            <table className="w-full text-sm">
+          {/* Comparison table */}
+          <div className="bg-white dark:bg-slate-800 rounded-2xl border border-indigo-100 dark:border-slate-700 overflow-x-auto shadow-xs">
+            <table className="w-full text-xs sm:text-sm">
               <thead>
-                <tr className="bg-indigo-50">
-                  <th className="text-left px-4 py-3 text-slate-600 font-medium">
-                    {lang === 'fr' ? 'Caract\u00e9ristique' : 'Feature'}
+                <tr className="bg-indigo-50/80 dark:bg-slate-700/80 border-b border-indigo-100 dark:border-slate-700">
+                  <th className="text-left px-4 py-3 text-slate-700 dark:text-slate-200 font-semibold">
+                    {lang === 'fr' ? 'Caractéristique' : 'Feature'}
                   </th>
-                  <th className="text-center px-4 py-3 text-indigo-700 font-semibold">
-                    <span className="text-blue-700">⚜️</span> {lang === 'fr' ? 'R\u00e9gime de base' : 'Basic plan'}
+                  <th className="text-center px-4 py-3 text-indigo-800 dark:text-indigo-300 font-bold">
+                    <span>⚜️</span> {lang === 'fr' ? 'Régime de base (RQAP)' : 'Basic plan (QPIP)'}
                   </th>
-                  <th className="text-center px-4 py-3 text-indigo-600 font-semibold">
-                    <span className="text-blue-700">⚜️</span> {lang === 'fr' ? 'R\u00e9gime particulier' : 'Special plan'}
+                  <th className="text-center px-4 py-3 text-indigo-600 dark:text-indigo-400 font-bold">
+                    <span>⚜️</span> {lang === 'fr' ? 'Régime particulier' : 'Special plan'}
                   </th>
-                  <th className="text-center px-4 py-3 text-slate-600 font-medium">
-                    🍁 {lang === 'fr' ? 'Canada (hors Qu\u00e9bec)' : 'Canada (excl. Quebec)'}
+                  <th className="text-center px-4 py-3 text-slate-600 dark:text-slate-300 font-medium">
+                    🍁 {lang === 'fr' ? 'Canada (hors Québec - AE)' : 'Canada (excl. Quebec - EI)'}
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-slate-100 dark:divide-slate-700/60 font-mono">
                 <CompareRow
-                  label={lang === 'fr' ? 'Cong\u00e9 maternit\u00e9' : 'Maternity leave'}
-                  base={lang === 'fr' ? '18 sem. \u00e0 70\u00a0%' : '18 wk. at 70%'}
-                  special={lang === 'fr' ? '15 sem. \u00e0 75\u00a0%' : '15 wk. at 75%'}
-                  fed={`${formatDuration(canada.maternity?.durationMonths?.total ?? null, lang)} \u2014 ${canada.maternity?.paymentRate ?? 0}%`}
+                  label={lang === 'fr' ? 'Congé maternité' : 'Maternity leave'}
+                  base={lang === 'fr' ? '18 sem. à 70 %' : '18 wk. at 70%'}
+                  special={lang === 'fr' ? '15 sem. à 75 %' : '15 wk. at 75%'}
+                  fed={`${formatDuration(canada.maternity?.durationMonths?.total ?? null, lang)} — ${canada.maternity?.paymentRate ?? 0}%`}
                 />
                 <CompareRow
-                  label={lang === 'fr' ? 'Cong\u00e9 paternit\u00e9' : 'Paternity leave'}
-                  base={lang === 'fr' ? '5 sem. \u00e0 70\u00a0%' : '5 wk. at 70%'}
-                  special={lang === 'fr' ? '3 sem. \u00e0 75\u00a0%' : '3 wk. at 75%'}
-                  fed={lang === 'fr' ? '\u2014 (inexistant)' : '\u2014 (none)'}
+                  label={lang === 'fr' ? 'Congé paternité' : 'Paternity leave'}
+                  base={lang === 'fr' ? '5 sem. à 70 %' : '5 wk. at 70%'}
+                  special={lang === 'fr' ? '3 sem. à 75 %' : '3 wk. at 75%'}
+                  fed={lang === 'fr' ? '— (inexistant)' : '— (none)'}
                   highlight
                 />
                 <CompareRow
-                  label={lang === 'fr' ? 'Cong\u00e9 parental (chaque parent)' : 'Parental leave (each parent)'}
-                  base={lang === 'fr' ? '32 sem. \u00e0 70\u00a0%, puis 25 sem. \u00e0 55\u00a0%' : '32 wk. at 70%, then 25 wk. at 55%'}
-                  special={lang === 'fr' ? '25 sem. \u00e0 75\u00a0%' : '25 wk. at 75%'}
+                  label={lang === 'fr' ? 'Congé parental (partageable)' : 'Parental leave (shareable)'}
+                  base={lang === 'fr' ? '32 sem. à 70 %, puis 25 sem. à 55 %' : '32 wk. at 70%, then 25 wk. at 55%'}
+                  special={lang === 'fr' ? '25 sem. à 75 %' : '25 wk. at 75%'}
                   fed={formatDuration(canada.parental?.durationMonths?.total ?? null, lang)}
                 />
                 <CompareRow
-                  label={lang === 'fr' ? 'D\u00e9lai de carence' : 'Waiting period'}
+                  label={lang === 'fr' ? 'Délai de carence' : 'Waiting period'}
                   base={lang === 'fr' ? 'Aucun' : 'None'}
                   special={lang === 'fr' ? 'Aucun' : 'None'}
                   fed={lang === 'fr' ? '1 semaine' : '1 week'}
@@ -209,9 +209,9 @@ export function SubnationalPage({ countries }: Props) {
                 />
                 <CompareRow
                   label={lang === 'fr' ? 'Travailleurs autonomes' : 'Self-employed workers'}
-                  base={lang === 'fr' ? 'Couverts' : 'Covered'}
-                  special={lang === 'fr' ? 'Couverts' : 'Covered'}
-                  fed={lang === 'fr' ? 'Adh\u00e9sion volontaire' : 'Voluntary opt-in'}
+                  base={lang === 'fr' ? 'Couverts d\'office' : 'Covered automatically'}
+                  special={lang === 'fr' ? 'Couverts d\'office' : 'Covered automatically'}
+                  fed={lang === 'fr' ? 'Adhésion volontaire' : 'Voluntary opt-in'}
                   highlight
                 />
                 <CompareRow
@@ -222,58 +222,44 @@ export function SubnationalPage({ countries }: Props) {
                 />
                 <CompareRow
                   label={lang === 'fr' ? 'Bonus partage parental' : 'Parental sharing bonus'}
-                  base={lang === 'fr' ? '+4 sem. si chaque parent prend \u2265\u00a08 sem.' : '+4 wk. if each parent takes \u22658 wk.'}
-                  special={lang === 'fr' ? '+3 sem. si chaque parent prend \u2265\u00a06 sem.' : '+3 wk. if each parent takes \u22656 wk.'}
+                  base={lang === 'fr' ? '+4 sem. si chaque parent prend ≥ 8 sem.' : '+4 wk. if each parent takes ≥8 wk.'}
+                  special={lang === 'fr' ? '+3 sem. si chaque parent prend ≥ 6 sem.' : '+3 wk. if each parent takes ≥6 wk.'}
                   fed={lang === 'fr' ? 'Aucun' : 'None'}
                   highlight
-                />
-                <CompareRow
-                  label={lang === 'fr' ? 'Parents seuls' : 'Single parents'}
-                  base={lang === 'fr' ? '+5 semaines' : '+5 weeks'}
-                  special={lang === 'fr' ? '+3 semaines' : '+3 weeks'}
-                  fed={lang === 'fr' ? 'Aucune disposition sp\u00e9cifique' : 'No specific provision'}
-                />
-                <CompareRow
-                  label={lang === 'fr' ? 'Naissances multiples' : 'Multiple births'}
-                  base={lang === 'fr' ? '+5 sem. par parent' : '+5 wk. per parent'}
-                  special={lang === 'fr' ? '+3 sem. par parent' : '+3 wk. per parent'}
-                  fed={lang === 'fr' ? 'Aucune disposition sp\u00e9cifique' : 'No specific provision'}
                 />
               </tbody>
             </table>
           </div>
-
-          {/* Notes */}
-          {quebec.notes && (
-            <div className="bg-indigo-50/60 rounded-lg p-3 text-xs text-indigo-800 leading-relaxed">
-              <strong>{lang === 'fr' ? 'Note : ' : 'Note: '}</strong>{quebec.notes}
-            </div>
-          )}
         </div>
       )}
 
       {/* ===== ALL SUBNATIONAL ENTITIES ===== */}
       <div className="space-y-4">
-        <h3 className="text-base font-semibold text-slate-800 dark:text-slate-100">
-          {lang === 'fr' ? 'Toutes les entités infranationales' : 'All subnational entities'}
-        </h3>
+        <div>
+          <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
+            {lang === 'fr' ? 'Toutes les entités infranationales' : 'All subnational entities'}
+          </h3>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            {lang === 'fr' ? 'Filtrer par mot-clé ou par pays fédéral.' : 'Filter by keyword or federal country.'}
+          </p>
+        </div>
 
         {/* Filters */}
         <div className="flex flex-wrap gap-3">
-          <div className="relative flex-1 min-w-[200px]">
-            <Search className="absolute left-2.5 top-2.5 w-4 h-4 text-slate-400" />
+          <div className="relative flex-1 min-w-[220px]">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <input
               type="text"
-              placeholder={lang === 'fr' ? 'Rechercher une entité...' : 'Search entity...'}
+              placeholder={lang === 'fr' ? 'Rechercher une province, un état...' : 'Search province, state...'}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 text-sm border border-slate-200 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm border border-slate-200 dark:border-slate-600 rounded-xl bg-white dark:bg-slate-700 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500 shadow-xs"
             />
           </div>
           <select
             value={countryFilter}
             onChange={(e) => setCountryFilter(e.target.value)}
-            className="text-sm border border-slate-200 dark:border-slate-600 rounded-lg px-3 py-2 bg-white dark:bg-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="text-xs sm:text-sm border border-slate-200 dark:border-slate-600 rounded-xl px-3 py-2 bg-white dark:bg-slate-700 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500 shadow-xs cursor-pointer"
           >
             <option value="all">{t('sub_filter_all')}</option>
             {countriesWithSub.map((c) => (
@@ -284,7 +270,7 @@ export function SubnationalPage({ countries }: Props) {
 
         {/* Entity cards */}
         {filtered.length === 0 ? (
-          <p className="text-sm text-slate-400 italic">{t('sub_no_data')}</p>
+          <p className="text-sm text-slate-400 italic py-8 text-center">{t('sub_no_data')}</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             {filtered.map((fe, i) => (
@@ -310,11 +296,11 @@ function KeyStat({
   label: string; qc: string; federal: string; highlight?: boolean; note?: string;
 }) {
   return (
-    <div className={`rounded-xl p-4 ${highlight ? 'bg-indigo-100 border border-indigo-200' : 'bg-white border border-slate-200'}`}>
-      <p className="text-xs text-slate-500 mb-2">{label}</p>
-      <p className={`text-base font-bold ${highlight ? 'text-indigo-800' : 'text-slate-800'}`}>{qc}</p>
-      {note && <p className="text-[10px] text-indigo-500 mt-0.5">{note}</p>}
-      <p className="text-xs text-slate-400 mt-1">vs {federal}</p>
+    <div className={`rounded-2xl p-4 ${highlight ? 'bg-indigo-100/90 dark:bg-indigo-900/40 border border-indigo-200 dark:border-indigo-700' : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700'}`}>
+      <p className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">{label}</p>
+      <p className={`text-base font-bold font-mono mt-1 ${highlight ? 'text-indigo-900 dark:text-indigo-200' : 'text-slate-900 dark:text-slate-100'}`}>{qc}</p>
+      {note && <p className="text-[11px] text-indigo-600 dark:text-indigo-300 mt-0.5">{note}</p>}
+      <p className="text-xs text-slate-400 dark:text-slate-500 mt-1.5 font-mono">vs {federal}</p>
     </div>
   );
 }
@@ -323,11 +309,11 @@ function CompareRow({ label, base, special, fed, highlight }: {
   label: string; base: string; special: string; fed: string; highlight?: boolean;
 }) {
   return (
-    <tr className={highlight ? 'bg-indigo-50/40' : ''}>
-      <td className="px-4 py-2.5 text-slate-600 text-xs">{label}</td>
-      <td className="px-4 py-2.5 text-center text-xs font-medium text-indigo-800">{base}</td>
-      <td className="px-4 py-2.5 text-center text-xs font-medium text-indigo-600">{special}</td>
-      <td className="px-4 py-2.5 text-center text-xs text-slate-500">{fed}</td>
+    <tr className={highlight ? 'bg-indigo-50/50 dark:bg-indigo-950/30' : 'hover:bg-slate-50 dark:hover:bg-slate-700/30'}>
+      <td className="px-4 py-2.5 font-sans text-slate-700 dark:text-slate-200 text-xs font-medium">{label}</td>
+      <td className="px-4 py-2.5 text-center text-xs font-bold text-indigo-900 dark:text-indigo-300">{base}</td>
+      <td className="px-4 py-2.5 text-center text-xs font-bold text-indigo-700 dark:text-indigo-400">{special}</td>
+      <td className="px-4 py-2.5 text-center text-xs text-slate-500 dark:text-slate-400">{fed}</td>
     </tr>
   );
 }
@@ -348,20 +334,20 @@ function EntityCard({ entity, countryName, lang, t, isQuebec }: {
   const hasLeave = entity.maternity?.exists || entity.paternity?.exists || entity.parental?.exists;
 
   return (
-    <div className={`bg-white dark:bg-slate-800 rounded-xl border p-4 space-y-3 ${isQuebec ? 'border-indigo-300 ring-1 ring-indigo-200' : 'border-slate-200 dark:border-slate-700'}`}>
+    <div className={`bg-white dark:bg-slate-800 rounded-2xl border p-4 space-y-3 shadow-xs ${isQuebec ? 'border-indigo-400 ring-2 ring-indigo-300/40 dark:ring-indigo-700/40' : 'border-slate-200 dark:border-slate-700'}`}>
       <div className="flex items-start justify-between gap-2">
         <div>
           <div className="flex items-center gap-2 flex-wrap">
-            {isQuebec && <span className="text-base text-blue-700">⚜️</span>}
-            <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">{entity.name}</span>
-            <span className="text-[10px] bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 px-1.5 py-0.5 rounded">
+            {isQuebec && <span className="text-base text-blue-700 dark:text-blue-400">⚜️</span>}
+            <span className="text-sm font-bold text-slate-900 dark:text-slate-100">{entity.name}</span>
+            <span className="text-[10px] font-semibold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded-md">
               {t(typeKeys[entity.type] as any) || entity.type}
             </span>
           </div>
           <p className="text-xs text-slate-400 mt-0.5">{countryName}</p>
         </div>
         {entity.code && (
-          <span className="text-[10px] text-slate-400 shrink-0">{entity.code}</span>
+          <span className="text-xs font-mono text-slate-400 shrink-0">{entity.code}</span>
         )}
       </div>
 
@@ -395,7 +381,7 @@ function EntityCard({ entity, countryName, lang, t, isQuebec }: {
       )}
 
       {entity.notes && (
-        <p className="text-xs text-slate-400 leading-relaxed line-clamp-3 italic">{entity.notes}</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-3 italic border-t border-slate-100 dark:border-slate-700/60 pt-2">{entity.notes}</p>
       )}
     </div>
   );
@@ -405,15 +391,15 @@ function LeaveChip({ label, duration, rate, color }: {
   label: string; duration: string; rate?: number | null; color: 'rose' | 'blue' | 'amber';
 }) {
   const colorMap = {
-    rose: 'bg-rose-50 text-rose-700',
-    blue: 'bg-blue-50 text-blue-700',
-    amber: 'bg-amber-50 text-amber-700',
+    rose: 'bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-300 border-rose-100 dark:border-rose-900/40',
+    blue: 'bg-sky-50 dark:bg-sky-950/40 text-sky-700 dark:text-sky-300 border-sky-100 dark:border-sky-900/40',
+    amber: 'bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 border-amber-100 dark:border-amber-900/40',
   };
   return (
-    <div className={`rounded-lg p-2 text-xs ${colorMap[color]}`}>
-      <p className="font-medium">{label}</p>
-      <p className="text-slate-700 mt-0.5">{duration}</p>
-      {rate && <p className="text-slate-500">{rate}%</p>}
+    <div className={`rounded-xl p-2.5 text-xs border ${colorMap[color]}`}>
+      <p className="font-semibold">{label}</p>
+      <p className="text-slate-800 dark:text-slate-200 font-mono font-medium mt-0.5">{duration}</p>
+      {rate && <p className="text-slate-500 dark:text-slate-400 font-mono text-[11px]">{rate}%</p>}
     </div>
   );
 }

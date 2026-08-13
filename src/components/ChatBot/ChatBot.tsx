@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { MessageCircle, X, Send } from 'lucide-react';
+import { MessageCircle, X, Send, Bot } from 'lucide-react';
 import type { Country } from '../../types';
 import { useTranslation } from '../../hooks/useTranslation';
 import { processQuestion } from '../../utils/chatEngine';
@@ -34,7 +34,6 @@ function loadMessages(): ChatMessage[] {
 
 function saveMessages(msgs: ChatMessage[]): void {
   try {
-    // Keep last 100 messages max to avoid bloating storage
     const toSave = msgs.slice(-100);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
   } catch { /* ignore quota errors */ }
@@ -55,29 +54,29 @@ export default function ChatBot({ countries }: ChatBotProps) {
   const getWelcomeMessage = useCallback((): string => {
     if (lang === 'fr') {
       return [
-        'Bienvenue ! Je suis l\u2019assistant robot du Leave Network Explorer.',
+        'Bienvenue ! Je suis l\u2019assistant du Leave Network Explorer.',
         '',
         'Vous pouvez me poser des questions comme :',
-        '- Le nom d\u2019un pays (ex : \u00ab France \u00bb)',
-        '- \u00ab Comparer Canada et Su\u00e8de \u00bb',
-        '- \u00ab Meilleur cong\u00e9 maternit\u00e9 \u00bb',
-        '- \u00ab G\u00e9n\u00e9rosit\u00e9 \u00bb ou \u00ab \u00c9galit\u00e9 \u00bb',
-        '- \u00ab Qu\u00e9bec \u00bb ou \u00ab RQAP \u00bb',
+        '• Le nom d\u2019un pays (ex : \u00ab France \u00bb ou \u00ab Suède \u00bb)',
+        '• \u00ab Comparer Canada et Suède \u00bb',
+        '• \u00ab Meilleur congé maternité \u00bb',
+        '• \u00ab Générosité \u00bb ou \u00ab Égalité \u00bb',
+        '• \u00ab Québec \u00bb ou \u00ab RQAP \u00bb',
         '',
-        'Limitations : je suis un assistant \u00e0 base de mots-cl\u00e9s, pas une intelligence artificielle. Mes r\u00e9ponses se limitent aux donn\u00e9es disponibles dans la base (LPRN 2025). Je ne comprends pas les questions complexes ou ambigu\u00ebs et je ne peux pas fournir de conseils juridiques.',
+        'Source des données : LPRN 2025.',
       ].join('\n');
     }
     return [
-      'Welcome! I am the Leave Network Explorer robot assistant.',
+      'Welcome! I am the Leave Network Explorer assistant.',
       '',
       'You can ask me things like:',
-      '- A country name (e.g., "France")',
-      '- "Compare Canada and Sweden"',
-      '- "Best maternity leave"',
-      '- "Generosity" or "Equality"',
-      '- "Quebec" or "QPIP"',
+      '• A country name (e.g., "France" or "Sweden")',
+      '• "Compare Canada and Sweden"',
+      '• "Best maternity leave"',
+      '• "Generosity" or "Equality"',
+      '• "Quebec" or "QPIP"',
       '',
-      'Limitations: I am a keyword-based assistant, not an AI. My answers are limited to the data available in the database (LPRN 2025). I cannot understand complex or ambiguous questions and I do not provide legal advice.',
+      'Data source: LPRN 2025.',
     ].join('\n');
   }, [lang]);
 
@@ -190,11 +189,11 @@ export default function ChatBot({ countries }: ChatBotProps) {
   const suggestions =
     lang === 'fr'
       ? [
-          'Cong\u00e9 maternit\u00e9 en France',
-          'Comparer Su\u00e8de et Canada',
-          'Meilleur cong\u00e9 paternit\u00e9',
-          'Qu\u2019est-ce que le RQAP ?',
-          'Score de g\u00e9n\u00e9rosit\u00e9',
+          'Congé maternité en France',
+          'Comparer Suède et Canada',
+          'Meilleur congé paternité',
+          'Qu’est-ce que le RQAP ?',
+          'Score de générosité',
         ]
       : [
           'Maternity leave in France',
@@ -205,10 +204,10 @@ export default function ChatBot({ countries }: ChatBotProps) {
         ];
 
   const headerTitle =
-    lang === 'fr' ? 'Assistant robot' : 'Robot Assistant';
+    lang === 'fr' ? 'Assistant Leave Network' : 'Leave Network Assistant';
 
   const placeholderText =
-    lang === 'fr' ? 'Posez votre question\u2026' : 'Ask your question...';
+    lang === 'fr' ? 'Posez une question sur les données...' : 'Ask about leave policies...';
 
   // ---------------------------------------------------------------------------
   // Render
@@ -221,7 +220,7 @@ export default function ChatBot({ countries }: ChatBotProps) {
         <button
           type="button"
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-teal-600 text-white shadow-2xl transition-transform hover:scale-110 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2"
+          className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-teal-600 hover:bg-teal-700 text-white shadow-2xl transition-transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 cursor-pointer"
           aria-label={lang === 'fr' ? 'Ouvrir le chatbot' : 'Open chatbot'}
         >
           <MessageCircle size={26} />
@@ -230,14 +229,22 @@ export default function ChatBot({ countries }: ChatBotProps) {
 
       {/* Chat panel */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 flex h-[480px] w-[350px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-slate-200">
+        <div className="fixed bottom-6 right-6 z-50 flex h-[520px] w-[370px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-3xl bg-white dark:bg-slate-850 shadow-2xl border border-slate-200 dark:border-slate-700 animate-in slide-in-from-bottom-3 duration-200">
           {/* Header */}
-          <div className="flex items-center justify-between bg-slate-800 px-4 py-3 text-white">
-            <span className="text-sm font-semibold">{headerTitle}</span>
+          <div className="flex items-center justify-between bg-slate-900 dark:bg-slate-950 px-4 py-3.5 text-white border-b border-slate-800">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-lg bg-teal-600 flex items-center justify-center text-white">
+                <Bot size={16} />
+              </div>
+              <div>
+                <span className="text-xs sm:text-sm font-bold tracking-tight">{headerTitle}</span>
+                <span className="block text-[10px] text-teal-400 font-medium">LPRN 2025</span>
+              </div>
+            </div>
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="rounded p-1 transition-colors hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-400"
+              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
               aria-label={lang === 'fr' ? 'Fermer le chatbot' : 'Close chatbot'}
             >
               <X size={18} />
@@ -245,17 +252,17 @@ export default function ChatBot({ countries }: ChatBotProps) {
           </div>
 
           {/* Messages area */}
-          <div className="flex-1 overflow-y-auto px-3 py-3 space-y-3">
+          <div className="flex-1 overflow-y-auto px-3.5 py-3.5 space-y-3 bg-slate-50/50 dark:bg-slate-900/50">
             {messages.map((msg) => (
               <div
                 key={msg.id}
                 className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-[85%] rounded-xl px-3 py-2 text-sm whitespace-pre-wrap leading-relaxed ${
+                  className={`max-w-[86%] rounded-2xl px-3.5 py-2.5 text-xs sm:text-sm whitespace-pre-wrap leading-relaxed shadow-2xs ${
                     msg.sender === 'user'
-                      ? 'bg-teal-600 text-white'
-                      : 'bg-slate-100 text-slate-800'
+                      ? 'bg-teal-600 text-white rounded-br-xs'
+                      : 'bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 rounded-bl-xs'
                   }`}
                 >
                   {msg.text}
@@ -263,13 +270,13 @@ export default function ChatBot({ countries }: ChatBotProps) {
               </div>
             ))}
             {messages.length === 1 && (
-              <div className="flex flex-wrap gap-1.5 px-1">
+              <div className="flex flex-wrap gap-1.5 pt-1">
                 {suggestions.map((s) => (
                   <button
                     key={s}
                     type="button"
                     onClick={() => handleSuggestionClick(s)}
-                    className="rounded-full bg-teal-50 px-2.5 py-1.5 text-xs text-teal-700 transition-colors hover:bg-teal-100"
+                    className="rounded-full bg-teal-50 dark:bg-teal-950/60 border border-teal-200/80 dark:border-teal-800/60 px-3 py-1.5 text-[11px] font-medium text-teal-700 dark:text-teal-300 transition-colors hover:bg-teal-100 dark:hover:bg-teal-900/80 cursor-pointer text-left"
                   >
                     {s}
                   </button>
@@ -279,17 +286,17 @@ export default function ChatBot({ countries }: ChatBotProps) {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Disclaimer */}
-          <div className="px-3 py-1.5 bg-amber-50 border-t border-amber-100">
-            <p className="text-[10px] text-amber-700 leading-tight">
+          {/* Disclaimer banner */}
+          <div className="px-3.5 py-1.5 bg-amber-50/90 dark:bg-amber-950/40 border-t border-amber-200/60 dark:border-amber-900/40">
+            <p className="text-[10px] text-amber-800 dark:text-amber-300 leading-tight">
               {lang === 'fr'
-                ? 'Assistant \u00e0 base de mots-cl\u00e9s. R\u00e9ponses limit\u00e9es aux donn\u00e9es LPRN 2025. Ne constitue pas un avis juridique.'
-                : 'Keyword-based assistant. Answers limited to LPRN 2025 data. Not legal advice.'}
+                ? 'Assistant à base de mots-clés sur la base LPRN 2025. Ne constitue pas un avis juridique.'
+                : 'Keyword-based assistant on LPRN 2025 data. Not legal advice.'}
             </p>
           </div>
 
           {/* Input area */}
-          <div className="flex items-center gap-2 border-t border-slate-200 bg-white px-3 py-2">
+          <div className="flex items-center gap-2 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3">
             <input
               ref={inputRef}
               type="text"
@@ -297,17 +304,17 @@ export default function ChatBot({ countries }: ChatBotProps) {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder={placeholderText}
-              className="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
+              className="flex-1 rounded-xl border border-slate-200 dark:border-slate-600 px-3 py-2 text-xs sm:text-sm text-slate-800 dark:text-slate-100 placeholder-slate-400 bg-slate-50 dark:bg-slate-700 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
               aria-label={placeholderText}
             />
             <button
               type="button"
               onClick={handleSend}
               disabled={!input.trim()}
-              className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-600 text-white transition-colors hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-40 focus:outline-none focus:ring-2 focus:ring-teal-400"
+              className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-600 text-white transition-colors hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-40 focus:outline-none focus:ring-2 focus:ring-teal-400 shrink-0 cursor-pointer shadow-xs"
               aria-label={lang === 'fr' ? 'Envoyer' : 'Send'}
             >
-              <Send size={16} />
+              <Send size={15} />
             </button>
           </div>
         </div>

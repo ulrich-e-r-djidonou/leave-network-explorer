@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-13T19:31:00Z",
+  "title": "Design System: Leave Network Explorer",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Analytical Teal", "canonical": "#0d9488" },
+      "secondary": { "role": "secondary", "displayName": "Subnational Indigo", "canonical": "#4f46e5" },
+      "maternity": { "role": "accent", "displayName": "Maternity Rose", "canonical": "#f43f5e" },
+      "paternity": { "role": "accent", "displayName": "Paternity Sky", "canonical": "#0284c7" },
+      "parental": { "role": "accent", "displayName": "Parental Amber", "canonical": "#d97706" },
+      "neutral-bg": { "role": "neutral", "displayName": "Slate Light Surface", "canonical": "#f8fafc" },
+      "neutral-dark-bg": { "role": "neutral", "displayName": "Slate Dark Surface", "canonical": "#0f172a" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero and major page headers" },
+      "headline": { "displayName": "Headline", "purpose": "Section headings and chart titles" },
+      "title": { "displayName": "Title", "purpose": "Card headers and entity names" },
+      "body": { "displayName": "Body", "purpose": "Main paragraph and documentation copy" },
+      "data": { "displayName": "Data Monospace", "purpose": "Tabular metrics, leave durations, and scores" }
+    },
+    "shadows": [
+      { "name": "card-rest", "value": "0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03)", "purpose": "Default card elevation" },
+      { "name": "card-hover", "value": "0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04)", "purpose": "Interactive hover state" }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Default easing for micro-interactions" }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Bouton d'action principal et filtres actifs.",
+      "html": "<button class=\"ds-btn-primary\">EXPORTER CSV</button>",
+      "css": ".ds-btn-primary { background: #0d9488; color: #ffffff; padding: 8px 16px; font-weight: 500; font-size: 14px; border: none; border-radius: 8px; cursor: pointer; transition: background 0.15s ease; } .ds-btn-primary:hover { background: #0f766e; }"
+    },
+    {
+      "name": "Policy Badge Maternity",
+      "kind": "chip",
+      "refersTo": "badge-maternity",
+      "description": "Badge sémantique pour congé maternité.",
+      "html": "<span class=\"ds-badge-mat\">Maternité • 18 sem.</span>",
+      "css": ".ds-badge-mat { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 9999px; font-size: 12px; font-weight: 600; background: #fff1f2; color: #e11d48; border: 1px solid #fecdd3; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Comparative Policy Atelier",
+    "overview": "Atelier visuel d'analyse socio-économique comparée alliant la rigueur d'une publication de recherche à la modernité d'un produit numérique haut de gamme.",
+    "keyCharacteristics": [
+      "Clarté sémantique stricte des types de congés",
+      "Hiérarchie typographique sculptée (Plus Jakarta Sans + Inter + JetBrains Mono)",
+      "Prise en charge native du mode sombre sur 100% des surfaces"
+    ],
+    "rules": [
+      { "name": "The Triple Role Rule", "body": "Les trois couleurs sémantiques sont strictement réservées à leurs types de congé respectifs.", "section": "colors" },
+      { "name": "The Tabular Data Rule", "body": "Tout chiffre dans un tableau ou comparateur doit employer tabular-nums.", "section": "typography" }
+    ],
+    "dos": [
+      "Utiliser les classes dark:* sur tous les conteneurs et textes.",
+      "Formater les nombres et durées selon la langue active (FR/EN)."
+    ],
+    "donts": [
+      "Ne pas laisser de fonds blancs non thématisés en mode sombre.",
+      "Ne pas utiliser d'emojis à la place d'icônes vectorielles."
+    ]
+  }
+}
