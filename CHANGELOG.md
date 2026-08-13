@@ -5,13 +5,16 @@ Toutes les modifications notables apportées à ce projet sont documentées dans
 ## [Non publié] - 2026-08-13
 
 ### Résumé
-Application complète du système de design et des standards d'excellence visuelle Impeccable (*The Comparative Policy Atelier*) sur l'ensemble de l'application Leave Network Explorer.
+Optimisation des performances de chargement initial (découpage dynamique des paquets JavaScript), configuration de l'audit automatisé Lighthouse CI et mise en place de l'outil d'ingestion des futures éditions de la revue LPRN.
 
 ### Ajouté
+- Découpage dynamique des paquets JavaScript (*manualChunks* dans `vite.config.ts` et `React.lazy`/`Suspense` dans `src/App.tsx`), réduisant la taille du bundle initial de 1 158 kB à seulement 44 kB.
+- Configuration Lighthouse CI (`.lighthouserc.json`) et workflow GitHub Actions (`.github/workflows/lighthouse.yml`) pour les audits automatisés d'accessibilité, de performance et de bonnes pratiques.
+- Script d'ingestion et de validation automatique `scripts/ingest_lprn_edition.py` pour traiter, valider et comparer les futures éditions annuelles de la revue LPRN.
 - Spécification produit `PRODUCT.md` conforme au schéma Impeccable (vision, utilisateurs cibles, architecture de l'information et principes de conception).
 - Système de design `DESIGN.md` avec tokens typographiques, palettes HSL/Tailwind, élévations et règles d'accessibilité.
 - Fichier de configuration `.impeccable/design.json` décrivant les composants réutilisables et styles maîtres.
-- Intégration des polices Google Fonts : *Plus Jakarta Sans* (titres et navigation), *Inter* (corps de texte) et *JetBrains Mono* (chiffres tabulaires et durées).
+- Intégration des polices Google Fonts : *Plus Jakarta Sans*, *Inter* et *JetBrains Mono*.
 - Route et lien direct pour le calculateur interactif de score personnalisé (`/custom-score`).
 
 ### Modifié
