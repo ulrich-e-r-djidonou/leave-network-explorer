@@ -5,17 +5,18 @@ Toutes les modifications notables apportées à ce projet sont documentées dans
 ## [Non publié] - 2026-08-13
 
 ### Résumé
-Optimisation des performances de chargement initial (découpage dynamique des paquets JavaScript), configuration de l'audit automatisé Lighthouse CI et mise en place de l'outil d'ingestion des futures éditions de la revue LPRN.
+Ajout de la suite de tests unitaires pour le moteur conversationnel, configuration des métadonnées et bannières Open Graph pour les réseaux sociaux, mise en place d'un moniteur de publication LPRN automatisé et révision complète de la documentation.
 
 ### Ajouté
+- Suite de tests unitaires Vitest `src/utils/chatEngine.test.ts` (28 tests validés avec succès) couvrant la détection d'intentions multilingues, les requêtes pays, les comparaisons et les superlatifs.
+- Image de prévisualisation Open Graph `public/og-image.jpg` et balises méta `og:image` / `twitter:image` dans `index.html` pour les partages LinkedIn et réseaux sociaux.
+- Workflow GitHub Actions programmé `.github/workflows/check-lprn-updates.yml` vérifiant deux fois par mois la sortie de nouvelles éditions sur le site officiel du Leave Policy Research Network.
+- Refonte complète de `README.md` avec badges de statut GitHub Actions, présentation des fonctionnalités, guide d'installation et citation scientifique.
+- Script de test `npm test` dans `package.json`.
 - Découpage dynamique des paquets JavaScript (*manualChunks* dans `vite.config.ts` et `React.lazy`/`Suspense` dans `src/App.tsx`), réduisant la taille du bundle initial de 1 158 kB à seulement 44 kB.
-- Configuration Lighthouse CI (`.lighthouserc.json`) et workflow GitHub Actions (`.github/workflows/lighthouse.yml`) pour les audits automatisés d'accessibilité, de performance et de bonnes pratiques.
+- Configuration Lighthouse CI (`.lighthouserc.json`) et workflow GitHub Actions (`.github/workflows/lighthouse.yml`) pour les audits automatisés d'accessibilité et de performance.
 - Script d'ingestion et de validation automatique `scripts/ingest_lprn_edition.py` pour traiter, valider et comparer les futures éditions annuelles de la revue LPRN.
-- Spécification produit `PRODUCT.md` conforme au schéma Impeccable (vision, utilisateurs cibles, architecture de l'information et principes de conception).
-- Système de design `DESIGN.md` avec tokens typographiques, palettes HSL/Tailwind, élévations et règles d'accessibilité.
-- Fichier de configuration `.impeccable/design.json` décrivant les composants réutilisables et styles maîtres.
-- Intégration des polices Google Fonts : *Plus Jakarta Sans*, *Inter* et *JetBrains Mono*.
-- Route et lien direct pour le calculateur interactif de score personnalisé (`/custom-score`).
+- Spécification produit `PRODUCT.md` et système de design `DESIGN.md` selon les standards Impeccable.
 
 ### Modifié
 - `src/index.css` : configuration complète des variables de thème `@theme`, variantes dark mode, styles Leaflet et barres de défilement fines.
