@@ -1,23 +1,58 @@
+import { lazy, Suspense, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/Layout/Header";
 import { DashboardPage } from "./pages/DashboardPage";
-import { CompareView } from "./components/Compare/CompareView";
-import { RankingsView } from "./components/Filters/RankingsView";
-import { AnalyticsView } from "./components/Analytics/AnalyticsView";
-import { ContactPage } from "./pages/ContactPage";
-import { AboutPage } from "./pages/AboutPage";
-import { SubnationalPage } from "./pages/SubnationalPage";
-import { ReformsPage } from "./pages/ReformsPage";
-import { DataTablePage } from "./pages/DataTablePage";
-import { CountryPage } from "./pages/CountryPage";
-import { MethodologyPage } from "./pages/MethodologyPage";
-import { CustomScorePage } from "./pages/CustomScorePage";
 import { useCountryData } from "./hooks/useCountryData";
-import { useState } from "react";
 import type { Country } from "./types";
 import { CountryDetail } from "./components/Country/CountryDetail";
 import { useTranslation } from "./hooks/useTranslation";
-import ChatBot from "./components/ChatBot/ChatBot";
+
+// Lazy-loaded routes for optimal initial chunk size
+const CompareView = lazy(() =>
+  import("./components/Compare/CompareView").then((m) => ({ default: m.CompareView }))
+);
+const RankingsView = lazy(() =>
+  import("./components/Filters/RankingsView").then((m) => ({ default: m.RankingsView }))
+);
+const AnalyticsView = lazy(() =>
+  import("./components/Analytics/AnalyticsView").then((m) => ({ default: m.AnalyticsView }))
+);
+const SubnationalPage = lazy(() =>
+  import("./pages/SubnationalPage").then((m) => ({ default: m.SubnationalPage }))
+);
+const ReformsPage = lazy(() =>
+  import("./pages/ReformsPage").then((m) => ({ default: m.ReformsPage }))
+);
+const DataTablePage = lazy(() =>
+  import("./pages/DataTablePage").then((m) => ({ default: m.DataTablePage }))
+);
+const CustomScorePage = lazy(() =>
+  import("./pages/CustomScorePage").then((m) => ({ default: m.CustomScorePage }))
+);
+const CountryPage = lazy(() =>
+  import("./pages/CountryPage").then((m) => ({ default: m.CountryPage }))
+);
+const MethodologyPage = lazy(() =>
+  import("./pages/MethodologyPage").then((m) => ({ default: m.MethodologyPage }))
+);
+const ContactPage = lazy(() =>
+  import("./pages/ContactPage").then((m) => ({ default: m.ContactPage }))
+);
+const AboutPage = lazy(() =>
+  import("./pages/AboutPage").then((m) => ({ default: m.AboutPage }))
+);
+const ChatBot = lazy(() => import("./components/ChatBot/ChatBot"));
+
+function PageLoader() {
+  return (
+    <div className="flex items-center justify-center py-24">
+      <div className="text-center p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs">
+        <div className="w-8 h-8 border-3 border-teal-500 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+        <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">Chargement...</span>
+      </div>
+    </div>
+  );
+}
 
 function AppInner() {
   const { data, loading } = useCountryData();
@@ -62,25 +97,29 @@ function AppInner() {
         </div>
       )}
       <div className="flex-1">
-        <Routes>
-          <Route path="/" element={<DashboardPage countries={data.countries} />} />
-          <Route path="/compare" element={<CompareView countries={data.countries} />} />
-          <Route
-            path="/rankings"
-            element={<RankingsView countries={data.countries} onCountryClick={setDetailCountry} />}
-          />
-          <Route path="/custom-score" element={<CustomScorePage countries={data.countries} />} />
-          <Route path="/analytics" element={<AnalyticsView countries={data.countries} onCountryClick={setDetailCountry} />} />
-          <Route path="/subnational" element={<SubnationalPage countries={data.countries} />} />
-          <Route path="/reforms" element={<ReformsPage countries={data.countries} />} />
-          <Route path="/data" element={<DataTablePage countries={data.countries} />} />
-          <Route path="/country/:iso2" element={<CountryPage countries={data.countries} />} />
-          <Route path="/methodology" element={<MethodologyPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/about" element={<AboutPage />} />
-        </Routes>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<DashboardPage countries={data.countries} />} />
+            <Route path="/compare" element={<CompareView countries={data.countries} />} />
+            <Route
+              path="/rankings"
+              element={<RankingsView countries={data.countries} onCountryClick={setDetailCountry} />}
+            />
+            <Route path="/custom-score" element={<CustomScorePage countries={data.countries} />} />
+            <Route path="/analytics" element={<AnalyticsView countries={data.countries} onCountryClick={setDetailCountry} />} />
+            <Route path="/subnational" element={<SubnationalPage countries={data.countries} />} />
+            <Route path="/reforms" element={<ReformsPage countries={data.countries} />} />
+            <Route path="/data" element={<DataTablePage countries={data.countries} />} />
+            <Route path="/country/:iso2" element={<CountryPage countries={data.countries} />} />
+            <Route path="/methodology" element={<MethodologyPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/about" element={<AboutPage />} />
+          </Routes>
+        </Suspense>
       </div>
-      <ChatBot countries={data.countries} />
+      <Suspense fallback={null}>
+        <ChatBot countries={data.countries} />
+      </Suspense>
       <footer className="border-t bg-white dark:bg-slate-900/90 border-slate-200 dark:border-slate-800 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 text-xs text-slate-500 dark:text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-center sm:text-left leading-relaxed">
