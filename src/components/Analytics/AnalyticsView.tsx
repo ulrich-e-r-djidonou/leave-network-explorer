@@ -7,6 +7,7 @@ import {
   formatDuration,
 } from "../../utils/calculations";
 import { useTranslation } from "../../hooks/useTranslation";
+import { useYear } from "../../contexts/YearContext";
 import { getCountryName } from "../../utils/countryNames";
 import { Download } from "lucide-react";
 import { downloadChartAsPNG } from "../../utils/exportChart";
@@ -55,6 +56,7 @@ type ScatterPoint = {
 
 export function AnalyticsView({ countries, onCountryClick }: Props) {
   const { t, lang } = useTranslation();
+  const { year } = useYear();
   const [activeRegion, setActiveRegion] = useState<string | null>(null);
   const [hoveredPoint, setHoveredPoint] = useState<string | null>(null);
   const scatterRef = useRef<HTMLDivElement | null>(null);
@@ -208,7 +210,7 @@ export function AnalyticsView({ countries, onCountryClick }: Props) {
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{t('analytics_scatter_desc')}</p>
           </div>
           <button
-            onClick={() => downloadChartAsPNG(scatterRef.current, 'gender-vs-generosity.png', lang)}
+            onClick={() => downloadChartAsPNG(scatterRef.current, 'gender-vs-generosity.png', lang, year)}
             className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700"
             title={lang === 'fr' ? 'Télécharger en PNG' : 'Download as PNG'}
           >

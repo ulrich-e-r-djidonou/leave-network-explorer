@@ -1,0 +1,10 @@
+{
+  "default": 2025,
+  "years": [
+    {
+      "year": 2025,
+      "file": "countries-2025.json",
+      "status": "final"
+    }
+  ]
+}

@@ -2,9 +2,11 @@
   "metadata": {
     "year": 2025,
     "asOf": "April 2025",
+    "asOfFr": "avril 2025",
     "source": "International Review of Leave Policies and Research 2025",
     "editors": "Dobrotic, I., Blum, S., Kaufman, G., Koslowski, A., Moss, P. and Valentova, M.",
-    "totalCountries": 52
+    "totalCountries": 52,
+    "changesPeriod": "2024/25"
   },
   "countries": [
     {

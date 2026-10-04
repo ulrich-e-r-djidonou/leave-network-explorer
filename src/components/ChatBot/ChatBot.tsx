@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import { MessageCircle, X, Send, Bot } from 'lucide-react';
 import type { Country } from '../../types';
 import { useTranslation } from '../../hooks/useTranslation';
+import { useYear } from '../../contexts/YearContext';
 import { processQuestion } from '../../utils/chatEngine';
 
 // ---------------------------------------------------------------------------
@@ -41,6 +42,8 @@ function saveMessages(msgs: ChatMessage[]): void {
 
 export default function ChatBot({ countries }: ChatBotProps) {
   const { lang } = useTranslation();
+  const { year } = useYear();
+  const sourceLabel = `LPRN ${year ?? ''}`.trim();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState<string>('');
@@ -63,7 +66,7 @@ export default function ChatBot({ countries }: ChatBotProps) {
         '• \u00ab Générosité \u00bb ou \u00ab Égalité \u00bb',
         '• \u00ab Québec \u00bb ou \u00ab RQAP \u00bb',
         '',
-        'Source des données : LPRN 2025.',
+        `Source des données : ${sourceLabel}.`,
       ].join('\n');
     }
     return [
@@ -76,9 +79,9 @@ export default function ChatBot({ countries }: ChatBotProps) {
       '• "Generosity" or "Equality"',
       '• "Quebec" or "QPIP"',
       '',
-      'Data source: LPRN 2025.',
+      `Data source: ${sourceLabel}.`,
     ].join('\n');
-  }, [lang]);
+  }, [lang, sourceLabel]);
 
   useEffect(() => {
     if (!hasInitialised.current) {
@@ -238,7 +241,7 @@ export default function ChatBot({ countries }: ChatBotProps) {
               </div>
               <div>
                 <span className="text-xs sm:text-sm font-bold tracking-tight">{headerTitle}</span>
-                <span className="block text-[10px] text-teal-400 font-medium">LPRN 2025</span>
+                <span className="block text-[10px] text-teal-400 font-medium">{sourceLabel}</span>
               </div>
             </div>
             <button
@@ -290,8 +293,8 @@ export default function ChatBot({ countries }: ChatBotProps) {
           <div className="px-3.5 py-1.5 bg-amber-50/90 dark:bg-amber-950/40 border-t border-amber-200/60 dark:border-amber-900/40">
             <p className="text-[10px] text-amber-800 dark:text-amber-300 leading-tight">
               {lang === 'fr'
-                ? 'Assistant à base de mots-clés sur la base LPRN 2025. Ne constitue pas un avis juridique.'
-                : 'Keyword-based assistant on LPRN 2025 data. Not legal advice.'}
+                ? `Assistant à base de mots-clés sur la base ${sourceLabel}. Ne constitue pas un avis juridique.`
+                : `Keyword-based assistant on ${sourceLabel} data. Not legal advice.`}
             </p>
           </div>
 

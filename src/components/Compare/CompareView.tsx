@@ -5,6 +5,7 @@ import { getComparableEntities } from "../../hooks/useCountryData";
 import { getCountryName } from "../../utils/countryNames";
 import { X, Search, Download } from "lucide-react";
 import { useTranslation } from "../../hooks/useTranslation";
+import { useYear } from "../../contexts/YearContext";
 import type { TranslationKey } from "../../i18n/translations";
 import { downloadChartAsPNG } from "../../utils/exportChart";
 import {
@@ -47,6 +48,7 @@ export function CompareView({ countries }: Props) {
   const [selected, setSelected] = useState<Country[]>([]);
   const [search, setSearch] = useState("");
   const { t, lang } = useTranslation();
+  const { year } = useYear();
 
   const allEntities = useMemo(() => getComparableEntities(countries), [countries]);
 
@@ -257,7 +259,7 @@ export function CompareView({ countries }: Props) {
                       {t(cat.titleKey)}
                     </h3>
                     <button
-                      onClick={() => downloadChartAsPNG(chartRefs.current[cat.key], `compare-${cat.key}.png`, lang)}
+                      onClick={() => downloadChartAsPNG(chartRefs.current[cat.key], `compare-${cat.key}.png`, lang, year)}
                       className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700"
                       title={lang === 'fr' ? 'Télécharger en PNG' : 'Download as PNG'}
                     >
@@ -304,7 +306,7 @@ export function CompareView({ countries }: Props) {
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200">{t('compare_radar_title')}</h3>
                 <button
-                  onClick={() => downloadChartAsPNG(radarRef.current, 'compare-radar.png', lang)}
+                  onClick={() => downloadChartAsPNG(radarRef.current, 'compare-radar.png', lang, year)}
                   className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700"
                   title={lang === 'fr' ? 'Télécharger en PNG' : 'Download as PNG'}
                 >

@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import type { Country, RecentChange } from "../types";
 import { REGIONS } from "../utils/calculations";
 import { useTranslation } from "../hooks/useTranslation";
+import { useYear } from "../contexts/YearContext";
 import type { TranslationKey } from "../i18n/translations";
 import { Search } from "lucide-react";
 
@@ -54,6 +55,7 @@ const TYPE_DOT: Record<RecentChange["type"], string> = {
 
 export function ReformsPage({ countries }: Props) {
   const { t, lang } = useTranslation();
+  const { data } = useYear();
   const [typeFilter, setTypeFilter] = useState<ReformTypeFilter>("all");
   const [regionFilter, setRegionFilter] = useState("All");
   const [search, setSearch] = useState("");
@@ -152,7 +154,7 @@ export function ReformsPage({ countries }: Props) {
 
         {/* Count */}
         <p className="text-xs font-medium text-slate-400 dark:text-slate-500">
-          {filtered.length} {t("reforms_count")} ({lang === 'fr' ? 'sur 2024–2025' : 'across 2024–2025'})
+          {filtered.length} {t("reforms_count")} ({lang === 'fr' ? 'sur' : 'across'} {data?.metadata.changesPeriod})
         </p>
       </div>
 
