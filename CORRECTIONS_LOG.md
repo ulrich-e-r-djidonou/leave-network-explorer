@@ -176,3 +176,12 @@ Source : notes pays individuelles du LPRN 2025, recherche par mots-cles "pension
 | 2026-04-10 | 9cae756 | France parental paid : 36 -> 6 (base 1er enfant, Table 3 LPRN) |
 | 2026-04-10 | 050ada1 | Corrections anomalies Phase 2b : EE, SK, LV, LT |
 | 2026-04-10 | 61fb421 | Variations de conge selon rang de naissance : HR, CY, RS, GR, BA, FR |
+
+---
+
+## Edition 2026 (2026-10-04) : ecarts herites de 2025, en attente de decision
+
+La construction de l'edition 2026 (`scripts/edition2026/`) a confronte les fiches a la base de donnees LPRN 2023-2026 et aux tableaux du rapport 2026. Quarante ecarts anterieurs a 2026 ont ete trouves : 27 erreurs probables, 9 conventions a confirmer, 4 arrondis. Exemples : maternite chinoise (98 jours, 3,26 mois, contre 2,3), paternite suedoise (10 jours ouvrables, 0,47 contre 0,33), conge parental norvegien (13,5 contre 14,2), caractere bien paye de l'Elterngeld allemand (65 %, 0 contre 14).
+
+Aucune correction n'est appliquee a l'edition 2025 ni a l'edition 2026 : l'edition 2026 reprend les valeurs 2025 quand la source ne change pas, pour ne pas simuler de reforme. La liste complete, avec justification sourcee et valeur proposee pour les deux editions, est dans `scripts/edition2026/ecarts_declares_2026.json` et a la fin de `scripts/edition2026/CONTROLE_2026.md`.
+

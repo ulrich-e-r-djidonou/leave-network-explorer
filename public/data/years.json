@@ -5,6 +5,11 @@
       "year": 2025,
       "file": "countries-2025.json",
       "status": "final"
+    },
+    {
+      "year": 2026,
+      "file": "countries-2026.json",
+      "status": "provisional"
     }
   ]
 }

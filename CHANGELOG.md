@@ -2,6 +2,27 @@
 
 Toutes les modifications notables apportées à ce projet sont documentées dans ce fichier. Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/).
 
+## [Non publié] - 2026-10-04 (branche `donnees-2026`)
+
+### Résumé
+Gestion de plusieurs éditions des données et ajout provisoire de l'édition 2026 (53 pays, Costa Rica compris), construite et contrôlée par des scripts rejouables. L'édition 2025 reste l'édition par défaut et n'est pas modifiée.
+
+### Ajouté
+- `public/data/years.json` (copie dans `data/`) : index des éditions, édition par défaut et statut (`final` ou `provisional`).
+- `src/contexts/YearContext.tsx` : chargement de l'index puis du fichier de l'édition choisie, mémorisée dans le navigateur.
+- Sélecteur d'édition dans l'en-tête, affiché dès que deux éditions existent, et bandeau d'avertissement pour une édition provisoire.
+- `data/countries-2026.json` et `scripts/edition2026/` : sources et empreintes, construction, provenance valeur par valeur, décisions, écarts déclarés et contrôle des chiffres. Méthode complète : `scripts/edition2026/README.md`.
+- Nom français du Costa Rica dans `src/utils/countryNames.ts`.
+
+### Modifié
+- `countries.json` devient `countries-2025.json` ; ses métadonnées gagnent `asOfFr` et `changesPeriod`, sans changement des données.
+- `t()` remplit `{year}`, `{period}` et `{n}` depuis les métadonnées : sous-titre, source des classements, période des réformes, nombre de pays, page À propos, assistant et filigrane des graphiques suivent l'édition affichée.
+- `src/utils/dataIntegrity.test.ts` vérifie chaque édition déclarée.
+
+### Constaté, non corrigé
+- La politique de sécurité ajoutée le 16 septembre 2026 (`index.html`, `img-src 'self' data: blob:`) bloque les tuiles du fond de carte cartocdn : la carte s'affiche sans fond. Correction possible : autoriser `https://*.basemaps.cartocdn.com` dans `img-src`.
+- 40 écarts hérités de l'édition 2025 avec les tableaux du rapport LPRN, déclarés dans `scripts/edition2026/ecarts_declares_2026.json` avec une valeur proposée pour les deux éditions, en attente de décision.
+
 ## [Non publié] - 2026-08-13
 
 ### Résumé
