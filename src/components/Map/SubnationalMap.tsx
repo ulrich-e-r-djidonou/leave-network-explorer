@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { MapContainer, GeoJSON, CircleMarker, Tooltip } from "react-leaflet";
+import type { FeatureCollection } from "geojson";
 import type { Country, SubnationalEntity } from "../../types";
 import { formatDuration } from "../../utils/calculations";
 import "leaflet/dist/leaflet.css";
@@ -151,7 +152,7 @@ export function SubnationalMap({
   // Fond de carte servi par le site lui-meme (meme fichier que la carte du
   // monde) : les tuiles CARTO exigent desormais une cle d'API, et sans fond
   // les cercles des provinces flottaient dans le vide.
-  const [fondPays, setFondPays] = useState<any>(null);
+  const [fondPays, setFondPays] = useState<FeatureCollection | null>(null);
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}world.geojson`)
       .then((res) => res.json())
