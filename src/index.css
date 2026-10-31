@@ -62,8 +62,16 @@ html, body, #root {
   background: #0f172a !important;
 }
 
-.dark .leaflet-tile {
-  filter: brightness(0.7) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+/* Fond de pays de la carte des provinces (world.geojson, sans tuiles). Les
+   proprietes CSS l'emportent sur les attributs fill/stroke poses par Leaflet. */
+.fond-pays {
+  fill: #e2e8f0;
+  stroke: #cbd5e1;
+}
+
+.dark .fond-pays {
+  fill: #1e293b;
+  stroke: #334155;
 }
 
 /* Leaflet Tooltips */

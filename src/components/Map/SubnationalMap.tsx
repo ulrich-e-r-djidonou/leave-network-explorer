@@ -1,5 +1,5 @@
-import { useMemo } from "react";
-import { MapContainer, TileLayer, CircleMarker, Tooltip } from "react-leaflet";
+import { useEffect, useMemo, useState } from "react";
+import { MapContainer, GeoJSON, CircleMarker, Tooltip } from "react-leaflet";
 import type { Country, SubnationalEntity } from "../../types";
 import { formatDuration } from "../../utils/calculations";
 import "leaflet/dist/leaflet.css";
@@ -148,6 +148,17 @@ export function SubnationalMap({
   selectedCode,
   lang,
 }: Props) {
+  // Fond de carte servi par le site lui-meme (meme fichier que la carte du
+  // monde) : les tuiles CARTO exigent desormais une cle d'API, et sans fond
+  // les cercles des provinces flottaient dans le vide.
+  const [fondPays, setFondPays] = useState<any>(null);
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}world.geojson`)
+      .then((res) => res.json())
+      .then(setFondPays)
+      .catch(() => setFondPays(null));
+  }, []);
+
   const points = useMemo<FlatSub[]>(() => {
     const result: FlatSub[] = [];
     countries.forEach((c) => {
@@ -208,10 +219,13 @@ export function SubnationalMap({
           scrollWheelZoom={true}
           style={{ background: "#f8fafc" }}
         >
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
-            url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
-          />
+          {fondPays && (
+            <GeoJSON
+              data={fondPays}
+              interactive={false}
+              style={() => ({ className: "fond-pays", weight: 0.6, fillOpacity: 1 })}
+            />
+          )}
           {points.map((pt) => {
             const isQC = pt.entity.code === "CA-QC";
             const isSelected = selectedCode === pt.entity.code;
