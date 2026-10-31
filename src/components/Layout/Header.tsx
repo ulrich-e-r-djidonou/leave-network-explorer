@@ -29,24 +29,27 @@ export function Header() {
   return (
     <header className="bg-slate-900/95 dark:bg-slate-950/95 backdrop-blur-md text-white shadow-md sticky top-0 z-40 border-b border-slate-800/80">
       {/* Main bar */}
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 px-4 sm:px-6 py-2.5">
+      <div className="max-w-7xl 2xl:max-w-[96rem] mx-auto flex items-center justify-between gap-3 px-4 sm:px-6 py-2.5">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2.5 hover:opacity-95 transition-opacity shrink-0 group">
+        <Link to="/" className="flex items-center gap-2.5 hover:opacity-95 transition-opacity min-w-0 group">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-xs font-bold tracking-tight text-white shadow-sm ring-1 ring-teal-300/30 group-hover:scale-105 transition-transform">
             LN
           </div>
-          <div>
-            <p className="text-sm font-bold tracking-tight text-slate-100 whitespace-nowrap font-display leading-none">
+          <div className="min-w-0">
+            <p className="text-[13px] sm:text-sm font-bold tracking-tight text-slate-100 truncate font-display leading-none">
               Leave Network Explorer
             </p>
-            <p className="text-[11px] text-slate-400 whitespace-nowrap mt-0.5 font-normal">
+            <p className="hidden sm:block text-[11px] text-slate-400 whitespace-nowrap mt-0.5 font-normal">
               {t('app_subtitle')}
             </p>
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden xl:flex items-center gap-1 overflow-x-auto no-scrollbar min-w-0 mx-2">
+        {/* Desktop Navigation : onze liens ne tiennent pas avant 1536 px. En
+            dessous, le menu deroulant prend le relais ; avant le 31 oct. 2026 la
+            barre etait coupee sans indication des 1280 px (overflow-x-auto +
+            no-scrollbar), et « Contact » restait hors de vue. */}
+        <nav className="hidden 2xl:flex items-center gap-1 overflow-x-auto no-scrollbar min-w-0 mx-2">
           {NAV_ITEMS.map((item) => {
             const active = isActive(item.path);
             return (
@@ -82,7 +85,7 @@ export function Header() {
           <div className="flex items-center bg-slate-800/90 border border-slate-700/50 rounded-lg p-0.5 text-xs font-medium">
             <button
               onClick={() => setLang('fr')}
-              className={`px-2.5 py-1 rounded-md transition-all ${
+              className={`px-2 sm:px-2.5 py-1 rounded-md transition-all ${
                 lang === 'fr'
                   ? 'bg-teal-600 text-white font-semibold shadow-xs'
                   : 'text-slate-400 hover:text-slate-200'
@@ -92,7 +95,7 @@ export function Header() {
             </button>
             <button
               onClick={() => setLang('en')}
-              className={`px-2.5 py-1 rounded-md transition-all ${
+              className={`px-2 sm:px-2.5 py-1 rounded-md transition-all ${
                 lang === 'en'
                   ? 'bg-teal-600 text-white font-semibold shadow-xs'
                   : 'text-slate-400 hover:text-slate-200'
@@ -104,7 +107,7 @@ export function Header() {
 
           {/* Hamburger Menu on smaller screens */}
           <button
-            className="xl:hidden p-2 rounded-lg bg-slate-800/90 text-slate-300 hover:bg-slate-700 hover:text-white transition-colors border border-slate-700/50"
+            className="2xl:hidden p-2 rounded-lg bg-slate-800/90 text-slate-300 hover:bg-slate-700 hover:text-white transition-colors border border-slate-700/50"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Ouvrir le menu de navigation"
           >
@@ -115,7 +118,7 @@ export function Header() {
 
       {/* Mobile & Tablet dropdown menu */}
       {menuOpen && (
-        <div className="xl:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-1 animate-in slide-in-from-top-2 duration-150">
+        <div className="2xl:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-1 animate-in slide-in-from-top-2 duration-150">
           <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-3">
             {NAV_ITEMS.map((item) => {
               const active = isActive(item.path);

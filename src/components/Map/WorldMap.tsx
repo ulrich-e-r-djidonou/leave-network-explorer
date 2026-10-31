@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo, useCallback } from "react";
-import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
+import { MapContainer, GeoJSON } from "react-leaflet";
 import type { Layer, LeafletMouseEvent } from "leaflet";
 import type { Feature } from "geojson";
 import type { Country, MapIndicator } from "../../types";
@@ -159,10 +159,9 @@ export function WorldMap({ countries, indicator, onCountryClick }: Props) {
         scrollWheelZoom={true}
         style={{ background: "#f8fafc" }}
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
-          url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
-        />
+        {/* Pas de fond de tuiles : les tuiles CARTO exigent desormais une cle
+            d'API (elles s'affichent barrees « API KEY REQUIRED ») et la CSP du
+            site les bloquait de toute facon. Les polygones des pays suffisent. */}
         <GeoJSON
           key={`${indicator}-${lang}`}
           data={geoData}
