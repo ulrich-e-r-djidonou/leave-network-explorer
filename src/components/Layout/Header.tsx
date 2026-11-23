@@ -1,9 +1,20 @@
-import { useState } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun, Moon, SlidersHorizontal } from 'lucide-react';
 import { useTranslation } from '../../hooks/useTranslation';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useYear } from '../../contexts/YearContext';
+
+// Sous 640 px, la mention « provisoire » quitte les options du sélecteur : la largeur
+// d'un <select> natif suit sa plus longue option et réduisait le titre à « L… ».
+// Le bandeau placé sous l'en-tête signale déjà une édition provisoire.
+const SM_QUERY = '(min-width: 640px)';
+function subscribeSm(onChange: () => void) {
+  const mq = window.matchMedia(SM_QUERY);
+  mq.addEventListener('change', onChange);
+  return () => mq.removeEventListener('change', onChange);
+}
+const isSmUp = () => window.matchMedia(SM_QUERY).matches;
 
 export function Header() {
   const location = useLocation();
@@ -11,6 +22,7 @@ export function Header() {
   const { theme, toggleTheme } = useTheme();
   const { editions, year, setYear } = useYear();
   const [menuOpen, setMenuOpen] = useState(false);
+  const smUp = useSyncExternalStore(subscribeSm, isSmUp, () => true);
 
   const NAV_ITEMS = [
     { path: '/', labelKey: 'nav_map' as const },
@@ -31,7 +43,7 @@ export function Header() {
   return (
     <header className="bg-slate-900/95 dark:bg-slate-950/95 backdrop-blur-md text-white shadow-md sticky top-0 z-40 border-b border-slate-800/80">
       {/* Main bar */}
-      <div className="max-w-7xl 2xl:max-w-[96rem] mx-auto flex items-center justify-between gap-3 px-4 sm:px-6 py-2.5">
+      <div className="max-w-7xl 2xl:max-w-[96rem] mx-auto flex items-center justify-between gap-2 sm:gap-3 px-3 sm:px-6 py-2.5">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5 hover:opacity-95 transition-opacity min-w-0 group">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-xs font-bold tracking-tight text-white shadow-sm ring-1 ring-teal-300/30 group-hover:scale-105 transition-transform">
@@ -39,7 +51,7 @@ export function Header() {
           </div>
           <div className="min-w-0">
             <p className="text-[13px] sm:text-sm font-bold tracking-tight text-slate-100 truncate font-display leading-none">
-              Leave Network Explorer
+              Leave Network<span className="hidden min-[480px]:inline"> Explorer</span>
             </p>
             <p className="hidden sm:block text-[11px] text-slate-400 whitespace-nowrap mt-0.5 font-normal">
               {t('app_subtitle')}
@@ -72,10 +84,10 @@ export function Header() {
         </nav>
 
         {/* Controls: Edition + Theme toggle + Language toggle + Mobile Hamburger */}
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           {/* Edition selector, shown once more than one edition is published */}
           {editions.length > 1 && (
-            <label className="flex items-center gap-1.5 bg-slate-800/90 border border-slate-700/50 rounded-lg pl-2.5 pr-1 py-0.5 text-xs font-medium text-slate-300">
+            <label className="flex items-center gap-1.5 bg-slate-800/90 border border-slate-700/50 rounded-lg pl-1.5 sm:pl-2.5 pr-1 py-0.5 text-xs font-medium text-slate-300">
               <span className="hidden sm:inline">{t('edition_label')}</span>
               <select
                 value={year ?? ''}
@@ -85,7 +97,7 @@ export function Header() {
               >
                 {editions.map((ed) => (
                   <option key={ed.year} value={ed.year} className="text-slate-900">
-                    {ed.year}{ed.status === 'provisional' ? ` (${t('edition_provisional')})` : ''}
+                    {ed.year}{ed.status === 'provisional' && smUp ? ` (${t('edition_provisional')})` : ''}
                   </option>
                 ))}
               </select>
