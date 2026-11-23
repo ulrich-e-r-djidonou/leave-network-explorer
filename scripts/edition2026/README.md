@@ -34,7 +34,7 @@ L'Excel et les tableaux du rapport sont deux sources indépendantes du LPRN. Ell
 5. **Changements récents** : remplacés par les entrées du tableau 6, découpées selon ses symboles (✓ introduction, x suppression, ↑ expansion, ↓ réduction, o recalibrage). Le texte est celui du tableau, avec les césures de fin de ligne recollées (« same- sex » devient « same-sex »). Les entrées du Québec sont préfixées « Quebec: » dans la fiche du Canada.
 6. **Correction déclarée de l'Excel** (ANO-X001) : quatre séries portent deux lignes « 2025 » et aucune « 2026 » (Québec maternité, Slovaquie maternité et paternité, Japon paternité). La seconde est lue comme 2026.
 7. **Costa Rica** : fiche construite à partir de l'Excel 2026 et de la note de pays (détail dans `decisions_2026.json`). Aucune valeur d'indice d'inégalité de genre n'est saisie : le site affiche « N/A », faute de chiffre vérifié.
-8. Les champs absents de l'Excel et des tableaux (autres mesures, financement, notes, entités infranationales hors Québec, Argentine et Grèce secteur public) sont repris de 2025, ce que dit le bandeau provisoire.
+8. Les champs absents de l'Excel et des tableaux (autres mesures, financement, notes, entités infranationales hors Québec, Argentine et Grèce secteur public) sont repris de 2025. Le bandeau provisoire du site se limite depuis le 23 novembre 2026 à « Édition 2026 provisoire, en cours de vérification » ; le détail de la méthode est ici.
 
 ## Résultat
 
