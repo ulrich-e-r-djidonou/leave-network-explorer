@@ -108,8 +108,8 @@ export function ChangesPage() {
                   <table className="w-full table-fixed text-xs sm:text-sm">
                     <thead>
                       <tr className="text-left text-[11px] uppercase tracking-wider text-slate-400">
-                        <th className="w-[34%] px-4 sm:px-5 py-2 font-medium">{t("changes_col_section")}</th>
-                        <th className="w-[30%] px-2 py-2 font-medium">{t("changes_col_field")}</th>
+                        <th className="hidden sm:table-cell sm:w-[34%] px-4 sm:px-5 py-2 font-medium">{t("changes_col_section")}</th>
+                        <th className="w-[46%] sm:w-[30%] pl-4 sm:pl-2 pr-2 py-2 font-medium">{t("changes_col_field")}</th>
                         <th className="px-2 py-2 font-medium text-right">{previousYear}</th>
                         <th className="px-4 sm:px-5 py-2 font-medium text-right">{year}</th>
                       </tr>
@@ -117,12 +117,15 @@ export function ChangesPage() {
                     <tbody className="divide-y divide-slate-100 dark:divide-slate-700/60">
                       {changes.map(({ field, before, after }) => (
                         <tr key={field.path}>
-                          <td className="px-4 sm:px-5 py-2 text-slate-500 dark:text-slate-400">{t(field.section)}</td>
-                          <td className="px-2 py-2 text-slate-700 dark:text-slate-300">{t(field.label)}</td>
-                          <td className="px-2 py-2 text-right tabular-nums text-slate-500 dark:text-slate-400">
+                          <td className="hidden sm:table-cell px-4 sm:px-5 py-2 text-slate-500 dark:text-slate-400">{t(field.section)}</td>
+                          <td className="pl-4 sm:pl-2 pr-2 py-2 text-slate-700 dark:text-slate-300">
+                            <span className="block sm:hidden text-[10px] text-slate-400">{t(field.section)}</span>
+                            {t(field.label)}
+                          </td>
+                          <td className="px-2 py-2 text-right tabular-nums whitespace-nowrap text-slate-500 dark:text-slate-400">
                             {formatFieldValue(before, field.kind, lang)}
                           </td>
-                          <td className="px-4 sm:px-5 py-2 text-right tabular-nums font-semibold text-slate-900 dark:text-slate-100">
+                          <td className="px-4 sm:px-5 py-2 text-right tabular-nums whitespace-nowrap font-semibold text-slate-900 dark:text-slate-100">
                             {formatFieldValue(after, field.kind, lang)}
                           </td>
                         </tr>
