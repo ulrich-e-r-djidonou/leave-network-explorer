@@ -16,6 +16,9 @@ export function useTranslation() {
 
   function t(key: TranslationKey): string {
     const raw = (translations[lang][key] as string) ?? (translations.fr[key] as string) ?? key;
+    // Clé calculée absente du dictionnaire (ex. type d'entité infranationale non prévu) :
+    // chaîne vide, pour que l'appelant applique son repli (`t(x) || valeurBrute`).
+    if (typeof raw !== 'string') return '';
     return raw.replace(/\{(year|period|n)\}/g, (_, name: string) => vars[name]);
   }
 
