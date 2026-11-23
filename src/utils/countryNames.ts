@@ -11,6 +11,7 @@ const COUNTRY_NAMES_FR: Record<string, string> = {
   CL: 'Chili',
   CN: 'Chine',
   CO: 'Colombie',
+  CR: 'Costa Rica',
   HR: 'Croatie',
   CZ: 'R\u00e9publique tch\u00e8que',
   DK: 'Danemark',

@@ -31,3 +31,6 @@ dist-ssr
 
 # Claude Code local settings (ne jamais committer)
 **/.claude/settings.local.json
+
+# Python
+__pycache__/

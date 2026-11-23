@@ -1,3 +1,15 @@
+# Leave Network Explorer
+
+Explorateur interactif des politiques de congés parentaux (maternité, paternité, parental, garde d'enfants) d'après l'*International Review of Leave Policies and Related Research* du Leave Policy Research Network. React, TypeScript et Vite.
+
+## Données et éditions
+
+- `public/data/years.json` liste les éditions disponibles, l'édition par défaut et leur statut. `data/` en garde une copie identique (vérifiée par `src/utils/dataIntegrity.test.ts`).
+- `countries-2025.json` : édition 2025, saisie à la main puis corrigée (`CORRECTIONS_LOG.md`).
+- `countries-2026.json` : édition 2026 provisoire, construite et contrôlée par `scripts/edition2026/` (méthode, sources et contrôle : `scripts/edition2026/README.md`).
+
+Le reste de ce fichier reprend le gabarit d'origine de Vite.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

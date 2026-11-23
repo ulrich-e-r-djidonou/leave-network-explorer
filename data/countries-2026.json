@@ -1,10 +1,14 @@
 {
   "metadata": {
-    "year": 2025,
-    "asOf": "April 2025",
-    "source": "International Review of Leave Policies and Research 2025",
-    "editors": "Dobrotic, I., Blum, S., Kaufman, G., Koslowski, A., Moss, P. and Valentova, M.",
-    "totalCountries": 52
+    "year": 2026,
+    "asOf": "April 2026",
+    "asOfFr": "avril 2026",
+    "source": "22nd International Review of Leave Policies and Related Research 2026",
+    "editors": "Dobrotić, I., Arnalds, Á. A., Kaufman, G., Koslowski, A., Moss, P. and Valentova, M.",
+    "totalCountries": 53,
+    "changesPeriod": "2025/26",
+    "provisionalNote_fr": "Édition 2026 provisoire, en cours de vérification. Les durées et caractéristiques des congés reprennent l'édition 2025 lorsque la base de données du LPRN 2023-2026 ne signale aucun changement, et suivent la base 2026 sinon ; le Costa Rica est ajouté. La garde d'enfants (ECEC) et les changements récents viennent des tableaux 4 et 6 du rapport 2026. Les autres champs sont repris de 2025. Des écarts hérités de 2025 avec les tableaux du rapport sont recensés et attendent un arbitrage.",
+    "provisionalNote_en": "Provisional 2026 edition, under review. Leave durations and features carry over the 2025 edition where the LPRN 2023-2026 dataset reports no change, and follow the 2026 dataset otherwise; Costa Rica is added. Childcare (ECEC) and recent changes come from Tables 4 and 6 of the 2026 report. Other fields are carried over from 2025. Discrepancies inherited from 2025 with the report tables are listed and await review."
   },
   "countries": [
     {
@@ -99,7 +103,13 @@
         "entitlementAgeMonths": 48,
         "gapAfterLeaveMonths": 45
       },
-      "recentChanges": [],
+      "recentChanges": [
+        {
+          "type": "recalibration",
+          "leaveType": "other",
+          "description": "flexible working arrangements"
+        }
+      ],
       "subnational": [
         {
           "parentCountry": "AR",
@@ -194,12 +204,12 @@
         "exists": true,
         "durationMonths": {
           "total": 24,
-          "paid": 5.1,
+          "paid": 5.58,
           "wellPaid": 0
         },
         "entitlementType": "individual",
-        "motherQuotaMonths": 0.5,
-        "fatherQuotaMonths": 0.5,
+        "motherQuotaMonths": 0.7,
+        "fatherQuotaMonths": 0.7,
         "sharedPortionMonths": 4.1,
         "transferable": true,
         "paymentRate": null,
@@ -236,19 +246,19 @@
       },
       "ecec": {
         "universalEntitlement": false,
-        "entitlementAgeMonths": 60,
+        "entitlementAgeMonths": null,
         "gapAfterLeaveMonths": null
       },
       "recentChanges": [
         {
           "type": "expansion",
           "leaveType": "parental",
-          "description": "Parental leave pay rising to 24 weeks (July 2025) and 26 weeks (July 2026); reserved portion increasing annually"
+          "description": "expanded parental leave pay duration"
         },
         {
-          "type": "expansion",
-          "leaveType": "other",
-          "description": "Three-day childcare guarantee abolishing activity test for subsidised childcare from January 2026"
+          "type": "recalibration",
+          "leaveType": "parental",
+          "description": "recalibration of the income ceiling at which parental leave payment cuts out"
         }
       ],
       "pensionRights": {
@@ -345,18 +355,7 @@
         "entitlementAgeMonths": 60,
         "gapAfterLeaveMonths": 36
       },
-      "recentChanges": [
-        {
-          "type": "introduction",
-          "leaveType": "maternity",
-          "description": "New Special maternity benefit introduced retroactively from November 2023 for previously uncovered women"
-        },
-        {
-          "type": "abolition",
-          "leaveType": "other",
-          "description": "Educational leave (Bildungskarenz) abolished by March 2025; new model planned for January 2026"
-        }
-      ],
+      "recentChanges": [],
       "pensionRights": {
         "continuesDuringLeave": null,
         "details_en": "No explicit mention of pension contributions during leave in the source document",
@@ -453,13 +452,7 @@
         "entitlementAgeMonths": 30,
         "gapAfterLeaveMonths": 26
       },
-      "recentChanges": [
-        {
-          "type": "recalibration",
-          "leaveType": "parental",
-          "description": "New federal government planning radical reform introducing 'rucksack of leave' per child combining all leave types; grandparental leave also under consideration"
-        }
-      ],
+      "recentChanges": [],
       "pensionRights": {
         "continuesDuringLeave": null,
         "details_en": "No explicit mention of pension contributions during leave in the source document",
@@ -559,7 +552,7 @@
         }
       },
       "ecec": {
-        "universalEntitlement": false,
+        "universalEntitlement": true,
         "entitlementAgeMonths": 60,
         "gapAfterLeaveMonths": null
       },
@@ -875,14 +868,29 @@
       },
       "ecec": {
         "universalEntitlement": true,
-        "entitlementAgeMonths": 60,
-        "gapAfterLeaveMonths": 24
+        "entitlementAgeMonths": 48,
+        "gapAfterLeaveMonths": 12
       },
       "recentChanges": [
         {
           "type": "recalibration",
+          "leaveType": "maternity",
+          "description": "the maternity leave benefit is suspended if the parent receiving it works under a second employment contract"
+        },
+        {
+          "type": "recalibration",
+          "leaveType": "paternity",
+          "description": "the paternity leave benefit is suspended if the parent receiving it works under a second employment contract"
+        },
+        {
+          "type": "recalibration",
           "leaveType": "parental",
-          "description": "Father can now use maternity/parental leave without mother's consent when mother is deprived of parental rights"
+          "description": "the parental leave benefit is suspended if the parent receiving it works under a second employment contract"
+        },
+        {
+          "type": "expansion",
+          "leaveType": "other",
+          "description": "Period for requesting temporary flexible working arrangements"
         }
       ],
       "pensionRights": {
@@ -982,13 +990,7 @@
         "entitlementAgeMonths": null,
         "gapAfterLeaveMonths": null
       },
-      "recentChanges": [
-        {
-          "type": "expansion",
-          "leaveType": "parental",
-          "description": "Quebec expanded sharing incentive with additional weeks and increased support for low-income parents and single parents"
-        }
-      ],
+      "recentChanges": [],
       "subnational": [
         {
           "parentCountry": "CA",
@@ -1147,7 +1149,13 @@
         "entitlementAgeMonths": null,
         "gapAfterLeaveMonths": null
       },
-      "recentChanges": [],
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "maternity",
+          "description": "increase in the minimum daily subsidy floor (link to the minimum wage rise)"
+        }
+      ],
       "pensionRights": {
         "continuesDuringLeave": true,
         "details_en": "Pension contributions (10%) continue during leave, paid by the health insurance institution",
@@ -1244,7 +1252,7 @@
       "ecec": {
         "universalEntitlement": true,
         "entitlementAgeMonths": 36,
-        "gapAfterLeaveMonths": 32
+        "gapAfterLeaveMonths": 33.2
       },
       "recentChanges": [],
       "subnational": [
@@ -1682,22 +1690,136 @@
         }
       },
       "ecec": {
-        "universalEntitlement": false,
+        "universalEntitlement": true,
         "entitlementAgeMonths": 60,
-        "gapAfterLeaveMonths": 52
+        "gapAfterLeaveMonths": 56
       },
-      "recentChanges": [
-        {
-          "type": "introduction",
-          "leaveType": "other",
-          "description": "New care policy approved June 2023 establishing role of care person/personal assistant with right to flexible work"
-        }
-      ],
+      "recentChanges": [],
       "pensionRights": {
         "continuesDuringLeave": true,
         "details_en": "Pension rights are maintained during Maternity leave",
         "details_fr": "Les droits à la retraite sont maintenus pendant le congé de maternité"
       }
+    },
+    {
+      "name": "Costa Rica",
+      "iso2": "CR",
+      "iso3": "CRI",
+      "region": "North America",
+      "federal": false,
+      "subnationalVariations": [
+        "Public sector: 30 calendar days of paternity leave; private sector: 8 days (2 days per week during the first 4 weeks)"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.99,
+          "paid": 3.99,
+          "wellPaid": 3.99
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "Employer (50%) and Costa Rican Social Security Fund, CCSS (50%)"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.37,
+          "paid": 0.37,
+          "wellPaid": 0.37
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Employer"
+      },
+      "parental": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": null,
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": false,
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": false,
+          "daysPerYear": null,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": false
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "The CCSS continues to credit the worker's pension account during Maternity leave",
+        "details_fr": "La CCSS continue de créditer le compte de retraite de la travailleuse pendant le congé de maternité"
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": null,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": [],
+      "subnational": [
+        {
+          "parentCountry": "CR",
+          "name": "Costa Rica (public sector)",
+          "code": "CR-PUB",
+          "type": "sector",
+          "paternity": {
+            "exists": true,
+            "durationMonths": {
+              "total": 1,
+              "paid": 1,
+              "wellPaid": 1
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "obligatory": false,
+            "flexPartTime": false,
+            "flexBlocks": false,
+            "notes": "30 calendar days, taken as a continuous period after the birth"
+          }
+        }
+      ]
     },
     {
       "name": "Croatia",
@@ -1789,24 +1911,19 @@
       },
       "ecec": {
         "universalEntitlement": true,
-        "entitlementAgeMonths": 60,
-        "gapAfterLeaveMonths": 46
+        "entitlementAgeMonths": 72,
+        "gapAfterLeaveMonths": 36
       },
       "recentChanges": [
         {
           "type": "expansion",
-          "leaveType": "paternity",
-          "description": "Paternity leave doubled to 20 working days"
-        },
-        {
-          "type": "expansion",
-          "leaveType": "parental",
-          "description": "Parental leave benefit increased significantly to 680% of budgetary base rate for first 6-8 months"
-        },
-        {
-          "type": "expansion",
           "leaveType": "maternity",
-          "description": "Increased benefits for mothers not meeting insurance requirements and for maternity exemption from work"
+          "description": "additional pension insurance period"
+        },
+        {
+          "type": "expansion",
+          "leaveType": "other",
+          "description": "sickness leave benefit"
         }
       ],
       "pensionRights": {
@@ -1910,19 +2027,24 @@
       },
       "ecec": {
         "universalEntitlement": true,
-        "entitlementAgeMonths": 54,
-        "gapAfterLeaveMonths": 48
+        "entitlementAgeMonths": 56,
+        "gapAfterLeaveMonths": 42.5
       },
       "recentChanges": [
         {
           "type": "expansion",
+          "leaveType": "maternity",
+          "description": "increase in maternity leave benefit, which depends on the number of dependents in the family"
+        },
+        {
+          "type": "expansion",
           "leaveType": "parental",
-          "description": "Paid parental leave increased for 2nd child (10 weeks) and 3rd child (12 weeks); age limit raised to 15 years"
+          "description": "increase in the number of weeks of paid parental leave, depending on the number of children"
         },
         {
           "type": "introduction",
           "leaveType": "other",
-          "description": "Young mother financial incentive: EUR 200/month for 24 months for first-time mothers under 30"
+          "description": "cash-for-care benefit"
         }
       ],
       "pensionRights": {
@@ -2021,9 +2143,9 @@
       },
       "recentChanges": [
         {
-          "type": "recalibration",
+          "type": "expansion",
           "leaveType": "parental",
-          "description": "From June 2025: parents on parental leave can work for the same employer; guarantee of return to original job if returning before child turns 2"
+          "description": "multiple births: parental benefit doubled, replacing the previous 1.5 multiplier"
         }
       ],
       "pensionRights": {
@@ -2120,7 +2242,33 @@
         "entitlementAgeMonths": 6,
         "gapAfterLeaveMonths": 0
       },
-      "recentChanges": [],
+      "recentChanges": [
+        {
+          "type": "recalibration",
+          "leaveType": "parental",
+          "description": "hospitalised newborn extension (paid parental leave can be extended up to 12 months)"
+        },
+        {
+          "type": "expansion",
+          "leaveType": "parental",
+          "description": "benefit ceiling increase"
+        },
+        {
+          "type": "expansion",
+          "leaveType": "other",
+          "description": "bereavement benefit eligibility"
+        },
+        {
+          "type": "recalibration",
+          "leaveType": "other",
+          "description": "sick-child leave (CA)"
+        },
+        {
+          "type": "recalibration",
+          "leaveType": "other",
+          "description": "DA Barsel ceiling"
+        }
+      ],
       "pensionRights": {
         "continuesDuringLeave": true,
         "details_en": "Public pension not affected by leave; pension payments continue during Paternity and Parental leave",
@@ -2218,13 +2366,23 @@
       "recentChanges": [
         {
           "type": "expansion",
-          "leaveType": "other",
-          "description": "Sick leave days for children under 12 increased from 14 to 60 days per illness episode"
+          "leaveType": "maternity",
+          "description": "upper ceiling on maternity leave benefit introduced"
         },
         {
-          "type": "cutback",
+          "type": "expansion",
+          "leaveType": "paternity",
+          "description": "upper ceiling"
+        },
+        {
+          "type": "expansion",
           "leaveType": "parental",
-          "description": "From January 2026, upper limit for parental benefit decreases from 3x to 2x average wage"
+          "description": "upper ceiling"
+        },
+        {
+          "type": "expansion",
+          "leaveType": "parental",
+          "description": "full parental benefit if a parent is working"
         }
       ],
       "pensionRights": {
@@ -2449,9 +2607,9 @@
       },
       "recentChanges": [
         {
-          "type": "recalibration",
+          "type": "introduction",
           "leaveType": "parental",
-          "description": "Government announced leave reform in Jan 2024 to be implemented in 2025, but not implemented due to political changes."
+          "description": "introduction of an additional paid parental leave of one to two months for each parent (“additional birth leave”; effective in June 2026)"
         }
       ],
       "pensionRights": {
@@ -2554,14 +2712,24 @@
       },
       "recentChanges": [
         {
-          "type": "cutback",
-          "leaveType": "parental",
-          "description": "Income limit for parental benefit reduced to EUR 175,000 (from EUR 200,000) from April 2025. Simultaneous use of Basiselterngeld limited to 1 month within first 12 months."
-        },
-        {
           "type": "expansion",
           "leaveType": "maternity",
-          "description": "From June 2025, maternity leave extended to cover stillbirths from 13th week of pregnancy (previously 24th week), with graduated protection periods."
+          "description": "extension of maternity protection to miscarriages"
+        },
+        {
+          "type": "cutback",
+          "leaveType": "parental",
+          "description": "further reduction of the income limit (eligibility criterion)"
+        },
+        {
+          "type": "cutback",
+          "leaveType": "parental",
+          "description": "restriction of simultaneous receipt of benefits for full-time leave for both parents"
+        },
+        {
+          "type": "abolition",
+          "leaveType": "other",
+          "description": "cash-for-care benefits in Bavaria"
         }
       ],
       "subnational": [
@@ -2708,13 +2876,28 @@
       "ecec": {
         "universalEntitlement": true,
         "entitlementAgeMonths": 48,
-        "gapAfterLeaveMonths": null
+        "gapAfterLeaveMonths": 25.3
       },
       "recentChanges": [
         {
           "type": "expansion",
           "leaveType": "maternity",
-          "description": "From April 2024, minimum wage increase automatically increased leave payments. Special maternity benefit extended to 9 months for self-employed mothers and farmers, and to special categories of employees."
+          "description": "expansion of post-natal portion for foster mothers"
+        },
+        {
+          "type": "recalibration",
+          "leaveType": "parental",
+          "description": "benefit level due to minimum wage increase"
+        },
+        {
+          "type": "recalibration",
+          "leaveType": "parental",
+          "description": "tax-exempt and non-seizable"
+        },
+        {
+          "type": "introduction",
+          "leaveType": "other",
+          "description": "leave for public sector employees who have the exclusive care of a child"
         }
       ],
       "subnational": [
@@ -2876,10 +3059,21 @@
       },
       "ecec": {
         "universalEntitlement": true,
-        "entitlementAgeMonths": 36,
-        "gapAfterLeaveMonths": 12
+        "entitlementAgeMonths": 0,
+        "gapAfterLeaveMonths": 0
       },
-      "recentChanges": [],
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "maternity",
+          "description": "personal income tax is not paid on leave benefit"
+        },
+        {
+          "type": "expansion",
+          "leaveType": "parental",
+          "description": "personal income tax is not paid on leave benefit"
+        }
+      ],
       "pensionRights": {
         "continuesDuringLeave": true,
         "details_en": "Pension contributions are deducted from leave benefits",
@@ -2981,7 +3175,7 @@
         {
           "type": "expansion",
           "leaveType": "parental",
-          "description": "Government agreed to raise ceiling on leave payments to ISK 900,000 in 2027. Proposed: increase shared extension for multiple births from 3 to 6 months, and extend leave by 2 months for mothers with serious illness during pregnancy."
+          "description": "extension of leave in case of multiple births"
         }
       ],
       "pensionRights": {
@@ -3077,22 +3271,11 @@
         }
       },
       "ecec": {
-        "universalEntitlement": false,
+        "universalEntitlement": true,
         "entitlementAgeMonths": 32,
         "gapAfterLeaveMonths": null
       },
-      "recentChanges": [
-        {
-          "type": "expansion",
-          "leaveType": "other",
-          "description": "Parent's leave extended to 9 weeks per parent (August 2024), from 5 weeks, to comply with EU Work-Life Balance Directive."
-        },
-        {
-          "type": "expansion",
-          "leaveType": "maternity",
-          "description": "Benefit rate increased from EUR 274 to EUR 289/week from January 2025. Maternity leave can now be postponed for serious health conditions (November 2024)."
-        }
-      ],
+      "recentChanges": [],
       "pensionRights": {
         "continuesDuringLeave": true,
         "details_en": "State pension contributions automatically covered during paid Maternity leave",
@@ -3190,7 +3373,13 @@
         "entitlementAgeMonths": null,
         "gapAfterLeaveMonths": null
       },
-      "recentChanges": [],
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "other",
+          "description": "fathers can use sickness leave if a newborn is hospitalised"
+        }
+      ],
       "pensionRights": {
         "continuesDuringLeave": null,
         "details_en": "No explicit mention of pension contributions during leave",
@@ -3290,9 +3479,24 @@
       },
       "recentChanges": [
         {
-          "type": "expansion",
+          "type": "introduction",
+          "leaveType": "paternity",
+          "description": "mandatory leave for an intentional parent in a same-sex couple"
+        },
+        {
+          "type": "introduction",
           "leaveType": "parental",
-          "description": "2025 budget law increased parental leave payment rates. Working mothers' bonus extended to temporary and self-employed workers. EUR 1,000 bonus per child born/adopted from Jan 2025 for families with ISEE under EUR 40,000."
+          "description": "mandatory leave for an intentional parent in a same-sex couple"
+        },
+        {
+          "type": "recalibration",
+          "leaveType": "parental",
+          "description": "the extension in the age limit"
+        },
+        {
+          "type": "recalibration",
+          "leaveType": "other",
+          "description": "the extension in the age limit and in the number of days of unpaid leave for sick children"
         }
       ],
       "pensionRights": {
@@ -3391,18 +3595,7 @@
         "entitlementAgeMonths": null,
         "gapAfterLeaveMonths": null
       },
-      "recentChanges": [
-        {
-          "type": "introduction",
-          "leaveType": "parental",
-          "description": "Postnatal Leave Support Benefit introduced from April 2025, bringing effective income replacement to ~100% net for up to 4 weeks per parent when both parents take leave."
-        },
-        {
-          "type": "expansion",
-          "leaveType": "other",
-          "description": "Employers obliged to offer flexible working measures for parents of children 3-6 years. Overtime exemption expanded to parents of preschool children. Telework added as employer obligation for parents of children under 3."
-        }
-      ],
+      "recentChanges": [],
       "pensionRights": {
         "continuesDuringLeave": true,
         "details_en": "Recipients exempted from social insurance contributions (including pension) during leave",
@@ -3505,13 +3698,23 @@
       "recentChanges": [
         {
           "type": "expansion",
-          "leaveType": "paternity",
-          "description": "Paternity leave doubled from 10 to 20 days, all fully paid (2025)."
+          "leaveType": "maternity",
+          "description": "benefit height"
         },
         {
           "type": "expansion",
-          "leaveType": "parental",
-          "description": "Parental leave payment significantly increased with higher ceilings. Bonus leave of 6 months added when both parents take 3+ months. Enhanced benefits for single parents and parents of children with severe disabilities."
+          "leaveType": "paternity",
+          "description": "benefit height"
+        },
+        {
+          "type": "recalibration",
+          "leaveType": "paternity",
+          "description": "prolongation of the taking-up period"
+        },
+        {
+          "type": "introduction",
+          "leaveType": "other",
+          "description": "5 days for miscarriage and stillbirth for fathers (from September 2026)"
         }
       ],
       "subnational": [
@@ -3628,7 +3831,7 @@
         }
       },
       "ecec": {
-        "universalEntitlement": false,
+        "universalEntitlement": true,
         "entitlementAgeMonths": 60,
         "gapAfterLeaveMonths": 54
       },
@@ -3636,12 +3839,7 @@
         {
           "type": "expansion",
           "leaveType": "maternity",
-          "description": "Maternity allowance for unemployed women and top-ups for employed women increased to EUR 319.5/month (from EUR 170) following minimum wage rise in June 2025."
-        },
-        {
-          "type": "expansion",
-          "leaveType": "other",
-          "description": "One-year preparatory pre-school programme became mandatory from 2024/25 school year."
+          "description": "benefit height"
         }
       ],
       "pensionRights": {
@@ -3742,9 +3940,19 @@
       },
       "recentChanges": [
         {
-          "type": "cutback",
+          "type": "expansion",
           "leaveType": "parental",
-          "description": "From January to December 2025, parental benefit reduced to 75% of normal granted amount for working parents who continue employment during leave."
+          "description": "benefit payment period extended for parents with preterm children"
+        },
+        {
+          "type": "recalibration",
+          "leaveType": "parental",
+          "description": "additional eligibility criteria"
+        },
+        {
+          "type": "expansion",
+          "leaveType": "parental",
+          "description": "increase in childcare allowance"
         }
       ],
       "pensionRights": {
@@ -3842,13 +4050,7 @@
         "entitlementAgeMonths": null,
         "gapAfterLeaveMonths": null
       },
-      "recentChanges": [
-        {
-          "type": "expansion",
-          "leaveType": "other",
-          "description": "From January 2025, one-off birth payment increased to EUR 770 (from EUR 605); child allowance increased to EUR 122.50; increased allowances for large families, poor families, and families with disabled children."
-        }
-      ],
+      "recentChanges": [],
       "pensionRights": {
         "continuesDuringLeave": true,
         "details_en": "Women on Maternity leave receive pension credits",
@@ -3945,13 +4147,7 @@
         "entitlementAgeMonths": 12,
         "gapAfterLeaveMonths": 0
       },
-      "recentChanges": [
-        {
-          "type": "recalibration",
-          "leaveType": "other",
-          "description": "Minimum social wage increased, affecting minimum and maximum benefit levels."
-        }
-      ],
+      "recentChanges": [],
       "pensionRights": {
         "continuesDuringLeave": true,
         "details_en": "Pension contributions made during leave; Parental leave payments subject to social contributions",
@@ -4047,19 +4243,34 @@
       },
       "ecec": {
         "universalEntitlement": true,
-        "entitlementAgeMonths": 3,
+        "entitlementAgeMonths": 36,
         "gapAfterLeaveMonths": 0
       },
       "recentChanges": [
         {
-          "type": "expansion",
-          "leaveType": "paternity",
-          "description": "Paternity leave extended from 5 days (public) / 1 day (private) to 10 working days, paid at 100%."
+          "type": "introduction",
+          "leaveType": "other",
+          "description": "pregnancy injury leave"
         },
         {
-          "type": "recalibration",
+          "type": "introduction",
           "leaveType": "other",
-          "description": "Government launched consultation on miscarriage leave scheme in April 2025."
+          "description": "special parental bereavement leave"
+        },
+        {
+          "type": "introduction",
+          "leaveType": "other",
+          "description": "neo-natal care leave"
+        },
+        {
+          "type": "introduction",
+          "leaveType": "other",
+          "description": "miscarriage leave"
+        },
+        {
+          "type": "expansion",
+          "leaveType": "other",
+          "description": "flexible working"
         }
       ],
       "pensionRights": {
@@ -4161,15 +4372,9 @@
       "ecec": {
         "universalEntitlement": true,
         "entitlementAgeMonths": 0,
-        "gapAfterLeaveMonths": null
+        "gapAfterLeaveMonths": 0
       },
-      "recentChanges": [
-        {
-          "type": "recalibration",
-          "leaveType": "other",
-          "description": "~8 proposals in Congress to extend maternity (14-20 weeks) and paternity (10 days to 8 weeks) leave, none yet approved. Progress continues at state level for public sector employees."
-        }
-      ],
+      "recentChanges": [],
       "subnational": [
         {
           "parentCountry": "MX",
@@ -4430,7 +4635,7 @@
         }
       },
       "ecec": {
-        "universalEntitlement": false,
+        "universalEntitlement": true,
         "entitlementAgeMonths": 48,
         "gapAfterLeaveMonths": 40
       },
@@ -4529,16 +4734,10 @@
       },
       "ecec": {
         "universalEntitlement": false,
-        "entitlementAgeMonths": 36,
+        "entitlementAgeMonths": null,
         "gapAfterLeaveMonths": null
       },
-      "recentChanges": [
-        {
-          "type": "introduction",
-          "leaveType": "other",
-          "description": "From July 2024, parents can get back up to 25% of weekly ECEC fees (Family Boost scheme), max NZD 975 per quarter."
-        }
-      ],
+      "recentChanges": [],
       "pensionRights": {
         "continuesDuringLeave": false,
         "details_en": "No pension credits accrued during leave; KiwiSaver contributions cease unless employee opts to continue",
@@ -4633,23 +4832,7 @@
         "entitlementAgeMonths": 12,
         "gapAfterLeaveMonths": 0
       },
-      "recentChanges": [
-        {
-          "type": "expansion",
-          "leaveType": "parental",
-          "description": "From July 2024, parental benefit at 80% extended from 295 to 306 days to equalize total payment with 100% option."
-        },
-        {
-          "type": "expansion",
-          "leaveType": "parental",
-          "description": "From August 2024, fathers'/co-mothers' independent right to parental benefit extended by 2 weeks (total 10 weeks)."
-        },
-        {
-          "type": "cutback",
-          "leaveType": "other",
-          "description": "From August 2024, cash-for-care benefit reduced to max 7 months (until child turns 19 months, down from 24 months)."
-        }
-      ],
+      "recentChanges": [],
       "pensionRights": {
         "continuesDuringLeave": true,
         "details_en": "Pension rights continue to accrue based on benefit level (e.g. 80% of salary)",
@@ -4744,13 +4927,7 @@
         "entitlementAgeMonths": 36,
         "gapAfterLeaveMonths": 0
       },
-      "recentChanges": [
-        {
-          "type": "introduction",
-          "leaveType": "maternity",
-          "description": "December 2024: Parliament approved supplementary maternity leave for parents of premature born children, effective March 2025."
-        }
-      ],
+      "recentChanges": [],
       "pensionRights": {
         "continuesDuringLeave": true,
         "details_en": "Leave is a fully contributory period for pension; applies to both Maternity and Parental leave",
@@ -4844,8 +5021,8 @@
       },
       "ecec": {
         "universalEntitlement": true,
-        "entitlementAgeMonths": 48,
-        "gapAfterLeaveMonths": 12
+        "entitlementAgeMonths": 36,
+        "gapAfterLeaveMonths": 0
       },
       "recentChanges": [],
       "subnational": [
@@ -4991,14 +5168,14 @@
       },
       "ecec": {
         "universalEntitlement": true,
-        "entitlementAgeMonths": 24,
+        "entitlementAgeMonths": 0,
         "gapAfterLeaveMonths": 0
       },
       "recentChanges": [
         {
           "type": "cutback",
-          "leaveType": "other",
-          "description": "EGO 156/2024: Freezing of social benefits due to fiscal austerity; Social Reference Indicator remains at RON660 in 2025."
+          "leaveType": "parental",
+          "description": "10% health care contribution needs to be paid on parental benefits"
         }
       ],
       "subnational": [
@@ -5117,18 +5294,7 @@
         "entitlementAgeMonths": 2,
         "gapAfterLeaveMonths": 0
       },
-      "recentChanges": [
-        {
-          "type": "expansion",
-          "leaveType": "other",
-          "description": "2025: Maternity Capital programme extended to 2030 with new spending options. Family Mortgage Program extended to 2030."
-        },
-        {
-          "type": "expansion",
-          "leaveType": "other",
-          "description": "2025: 41 regions with below-average fertility receive federal subsidies including RUB100,000 for pregnant students."
-        }
-      ],
+      "recentChanges": [],
       "subnational": [
         {
           "parentCountry": "RU",
@@ -5258,9 +5424,9 @@
         }
       },
       "ecec": {
-        "universalEntitlement": false,
-        "entitlementAgeMonths": 66,
-        "gapAfterLeaveMonths": 54
+        "universalEntitlement": true,
+        "entitlementAgeMonths": 72,
+        "gapAfterLeaveMonths": 36
       },
       "recentChanges": [],
       "pensionRights": {
@@ -5354,19 +5520,29 @@
       },
       "ecec": {
         "universalEntitlement": true,
-        "entitlementAgeMonths": 36,
-        "gapAfterLeaveMonths": null
+        "entitlementAgeMonths": 60,
+        "gapAfterLeaveMonths": 24
       },
       "recentChanges": [
         {
           "type": "expansion",
           "leaveType": "maternity",
-          "description": "January 2025: Maternity benefit cap increased from EUR1,994 to EUR2,186 in line with wage growth."
+          "description": "benefit level"
+        },
+        {
+          "type": "expansion",
+          "leaveType": "paternity",
+          "description": "benefit level"
         },
         {
           "type": "expansion",
           "leaveType": "parental",
-          "description": "January 2025: Parental allowance increased to EUR482 (from EUR473) for those with prior maternity benefit, EUR352 (from EUR345) for others."
+          "description": "benefit level"
+        },
+        {
+          "type": "expansion",
+          "leaveType": "other",
+          "description": "benefit level (sickness leave – to take care of a sick relative, long-term care benefit)"
         }
       ],
       "pensionRights": {
@@ -5460,10 +5636,16 @@
       },
       "ecec": {
         "universalEntitlement": true,
-        "entitlementAgeMonths": 12,
+        "entitlementAgeMonths": 13.2,
         "gapAfterLeaveMonths": 0
       },
-      "recentChanges": [],
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "parental",
+          "description": "15 days of leave for foster parents of a child 8-15"
+        }
+      ],
       "pensionRights": {
         "continuesDuringLeave": true,
         "details_en": "Parent caring for child in first year receives pension credits; social security contributions paid on proportional earnings",
@@ -5578,9 +5760,9 @@
       "maternity": {
         "exists": true,
         "durationMonths": {
-          "total": 3.7,
-          "paid": 3.7,
-          "wellPaid": 3.7
+          "total": 4.42,
+          "paid": 4.42,
+          "wellPaid": 4.42
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -5595,9 +5777,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 3.72,
-          "paid": 3.72,
-          "wellPaid": 3.72
+          "total": 4.42,
+          "paid": 4.42,
+          "wellPaid": 4.42
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -5658,9 +5840,24 @@
       },
       "recentChanges": [
         {
-          "type": "recalibration",
+          "type": "expansion",
           "leaveType": "maternity",
-          "description": "2024: Constitutional Court ruled that lone mothers must receive both parents' optional Birth and Childcare leave (26 weeks total)."
+          "description": "leave length (3 weeks; 13 weeks for lone parents)"
+        },
+        {
+          "type": "expansion",
+          "leaveType": "maternity",
+          "description": "flat rate benefit for all employed women who do not meet eligibility requirements extended in case of adoption and foster care"
+        },
+        {
+          "type": "expansion",
+          "leaveType": "paternity",
+          "description": "leave length (3 weeks; 13 weeks for lone parents)"
+        },
+        {
+          "type": "expansion",
+          "leaveType": "paternity",
+          "description": "flat rate benefit for all second parents who do not meet eligibility requirements extended in case of adoption and foster care"
         }
       ],
       "subnational": [
@@ -5839,13 +6036,7 @@
         "entitlementAgeMonths": 12,
         "gapAfterLeaveMonths": 0
       },
-      "recentChanges": [
-        {
-          "type": "recalibration",
-          "leaveType": "parental",
-          "description": "From July 2024: Up to 60 'double days' can be used by both parents together during child's first 15 months. Up to 45 days transferable to someone else (e.g. grandparents)."
-        }
-      ],
+      "recentChanges": [],
       "pensionRights": {
         "continuesDuringLeave": true,
         "details_en": "All parental leave benefits offer pension credits; extra pension supplement for lower-earning parent during child's first four years",
@@ -5940,16 +6131,10 @@
       },
       "ecec": {
         "universalEntitlement": false,
-        "entitlementAgeMonths": 48,
-        "gapAfterLeaveMonths": 42
+        "entitlementAgeMonths": null,
+        "gapAfterLeaveMonths": null
       },
-      "recentChanges": [
-        {
-          "type": "recalibration",
-          "leaveType": "other",
-          "description": "April 2025: Popular initiative for a national parental leave launched (36 weeks total, 18 per parent). Requires 100,000 signatures within 18 months."
-        }
-      ],
+      "recentChanges": [],
       "subnational": [
         {
           "parentCountry": "CH",
@@ -6177,7 +6362,7 @@
       },
       "ecec": {
         "universalEntitlement": false,
-        "entitlementAgeMonths": 36,
+        "entitlementAgeMonths": null,
         "gapAfterLeaveMonths": null
       },
       "recentChanges": [],
@@ -6275,18 +6460,18 @@
       "ecec": {
         "universalEntitlement": true,
         "entitlementAgeMonths": 36,
-        "gapAfterLeaveMonths": 24
+        "gapAfterLeaveMonths": 22.5
       },
       "recentChanges": [
         {
-          "type": "introduction",
-          "leaveType": "other",
-          "description": "April 2025: Neonatal Care Leave introduced - up to 12 weeks paid leave for parents of babies in neonatal care."
+          "type": "recalibration",
+          "leaveType": "paternity",
+          "description": "‘day one’ right for employees to leave (but not payment)"
         },
         {
           "type": "recalibration",
-          "leaveType": "paternity",
-          "description": "Employment Rights Bill underway: Paternity leave and Parental leave to become 'day one' rights (removing qualifying periods)."
+          "leaveType": "parental",
+          "description": "‘day one’ right for employees to leave (but not payment)"
         }
       ],
       "subnational": [
@@ -6438,7 +6623,18 @@
         "entitlementAgeMonths": null,
         "gapAfterLeaveMonths": null
       },
-      "recentChanges": [],
+      "recentChanges": [
+        {
+          "type": "expansion",
+          "leaveType": "parental",
+          "description": "availability at the state level"
+        },
+        {
+          "type": "expansion",
+          "leaveType": "other",
+          "description": "made permanent an employer PFML tax credit and expanded the definition of qualified employee, allowing increased access"
+        }
+      ],
       "subnational": [
         {
           "parentCountry": "US",
@@ -6928,9 +7124,9 @@
       "paternity": {
         "exists": true,
         "durationMonths": {
-          "total": 0.44,
-          "paid": 0.44,
-          "wellPaid": 0.44
+          "total": 0.67,
+          "paid": 0.67,
+          "wellPaid": 0.67
         },
         "paymentRate": 100,
         "paymentType": "earnings-related",
@@ -6993,7 +7189,7 @@
         {
           "type": "expansion",
           "leaveType": "paternity",
-          "description": "Law 20,312 (April 2024): Private sector paternity leave increased to 17 days (from January 2026: further increase). Protection from dismissal strengthened."
+          "description": "lenght"
         }
       ],
       "pensionRights": {
@@ -7087,24 +7283,29 @@
       },
       "ecec": {
         "universalEntitlement": false,
-        "entitlementAgeMonths": 60,
+        "entitlementAgeMonths": null,
         "gapAfterLeaveMonths": null
       },
       "recentChanges": [
         {
           "type": "expansion",
           "leaveType": "maternity",
-          "description": "2024 Social Insurance Law (effective July 2025): Expanded coverage to new worker groups including part-time workers, business household owners. Extended eligible conditions for infertility treatment."
+          "description": "leave length for the 2nd child (1 week)"
+        },
+        {
+          "type": "introduction",
+          "leaveType": "maternity",
+          "description": "maternity allowance for voluntary social insurance contributors"
         },
         {
           "type": "expansion",
           "leaveType": "paternity",
-          "description": "Paternity leave can now be taken within 60 days (extended from 30 days) after birth."
+          "description": "leave length for the 2nd child (1 week)"
         },
         {
           "type": "expansion",
-          "leaveType": "maternity",
-          "description": "Prenatal check-up leave increased from 1 to 2 working days per visit."
+          "leaveType": "other",
+          "description": "benefit for stillbirths or fetal death after a 22-week pregnancy"
         }
       ],
       "pensionRights": {

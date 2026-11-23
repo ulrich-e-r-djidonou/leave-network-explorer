@@ -1,23 +1,9 @@
-import { useState, useEffect } from "react";
-import type { CountryData, Country } from "../types";
+import type { Country } from "../types";
+import { useYear } from "../contexts/YearContext";
 
+/** Données de l'édition sélectionnée (voir YearContext). */
 export function useCountryData() {
-  const [data, setData] = useState<CountryData | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/countries.json`)
-      .then((res) => res.json())
-      .then((json) => {
-        setData(json);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Failed to load country data:", err);
-        setLoading(false);
-      });
-  }, []);
-
+  const { data, loading } = useYear();
   return { data, loading };
 }
 

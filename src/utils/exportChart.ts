@@ -7,14 +7,15 @@ import html2canvas from "html2canvas";
 export async function downloadChartAsPNG(
   container: HTMLElement | null,
   filename = "chart.png",
-  lang: "fr" | "en" = "fr"
+  lang: "fr" | "en" = "fr",
+  edition?: number | null
 ): Promise<void> {
   if (!container) return;
 
   const watermark =
     lang === "fr"
-      ? "Source : LPRN 2025 — © Ulrich Djidonou"
-      : "Source: LPRN 2025 — © Ulrich Djidonou";
+      ? `Source : LPRN ${edition ?? ""} — © Ulrich Djidonou`
+      : `Source: LPRN ${edition ?? ""} — © Ulrich Djidonou`;
 
   try {
     const canvas = await html2canvas(container, {

@@ -1,0 +1,22 @@
+{
+  "_lisez_moi": "Sources de l'edition 2026. Chemins relatifs a la racine du depot ; les fichiers restent hors du depot public et sont verifies par empreinte SHA-256 avant tout traitement.",
+  "excel_lprn": {
+    "chemin": "../../leave-network-md-agy/Dobrotic_et_al_LPRNdata_2023_2026.xlsx",
+    "sha256": "0612f87dcf3a78418d75fe8554a2fe7d704a47aeeda2b768142378d56f29a98a",
+    "url": "https://leavenetwork.org/fileadmin/user_upload/leavenetwork/Annual_Reviews/2026/comparative_tables/Dobrotic_et_al_LPRNdata_2023_2026.xlsx",
+    "page": "https://leavenetwork.org/annual-review-reports/cross-country-comparisons-2026",
+    "citation": "Dobrotić, I., Arnalds, A. Á., Kaufman, G., Koslowski, A., Moss, P., and Valentova, M. (2026) 22nd International Review of Leave Policies and Related Research 2026: comparative tables 2023-2026. DOI : osf.io/qut8e"
+  },
+  "tableaux_pdf_codex": {
+    "_role": "Extraction Codex des tableaux comparatifs du rapport complet (commit 70385a6 du depot leave-network-md-agy). Source independante de l'Excel, utilisee pour l'ECEC (tableau 4), les changements (tableau 6) et le controle.",
+    "dossier": "../../leave-network-md-agy/extraction_codex/sortie/tableaux/comparatifs/",
+    "pdf_rapport": "Dobrotic_et_al_LP_R_2026_final_web.pdf (SHA-256 40d650b015ef82634d74189fb42c4c1028ab37364c60da8d51cc0d89e82f0c31)",
+    "fichiers": {
+      "T1_maternite.csv": "200d9bc319a03ac1ee565fc5939a0fc075ff3eae0a33a66e6a8ed2c5648d747b",
+      "T2_paternite.csv": "f199a001cde8dcc273c1599a4b8790fffcf85f3cb97398e36e066039e99987dc",
+      "T3_parental.csv": "7ae82190728abce7b812d6c42754725c139697c96f10150d97fd0509654c9970",
+      "T4_ecec.csv": "9156da971072e65a0653f3709a4d6555baddb55e264d139f7cdc140cc69b0ba7",
+      "T6_changements.csv": "79c7815c664ec2050796f6149fdcd4dffc62f090c4772cbf6c4cab547eda0689"
+    }
+  }
+}

@@ -100,11 +100,31 @@ export interface CountryData {
   metadata: {
     year: number;
     asOf: string;
+    asOfFr?: string;
     source: string;
     editors: string;
     totalCountries: number;
+    /** Période couverte par recentChanges, telle qu'imprimée (ex. "2024/25"). */
+    changesPeriod?: string;
+    /** Avertissement affiché tant qu'une édition n'est pas entièrement vérifiée. */
+    provisionalNote_fr?: string;
+    provisionalNote_en?: string;
   };
   countries: Country[];
+}
+
+export type EditionStatus = "final" | "provisional";
+
+export interface EditionEntry {
+  year: number;
+  file: string;
+  status: EditionStatus;
+}
+
+/** Index des éditions disponibles : public/data/years.json */
+export interface EditionIndex {
+  default: number;
+  years: EditionEntry[];
 }
 
 export type LeaveType = "maternity" | "paternity" | "parental";

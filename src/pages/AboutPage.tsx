@@ -1,9 +1,11 @@
 import { useTranslation } from "../hooks/useTranslation";
+import { useYear } from "../contexts/YearContext";
 import { BookOpen, ShieldAlert } from "lucide-react";
 
 export function AboutPage() {
   const { lang } = useTranslation();
   const isFr = lang === "fr";
+  const meta = useYear().data?.metadata;
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8 space-y-6">
@@ -27,7 +29,7 @@ export function AboutPage() {
               Ce tableau de bord interactif visualise les données de la{" "}
               <strong>International Review of Leave Policies and Research</strong> publiée chaque
               année en septembre par le Leave Policy Research Network (LPRN). La version actuelle couvre les
-              politiques en vigueur en <strong>avril 2025</strong>, incluant 52 pays et plus de
+              politiques en vigueur en <strong>{meta?.asOfFr ?? meta?.asOf}</strong>, incluant {meta?.totalCountries} pays et plus de
               60 entités infranationales (provinces canadiennes, états américains, cantons suisses, etc.).
             </>
           ) : (
@@ -35,7 +37,7 @@ export function AboutPage() {
               This interactive dashboard visualizes data from the{" "}
               <strong>International Review of Leave Policies and Research</strong>, published annually
               in September by the Leave Policy Research Network (LPRN). The current version covers policies in force
-              in <strong>April 2025</strong>, including 52 countries and more than 60 subnational
+              in <strong>{meta?.asOf}</strong>, including {meta?.totalCountries} countries and more than 60 subnational
               entities (Canadian provinces, US states, Swiss cantons, etc.).
             </>
           )}
@@ -44,8 +46,8 @@ export function AboutPage() {
         <div className="border-t border-slate-100 dark:border-slate-700 pt-4 space-y-2 text-xs text-slate-500 dark:text-slate-400">
           <p>
             <strong className="text-slate-700 dark:text-slate-300">Source :</strong>{" "}
-            Dobrotic, I., Blum, S., Kaufman, G., Koslowski, A., Moss, P. and Valentova, M. (eds.) (2025).{" "}
-            <em>International Review of Leave Policies and Research 2025</em>. Leave Policy Research Network.
+            {meta?.editors} (eds.) ({meta?.year}).{" "}
+            <em>{meta?.source}</em>. Leave Policy Research Network.
           </p>
           <p>
             <strong className="text-slate-700 dark:text-slate-300">{isFr ? "Conçu et développé par" : "Built by"} :</strong> Ulrich Djidonou (Économiste-chercheur).

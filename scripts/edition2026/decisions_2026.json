@@ -1,0 +1,138 @@
+{
+  "_lisez_moi": "Decisions manuelles de l'edition 2026. 'metadata' : en-tete du fichier publie. 'valeurs' : arbitrages qui priment sur le calcul automatique, chacun avec sa justification et sa source. 'costa_rica' : fiche du seul pays nouveau en 2026 (aucune base 2025).",
+  "metadata": {
+    "year": 2026,
+    "asOf": "April 2026",
+    "asOfFr": "avril 2026",
+    "source": "22nd International Review of Leave Policies and Related Research 2026",
+    "editors": "Dobrotić, I., Arnalds, Á. A., Kaufman, G., Koslowski, A., Moss, P. and Valentova, M.",
+    "totalCountries": 53,
+    "changesPeriod": "2025/26",
+    "provisionalNote_fr": "Édition 2026 provisoire, en cours de vérification. Les durées et caractéristiques des congés reprennent l'édition 2025 lorsque la base de données du LPRN 2023-2026 ne signale aucun changement, et suivent la base 2026 sinon ; le Costa Rica est ajouté. La garde d'enfants (ECEC) et les changements récents viennent des tableaux 4 et 6 du rapport 2026. Les autres champs sont repris de 2025. Des écarts hérités de 2025 avec les tableaux du rapport sont recensés et attendent un arbitrage.",
+    "provisionalNote_en": "Provisional 2026 edition, under review. Leave durations and features carry over the 2025 edition where the LPRN 2023-2026 dataset reports no change, and follow the 2026 dataset otherwise; Costa Rica is added. Childcare (ECEC) and recent changes come from Tables 4 and 6 of the 2026 report. Other fields are carried over from 2025. Discrepancies inherited from 2025 with the report tables are listed and await review."
+  },
+  "valeurs": [],
+  "costa_rica": {
+    "justification": "Nouvelle fiche 2026. Durees, taux et indicateurs : Excel LPRN 2026 (MaternityLeave et ParentalLeave « Costa Rica » ; PaternityLeave « Costa Rica (private) » pour la fiche nationale, « Costa Rica (public) » pour CR-PUB), semaines / 4,3 arrondies a 2 decimales : maternite 17,14 sem. (3,99 mois), paternite 1,6 sem. (0,37), secteur public 4,3 sem. (1). Autres champs : note de pays (rapport 2026, PDF 159 a 165) : financement employeur 50 % et CCSS 50 % ; pause d'allaitement payee d'une heure par jour ; soins aux proches et travail flexible : « No statutory entitlement » ; autres conges : « None reported », codes false ; retraite : la CCSS continue de crediter le compte de retraite. Region « North America » : choix editorial, comme le Mexique. ECEC et changements : tableaux 4 et 6.",
+    "fiche": {
+      "name": "Costa Rica",
+      "iso2": "CR",
+      "iso3": "CRI",
+      "region": "North America",
+      "federal": false,
+      "subnationalVariations": [
+        "Public sector: 30 calendar days of paternity leave; private sector: 8 days (2 days per week during the first 4 weeks)"
+      ],
+      "maternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 3.99,
+          "paid": 3.99,
+          "wellPaid": 3.99
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": true,
+        "transferable": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "additionalForMultiple": false,
+        "fundingSource": "Employer (50%) and Costa Rican Social Security Fund, CCSS (50%)"
+      },
+      "paternity": {
+        "exists": true,
+        "durationMonths": {
+          "total": 0.37,
+          "paid": 0.37,
+          "wellPaid": 0.37
+        },
+        "paymentRate": 100,
+        "paymentType": "earnings-related",
+        "ceiling": false,
+        "obligatory": false,
+        "flexPartTime": false,
+        "flexBlocks": true,
+        "fundingSource": "Employer"
+      },
+      "parental": {
+        "exists": false,
+        "durationMonths": {
+          "total": 0,
+          "paid": 0,
+          "wellPaid": 0
+        },
+        "entitlementType": null,
+        "motherQuotaMonths": null,
+        "fatherQuotaMonths": null,
+        "sharedPortionMonths": null,
+        "transferable": false,
+        "paymentRate": null,
+        "paymentType": null,
+        "ceiling": false,
+        "flexPartTime": false,
+        "flexBlocks": false,
+        "fundingSource": null
+      },
+      "childcareLeave": {
+        "exists": false,
+        "durationMonths": null,
+        "paid": false,
+        "details": "No statutory entitlement"
+      },
+      "otherMeasures": {
+        "sickChildLeave": {
+          "exists": false,
+          "daysPerYear": null,
+          "paid": false
+        },
+        "breastfeeding": {
+          "exists": true
+        },
+        "flexibleWork": {
+          "rightToRequest": false
+        },
+        "domesticViolenceLeave": {
+          "exists": false
+        },
+        "bereavementLeave": {
+          "exists": false
+        }
+      },
+      "pensionRights": {
+        "continuesDuringLeave": true,
+        "details_en": "The CCSS continues to credit the worker's pension account during Maternity leave",
+        "details_fr": "La CCSS continue de créditer le compte de retraite de la travailleuse pendant le congé de maternité"
+      },
+      "ecec": {
+        "universalEntitlement": false,
+        "entitlementAgeMonths": null,
+        "gapAfterLeaveMonths": null
+      },
+      "recentChanges": [],
+      "subnational": [
+        {
+          "parentCountry": "CR",
+          "name": "Costa Rica (public sector)",
+          "code": "CR-PUB",
+          "type": "sector",
+          "paternity": {
+            "exists": true,
+            "durationMonths": {
+              "total": 1,
+              "paid": 1,
+              "wellPaid": 1
+            },
+            "paymentRate": 100,
+            "paymentType": "earnings-related",
+            "ceiling": false,
+            "obligatory": false,
+            "flexPartTime": false,
+            "flexBlocks": false,
+            "notes": "30 calendar days, taken as a continuous period after the birth"
+          }
+        }
+      ]
+    }
+  }
+}

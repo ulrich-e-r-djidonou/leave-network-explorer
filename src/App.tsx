@@ -13,6 +13,7 @@ import { CountryPage } from "./pages/CountryPage";
 import { MethodologyPage } from "./pages/MethodologyPage";
 import { CustomScorePage } from "./pages/CustomScorePage";
 import { useCountryData } from "./hooks/useCountryData";
+import { useYear } from "./contexts/YearContext";
 import { useState } from "react";
 import type { Country } from "./types";
 import { CountryDetail } from "./components/Country/CountryDetail";
@@ -21,8 +22,9 @@ import ChatBot from "./components/ChatBot/ChatBot";
 
 function AppInner() {
   const { data, loading } = useCountryData();
+  const { edition } = useYear();
   const [detailCountry, setDetailCountry] = useState<Country | null>(null);
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
 
   if (loading) {
     return (
@@ -48,6 +50,13 @@ function AppInner() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 flex flex-col selection:bg-teal-500 selection:text-white">
       <Header />
+      {edition?.status === 'provisional' && (
+        <div role="status" className="bg-amber-50 dark:bg-amber-950/40 border-b border-amber-200 dark:border-amber-900/50">
+          <p className="max-w-7xl mx-auto px-4 sm:px-6 py-2 text-xs text-amber-900 dark:text-amber-200 leading-relaxed">
+            {lang === 'fr' ? data.metadata.provisionalNote_fr : data.metadata.provisionalNote_en}
+          </p>
+        </div>
+      )}
       {detailCountry && (
         <div
           className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 flex items-start justify-center pt-10 sm:pt-16 px-3 sm:px-4 animate-in fade-in duration-200"

@@ -13,7 +13,9 @@ const translations = {
 
     // Header
     app_title: 'Leave Network Explorer',
-    app_subtitle: 'International Review of Leave Policies 2025',
+    edition_label: 'Édition',
+    edition_provisional: 'provisoire',
+    app_subtitle: 'International Review of Leave Policies {year}',
 
     // Indicateurs
     ind_maternity_total: 'Congé maternité (total)',
@@ -27,9 +29,9 @@ const translations = {
     ind_generosity: 'G\u00e9n\u00e9rosit\u00e9 (ETP, mois)',
     ind_pension: 'Cotisations retraite pendant le cong\u00e9',
     ind_wellpaid_total: 'Cong\u00e9s bien pay\u00e9s (total)',
-    rankings_methodology_note: 'Le classement est bas\u00e9 sur l\u2019indicateur s\u00e9lectionn\u00e9 ci-dessous. Les donn\u00e9es proviennent du LPRN 2025 (Leave Policy Research Network) et sont mises \u00e0 jour annuellement. Important : un cong\u00e9 offert ne signifie pas n\u00e9cessairement qu\u2019il est bien r\u00e9mun\u00e9r\u00e9. Consultez l\u2019indicateur \u00ab G\u00e9n\u00e9rosit\u00e9 (ETP) \u00bb pour une mesure tenant compte du taux de remplacement.',
+    rankings_methodology_note: 'Le classement est bas\u00e9 sur l\u2019indicateur s\u00e9lectionn\u00e9 ci-dessous. Les donn\u00e9es proviennent du LPRN {year} (Leave Policy Research Network) et sont mises \u00e0 jour annuellement. Important : un cong\u00e9 offert ne signifie pas n\u00e9cessairement qu\u2019il est bien r\u00e9mun\u00e9r\u00e9. Consultez l\u2019indicateur \u00ab G\u00e9n\u00e9rosit\u00e9 (ETP) \u00bb pour une mesure tenant compte du taux de remplacement.',
     rankings_see_methodology: 'Voir la m\u00e9thodologie',
-    rankings_data_source: 'Donn\u00e9es : LPRN 2025',
+    rankings_data_source: 'Donn\u00e9es : LPRN {year}',
     methodology_title: 'M\u00e9thodologie des scores',
     methodology_subtitle: 'Formules, hypoth\u00e8ses et limites des indices composites',
     nav_methodology: 'M\u00e9thodologie',
@@ -89,7 +91,7 @@ const translations = {
     universal_entitlement: 'Droit universel',
     entitlement_age: "Âge d'accès",
     gap_after_leave: 'Écart après congé',
-    recent_changes: 'Changements récents (2024/25)',
+    recent_changes: 'Changements récents ({period})',
     subnational_variations: 'Variations infranationales',
     total_duration: 'Durée totale',
     paid_duration: 'Durée payée',
@@ -125,8 +127,8 @@ const translations = {
     analytics_gap_desc:
       "Mois entre la fin du congé parental et le droit ECEC. Positif = période sans couverture.",
     analytics_gap_months: 'mois',
-    analytics_reforms_title: 'Réformes 2024/25 — Direction des changements',
-    analytics_reforms_desc: 'Nombre de réformes par type parmi les 52 pays.',
+    analytics_reforms_title: 'Réformes {period} — Direction des changements',
+    analytics_reforms_desc: 'Nombre de réformes par type parmi les {n} pays.',
     analytics_expansion: 'Expansion',
     analytics_introduction: 'Introduction',
     analytics_recalibration: 'Recalibration',
@@ -285,7 +287,9 @@ const translations = {
 
     // Header
     app_title: 'Leave Network Explorer',
-    app_subtitle: 'International Review of Leave Policies 2025',
+    edition_label: 'Édition',
+    edition_provisional: 'provisoire',
+    app_subtitle: 'International Review of Leave Policies {year}',
 
     // Indicators
     ind_maternity_total: 'Maternity leave (total)',
@@ -299,9 +303,9 @@ const translations = {
     ind_generosity: 'Generosity (FTE, months)',
     ind_pension: 'Pension contributions during leave',
     ind_wellpaid_total: 'Well-paid leave (total)',
-    rankings_methodology_note: 'Rankings are based on the selected indicator below. Data comes from LPRN 2025 (Leave Policy Research Network) and is updated annually. Important: a leave entitlement does not necessarily mean it is well paid. See the \u201cGenerosity (FTE)\u201d indicator for a measure that accounts for replacement rates.',
+    rankings_methodology_note: 'Rankings are based on the selected indicator below. Data comes from LPRN {year} (Leave Policy Research Network) and is updated annually. Important: a leave entitlement does not necessarily mean it is well paid. See the \u201cGenerosity (FTE)\u201d indicator for a measure that accounts for replacement rates.',
     rankings_see_methodology: 'See methodology',
-    rankings_data_source: 'Data: LPRN 2025',
+    rankings_data_source: 'Data: LPRN {year}',
     methodology_title: 'Score Methodology',
     methodology_subtitle: 'Formulas, assumptions and limitations of composite indices',
     nav_methodology: 'Methodology',
@@ -361,7 +365,7 @@ const translations = {
     universal_entitlement: 'Universal entitlement',
     entitlement_age: 'Entitlement age',
     gap_after_leave: 'Gap after leave',
-    recent_changes: 'Recent changes (2024/25)',
+    recent_changes: 'Recent changes ({period})',
     subnational_variations: 'Subnational variations',
     total_duration: 'Total duration',
     paid_duration: 'Paid duration',
@@ -397,8 +401,8 @@ const translations = {
     analytics_gap_desc:
       'Months between end of parental leave and ECEC entitlement. Positive = coverage gap.',
     analytics_gap_months: 'months',
-    analytics_reforms_title: 'Reforms 2024/25 — Direction of changes',
-    analytics_reforms_desc: 'Number of reforms by type across 52 countries.',
+    analytics_reforms_title: 'Reforms {period} — Direction of changes',
+    analytics_reforms_desc: 'Number of reforms by type across {n} countries.',
     analytics_expansion: 'Expansion',
     analytics_introduction: 'Introduction',
     analytics_recalibration: 'Recalibration',

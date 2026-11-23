@@ -3,11 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun, Moon, SlidersHorizontal } from 'lucide-react';
 import { useTranslation } from '../../hooks/useTranslation';
 import { useTheme } from '../../contexts/ThemeContext';
+import { useYear } from '../../contexts/YearContext';
 
 export function Header() {
   const location = useLocation();
   const { t, lang, setLang } = useTranslation();
   const { theme, toggleTheme } = useTheme();
+  const { editions, year, setYear } = useYear();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const NAV_ITEMS = [
@@ -69,8 +71,27 @@ export function Header() {
           })}
         </nav>
 
-        {/* Controls: Theme toggle + Language toggle + Mobile Hamburger */}
+        {/* Controls: Edition + Theme toggle + Language toggle + Mobile Hamburger */}
         <div className="flex items-center gap-2 shrink-0">
+          {/* Edition selector, shown once more than one edition is published */}
+          {editions.length > 1 && (
+            <label className="flex items-center gap-1.5 bg-slate-800/90 border border-slate-700/50 rounded-lg pl-2.5 pr-1 py-0.5 text-xs font-medium text-slate-300">
+              <span className="hidden sm:inline">{t('edition_label')}</span>
+              <select
+                value={year ?? ''}
+                onChange={(e) => setYear(Number(e.target.value))}
+                className="bg-transparent text-white font-semibold py-1 pr-1 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 cursor-pointer"
+                aria-label={t('edition_label')}
+              >
+                {editions.map((ed) => (
+                  <option key={ed.year} value={ed.year} className="text-slate-900">
+                    {ed.year}{ed.status === 'provisional' ? ` (${t('edition_provisional')})` : ''}
+                  </option>
+                ))}
+              </select>
+            </label>
+          )}
+
           {/* Dark / Light Toggle */}
           <button
             onClick={toggleTheme}

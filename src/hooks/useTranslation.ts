@@ -1,12 +1,22 @@
 import translations from '../i18n/translations';
 import type { TranslationKey } from '../i18n/translations';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useYear } from '../contexts/YearContext';
 
 export function useTranslation() {
   const { lang, setLang } = useLanguage();
+  const { year, data } = useYear();
+
+  // {year}, {period} et {n} viennent des métadonnées de l'édition affichée.
+  const vars: Record<string, string> = {
+    year: String(data?.metadata.year ?? year ?? ''),
+    period: data?.metadata.changesPeriod ?? '',
+    n: String(data?.metadata.totalCountries ?? ''),
+  };
 
   function t(key: TranslationKey): string {
-    return (translations[lang][key] as string) ?? (translations.fr[key] as string) ?? key;
+    const raw = (translations[lang][key] as string) ?? (translations.fr[key] as string) ?? key;
+    return raw.replace(/\{(year|period|n)\}/g, (_, name: string) => vars[name]);
   }
 
   return { t, lang, setLang };
