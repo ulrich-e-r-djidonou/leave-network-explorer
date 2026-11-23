@@ -68,6 +68,7 @@ export function YearProvider({ children }: { children: ReactNode }) {
 
   const setYear = (newYear: number) => {
     if (!editions.some((e) => e.year === newYear)) return;
+    setFailed(false); // Un échec antérieur ne doit pas bloquer la nouvelle édition.
     setYearState(newYear);
     try {
       localStorage.setItem(STORAGE_KEY, String(newYear));

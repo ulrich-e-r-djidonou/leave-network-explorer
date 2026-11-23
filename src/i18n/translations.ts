@@ -287,8 +287,8 @@ const translations = {
 
     // Header
     app_title: 'Leave Network Explorer',
-    edition_label: 'Édition',
-    edition_provisional: 'provisoire',
+    edition_label: 'Edition',
+    edition_provisional: 'provisional',
     app_subtitle: 'International Review of Leave Policies {year}',
 
     // Indicators
