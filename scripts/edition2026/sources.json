@@ -1,5 +1,9 @@
 {
   "_lisez_moi": "Sources de l'edition 2026. Chemins relatifs a la racine du depot ; les fichiers restent hors du depot public et sont verifies par empreinte SHA-256 avant tout traitement.",
+  "dossier_travail": {
+    "_role": "Fichiers de travail hors du depot public : decisions, ecarts declares, provenance, rapports de construction et de controle.",
+    "chemin": "../../leave-network-md-agy/edition2026"
+  },
   "excel_lprn": {
     "chemin": "../../leave-network-md-agy/Dobrotic_et_al_LPRNdata_2023_2026.xlsx",
     "sha256": "0612f87dcf3a78418d75fe8554a2fe7d704a47aeeda2b768142378d56f29a98a",

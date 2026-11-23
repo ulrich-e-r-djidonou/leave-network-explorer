@@ -2,26 +2,26 @@
 
 Toutes les modifications notables apportées à ce projet sont documentées dans ce fichier. Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/).
 
-## [Non publié] - 2026-10-04 (branche `donnees-2026`)
+## [Publié] - 2026-11-23
 
 ### Résumé
-Gestion de plusieurs éditions des données et ajout provisoire de l'édition 2026 (53 pays, Costa Rica compris), construite et contrôlée par des scripts rejouables. L'édition 2025 reste l'édition par défaut et n'est pas modifiée.
+Le site propose plusieurs éditions des données. L'édition 2026 est publiée en version provisoire, l'édition 2025 reste affichée par défaut, et le lecteur voit à tout moment quelle édition il consulte et ce qui la distingue de la précédente.
 
 ### Ajouté
-- `public/data/years.json` (copie dans `data/`) : index des éditions, édition par défaut et statut (`final` ou `provisional`).
-- `src/contexts/YearContext.tsx` : chargement de l'index puis du fichier de l'édition choisie, mémorisée dans le navigateur.
-- Sélecteur d'édition dans l'en-tête, affiché dès que deux éditions existent, et bandeau d'avertissement pour une édition provisoire.
-- `data/countries-2026.json` et `scripts/edition2026/` : sources et empreintes, construction, provenance valeur par valeur, décisions, écarts déclarés et contrôle des chiffres. Méthode complète : `scripts/edition2026/README.md`.
-- Nom français du Costa Rica dans `src/utils/countryNames.ts`.
+- Sélecteur d'édition dans l'en-tête et bandeau signalant une édition provisoire.
+- Édition 2026 (`data/countries-2026.json`, Costa Rica compris), construite et contrôlée par les scripts de `scripts/edition2026/`.
+- Pastille « Données 2025 » ou « Données 2026 » sur les pages de données et les fiches pays, avec une teinte par édition.
+- Dans l'édition 2026, les valeurs qui diffèrent de 2025 portent la valeur 2025 dans la fiche pays et un repère dans la liste de la carte ; un pays absent de 2025 est marqué « Nouveau en 2026 ».
+- Page « Ce qui change » (`/changes`) : valeurs différentes entre l'édition affichée et la précédente, pays par pays, et nouveaux pays.
 
 ### Modifié
-- `countries.json` devient `countries-2025.json` ; ses métadonnées gagnent `asOfFr` et `changesPeriod`, sans changement des données.
-- `t()` remplit `{year}`, `{period}` et `{n}` depuis les métadonnées : sous-titre, source des classements, période des réformes, nombre de pays, page À propos, assistant et filigrane des graphiques suivent l'édition affichée.
-- `src/utils/dataIntegrity.test.ts` vérifie chaque édition déclarée.
+- `countries.json` devient `countries-2025.json`, sans changement des données.
+- Les textes qui citent l'année, la période des réformes ou le nombre de pays suivent l'édition affichée.
+- Les tests d'intégrité vérifient chaque édition déclarée ; un test couvre la comparaison entre éditions.
 
-### Constaté, non corrigé
-- La politique de sécurité ajoutée le 16 septembre 2026 (`index.html`, `img-src 'self' data: blob:`) bloque les tuiles du fond de carte cartocdn : la carte s'affiche sans fond. Correction possible : autoriser `https://*.basemaps.cartocdn.com` dans `img-src`.
-- 40 écarts hérités de l'édition 2025 avec les tableaux du rapport LPRN, déclarés dans `scripts/edition2026/ecarts_declares_2026.json` avec une valeur proposée pour les deux éditions, en attente de décision.
+### Corrigé
+- Plantage de l'application à l'ouverture des fiches pays comportant des entités infranationales d'un type non traduit (10 pays), introduit par la gestion des éditions.
+- Libellés anglais du sélecteur d'édition, reprise après un échec de chargement, en-tête mobile tronqué par le sélecteur.
 
 ## [Non publié] - 2026-08-13
 

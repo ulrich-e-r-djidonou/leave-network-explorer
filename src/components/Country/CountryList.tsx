@@ -5,6 +5,8 @@ import { Search, X } from "lucide-react";
 import { useTranslation } from "../../hooks/useTranslation";
 import type { TranslationKey } from "../../i18n/translations";
 import { getCountryName } from "../../utils/countryNames";
+import { useYear } from "../../contexts/YearContext";
+import { editionTone } from "../../utils/editionTone";
 
 const REGION_LABEL_KEYS: Record<string, string> = {
   All: 'region_all',
@@ -27,6 +29,12 @@ export function CountryList({ countries, indicator, onSelect, selectedIso2 }: Pr
   const [search, setSearch] = useState("");
   const [region, setRegion] = useState<string>("All");
   const { t, lang } = useTranslation();
+  const { previousData, previousYear, editions } = useYear();
+  const prevByIso = useMemo(
+    () => new Map((previousData?.countries ?? []).map((c) => [c.iso2, c])),
+    [previousData],
+  );
+  const prevTone = editionTone(previousYear, editions.map((e) => e.year));
 
   const filtered = useMemo(() => {
     return countries
@@ -44,6 +52,16 @@ export function CountryList({ countries, indicator, onSelect, selectedIso2 }: Pr
 
   const isScore = indicator.includes("gender");
   const isPension = indicator === "pension";
+  const formatValue = (value: number | null) =>
+    value !== null
+      ? isPension
+        ? (value === 1 ? (lang === 'fr' ? 'Oui' : 'Yes') : (lang === 'fr' ? 'Non' : 'No'))
+        : isScore
+          ? `${Math.round(value)}/100`
+          : formatDuration(value, lang)
+      : isPension
+        ? "—"
+        : "N/A";
 
   return (
     <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden flex flex-col h-full max-h-[560px]">
@@ -81,11 +99,25 @@ export function CountryList({ countries, indicator, onSelect, selectedIso2 }: Pr
         </select>
       </div>
 
+      {previousData && (
+        <p className="px-3.5 py-2 text-[11px] text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+          <span className={`w-2 h-2 rounded-full border shrink-0 ${prevTone}`} aria-hidden="true" />
+          {t('diff_list_hint')}
+        </p>
+      )}
+
       {/* List */}
       <div className="flex-1 overflow-y-auto divide-y divide-slate-100 dark:divide-slate-700/60">
         {filtered.map((c, i) => {
           const value = getIndicatorValue(c, indicator);
           const isSelected = selectedIso2 === c.iso2;
+          const prevCountry = previousData ? prevByIso.get(c.iso2) ?? null : undefined;
+          const prevValue = prevCountry ? getIndicatorValue(prevCountry, indicator) : null;
+          const differs =
+            prevCountry !== undefined &&
+            prevCountry !== null &&
+            !(prevValue === value || (prevValue !== null && value !== null && Math.abs(prevValue - value) < 0.005));
+          const prevLabel = `${previousYear}${lang === 'fr' ? ' : ' : ': '}${formatValue(prevValue)}`;
           return (
             <button
               key={c.iso2}
@@ -101,22 +133,28 @@ export function CountryList({ countries, indicator, onSelect, selectedIso2 }: Pr
                 <span className="text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-200 truncate group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                   {getCountryName(c.name, c.iso2, lang)}
                 </span>
+                {prevCountry === null && (
+                  <span className="text-[10px] font-semibold bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-300 px-1.5 py-0.5 rounded-md border border-teal-200/60 dark:border-teal-800/50 shrink-0">
+                    {t('diff_new_country')}
+                  </span>
+                )}
                 {c.subnational && c.subnational.length > 0 && (
                   <span className="text-[10px] font-semibold bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 px-1.5 py-0.5 rounded-md border border-indigo-200/60 dark:border-indigo-800/50 shrink-0">
                     {c.subnational.length}
                   </span>
                 )}
               </div>
-              <span className="text-xs sm:text-sm font-mono font-medium text-slate-600 dark:text-slate-300 tabular-nums shrink-0">
-                {value !== null
-                  ? isPension
-                    ? (value === 1 ? (lang === 'fr' ? 'Oui' : 'Yes') : (lang === 'fr' ? 'Non' : 'No'))
-                    : isScore
-                      ? `${Math.round(value)}/100`
-                      : formatDuration(value, lang)
-                  : isPension
-                    ? "—"
-                    : "N/A"}
+              <span
+                className="text-xs sm:text-sm font-mono font-medium text-slate-600 dark:text-slate-300 tabular-nums shrink-0 flex items-center gap-1.5"
+                title={differs ? prevLabel : undefined}
+              >
+                {differs && (
+                  <>
+                    <span className={`w-2 h-2 rounded-full border ${prevTone}`} aria-hidden="true" />
+                    <span className="sr-only">{prevLabel}</span>
+                  </>
+                )}
+                {formatValue(value)}
               </span>
             </button>
           );

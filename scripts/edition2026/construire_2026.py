@@ -458,7 +458,7 @@ def main():
     if ecarts:
         raise SystemExit("Sources non conformes :\n  " + "\n  ".join(ecarts))
     base = json.loads((S.RACINE / "data/countries-2025.json").read_text(encoding="utf-8"))
-    dec_json = json.loads((S.ICI / "decisions_2026.json").read_text(encoding="utf-8"))
+    dec_json = json.loads((S.TRAVAIL / "decisions_2026.json").read_text(encoding="utf-8"))
     decisions = {(d["entite"], d["champ"]): d for d in dec_json["valeurs"]}
     xl = S.charger_excel()
     t4 = S.charger_tableau("T4_ecec.csv")
@@ -494,7 +494,7 @@ def main():
         (S.RACINE / chemin).write_text(texte, encoding="utf-8", newline="\n")
 
     cols = ["entite", "champ", "statut", "valeur_2025", "valeur_2026", "regle", "excel_2025", "excel_2026", "ligne_excel_2026", "note"]
-    with open(S.ICI / "provenance_2026.csv", "w", encoding="utf-8-sig", newline="") as f:
+    with open(S.TRAVAIL / "provenance_2026.csv", "w", encoding="utf-8-sig", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols, lineterminator="\n")
         w.writeheader()
         for p in prov:
@@ -502,7 +502,7 @@ def main():
 
     non_resolus = [p for p in prov if p["statut"] == "revue"]
     stats = Counter(p["statut"] for p in prov)
-    with open(S.ICI / "A_REVOIR_2026.md", "w", encoding="utf-8", newline="\n") as f:
+    with open(S.TRAVAIL / "A_REVOIR_2026.md", "w", encoding="utf-8", newline="\n") as f:
         f.write("# Valeurs 2026 a revoir\n\nFichier genere par `construire_2026.py`. Chaque ligne garde une valeur provisoire "
                 "(ecart applique ou valeur 2025) tant qu'une decision n'est pas inscrite dans `decisions_2026.json`.\n\n")
         f.write("Bilan des statuts : " + ", ".join(f"{k} {v}" for k, v in sorted(stats.items())) + ".\n\n")

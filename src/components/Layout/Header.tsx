@@ -32,6 +32,7 @@ export function Header() {
     { path: '/analytics', labelKey: 'nav_analytics' as const },
     { path: '/subnational', labelKey: 'nav_subnational' as const },
     { path: '/reforms', labelKey: 'nav_reforms' as const },
+    { path: '/changes', labelKey: 'nav_changes' as const },
     { path: '/data', labelKey: 'nav_data' as const },
     { path: '/methodology', labelKey: 'nav_methodology' as const },
     { path: '/about', labelKey: 'nav_about' as const },

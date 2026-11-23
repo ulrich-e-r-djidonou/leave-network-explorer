@@ -1,3 +1,4 @@
+import { EditionBadge } from "../components/Layout/EditionBadge";
 import { useState, useMemo } from "react";
 import type { Country, SubnationalEntity } from "../types";
 import { formatDuration } from "../utils/calculations";
@@ -62,7 +63,7 @@ export function SubnationalPage({ countries }: Props) {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-8">
       {/* Page header */}
       <div>
-        <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-slate-100">{t('sub_title')}</h2>
+        <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-slate-100 flex flex-wrap items-center gap-2">{t('sub_title')} <EditionBadge /></h2>
         <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">{t('sub_subtitle')}</p>
         <p className="text-xs font-semibold text-teal-600 dark:text-teal-400 mt-1">
           {allEntities.length} {lang === 'fr' ? 'entités infranationales répertoriées dans' : 'subnational entities across'} {countriesWithSub.length} {lang === 'fr' ? 'pays' : 'countries'}

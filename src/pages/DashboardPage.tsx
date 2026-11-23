@@ -6,6 +6,7 @@ import { StatsBar } from "../components/Map/StatsBar";
 import { CountryList } from "../components/Country/CountryList";
 import { CountryDetail } from "../components/Country/CountryDetail";
 import { useTranslation } from "../hooks/useTranslation";
+import { EditionBadge } from "../components/Layout/EditionBadge";
 
 interface Props {
   countries: Country[];
@@ -20,9 +21,12 @@ export function DashboardPage({ countries }: Props) {
     <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
       {/* Indicator selector */}
       <div>
-        <h2 className="text-sm font-medium text-slate-500 dark:text-slate-300 mb-2">
-          {t('dashboard_indicator_label')}
-        </h2>
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+          <h2 className="text-sm font-medium text-slate-500 dark:text-slate-300">
+            {t('dashboard_indicator_label')}
+          </h2>
+          <EditionBadge />
+        </div>
         <IndicatorSelector value={indicator} onChange={setIndicator} />
       </div>
 

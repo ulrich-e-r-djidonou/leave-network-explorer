@@ -1,3 +1,4 @@
+import { EditionBadge } from "../components/Layout/EditionBadge";
 import { useState, useMemo } from "react";
 import { Download, ChevronUp, ChevronDown, Search, X } from "lucide-react";
 import type { Country } from "../types";
@@ -227,7 +228,7 @@ export function DataTablePage({ countries }: Props) {
     <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-slate-100">{t("data_title")}</h1>
+        <h1 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-slate-100 flex flex-wrap items-center gap-2">{t("data_title")} <EditionBadge /></h1>
         <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">{t("data_subtitle")}</p>
       </div>
 

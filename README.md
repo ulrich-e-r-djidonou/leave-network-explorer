@@ -6,7 +6,7 @@ Explorateur interactif des politiques de congés parentaux (maternité, paternit
 
 - `public/data/years.json` liste les éditions disponibles, l'édition par défaut et leur statut. `data/` en garde une copie identique (vérifiée par `src/utils/dataIntegrity.test.ts`).
 - `countries-2025.json` : édition 2025, saisie à la main puis corrigée (`CORRECTIONS_LOG.md`).
-- `countries-2026.json` : édition 2026 provisoire, construite et contrôlée par `scripts/edition2026/` (méthode, sources et contrôle : `scripts/edition2026/README.md`).
+- `countries-2026.json` : édition 2026 provisoire, construite et contrôlée par `scripts/edition2026/` (sources et commandes : `scripts/edition2026/README.md`).
 
 Le reste de ce fichier reprend le gabarit d'origine de Vite.
 

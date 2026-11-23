@@ -12,6 +12,7 @@ import { DataTablePage } from "./pages/DataTablePage";
 import { CountryPage } from "./pages/CountryPage";
 import { MethodologyPage } from "./pages/MethodologyPage";
 import { CustomScorePage } from "./pages/CustomScorePage";
+import { ChangesPage } from "./pages/ChangesPage";
 import { useCountryData } from "./hooks/useCountryData";
 import { useYear } from "./contexts/YearContext";
 import { useState } from "react";
@@ -82,6 +83,7 @@ function AppInner() {
           <Route path="/analytics" element={<AnalyticsView countries={data.countries} onCountryClick={setDetailCountry} />} />
           <Route path="/subnational" element={<SubnationalPage countries={data.countries} />} />
           <Route path="/reforms" element={<ReformsPage countries={data.countries} />} />
+          <Route path="/changes" element={<ChangesPage />} />
           <Route path="/data" element={<DataTablePage countries={data.countries} />} />
           <Route path="/country/:iso2" element={<CountryPage countries={data.countries} />} />
           <Route path="/methodology" element={<MethodologyPage />} />

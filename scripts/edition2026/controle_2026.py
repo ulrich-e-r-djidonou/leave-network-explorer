@@ -29,7 +29,7 @@ import lprn_sources as S
 
 S.console_utf8()
 
-DECL = json.loads((S.ICI / "ecarts_declares_2026.json").read_text(encoding="utf-8"))
+DECL = json.loads((S.TRAVAIL / "ecarts_declares_2026.json").read_text(encoding="utf-8"))
 T_SEM = 0.265   # fiche en mois arrondie parfois a une decimale (0.05 mois = 0.215 sem.) + tableau 2 a une decimale (0.05)
 T_MOIS = 0.1    # fiche a une ou deux decimales (0.05) + tableaux 1 et 3 a une decimale (0.05)
 
@@ -51,7 +51,7 @@ def charger():
         "t3": S.charger_tableau("T3_parental.csv"),
         "t4": S.charger_tableau("T4_ecec.csv"),
         "t6": S.charger_tableau("T6_changements.csv"),
-        "prov": list(csv.DictReader(open(S.ICI / "provenance_2026.csv", encoding="utf-8-sig"))),
+        "prov": list(csv.DictReader(open(S.TRAVAIL / "provenance_2026.csv", encoding="utf-8-sig"))),
     }
 
 
@@ -443,7 +443,7 @@ def main():
     emp = S.verifier_empreintes()
     lignes += ["## C0 Empreintes des sources", "", "Conformes." if not emp else "\n".join(f"- {e}" for e in emp), ""]
     if emp:
-        (S.ICI / "CONTROLE_2026.md").write_text("\n".join(lignes) + "\n", encoding="utf-8", newline="\n")
+        (S.TRAVAIL / "CONTROLE_2026.md").write_text("\n".join(lignes) + "\n", encoding="utf-8", newline="\n")
         print("\n".join(emp))
         sys.exit(1)
     d = charger()
@@ -493,7 +493,7 @@ def main():
             prop = e.get("proposition")
             lignes.append(f"| {e['cle']} | {e['categorie']} | {'' if prop is None else prop} | {e['justification']} |")
         lignes.append("")
-    (S.ICI / "CONTROLE_2026.md").write_text("\n".join(lignes) + "\n", encoding="utf-8", newline="\n")
+    (S.TRAVAIL / "CONTROLE_2026.md").write_text("\n".join(lignes) + "\n", encoding="utf-8", newline="\n")
     for k, errs in resultats.items():
         print(f"{k} : {len(errs)} erreur(s)")
         for e in errs[:40]:

@@ -14,6 +14,10 @@ from pathlib import Path
 RACINE = Path(__file__).resolve().parents[2]
 ICI = Path(__file__).resolve().parent
 SOURCES = json.loads((ICI / "sources.json").read_text(encoding="utf-8"))
+# Fichiers de travail (decisions, ecarts, provenance, rapports) : hors du depot public.
+TRAVAIL = (RACINE / SOURCES["dossier_travail"]["chemin"]).resolve()
+if not TRAVAIL.is_dir():
+    sys.exit(f"Dossier de travail introuvable : {TRAVAIL} (voir sources.json, dossier_travail)")
 
 SEMAINES_PAR_MOIS = 4.3  # regle du LPRN, notes des tableaux 1 a 3 ; deja appliquee en 2025 (CORRECTIONS_LOG.md)
 

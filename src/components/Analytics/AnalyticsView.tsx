@@ -1,3 +1,4 @@
+import { EditionBadge } from "../Layout/EditionBadge";
 import { useMemo, useState, useCallback, useRef } from "react";
 import type { Country } from "../../types";
 import {
@@ -194,7 +195,7 @@ export function AnalyticsView({ countries, onCountryClick }: Props) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-8">
       <div>
-        <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-slate-100">{t('analytics_title')}</h2>
+        <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-slate-100 flex flex-wrap items-center gap-2">{t('analytics_title')} <EditionBadge /></h2>
         <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">
           {lang === 'fr' ? 'Analyses multidimensionnelles, écarts garde-congé et tendances des réformes.' : 'Multidimensional analysis, leave-to-care gaps, and reform dynamics.'}
         </p>

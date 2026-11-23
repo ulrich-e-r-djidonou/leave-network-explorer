@@ -4,6 +4,9 @@ import { LeaveTimeline } from "./LeaveTimeline";
 import { X, ExternalLink } from "lucide-react";
 import { useTranslation } from "../../hooks/useTranslation";
 import { Link } from "react-router-dom";
+import { usePreviousCountry } from "../../hooks/useEditionDiff";
+import { readField, sameValue, formatFieldValue, type FieldKind } from "../../utils/editionDiff";
+import { EditionBadge, PreviousValue } from "../Layout/EditionBadge";
 
 interface Props {
   country: Country;
@@ -15,6 +18,13 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
   const c = country;
   const { t, lang } = useTranslation();
   const genderScore = getGenderEqualityScore(c);
+  const prev = usePreviousCountry(c.iso2);
+  // Valeur de l'édition précédente, formatée, quand elle diffère de la valeur affichée.
+  const was = (path: string, kind: FieldKind): string | undefined => {
+    if (!prev) return undefined;
+    const before = readField(prev, path);
+    return sameValue(before, readField(c, path)) ? undefined : formatFieldValue(before, kind, lang);
+  };
   const generosityScore = getGenerosityScore(c);
 
   const entitlementLabel = (type: string | null) => {
@@ -30,6 +40,14 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
       <div className="bg-slate-900 dark:bg-slate-950 text-white p-5 flex items-start justify-between gap-4 border-b border-slate-800">
         <div>
           <h2 className="text-xl sm:text-2xl font-bold tracking-tight font-display text-white">{c.name}</h2>
+          <div className="flex flex-wrap items-center gap-1.5 mt-1.5">
+            <EditionBadge />
+            {prev === null && (
+              <span className="inline-flex items-center rounded-full bg-teal-500/15 text-teal-200 border border-teal-400/30 px-2.5 py-0.5 text-xs font-semibold">
+                {t('diff_new_country')}
+              </span>
+            )}
+          </div>
           <p className="text-xs sm:text-sm text-slate-300 mt-1">
             {c.region}
             {c.federal && ` • ${t('federal_state')}`}
@@ -90,6 +108,8 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
           <LeaveSection
             title={t('maternity_leave')}
             leave={c.maternity}
+            leaveKey="maternity"
+            was={was}
             color="bg-rose-500"
             lang={lang}
             t={t}
@@ -99,6 +119,8 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
           <LeaveSection
             title={t('paternity_leave')}
             leave={c.paternity}
+            leaveKey="paternity"
+            was={was}
             color="bg-sky-500"
             lang={lang}
             t={t}
@@ -108,17 +130,19 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
           <LeaveSection
             title={t('parental_leave')}
             leave={c.parental}
+            leaveKey="parental"
+            was={was}
             color="bg-amber-500"
             lang={lang}
             t={t}
             extra={
               <>
                 <Detail label={t('entitlement_type')} value={entitlementLabel(c.parental.entitlementType)} />
-                {c.parental.motherQuotaMonths !== null && (
-                  <Detail label={t('mother_quota')} value={formatDuration(c.parental.motherQuotaMonths, lang)} />
+                {(c.parental.motherQuotaMonths !== null || was('parental.motherQuotaMonths', 'months')) && (
+                  <Detail label={t('mother_quota')} value={formatDuration(c.parental.motherQuotaMonths, lang)} before={was('parental.motherQuotaMonths', 'months')} />
                 )}
-                {c.parental.fatherQuotaMonths !== null && (
-                  <Detail label={t('father_quota')} value={formatDuration(c.parental.fatherQuotaMonths, lang)} />
+                {(c.parental.fatherQuotaMonths !== null || was('parental.fatherQuotaMonths', 'months')) && (
+                  <Detail label={t('father_quota')} value={formatDuration(c.parental.fatherQuotaMonths, lang)} before={was('parental.fatherQuotaMonths', 'months')} />
                 )}
               </>
             }
@@ -132,7 +156,10 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
               {t('childcare_leave')}
             </h4>
             <p className="text-sm text-slate-600 dark:text-slate-300 mt-2 font-medium">
-              {formatDuration(c.childcareLeave.durationMonths, lang)} •{" "}
+              {formatDuration(c.childcareLeave.durationMonths, lang)}{" "}
+              {was('childcareLeave.durationMonths', 'months') !== undefined && (
+                <PreviousValue text={was('childcareLeave.durationMonths', 'months') ?? ''} />
+              )}{" "}•{" "}
               <span className={c.childcareLeave.paid ? "text-emerald-600 dark:text-emerald-400" : "text-slate-500"}>
                 {c.childcareLeave.paid ? t('paid') : t('unpaid')}
               </span>
@@ -192,12 +219,12 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
         <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-4 shadow-xs">
           <h4 className="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-2">{t('ecec')}</h4>
           <div className="text-sm text-slate-600 dark:text-slate-300 space-y-1.5">
-            <Detail label={t('universal_entitlement')} value={c.ecec.universalEntitlement ? t('yes') : t('no')} />
-            {c.ecec.entitlementAgeMonths !== null && (
-              <Detail label={t('entitlement_age')} value={`${c.ecec.entitlementAgeMonths} ${lang === 'en' ? 'months' : 'mois'}`} />
+            <Detail label={t('universal_entitlement')} value={c.ecec.universalEntitlement ? t('yes') : t('no')} before={was('ecec.universalEntitlement', 'bool')} />
+            {(c.ecec.entitlementAgeMonths !== null || was('ecec.entitlementAgeMonths', 'ageMonths')) && (
+              <Detail label={t('entitlement_age')} value={formatFieldValue(c.ecec.entitlementAgeMonths, 'ageMonths', lang)} before={was('ecec.entitlementAgeMonths', 'ageMonths')} />
             )}
-            {c.ecec.gapAfterLeaveMonths !== null && (
-              <Detail label={t('gap_after_leave')} value={formatDuration(c.ecec.gapAfterLeaveMonths, lang)} />
+            {(c.ecec.gapAfterLeaveMonths !== null || was('ecec.gapAfterLeaveMonths', 'months')) && (
+              <Detail label={t('gap_after_leave')} value={formatDuration(c.ecec.gapAfterLeaveMonths, lang)} before={was('ecec.gapAfterLeaveMonths', 'months')} />
             )}
           </div>
         </div>
@@ -239,10 +266,12 @@ export function CountryDetail({ country, onClose, onCompare }: Props) {
 }
 
 function LeaveSection({
-  title, leave, color, extra, lang, t,
+  title, leave, leaveKey, was, color, extra, lang, t,
 }: {
   title: string;
   leave: any;
+  leaveKey: 'maternity' | 'paternity' | 'parental';
+  was: (path: string, kind: FieldKind) => string | undefined;
   color: string;
   extra?: React.ReactNode;
   lang: 'fr' | 'en';
@@ -255,12 +284,13 @@ function LeaveSection({
         {title}
       </h4>
       <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 text-xs sm:text-sm">
-        <Detail label={t('total_duration')} value={formatDuration(leave.durationMonths.total, lang)} />
-        <Detail label={t('paid_duration')} value={formatDuration(leave.durationMonths.paid, lang)} />
-        <Detail label={t('well_paid')} value={formatDuration(leave.durationMonths.wellPaid, lang)} />
+        <Detail label={t('total_duration')} value={formatDuration(leave.durationMonths.total, lang)} before={was(`${leaveKey}.durationMonths.total`, 'months')} />
+        <Detail label={t('paid_duration')} value={formatDuration(leave.durationMonths.paid, lang)} before={was(`${leaveKey}.durationMonths.paid`, 'months')} />
+        <Detail label={t('well_paid')} value={formatDuration(leave.durationMonths.wellPaid, lang)} before={was(`${leaveKey}.durationMonths.wellPaid`, 'months')} />
         <Detail
           label={t('rate')}
           value={leave.paymentRate ? `${leave.paymentRate}%` : leave.paymentType || t('na')}
+          before={was(`${leaveKey}.paymentRate`, 'percent')}
         />
         <Detail label={t('mandatory')} value={leave.obligatory ? t('yes') : t('no')} />
         <Detail label={t('transferable')} value={leave.transferable ? t('yes') : t('no')} />
@@ -283,11 +313,12 @@ function LeaveSection({
   );
 }
 
-function Detail({ label, value }: { label: string; value: string }) {
+function Detail({ label, value, before }: { label: string; value: string; before?: string }) {
   return (
     <div className="flex items-baseline gap-1.5 flex-wrap">
       <span className="text-slate-500 dark:text-slate-400 text-xs">{label} :</span>
       <span className="text-slate-800 dark:text-slate-200 font-medium tabular-nums">{value}</span>
+      {before !== undefined && <PreviousValue text={before} />}
     </div>
   );
 }

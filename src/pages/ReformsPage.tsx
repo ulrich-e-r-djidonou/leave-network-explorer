@@ -1,3 +1,4 @@
+import { EditionBadge } from "../components/Layout/EditionBadge";
 import { useState, useMemo } from "react";
 import type { Country, RecentChange } from "../types";
 import { REGIONS } from "../utils/calculations";
@@ -94,7 +95,7 @@ export function ReformsPage({ countries }: Props) {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 space-y-6">
       {/* Header */}
       <div>
-        <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-slate-100">{t("reforms_title")}</h2>
+        <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-slate-100 flex flex-wrap items-center gap-2">{t("reforms_title")} <EditionBadge /></h2>
         <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">{t("reforms_subtitle")}</p>
       </div>
 

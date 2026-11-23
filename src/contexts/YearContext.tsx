@@ -8,6 +8,9 @@ interface YearContextType {
   edition: EditionEntry | null;
   data: CountryData | null;
   loading: boolean;
+  /** Édition précédente (année inférieure la plus proche), pour signaler ce qui diffère. */
+  previousYear: number | null;
+  previousData: CountryData | null;
 }
 
 const YearContext = createContext<YearContextType>({
@@ -17,6 +20,8 @@ const YearContext = createContext<YearContextType>({
   edition: null,
   data: null,
   loading: true,
+  previousYear: null,
+  previousData: null,
 });
 
 const STORAGE_KEY = 'ln_year';
@@ -54,7 +59,14 @@ export function YearProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const edition = editions.find((e) => e.year === year) ?? null;
+  const previousEdition =
+    year === null
+      ? null
+      : editions
+          .filter((e) => e.year < year)
+          .reduce<EditionEntry | null>((best, e) => (best === null || e.year > best.year ? e : best), null);
 
+  // Édition affichée : son échec bloque l'application.
   useEffect(() => {
     if (!edition || cache[edition.year]) return;
     fetch(dataUrl(edition.file))
@@ -65,6 +77,15 @@ export function YearProvider({ children }: { children: ReactNode }) {
         setFailed(true);
       });
   }, [edition, cache]);
+
+  // Édition précédente : chargée en second plan ; son échec retire seulement les repères de différence.
+  useEffect(() => {
+    if (!previousEdition || cache[previousEdition.year]) return;
+    fetch(dataUrl(previousEdition.file))
+      .then((res) => res.json() as Promise<CountryData>)
+      .then((json) => setCache((prev) => ({ ...prev, [previousEdition.year]: json })))
+      .catch((err) => console.error('Failed to load previous edition:', err));
+  }, [previousEdition, cache]);
 
   const setYear = (newYear: number) => {
     if (!editions.some((e) => e.year === newYear)) return;
@@ -79,9 +100,11 @@ export function YearProvider({ children }: { children: ReactNode }) {
 
   const data = year !== null ? cache[year] ?? null : null;
   const loading = !failed && data === null;
+  const previousYear = previousEdition?.year ?? null;
+  const previousData = previousYear !== null ? cache[previousYear] ?? null : null;
 
   return (
-    <YearContext.Provider value={{ editions, year, setYear, edition, data, loading }}>
+    <YearContext.Provider value={{ editions, year, setYear, edition, data, loading, previousYear, previousData }}>
       {children}
     </YearContext.Provider>
   );
