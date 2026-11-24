@@ -14,7 +14,7 @@ Explorateur interactif des politiques de congés parentaux (maternité, paternit
 - `npm run build` : construit `dist/`, puis `scripts/pages-routes.mjs` écrit une page par route (une par pays pour `/country/XX`) et un `404.html` de repli, pour que les adresses directes répondent sur GitHub Pages.
 - `npm run smoke` (après le build ; première fois : `npx playwright install --only-shell chromium`) : sert `dist/` comme GitHub Pages, ouvre chaque route en accès direct et la fiche de chaque pays dans chaque édition, et échoue à la moindre erreur JavaScript.
 
-Le déploiement (`.github/workflows/deploy.yml`) lance ces trois étapes ; un échec bloque la mise en ligne.
+Le déploiement (`.github/workflows/deploy.yml`) lance ces trois étapes, aussi sur chaque demande de fusion (sans déployer) ; un échec bloque la mise en ligne.
 
 Le reste de ce fichier reprend le gabarit d'origine de Vite.
 
