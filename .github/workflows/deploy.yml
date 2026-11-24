@@ -24,7 +24,13 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      # Tests unitaires et intégrité des données de chaque édition
+      - run: npm test
+      # Construit le site et une page par route (accès direct sur Pages)
       - run: npm run build
+      # Chaque route et chaque fiche pays, dans chaque édition, sur le site construit
+      - run: npx playwright install --with-deps --only-shell chromium
+      - run: npm run smoke
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

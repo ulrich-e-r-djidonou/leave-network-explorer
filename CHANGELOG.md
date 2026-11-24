@@ -2,6 +2,13 @@
 
 Toutes les modifications notables apportées à ce projet sont documentées dans ce fichier. Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/).
 
+## [Non publié] - 2026-11-23 (soir)
+
+### Ajouté
+- Une page par route et par pays dans le site construit, et un `404.html` de repli : les adresses directes (`/changes`, `/reforms`, `/country/FR`...) s'ouvrent sur GitHub Pages au lieu de renvoyer une erreur 404.
+- Test de fumée (`npm run smoke`) : chaque route en accès direct et chaque fiche pays dans chaque édition, sur le site construit servi comme GitHub Pages.
+- Le déploiement lance les tests, le build et le test de fumée avant la mise en ligne.
+
 ## [Publié] - 2026-11-23
 
 ### Résumé
